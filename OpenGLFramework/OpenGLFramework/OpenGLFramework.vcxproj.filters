@@ -25,9 +25,6 @@
     <Filter Include="Text">
       <UniqueIdentifier>{00a07d06-8435-4f1d-9290-a226e034bfd1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ToRemove">
-      <UniqueIdentifier>{7a8456f8-4552-4e33-8098-e57b03ce8b87}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Utils">
       <UniqueIdentifier>{6a8306b8-4c2f-4a71-8cd7-16ef6a585f07}</UniqueIdentifier>
     </Filter>
@@ -74,15 +71,6 @@
     </ClCompile>
     <ClCompile Include="Utils\Vertex.cpp">
       <Filter>Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="ToRemove\main.cpp">
-      <Filter>ToRemove</Filter>
-    </ClCompile>
-    <ClCompile Include="ToRemove\Planet.cpp">
-      <Filter>ToRemove</Filter>
-    </ClCompile>
-    <ClCompile Include="ToRemove\Sun.cpp">
-      <Filter>ToRemove</Filter>
     </ClCompile>
     <ClCompile Include="Text\Text.cpp">
       <Filter>Text</Filter>
@@ -172,12 +160,6 @@
     </ClInclude>
     <ClInclude Include="Utils\VertexType.h">
       <Filter>Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="ToRemove\Planet.h">
-      <Filter>ToRemove</Filter>
-    </ClInclude>
-    <ClInclude Include="ToRemove\Sun.h">
-      <Filter>ToRemove</Filter>
     </ClInclude>
     <ClInclude Include="Text\Text.h">
       <Filter>Text</Filter>

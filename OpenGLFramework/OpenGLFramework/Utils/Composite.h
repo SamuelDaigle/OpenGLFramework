@@ -3,7 +3,6 @@
 /************************************************************************/
 
 #include "..\stdafx.h"
-#include "..\ToRemove\Planet.h"
 
 using namespace std;
 

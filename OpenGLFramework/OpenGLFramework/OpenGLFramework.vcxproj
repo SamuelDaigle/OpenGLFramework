@@ -38,9 +38,6 @@
     <ClCompile Include="Rendering\Triangle.cpp" />
     <ClCompile Include="Text\Text.cpp" />
     <ClCompile Include="Text\TextHolder.cpp" />
-    <ClCompile Include="ToRemove\main.cpp" />
-    <ClCompile Include="ToRemove\Planet.cpp" />
-    <ClCompile Include="ToRemove\Sun.cpp" />
     <ClCompile Include="Utils\Composite.cpp" />
     <ClCompile Include="Utils\MeshBank.cpp" />
     <ClCompile Include="Utils\TextureBank.cpp" />
@@ -69,8 +66,6 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Text\Text.h" />
     <ClInclude Include="Text\TextHolder.h" />
-    <ClInclude Include="ToRemove\Planet.h" />
-    <ClInclude Include="ToRemove\Sun.h" />
     <ClInclude Include="Utils\Color.h" />
     <ClInclude Include="Utils\Composite.h" />
     <ClInclude Include="Utils\DynamicArray.h" />
@@ -95,13 +90,13 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -153,11 +148,11 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>Dependencies\soil;Dependencies\cimg;Dependencies\glm;Dependencies\assimp;Dependencies\freeglut;Dependencies\glew</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SOIL.lib;assimp.lib;opengl32.lib;freeglut.lib;glew32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SOIL.lib;assimp.lib;opengl32.lib;glew32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -174,13 +169,13 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>Dependencies\soil;Dependencies\cimg;Dependencies\glm;Dependencies\assimp;Dependencies\freeglut;Dependencies\glew</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SOIL.lib;assimp.lib;opengl32.lib;freeglut.lib;glew32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SOIL.lib;assimp.lib;opengl32.lib;glew32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalOptions>/NODEFAULTLIB:MSVCRT %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>

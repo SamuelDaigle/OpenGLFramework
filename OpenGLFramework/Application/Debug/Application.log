@@ -1,0 +1,7 @@
+﻿  Sun.cpp
+  Planet.cpp
+  main.cpp
+c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\utils\color.h(6): warning C4005: 'TRANSPARENT': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\um\wingdi.h(1861): note: see previous definition of 'TRANSPARENT'
+  Generating Code...
+LINK : fatal error LNK1104: cannot open file 'freeglut.lib'

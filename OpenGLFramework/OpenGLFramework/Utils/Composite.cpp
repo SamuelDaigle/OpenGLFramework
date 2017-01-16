@@ -3,8 +3,6 @@
 
 void Composite::Initialize(MeshLoader* _meshLoader)
 {
-	planet = new Planet();
-	planet->Initialize(_meshLoader);
 }
 
 void Composite::SetSelfObject(IObject* _object)

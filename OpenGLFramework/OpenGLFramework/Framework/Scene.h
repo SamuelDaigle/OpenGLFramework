@@ -6,7 +6,6 @@
 #include "..\Rendering\Triangle.h"
 #include "OpenGL.h"
 #include "..\Utils\Composite.h"
-#include "..\ToRemove\Planet.h"
 #include "Skybox.h"
 #include "..\Rendering\BasicShader.h"
 #include "..\Rendering\AdvancedShader.h"
@@ -15,7 +14,6 @@
 #include "..\Rendering\Square.h"
 #include "..\Rendering\Light.h"
 #include "..\Text\Text.h"
-#include "..\ToRemove\Sun.h"
 
 #include "..\Dependencies\glm\common.hpp"
 
@@ -36,7 +34,6 @@ private:
 	OpenGL* ptrOpenGL;
 	InputHandler* ptrInputHandler;
 	Composite* rootObject;
-	Planet* planet;
 	IShader* basicShader;
 	IShader* advancedShader;
 	IShader* skyboxShader;
