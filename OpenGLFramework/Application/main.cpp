@@ -47,6 +47,8 @@ int main(int argc, char* argv[])
 
 	glutMainLoop();
 
+	system("PAUSE");
+
 	window->Destroy();
 	delete window;
 

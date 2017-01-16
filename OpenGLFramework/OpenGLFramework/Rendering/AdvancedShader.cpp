@@ -7,8 +7,8 @@ AdvancedShader::AdvancedShader()
 
 	ShaderLoader shaderLoader;
 
-	GLuint vertShaderID = shaderLoader.LoadShader("advanced.vert", ShaderLoader::VERTEX);
-	GLuint fragShaderID = shaderLoader.LoadShader("advanced.frag", ShaderLoader::FRAGMENTATION);
+	GLuint vertShaderID = shaderLoader.LoadShader("..\Shaders\advanced.vert", ShaderLoader::VERTEX);
+	GLuint fragShaderID = shaderLoader.LoadShader("..\Shaders\advanced.frag", ShaderLoader::FRAGMENTATION);
 
 	shaderLoader.CompileShader(vertShaderID);
 	shaderLoader.CompileShader(fragShaderID);

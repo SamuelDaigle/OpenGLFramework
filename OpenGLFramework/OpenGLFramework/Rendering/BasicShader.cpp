@@ -7,8 +7,8 @@ BasicShader::BasicShader()
 
 	ShaderLoader shaderLoader;
 
-	GLuint vertShaderID = shaderLoader.LoadShader("basic.vert", ShaderLoader::VERTEX);
-	GLuint fragShaderID = shaderLoader.LoadShader("basic.frag", ShaderLoader::FRAGMENTATION);
+	GLuint vertShaderID = shaderLoader.LoadShader("..\Shaders\basic.vert", ShaderLoader::VERTEX);
+	GLuint fragShaderID = shaderLoader.LoadShader("..\Shaders\basic.frag", ShaderLoader::FRAGMENTATION);
 
 	shaderLoader.CompileShader(vertShaderID);
 	shaderLoader.CompileShader(fragShaderID);
