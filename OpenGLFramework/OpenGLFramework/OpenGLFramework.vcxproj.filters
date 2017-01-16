@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Framework">
+      <UniqueIdentifier>{af2252cf-4605-4a3b-98a5-2773397e26b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Camera">
+      <UniqueIdentifier>{ea8b3490-2606-4d98-aea5-e709c332c9ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Inputs">
+      <UniqueIdentifier>{b40b1347-ee25-4134-a66e-609875887a39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interfaces">
+      <UniqueIdentifier>{4f6f0acf-5129-4161-a046-f5367bafc38e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IO">
+      <UniqueIdentifier>{3f3153d8-d1b6-44fe-8187-b85a6b0e8092}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Rendering">
+      <UniqueIdentifier>{f15a0f54-a518-4832-9e7e-e49a13dce7c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{849cf495-0702-48f5-a3e3-41e0615a6fbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Text">
+      <UniqueIdentifier>{00a07d06-8435-4f1d-9290-a226e034bfd1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ToRemove">
+      <UniqueIdentifier>{7a8456f8-4552-4e33-8098-e57b03ce8b87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{6a8306b8-4c2f-4a71-8cd7-16ef6a585f07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dependencies">
+      <UniqueIdentifier>{73fe41eb-85fa-4bf5-ab72-c94d2a505683}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Framework\OpenGL.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Scene.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Skybox.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Window.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera\Camera.cpp">
+      <Filter>Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Inputs\InputHandler.cpp">
+      <Filter>Inputs</Filter>
+    </ClCompile>
+    <ClCompile Include="IO\MeshLoader.cpp">
+      <Filter>IO</Filter>
+    </ClCompile>
+    <ClCompile Include="IO\ShaderLoader.cpp">
+      <Filter>IO</Filter>
+    </ClCompile>
+    <ClCompile Include="IO\TextureLoader.cpp">
+      <Filter>IO</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\Composite.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\MeshBank.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\TextureBank.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\Vertex.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="ToRemove\main.cpp">
+      <Filter>ToRemove</Filter>
+    </ClCompile>
+    <ClCompile Include="ToRemove\Planet.cpp">
+      <Filter>ToRemove</Filter>
+    </ClCompile>
+    <ClCompile Include="ToRemove\Sun.cpp">
+      <Filter>ToRemove</Filter>
+    </ClCompile>
+    <ClCompile Include="Text\Text.cpp">
+      <Filter>Text</Filter>
+    </ClCompile>
+    <ClCompile Include="Text\TextHolder.cpp">
+      <Filter>Text</Filter>
+    </ClCompile>
+    <ClCompile Include="Rendering\AdvancedShader.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Rendering\BasicShader.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Rendering\Light.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Rendering\Mesh.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Rendering\Model.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Rendering\SkyboxShader.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Rendering\Square.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Rendering\Triangle.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Framework\OpenGL.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Scene.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Skybox.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Window.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera\Camera.h">
+      <Filter>Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Inputs\InputHandler.h">
+      <Filter>Inputs</Filter>
+    </ClInclude>
+    <ClInclude Include="Interfaces\IObject.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="Interfaces\IShader.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="IO\MeshLoader.h">
+      <Filter>IO</Filter>
+    </ClInclude>
+    <ClInclude Include="IO\ShaderLoader.h">
+      <Filter>IO</Filter>
+    </ClInclude>
+    <ClInclude Include="IO\TextureLoader.h">
+      <Filter>IO</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\Color.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\Composite.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\DynamicArray.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\DynamicArray.hpp">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\MeshBank.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\TextureBank.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\Vertex.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\VertexType.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ToRemove\Planet.h">
+      <Filter>ToRemove</Filter>
+    </ClInclude>
+    <ClInclude Include="ToRemove\Sun.h">
+      <Filter>ToRemove</Filter>
+    </ClInclude>
+    <ClInclude Include="Text\Text.h">
+      <Filter>Text</Filter>
+    </ClInclude>
+    <ClInclude Include="Text\TextHolder.h">
+      <Filter>Text</Filter>
+    </ClInclude>
+    <ClInclude Include="Rendering\AdvancedShader.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Rendering\BasicShader.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Rendering\Light.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Rendering\Mesh.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Rendering\Model.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Rendering\SkyboxShader.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Rendering\Square.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Rendering\Triangle.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Shaders\advanced.frag">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\advanced.vert">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\basic.frag">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\basic.vert">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\skybox.frag">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\skybox.vert">
+      <Filter>Shaders</Filter>
+    </None>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,32 @@
+﻿LINK : warning LNK4098: defaultlib 'MSVCRTD' conflicts with use of other libs; use /NODEFAULTLIB:library
+SOIL.lib(SOIL.obj) : warning LNK4217: locally defined symbol _fclose imported in function _SOIL_direct_load_DDS
+SOIL.lib(stb_image_aug.obj) : warning LNK4049: locally defined symbol _fclose imported
+SOIL.lib(image_DXT.obj) : warning LNK4049: locally defined symbol _fclose imported
+SOIL.lib(SOIL.obj) : warning LNK4217: locally defined symbol _fopen imported in function _SOIL_direct_load_DDS
+SOIL.lib(stb_image_aug.obj) : warning LNK4049: locally defined symbol _fopen imported
+SOIL.lib(image_DXT.obj) : warning LNK4049: locally defined symbol _fopen imported
+SOIL.lib(SOIL.obj) : warning LNK4217: locally defined symbol _fseek imported in function _SOIL_direct_load_DDS
+SOIL.lib(stb_image_aug.obj) : warning LNK4049: locally defined symbol _fseek imported
+SOIL.lib(SOIL.obj) : warning LNK4217: locally defined symbol _ftell imported in function _SOIL_direct_load_DDS
+SOIL.lib(stb_image_aug.obj) : warning LNK4049: locally defined symbol _ftell imported
+SOIL.lib(SOIL.obj) : warning LNK4217: locally defined symbol _free imported in function _SOIL_free_image_data
+SOIL.lib(stb_image_aug.obj) : warning LNK4049: locally defined symbol _free imported
+SOIL.lib(image_DXT.obj) : warning LNK4049: locally defined symbol _free imported
+SOIL.lib(SOIL.obj) : warning LNK4217: locally defined symbol _malloc imported in function _SOIL_create_OGL_single_cubemap
+SOIL.lib(stb_image_aug.obj) : warning LNK4049: locally defined symbol _malloc imported
+SOIL.lib(image_DXT.obj) : warning LNK4049: locally defined symbol _malloc imported
+SOIL.lib(stb_image_aug.obj) : warning LNK4217: locally defined symbol _fgetc imported in function _get8
+SOIL.lib(stb_image_aug.obj) : warning LNK4217: locally defined symbol _fwrite imported in function _write8
+SOIL.lib(image_DXT.obj) : warning LNK4049: locally defined symbol _fwrite imported
+SOIL.lib(stb_image_aug.obj) : warning LNK4217: locally defined symbol _ldexp imported in function _hdr_convert
+SOIL.lib(image_helper.obj) : warning LNK4049: locally defined symbol _ldexp imported
+SOIL.lib(stb_image_aug.obj) : warning LNK4217: locally defined symbol _strncmp imported in function _hdr_load
+SOIL.lib(stb_image_aug.obj) : warning LNK4217: locally defined symbol _strtol imported in function _hdr_load
+SOIL.lib(stb_image_aug.obj) : warning LNK4217: locally defined symbol __wassert imported in function _bit_reverse
+SOIL.lib(SOIL.obj) : error LNK2019: unresolved external symbol __imp__strstr referenced in function _query_DXT_capability
+SOIL.lib(SOIL.obj) : error LNK2019: unresolved external symbol __imp__fread referenced in function _SOIL_direct_load_DDS
+SOIL.lib(stb_image_aug.obj) : error LNK2001: unresolved external symbol __imp__fread
+SOIL.lib(stb_image_aug.obj) : error LNK2019: unresolved external symbol __imp__feof referenced in function _at_eof
+SOIL.lib(stb_image_aug.obj) : error LNK2019: unresolved external symbol __imp__realloc referenced in function _expand
+MSVCRTD.lib(_chandler4gs_.obj) : error LNK2019: unresolved external symbol __except_handler4_common referenced in function __except_handler4
+C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\Debug\OpenGLFramework.exe : fatal error LNK1120: 5 unresolved externals
