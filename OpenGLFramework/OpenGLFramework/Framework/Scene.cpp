@@ -90,10 +90,9 @@ void Scene::render()
 	
 	// Draw sun.
 	basicShader->Use();
-	basicShader->SetWorldMatrix(sun->GetWorldMatrix());
 	basicShader->SetViewMatrix(ptrOpenGL->GetViewMatrix());
 	basicShader->SetProjectionMatrix(ptrOpenGL->GetProjMatrix());
-	sun->Render(*basicShader);
+	//sun->Render(*basicShader);
 
 	// Draw every planets.
 	advancedShader->Use();
@@ -102,7 +101,7 @@ void Scene::render()
 
 	glUniform3f(glGetUniformLocation(advancedShader->glProgram, "viewPos"), ptrOpenGL->GetCamera()->position.x, ptrOpenGL->GetCamera()->position.y, ptrOpenGL->GetCamera()->position.z);
 	light->Apply(advancedShader);
-	rootObject->Render(*advancedShader);
+	//rootObject->Render(*advancedShader);
 }
 
 void Scene::update()

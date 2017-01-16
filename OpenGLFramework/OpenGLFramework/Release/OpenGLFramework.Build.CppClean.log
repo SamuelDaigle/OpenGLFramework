@@ -1,5 +1,5 @@
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\vc140.pdb
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\main.obj
+c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\openglframework.pdb
+c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\composite.obj
 c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\textholder.obj
 c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\text.obj
 c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\triangle.obj
@@ -22,10 +22,6 @@ c:\users\samue\documents\workspace\openglframework\openglframework\openglframewo
 c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\vertex.obj
 c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\texturebank.obj
 c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\meshbank.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\composite.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\sun.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\planet.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\openglframework.pdb
 c:\users\samue\documents\workspace\openglframework\openglframework\release\openglframework.lib
 c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\openglframework.tlog\cl.command.1.tlog
 c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\openglframework.tlog\cl.read.1.tlog
@@ -33,6 +29,3 @@ c:\users\samue\documents\workspace\openglframework\openglframework\openglframewo
 c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\openglframework.tlog\lib-link.read.1.tlog
 c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\openglframework.tlog\lib-link.write.1.tlog
 c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\openglframework.tlog\lib.command.1.tlog
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\openglframework.tlog\link.command.1.tlog
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\openglframework.tlog\link.read.1.tlog
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\openglframework.tlog\link.write.1.tlog

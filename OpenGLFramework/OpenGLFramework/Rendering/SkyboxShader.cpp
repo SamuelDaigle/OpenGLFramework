@@ -7,8 +7,8 @@ SkyboxShader::SkyboxShader()
 
 	ShaderLoader shaderLoader;
 
-	GLuint vertShaderID = shaderLoader.LoadShader("..\Shaders\skybox.vert", ShaderLoader::VERTEX);
-	GLuint fragShaderID = shaderLoader.LoadShader("..\Shaders\skybox.frag", ShaderLoader::FRAGMENTATION);
+	GLuint vertShaderID = shaderLoader.LoadShader("../OpenGLFramework/Shaders/skybox.vert", ShaderLoader::VERTEX);
+	GLuint fragShaderID = shaderLoader.LoadShader("../OpenGLFramework/Shaders/skybox.frag", ShaderLoader::FRAGMENTATION);
 
 	shaderLoader.CompileShader(vertShaderID);
 	shaderLoader.CompileShader(fragShaderID);

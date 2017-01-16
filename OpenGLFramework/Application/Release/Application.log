@@ -1,12 +1,12 @@
 ﻿  main.cpp
 c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\Utils/Color.h(6): warning C4005: 'TRANSPARENT': macro redefinition
   C:\Program Files (x86)\Windows Kits\8.1\Include\um\wingdi.h(1861): note: see previous definition of 'TRANSPARENT'
-  Planet.cpp
-  Sun.cpp
-OpenGLFramework.lib(Window.obj) : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:ICF' specification
+SOIL.lib(SOIL.obj) : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:ICF' specification
 LINK : warning LNK4098: defaultlib 'MSVCRTD' conflicts with use of other libs; use /NODEFAULTLIB:library
   Generating code
-  All 16 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  6 of 587 functions ( 1.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    2 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
 SOIL.lib(image_DXT.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'SOIL.lib(image_DXT.obj)' or at 'C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\Release\vc120.pdb'; linking object as if no debug info
 SOIL.lib(image_helper.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'SOIL.lib(image_helper.obj)' or at 'C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\Release\vc120.pdb'; linking object as if no debug info

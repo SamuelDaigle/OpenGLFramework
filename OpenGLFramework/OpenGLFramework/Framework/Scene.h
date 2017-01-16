@@ -39,6 +39,5 @@ private:
 	IShader* skyboxShader;
 	Skybox* skybox;
 	Light* light;
-	IObject* sun;
 };
 
