@@ -8,26 +8,30 @@
 
 using namespace glm;
 
-class InputHandler
+namespace Input
 {
-public:
-	void Initialize();
-	void Destroy();
-	void LateUpdate();
-	
-	bool IsKeyDown(unsigned char _key);
-	vec2 GetCursorPosition();
-	vec2 GetCursorDelta();
 
-	void OnKeyDown(unsigned char _key);
-	void OnKeyUp(unsigned char _key);
+	class InputHandler
+	{
+	public:
+		void Initialize();
+		void Destroy();
+		void LateUpdate();
 
-	void OnMouseMove(int _x, int _y);
+		bool IsKeyDown(unsigned char _key);
+		vec2 GetCursorPosition();
+		vec2 GetCursorDelta();
 
-	bool keyStates[256];
+		void OnKeyDown(unsigned char _key);
+		void OnKeyUp(unsigned char _key);
 
-	vec2 previousCursorPosition;
-	vec2 cursorPosition;
-	vec2 deltaCursor;
-};
+		void OnMouseMove(int _x, int _y);
 
+		bool keyStates[256];
+
+		vec2 previousCursorPosition;
+		vec2 cursorPosition;
+		vec2 deltaCursor;
+	};
+
+}

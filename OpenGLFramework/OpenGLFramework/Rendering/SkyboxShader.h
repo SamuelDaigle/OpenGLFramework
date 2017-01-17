@@ -7,17 +7,21 @@
 #include "..\stdafx.h"
 #include "..\IO\ShaderLoader.h"
 
-class SkyboxShader : public IShader
+namespace Rendering
 {
-public:
-	SkyboxShader();
-	~SkyboxShader();
 
-	void SetWorldMatrix(mat4 _worldMatrix) override;
-	void SetViewMatrix(mat4 _viewMatrix) override;
-	void SetProjectionMatrix(mat4 _projMatrix) override;
+	class SkyboxShader : public Interface::IShader
+	{
+	public:
+		SkyboxShader();
+		~SkyboxShader();
 
-private:
-	GLfloat* MatrixToFloatArray(mat4 _matrix);
-};
+		void SetWorldMatrix(mat4 _worldMatrix) override;
+		void SetViewMatrix(mat4 _viewMatrix) override;
+		void SetProjectionMatrix(mat4 _projMatrix) override;
 
+	private:
+		GLfloat* MatrixToFloatArray(mat4 _matrix);
+	};
+
+}

@@ -7,19 +7,22 @@
 #include "..\Dependencies\soil\SOIL.h"
 #include "..\Utils\TextureBank.h"
 
-
-class TextureLoader
+namespace IO
 {
-public:
-	void Initialize();
-	void ReleaseTextures();
 
-	GLuint GetTexture(const char* _texturePath);
-	GLuint LoadTextureFromFile(const char* path);
+	class TextureLoader
+	{
+	public:
+		void Initialize();
+		void ReleaseTextures();
 
-	unsigned char* GetUnloadedTexture(const char* _path);
+		GLuint GetTexture(const char* _texturePath);
+		GLuint LoadTextureFromFile(const char* path);
 
-private:
-	TextureBank* textureBank;
-};
+		unsigned char* GetUnloadedTexture(const char* _path);
 
+	private:
+		Utils::TextureBank* textureBank;
+	};
+
+}

@@ -8,28 +8,33 @@
 #include "Scene.h"
 
 #pragma once
-class Window
+
+namespace Framework
 {
-public:
-	void Initialize();
-	void Destroy();
 
-	void Frame();
-	void OnKeyPress(unsigned char _key, int _x, int _y);
-	void OnKeyRelease(unsigned char _key, int _x, int _y);
-	void OnMouseMove(int _x, int _y);
-	void Update();
+	class Window
+	{
+	public:
+		void Initialize();
+		void Destroy();
 
-private:
-	void initializeWindow();
-	void manageInput();
-	bool hasExited();
+		void Frame();
+		void OnKeyPress(unsigned char _key, int _x, int _y);
+		void OnKeyRelease(unsigned char _key, int _x, int _y);
+		void OnMouseMove(int _x, int _y);
+		void Update();
 
-	OpenGL* openGL;
-	InputHandler* inputhandler;
-	Scene* scene;
+	private:
+		void initializeWindow();
+		void manageInput();
+		bool hasExited();
 
-	int screenWidth;
-	int screenHeight;
-};
+		OpenGL* openGL;
+		Input::InputHandler* inputhandler;
+		Scene* scene;
 
+		int screenWidth;
+		int screenHeight;
+	};
+
+}

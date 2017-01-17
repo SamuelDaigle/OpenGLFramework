@@ -6,17 +6,21 @@
 
 #include "..\stdafx.h"
 
-class Light
+namespace Rendering
 {
-public:
-	void Initialize();
-	void Destroy();
 
-	void Apply(IShader* _shader);
+	class Light
+	{
+	public:
+		void Initialize();
+		void Destroy();
 
-	vec3 Position;
-	vec3 Ambiant;
-	vec3 Diffuse;
-	vec3 Specular;
-};
+		void Apply(Interface::IShader* _shader);
 
+		vec3 Position;
+		vec3 Ambiant;
+		vec3 Diffuse;
+		vec3 Specular;
+	};
+
+}

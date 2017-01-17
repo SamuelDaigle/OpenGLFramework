@@ -18,26 +18,31 @@
 #include "..\Dependencies\glm\common.hpp"
 
 #pragma once
-class Scene
+
+namespace Framework
 {
-public:
-	void Initialize(OpenGL* _ptrOpenGL, InputHandler* _ptrInput);
-	void Destroy();
 
-	void Frame();
+	class Scene
+	{
+	public:
+		void Initialize(OpenGL* _ptrOpenGL, Input::InputHandler* _ptrInput);
+		void Destroy();
 
-private:
-	void input();
-	void update();
-	void render();
+		void Frame();
 
-	OpenGL* ptrOpenGL;
-	InputHandler* ptrInputHandler;
-	Composite* rootObject;
-	IShader* basicShader;
-	IShader* advancedShader;
-	IShader* skyboxShader;
-	Skybox* skybox;
-	Light* light;
-};
+	private:
+		void input();
+		void update();
+		void render();
 
+		OpenGL* ptrOpenGL;
+		Input::InputHandler* ptrInputHandler;
+		Utils::Composite* rootObject;
+		Interface::IShader* basicShader;
+		Interface::IShader* advancedShader;
+		Interface::IShader* skyboxShader;
+		Skybox* skybox;
+		Rendering::Light* light;
+	};
+
+}

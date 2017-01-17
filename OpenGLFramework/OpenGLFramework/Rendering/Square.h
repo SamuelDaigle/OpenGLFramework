@@ -7,22 +7,26 @@
 #include "..\stdafx.h"
 #include "..\Utils\VertexType.h"
 
-class Square : public IObject
+namespace Rendering
 {
-public:
-	Square();
-	~Square();
 
-	void Initialize(MeshLoader* _meshLoader) override;
-	void Destroy() override;
+	class Square : public Interface::IObject
+	{
+	public:
+		Square();
+		~Square();
 
-	void Render(IShader& _shader) override;
-	void Translate(float _x, float _y, float _z) override;
-	void Rotate(float _angleX, float _angleY, float _angleZ) override;
-	void Scale(float _scaleX, float _scaleY, float _scaleZ) override;
+		void Initialize(IO::MeshLoader* _meshLoader) override;
+		void Destroy() override;
 
-private:
-	void initializeBuffers();
-	void shutdownBuffers();
-};
+		void Render(Interface::IShader& _shader) override;
+		void Translate(float _x, float _y, float _z) override;
+		void Rotate(float _angleX, float _angleY, float _angleZ) override;
+		void Scale(float _scaleX, float _scaleY, float _scaleZ) override;
 
+	private:
+		void initializeBuffers();
+		void shutdownBuffers();
+	};
+
+}

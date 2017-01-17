@@ -1,7 +1,8 @@
 ﻿  Scene.cpp
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\Utils/Color.h(6): warning C4005: 'TRANSPARENT': macro redefinition
+c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\Utils/Color.h(9): warning C4005: 'TRANSPARENT': macro redefinition
   C:\Program Files (x86)\Windows Kits\8.1\Include\um\wingdi.h(1861): note: see previous definition of 'TRANSPARENT'
   Window.cpp
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\Utils/Color.h(6): warning C4005: 'TRANSPARENT': macro redefinition
+c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\Utils/Color.h(9): warning C4005: 'TRANSPARENT': macro redefinition
   C:\Program Files (x86)\Windows Kits\8.1\Include\um\wingdi.h(1861): note: see previous definition of 'TRANSPARENT'
+  InputHandler.cpp
   OpenGLFramework.vcxproj -> C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.lib

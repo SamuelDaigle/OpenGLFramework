@@ -11,26 +11,31 @@
 using namespace std;
 
 #pragma once
-class ShaderLoader
+
+namespace IO
 {
-public:
-	enum ShaderType
+
+	class ShaderLoader
 	{
-		VERTEX,
-		FRAGMENTATION
+	public:
+		enum ShaderType
+		{
+			VERTEX,
+			FRAGMENTATION
+		};
+
+		ShaderLoader();
+		~ShaderLoader();
+
+		GLuint LoadShader(char* _filepath, ShaderType _shaderType);
+		void CompileShader(GLuint& _shader);
+
+	private:
+		char* loadShaderFile(char* _filepath, GLint& _shaderLength);
+		void printShaderInfoLog(GLuint& _shaderInfo);
+
+		GLuint vertexShader;
+		GLuint fragShader;
 	};
 
-	ShaderLoader();
-	~ShaderLoader();
-
-	GLuint LoadShader(char* _filepath, ShaderType _shaderType);
-	void CompileShader(GLuint& _shader);
-
-private:
-	char* loadShaderFile(char* _filepath, GLint& _shaderLength);
-	void printShaderInfoLog(GLuint& _shaderInfo);
-
-	GLuint vertexShader;
-	GLuint fragShader;
-};
-
+}

@@ -2,6 +2,8 @@
 /* Author: Samuel Daigle et Sébastien Rousseau                          */
 /************************************************************************/
 
+#pragma once
+
 #include "..\Camera\Camera.h"
 #include "..\IO\ShaderLoader.h"
 
@@ -10,27 +12,30 @@
 
 using namespace std;
 
-#pragma once
-
-class OpenGL
+namespace Framework
 {
-public:
-	void Initialize();
-	void Destroy();
 
-	mat4& GetViewMatrix();
-	mat4& GetProjMatrix();
-	Camera* GetCamera();
+	class OpenGL
+	{
+	public:
+		void Initialize();
+		void Destroy();
 
-	void BeginScene();
-	void EndScene();
+		mat4& GetViewMatrix();
+		mat4& GetProjMatrix();
+		Camera::Camera* GetCamera();
 
-private:
-	void setBuffer(int _objectID, int _bufferID, GLfloat* _bufferData);
+		void BeginScene();
+		void EndScene();
 
-	unsigned int* vertexArrayObjID;
-	unsigned int* vertexBufferObjID[2];
+	private:
+		void setBuffer(int _objectID, int _bufferID, GLfloat* _bufferData);
 
-	Camera* camera;
-	mat4 projectionMatrix;
-};
+		unsigned int* vertexArrayObjID;
+		unsigned int* vertexBufferObjID[2];
+
+		Camera::Camera* camera;
+		mat4 projectionMatrix;
+	};
+
+}

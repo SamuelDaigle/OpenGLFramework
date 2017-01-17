@@ -5,16 +5,20 @@
 #pragma once
 #include "Text.h"
 
-class TextHolder
+namespace Text
 {
-public:
-	TextHolder();
-	~TextHolder();
 
-	void DrawTexts();
-	void NewText(const char * _value, float _x, float _y, float _r, float _g, float _b);
+	class TextHolder
+	{
+	public:
+		TextHolder();
+		~TextHolder();
 
-private:
-	vector<Text *> texts;
-};
+		void DrawTexts();
+		void NewText(const char * _value, float _x, float _y, float _r, float _g, float _b);
 
+	private:
+		vector<Text *> texts;
+	};
+
+}

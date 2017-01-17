@@ -18,25 +18,29 @@ using namespace std;
 
 #include "..\Interfaces\IShader.h"
 
-struct Vertex {
-	glm::vec3 Position;
-	glm::vec3 Normal;
-	glm::vec2 TexCoords;
-};
+namespace Rendering
+{
 
-class Mesh {
-public:
-	vector<Vertex> vertices;
-	vector<GLuint> indices;
-	GLuint texture;
+	struct Vertex {
+		glm::vec3 Position;
+		glm::vec3 Normal;
+		glm::vec2 TexCoords;
+	};
 
-	Mesh(vector<Vertex> _vertices, vector<GLuint> _indices, GLuint _texture);
-	void Draw(IShader& shader);
+	class Mesh {
+	public:
+		vector<Vertex> vertices;
+		vector<GLuint> indices;
+		GLuint texture;
 
-private:
-	GLuint VAO, VBO, EBO;
-	int NbIndices;
+		Mesh(vector<Vertex> _vertices, vector<GLuint> _indices, GLuint _texture);
+		void Draw(Interface::IShader& shader);
 
-	void setupMesh();
-};
+	private:
+		GLuint VAO, VBO, EBO;
+		int NbIndices;
 
+		void setupMesh();
+	};
+
+}

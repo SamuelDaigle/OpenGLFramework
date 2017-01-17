@@ -1,14 +1,18 @@
 #include "Model.h"
 
-Model::Model(const char* path, MeshLoader* _meshLoader)
+namespace Rendering
 {
-	meshes = _meshLoader->LoadMeshes(path);
+
+	Model::Model(const char* path, IO::MeshLoader* _meshLoader)
+	{
+		meshes = _meshLoader->LoadMeshes(path);
+	}
+
+	void Model::Draw(Interface::IShader& shader)
+	{
+		for (GLuint i = 0; i < meshes.size(); i++)
+			meshes[i]->Draw(shader);
+	}
+
+
 }
-
-void Model::Draw(IShader& shader)
-{
-	for (GLuint i = 0; i < meshes.size(); i++)
-		meshes[i]->Draw(shader);
-}
-
-

@@ -16,12 +16,17 @@ using namespace std;
 #include "..\IO\TextureLoader.h"
 #include "Mesh.h"
 
-class Model
+namespace Rendering
 {
-public:
-	Model(const char* path, MeshLoader* _meshLoader);
-	void Draw(IShader& shader);
 
-private:
-	vector<Mesh*> meshes;
-};
+	class Model
+	{
+	public:
+		Model(const char* path, IO::MeshLoader* _meshLoader);
+		void Draw(Interface::IShader& shader);
+
+	private:
+		vector<Mesh*> meshes;
+	};
+
+}

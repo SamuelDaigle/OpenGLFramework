@@ -7,16 +7,16 @@
 #include "Rendering\Model.h"
 #include "Interfaces\IObject.h"
 
-class Planet : public IObject
+class Planet : public Interface::IObject
 {
 public:
-	void Initialize(MeshLoader* _meshLoader) override;
+	void Initialize(IO::MeshLoader* _meshLoader) override;
 
 	void Destroy() override;
 
-	void Render(IShader& _shader) override;
+	void Render(Interface::IShader& _shader) override;
 
 private:
-	Model* model;
+	Rendering::Model* model;
 };
 

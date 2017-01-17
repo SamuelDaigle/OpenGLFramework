@@ -4,9 +4,14 @@
 
 #pragma once
 
-struct VertexType
+namespace Utils
 {
-	float x, y, z;
-	float r, g, b;
-	unsigned int materialIndex;
-};
+
+	struct VertexType
+	{
+		float x, y, z;
+		float r, g, b;
+		unsigned int materialIndex;
+	};
+
+}

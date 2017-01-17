@@ -11,17 +11,22 @@
 
 using namespace std;
 
-class MeshBank
+namespace Utils
 {
-public:
-	void Initialize();
-	void Destroy();
 
-	bool HasMesh(const char* _path);
-	void AddMesh(const char* _path, vector<Mesh*>& _mesh);
-	vector<Mesh*> GetMesh(const char* _path);
+	class MeshBank
+	{
+	public:
+		void Initialize();
+		void Destroy();
 
-private:
-	map<string, vector<Mesh*>> meshs;
-};
+		bool HasMesh(const char* _path);
+		void AddMesh(const char* _path, vector<Rendering::Mesh*>& _mesh);
+		vector<Rendering::Mesh*> GetMesh(const char* _path);
+
+	private:
+		map<string, vector<Rendering::Mesh*>> meshs;
+	};
+
+}
 

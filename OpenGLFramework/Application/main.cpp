@@ -10,7 +10,7 @@
 
 using namespace std;
 
-Window* window;
+Framework::Window* window;
 
 void Frame(int timeId)
 {
@@ -37,7 +37,7 @@ int main(int argc, char* argv[])
 {
 	glutInit(&argc, argv);
 
-	window = new Window();
+	window = new Framework::Window();
 	window->Initialize();
 
 	glutTimerFunc(1, Frame, 1);

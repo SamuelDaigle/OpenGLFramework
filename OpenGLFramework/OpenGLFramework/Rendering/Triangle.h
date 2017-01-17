@@ -6,15 +6,20 @@
 #include "..\Utils\VertexType.h"
 
 #pragma once
-class Triangle : public IObject
-{
-public:
-	void Initialize(MeshLoader* _meshLoader) override;
-	void Destroy() override;
-	
-	void Render(IShader& _shader) override;
-private:
-	void initializeBuffers();
-	void shutdownBuffers();
-};
 
+namespace Rendering
+{
+
+	class Triangle : public Interface::IObject
+	{
+	public:
+		void Initialize(IO::MeshLoader* _meshLoader) override;
+		void Destroy() override;
+
+		void Render(Interface::IShader& _shader) override;
+	private:
+		void initializeBuffers();
+		void shutdownBuffers();
+	};
+
+}

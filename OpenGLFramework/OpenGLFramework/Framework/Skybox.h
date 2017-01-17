@@ -8,19 +8,23 @@
 #include "..\stdafx.h"
 #include "..\Dependencies\soil\SOIL.h"
 
-class Skybox
+namespace Framework
 {
-public:
-	void Initialize(vector<const GLchar*> _filePaths, TextureLoader* _textureLoader);
-	void Initialize(const GLchar* _filename, TextureLoader* _textureLoader);
-	void Destroy();
 
-	void Render(IShader& _shader);
+	class Skybox
+	{
+	public:
+		void Initialize(vector<const GLchar*> _filePaths, IO::TextureLoader* _textureLoader);
+		void Initialize(const GLchar* _filename, IO::TextureLoader* _textureLoader);
+		void Destroy();
 
-private:
-	void loadMesh();
+		void Render(Interface::IShader& _shader);
 
-	GLuint cubemapID;
-	GLuint skyboxVAO;
-};
+	private:
+		void loadMesh();
 
+		GLuint cubemapID;
+		GLuint skyboxVAO;
+	};
+
+}

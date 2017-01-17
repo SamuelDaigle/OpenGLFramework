@@ -7,17 +7,21 @@
 #include "..\stdafx.h"
 #include "..\IO\ShaderLoader.h"
 
-class BasicShader : public IShader
+namespace Rendering
 {
-public:
-	BasicShader();
-	~BasicShader();
 
-	void SetWorldMatrix(mat4 _worldMatrix) override;
-	void SetViewMatrix(mat4 _viewMatrix) override;
-	void SetProjectionMatrix(mat4 _projMatrix) override;
+	class BasicShader : public Interface::IShader
+	{
+	public:
+		BasicShader();
+		~BasicShader();
 
-private:
-	GLfloat* MatrixToFloatArray(mat4 _matrix);
-};
+		void SetWorldMatrix(mat4 _worldMatrix) override;
+		void SetViewMatrix(mat4 _viewMatrix) override;
+		void SetProjectionMatrix(mat4 _projMatrix) override;
 
+	private:
+		GLfloat* MatrixToFloatArray(mat4 _matrix);
+	};
+
+}

@@ -7,31 +7,36 @@
 using namespace std;
 
 #pragma once
-class Composite : public IObject
+
+namespace Utils
 {
-public:
-	void Initialize(MeshLoader* _meshLoader) override;
 
-	void SetSelfObject(IObject* _object);
+	class Composite : public Interface::IObject
+	{
+	public:
+		void Initialize(IO::MeshLoader* _meshLoader) override;
 
-	void Destroy() override;
+		void SetSelfObject(Interface::IObject* _object);
 
-	void Update() override;
+		void Destroy() override;
 
-	void SetColor(float _r, float _g, float _b) override;
+		void Update() override;
 
-	void Render(IShader& _shader) override;
+		void SetColor(float _r, float _g, float _b) override;
 
-	void Translate(float _x, float _y, float _z) override;
+		void Render(Interface::IShader& _shader) override;
 
-	void Rotate(float _angleX, float _angleY, float _angleZ) override;
+		void Translate(float _x, float _y, float _z) override;
 
-	void Scale(float _scaleX, float _scaleY, float _scaleZ) override;
+		void Rotate(float _angleX, float _angleY, float _angleZ) override;
 
-	void Add(IObject* _object);
+		void Scale(float _scaleX, float _scaleY, float _scaleZ) override;
 
-private:
-	vector<IObject*> childObjects;
-	IObject * planet;
-};
+		void Add(Interface::IObject* _object);
 
+	private:
+		vector<Interface::IObject*> childObjects;
+		Interface::IObject * planet;
+	};
+
+}

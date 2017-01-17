@@ -7,18 +7,18 @@
 #include "Rendering\Model.h"
 #include "Interfaces\IObject.h"
 
-class Sun : public IObject
+class Sun : public Interface::IObject
 {
 public:
-	void Initialize(MeshLoader* _meshLoader) override;
-	void SetShader(IShader* _shader);
+	void Initialize(IO::MeshLoader* _meshLoader) override;
+	void SetShader(Interface::IShader* _shader);
 
 	void Destroy() override;
 
-	void Render(IShader& _shader) override;
+	void Render(Interface::IShader& _shader) override;
 
 private:
-	Model* model;
-	IShader* shader;
+	Rendering::Model* model;
+	Interface::IShader* shader;
 };
 

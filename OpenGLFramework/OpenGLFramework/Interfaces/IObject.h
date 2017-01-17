@@ -12,81 +12,86 @@
 
 using namespace glm;
 
-class IObject
+namespace Interface
 {
-public:
-	virtual void Initialize(MeshLoader* _meshLoader) = 0;
-	virtual void Destroy() = 0;
 
-	virtual void Render(IShader& _shader) = 0;
-	
-	virtual void Update()
+	class IObject
 	{
-		rotation.z += speedRotation;
-	}
+	public:
+		virtual void Initialize(IO::MeshLoader* _meshLoader) = 0;
+		virtual void Destroy() = 0;
 
-	virtual void SetColor(float _r, float _g, float _b)
-	{
-		r = _r;
-		g = _g;
-		b = _b;
-	}
+		virtual void Render(IShader& _shader) = 0;
 
-	virtual void Translate(float _x, float _y, float _z)
-	{
-		translation.x += _x;
-		translation.y += _y;
-		translation.z += _z;
-	}
+		virtual void Update()
+		{
+			rotation.z += speedRotation;
+		}
 
-	virtual void Rotate(float _angleX, float _angleY, float _angleZ)
-	{
-		rotation.x += _angleX;
-		rotation.y += _angleZ;
-		rotation.z += _angleY;
-	}
+		virtual void SetColor(float _r, float _g, float _b)
+		{
+			r = _r;
+			g = _g;
+			b = _b;
+		}
 
-	virtual void Scale(float _scaleX, float _scaleY, float _scaleZ)
-	{
-		scaling.x = _scaleX;
-		scaling.y = _scaleY;
-		scaling.z = _scaleZ;
-	}
+		virtual void Translate(float _x, float _y, float _z)
+		{
+			translation.x += _x;
+			translation.y += _y;
+			translation.z += _z;
+		}
 
-	virtual mat4 GetWorldMatrix()
-	{
-		return GetRotationMatrix() * GetScalingMatrix() * GetTranslateMatrix();
-	}
+		virtual void Rotate(float _angleX, float _angleY, float _angleZ)
+		{
+			rotation.x += _angleX;
+			rotation.y += _angleZ;
+			rotation.z += _angleY;
+		}
 
-	virtual void SetRotationSpeed(float _speed)
-	{
-		speedRotation = _speed;
-	}
+		virtual void Scale(float _scaleX, float _scaleY, float _scaleZ)
+		{
+			scaling.x = _scaleX;
+			scaling.y = _scaleY;
+			scaling.z = _scaleZ;
+		}
 
-	vec3 translation;
-protected:
-	int vertexCount, indexCount;
-	unsigned int vertexArrayId, vertexBufferId, indexBufferId;
-	vec3 scaling;
-	vec3 rotation;
-	float r = 1;
-	float g = 1;
-	float b = 0.2f;
-	float speedRotation = 0.001f;
+		virtual mat4 GetWorldMatrix()
+		{
+			return GetRotationMatrix() * GetScalingMatrix() * GetTranslateMatrix();
+		}
 
-private:
-	virtual mat4 GetRotationMatrix()
-	{
-		return orientate4(rotation);
-	}
+		virtual void SetRotationSpeed(float _speed)
+		{
+			speedRotation = _speed;
+		}
 
-	virtual mat4 GetScalingMatrix()
-	{
-		return scale(scaling);
-	}
+		vec3 translation;
+	protected:
+		int vertexCount, indexCount;
+		unsigned int vertexArrayId, vertexBufferId, indexBufferId;
+		vec3 scaling;
+		vec3 rotation;
+		float r = 1;
+		float g = 1;
+		float b = 0.2f;
+		float speedRotation = 0.001f;
 
-	virtual mat4 GetTranslateMatrix()
-	{
-		return translate(translation);
-	}
-};
+	private:
+		virtual mat4 GetRotationMatrix()
+		{
+			return orientate4(rotation);
+		}
+
+		virtual mat4 GetScalingMatrix()
+		{
+			return scale(scaling);
+		}
+
+		virtual mat4 GetTranslateMatrix()
+		{
+			return translate(translation);
+		}
+	};
+
+}

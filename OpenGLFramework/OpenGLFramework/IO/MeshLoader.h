@@ -23,23 +23,28 @@ using namespace glm;
 
 using namespace Assimp;
 
-class MeshLoader
+namespace IO
 {
-public:
-	void Initialize(TextureLoader* _textureLoader);
-	void ReleaseMeshes();
 
-	vector<Mesh*> LoadMeshes(const char* _filepath);
+	class MeshLoader
+	{
+	public:
+		void Initialize(TextureLoader* _textureLoader);
+		void ReleaseMeshes();
 
-private:
-	void processNode(aiNode* node, const aiScene* scene);
-	Mesh* processMesh(aiMesh* mesh, const aiScene* scene);
-	GLuint loadMaterialTextures(aiMaterial* mat);
+		vector<Rendering::Mesh*> LoadMeshes(const char* _filepath);
 
-	vector<Mesh*> meshes;
-	string directory;
+	private:
+		void processNode(aiNode* node, const aiScene* scene);
+		Rendering::Mesh* processMesh(aiMesh* mesh, const aiScene* scene);
+		GLuint loadMaterialTextures(aiMaterial* mat);
 
-	MeshBank* meshBank;
-	TextureLoader* textureLoader;
-};
+		vector<Rendering::Mesh*> meshes;
+		string directory;
+
+		Utils::MeshBank* meshBank;
+		TextureLoader* textureLoader;
+	};
+
+}
 

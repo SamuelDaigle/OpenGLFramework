@@ -1,52 +1,57 @@
 #include "OpenGL.h"
 
-void OpenGL::Initialize()
+namespace Framework
 {
-	camera = new Camera();
-	camera->Initialize();
 
-	glEnable(GL_DEPTH_TEST);
-	glDepthMask(GL_ALWAYS);
-	glDepthFunc(GL_LESS);
-	glEnable(GL_STENCIL_TEST);
-
-	projectionMatrix = perspective<float>(radians(45.0f), (float)glutGet(GLUT_SCREEN_WIDTH) / (float)glutGet(GLUT_SCREEN_HEIGHT), 0.1f, 1000.0f);
-}
-
-void OpenGL::Destroy()
-{
-	if (camera)
+	void OpenGL::Initialize()
 	{
-		camera->Destroy();
-		delete camera;
-		camera = NULL;
+		camera = new Camera::Camera();
+		camera->Initialize();
+
+		glEnable(GL_DEPTH_TEST);
+		glDepthMask(GL_ALWAYS);
+		glDepthFunc(GL_LESS);
+		glEnable(GL_STENCIL_TEST);
+
+		projectionMatrix = perspective<float>(radians(45.0f), (float)glutGet(GLUT_SCREEN_WIDTH) / (float)glutGet(GLUT_SCREEN_HEIGHT), 0.1f, 1000.0f);
 	}
-}
 
-mat4& OpenGL::GetViewMatrix()
-{
-	return camera->GetViewMatrix();
-}
+	void OpenGL::Destroy()
+	{
+		if (camera)
+		{
+			camera->Destroy();
+			delete camera;
+			camera = NULL;
+		}
+	}
 
-mat4& OpenGL::GetProjMatrix()
-{
-	return projectionMatrix;
-}
+	mat4& OpenGL::GetViewMatrix()
+	{
+		return camera->GetViewMatrix();
+	}
 
-Camera* OpenGL::GetCamera()
-{
-	return camera;
-}
+	mat4& OpenGL::GetProjMatrix()
+	{
+		return projectionMatrix;
+	}
 
-void OpenGL::BeginScene()
-{
-	glClearColor(0, 0, 0, 1.0f);
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	Camera::Camera* OpenGL::GetCamera()
+	{
+		return camera;
+	}
 
-	camera->Update();
-}
+	void OpenGL::BeginScene()
+	{
+		glClearColor(0, 0, 0, 1.0f);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-void OpenGL::EndScene()
-{
-	glutSwapBuffers();
+		camera->Update();
+	}
+
+	void OpenGL::EndScene()
+	{
+		glutSwapBuffers();
+	}
+
 }

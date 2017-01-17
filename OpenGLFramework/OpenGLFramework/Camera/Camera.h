@@ -2,30 +2,33 @@
 /* Author: Samuel Daigle et Sébastien Rousseau                          */
 /************************************************************************/
 
+#pragma once
+
 #include "..\Dependencies\glm\gtc\matrix_transform.hpp"
 #include "..\Dependencies\glm\gtx\euler_angles.hpp"
 #include "..\Dependencies\glm\gtx\transform.hpp"
 
 using namespace glm;
 
-#pragma once
-class Camera
+namespace Camera
 {
-public:
-	void Initialize();
-	void Destroy();
+	class Camera
+	{
+	public:
+		void Initialize();
+		void Destroy();
 
-	void Update();
-	void LookAt(vec3 _position);
-	mat4 GetViewMatrix();
+		void Update();
+		void LookAt(vec3 _position);
+		mat4 GetViewMatrix();
 
-	mat4 view;
-	vec3 rotation;
+		mat4 view;
+		vec3 rotation;
 
-	vec3 position;
-	vec3 target;
-	vec3 forward;
-	vec3 up;
-	vec3 right;
-};
-
+		vec3 position;
+		vec3 target;
+		vec3 forward;
+		vec3 up;
+		vec3 right;
+	};
+}
