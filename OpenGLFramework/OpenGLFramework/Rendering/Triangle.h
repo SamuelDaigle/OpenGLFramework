@@ -10,13 +10,13 @@
 namespace Rendering
 {
 
-	class Triangle : public Interface::IObject
+	class Triangle : public Framework::BaseObject
 	{
 	public:
 		void Initialize(IO::MeshLoader* _meshLoader) override;
 		void Destroy() override;
 
-		void Render(Interface::IShader& _shader) override;
+		void Render(BaseShader& _shader) override;
 	private:
 		void initializeBuffers();
 		void shutdownBuffers();

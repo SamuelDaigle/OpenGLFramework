@@ -10,7 +10,7 @@
 namespace Rendering
 {
 
-	class Square : public Interface::IObject
+	class Square : public Framework::BaseObject
 	{
 	public:
 		Square();
@@ -19,7 +19,7 @@ namespace Rendering
 		void Initialize(IO::MeshLoader* _meshLoader) override;
 		void Destroy() override;
 
-		void Render(Interface::IShader& _shader) override;
+		void Render(BaseShader& _shader) override;
 		void Translate(float _x, float _y, float _z) override;
 		void Rotate(float _angleX, float _angleY, float _angleZ) override;
 		void Scale(float _scaleX, float _scaleY, float _scaleZ) override;

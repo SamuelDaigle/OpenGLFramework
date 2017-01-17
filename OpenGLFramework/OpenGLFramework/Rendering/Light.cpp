@@ -16,7 +16,7 @@ namespace Rendering
 
 	}
 
-	void Light::Apply(Interface::IShader* _shader)
+	void Light::Apply(Rendering::BaseShader* _shader)
 	{
 		glUniform3f(glGetUniformLocation(_shader->glProgram, "pointLight.position"), Position.x, Position.y, Position.z);
 		glUniform3f(glGetUniformLocation(_shader->glProgram, "pointLight.ambient"), Ambiant.x, Ambiant.y, Ambiant.z);

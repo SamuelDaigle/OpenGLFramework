@@ -12,7 +12,7 @@ namespace Rendering
 		setupMesh();
 	}
 
-	void Mesh::Draw(Interface::IShader& shader)
+	void Mesh::Draw(Rendering::BaseShader& shader)
 	{
 		// Texture
 		glUniform1i(glGetUniformLocation(shader.glProgram, "textureSample"), 0);

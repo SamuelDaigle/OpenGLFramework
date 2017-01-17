@@ -12,7 +12,7 @@ void Planet::Destroy()
 {
 }
 
-void Planet::Render(Interface::IShader& _shader)
+void Planet::Render(Rendering::BaseShader& _shader)
 {
 	// Color
 	glUniform4f(glGetUniformLocation(_shader.glProgram, "Color"), r, g, b, 1.0f);

@@ -7,7 +7,7 @@ namespace Utils
 	{
 	}
 
-	void Composite::SetSelfObject(Interface::IObject* _object)
+	void Composite::SetSelfObject(Framework::BaseObject* _object)
 	{
 		planet = _object;
 	}
@@ -15,7 +15,7 @@ namespace Utils
 	void Composite::Destroy()
 	{
 		SAFE_DESTROY(planet);
-		for each (Interface::IObject* childObject in childObjects)
+		for each (Framework::BaseObject* childObject in childObjects)
 		{
 			SAFE_DESTROY(childObject);
 		}
@@ -27,7 +27,7 @@ namespace Utils
 		{
 			planet->Update();
 		}
-		for each (Interface::IObject* childObject in childObjects)
+		for each (Framework::BaseObject* childObject in childObjects)
 		{
 			childObject->Update();
 		}
@@ -41,14 +41,14 @@ namespace Utils
 		}
 	}
 
-	void Composite::Render(Interface::IShader& _shader)
+	void Composite::Render(Rendering::BaseShader& _shader)
 	{
 		if (planet != NULL)
 		{
 			_shader.SetWorldMatrix(planet->GetWorldMatrix());
 			planet->Render(_shader);
 		}
-		for each (Interface::IObject* childObject in childObjects)
+		for each (Framework::BaseObject* childObject in childObjects)
 		{
 			mat4 parentWorldMatrix;
 			if (planet != NULL)
@@ -66,7 +66,7 @@ namespace Utils
 		{
 			planet->Translate(_x, _y, _z);
 		}
-		for each (Interface::IObject* childObject in childObjects)
+		for each (Framework::BaseObject* childObject in childObjects)
 		{
 			childObject->Translate(_x, _y, _z);
 		}
@@ -78,7 +78,7 @@ namespace Utils
 		{
 			planet->Rotate(_angleX, _angleY, _angleZ);
 		}
-		for each (Interface::IObject* childObject in childObjects)
+		for each (Framework::BaseObject* childObject in childObjects)
 		{
 			childObject->Rotate(_angleX, _angleY, _angleZ);
 		}
@@ -92,7 +92,7 @@ namespace Utils
 		}
 	}
 
-	void Composite::Add(Interface::IObject* _object)
+	void Composite::Add(Framework::BaseObject* _object)
 	{
 		childObjects.push_back(_object);
 	}

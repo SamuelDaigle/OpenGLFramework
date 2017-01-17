@@ -25,7 +25,7 @@ namespace Rendering
 		shutdownBuffers();
 	}
 
-	void Square::Render(Interface::IShader& _shader)
+	void Square::Render(Rendering::BaseShader& _shader)
 	{
 
 		glBindVertexArray(vertexArrayId);

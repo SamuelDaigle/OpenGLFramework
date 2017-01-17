@@ -9,10 +9,10 @@
 
 using namespace glm;
 
-namespace Interface
+namespace Rendering
 {
 
-	class IShader
+	class BaseShader
 	{
 	public:
 		virtual void SetWorldMatrix(mat4 _worldMatrix) = 0;

@@ -38,9 +38,9 @@ namespace Framework
 		OpenGL* ptrOpenGL;
 		Input::InputHandler* ptrInputHandler;
 		Utils::Composite* rootObject;
-		Interface::IShader* basicShader;
-		Interface::IShader* advancedShader;
-		Interface::IShader* skyboxShader;
+		Rendering::BaseShader* basicShader;
+		Rendering::BaseShader* advancedShader;
+		Rendering::BaseShader* skyboxShader;
 		Skybox* skybox;
 		Rendering::Light* light;
 	};

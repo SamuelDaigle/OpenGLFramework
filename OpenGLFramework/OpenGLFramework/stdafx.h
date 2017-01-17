@@ -9,9 +9,9 @@
 #pragma comment(lib, "glew32.lib")
 
 #include <vector>
-#include "Utils/Color.h"
-#include "Utils/DynamicArray.h"
-#include "Interfaces\IObject.h"
+#include "Utils\Color.h"
+#include "Utils\DynamicArray.h"
+#include "Framework\BaseObject.h"
 #include "Framework\OpenGL.h"
 
 using namespace glm;

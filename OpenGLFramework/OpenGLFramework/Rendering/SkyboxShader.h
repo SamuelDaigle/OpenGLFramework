@@ -10,7 +10,7 @@
 namespace Rendering
 {
 
-	class SkyboxShader : public Interface::IShader
+	class SkyboxShader : public BaseShader
 	{
 	public:
 		SkyboxShader();

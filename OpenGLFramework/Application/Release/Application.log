@@ -1,13 +1,32 @@
 ﻿  main.cpp
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\Utils/Color.h(9): warning C4005: 'TRANSPARENT': macro redefinition
-  C:\Program Files (x86)\Windows Kits\8.1\Include\um\wingdi.h(1861): note: see previous definition of 'TRANSPARENT'
 SOIL.lib(SOIL.obj) : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:ICF' specification
 LINK : warning LNK4098: defaultlib 'MSVCRTD' conflicts with use of other libs; use /NODEFAULTLIB:library
   Generating code
-  21 of 587 functions ( 3.6%) were compiled, the rest were copied from previous compilation.
-    10 functions were new in current compilation
-    11 functions had inline decision re-evaluated but remain unchanged
+  0 of 587 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    23 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
+main.obj : warning LNK4020: a type record in 'c:\users\samue\documents\workspace\openglframework\openglframework\application\release\vc140.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+Planet.obj : warning LNK4020: a type record in 'c:\users\samue\documents\workspace\openglframework\openglframework\application\release\vc140.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+Sun.obj : warning LNK4020: a type record in 'c:\users\samue\documents\workspace\openglframework\openglframework\application\release\vc140.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+OpenGLFramework.lib(Window.obj) : warning LNK4020: a type record in 'C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+OpenGLFramework.lib(Model.obj) : warning LNK4020: a type record in 'C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+OpenGLFramework.lib(OpenGL.obj) : warning LNK4020: a type record in 'C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+OpenGLFramework.lib(Scene.obj) : warning LNK4020: a type record in 'C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+OpenGLFramework.lib(InputHandler.obj) : warning LNK4020: a type record in 'C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+OpenGLFramework.lib(MeshLoader.obj) : warning LNK4020: a type record in 'C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+OpenGLFramework.lib(Mesh.obj) : warning LNK4020: a type record in 'C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+OpenGLFramework.lib(Camera.obj) : warning LNK4020: a type record in 'C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+OpenGLFramework.lib(Composite.obj) : warning LNK4020: a type record in 'C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+OpenGLFramework.lib(Skybox.obj) : warning LNK4020: a type record in 'C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+OpenGLFramework.lib(TextureLoader.obj) : warning LNK4020: a type record in 'C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+OpenGLFramework.lib(AdvancedShader.obj) : warning LNK4020: a type record in 'C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+OpenGLFramework.lib(BasicShader.obj) : warning LNK4020: a type record in 'C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+OpenGLFramework.lib(Light.obj) : warning LNK4020: a type record in 'C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+OpenGLFramework.lib(SkyboxShader.obj) : warning LNK4020: a type record in 'C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+OpenGLFramework.lib(MeshBank.obj) : warning LNK4020: a type record in 'C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+OpenGLFramework.lib(TextureBank.obj) : warning LNK4020: a type record in 'C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+OpenGLFramework.lib(ShaderLoader.obj) : warning LNK4020: a type record in 'C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.pdb' is corrupted; some symbols and types may not be accessible from the debugger
 SOIL.lib(image_DXT.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'SOIL.lib(image_DXT.obj)' or at 'C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\Release\vc120.pdb'; linking object as if no debug info
 SOIL.lib(image_helper.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'SOIL.lib(image_helper.obj)' or at 'C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\Release\vc120.pdb'; linking object as if no debug info
 SOIL.lib(SOIL.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'SOIL.lib(SOIL.obj)' or at 'C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\Release\vc120.pdb'; linking object as if no debug info

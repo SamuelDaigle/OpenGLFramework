@@ -8,20 +8,20 @@
 #include "..\Dependencies\glm\gtx\euler_angles.hpp"
 #include "..\Dependencies\glm\gtx\transform.hpp"
 #include "..\IO\MeshLoader.h"
-#include "IShader.h"
+#include "..\Rendering\BaseShader.h"
 
 using namespace glm;
 
-namespace Interface
+namespace Framework
 {
 
-	class IObject
+	class BaseObject
 	{
 	public:
 		virtual void Initialize(IO::MeshLoader* _meshLoader) = 0;
 		virtual void Destroy() = 0;
 
-		virtual void Render(IShader& _shader) = 0;
+		virtual void Render(Rendering::BaseShader& _shader) = 0;
 
 		virtual void Update()
 		{

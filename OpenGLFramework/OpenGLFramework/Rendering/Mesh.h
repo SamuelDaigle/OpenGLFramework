@@ -16,7 +16,7 @@ using namespace std;
 #include "..\Dependencies\glm\gtc\matrix_transform.hpp"
 #include "..\Dependencies\assimp\mesh.h"
 
-#include "..\Interfaces\IShader.h"
+#include "..\Rendering\BaseShader.h"
 
 namespace Rendering
 {
@@ -34,7 +34,7 @@ namespace Rendering
 		GLuint texture;
 
 		Mesh(vector<Vertex> _vertices, vector<GLuint> _indices, GLuint _texture);
-		void Draw(Interface::IShader& shader);
+		void Draw(BaseShader& shader);
 
 	private:
 		GLuint VAO, VBO, EBO;

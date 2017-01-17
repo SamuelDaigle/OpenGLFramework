@@ -15,7 +15,7 @@ namespace Rendering
 		void Initialize();
 		void Destroy();
 
-		void Apply(Interface::IShader* _shader);
+		void Apply(Rendering::BaseShader* _shader);
 
 		vec3 Position;
 		vec3 Ambiant;

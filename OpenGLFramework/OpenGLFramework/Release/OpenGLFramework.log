@@ -1,8 +1,13 @@
 ﻿  Scene.cpp
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\Utils/Color.h(9): warning C4005: 'TRANSPARENT': macro redefinition
-  C:\Program Files (x86)\Windows Kits\8.1\Include\um\wingdi.h(1861): note: see previous definition of 'TRANSPARENT'
+  Skybox.cpp
   Window.cpp
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\Utils/Color.h(9): warning C4005: 'TRANSPARENT': macro redefinition
-  C:\Program Files (x86)\Windows Kits\8.1\Include\um\wingdi.h(1861): note: see previous definition of 'TRANSPARENT'
-  InputHandler.cpp
+  AdvancedShader.cpp
+  BasicShader.cpp
+  Light.cpp
+  SkyboxShader.cpp
+  Square.cpp
+  Triangle.cpp
+  Text.cpp
+  TextHolder.cpp
+  Composite.cpp
   OpenGLFramework.vcxproj -> C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.lib

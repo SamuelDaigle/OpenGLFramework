@@ -8,7 +8,7 @@ void Sun::Initialize(IO::MeshLoader* _meshLoader)
 	scaling.z = 1.0f;
 }
 
-void Sun::SetShader(Interface::IShader* _shader)
+void Sun::SetShader(Rendering::BaseShader* _shader)
 {
 	shader = _shader;
 }
@@ -17,7 +17,7 @@ void Sun::Destroy()
 {
 }
 
-void Sun::Render(Interface::IShader& _shader)
+void Sun::Render(Rendering::BaseShader& _shader)
 {
 	if (shader == NULL)
 	{

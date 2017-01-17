@@ -10,7 +10,7 @@
 namespace Rendering
 {
 
-	class BasicShader : public Interface::IShader
+	class BasicShader : public BaseShader
 	{
 	public:
 		BasicShader();

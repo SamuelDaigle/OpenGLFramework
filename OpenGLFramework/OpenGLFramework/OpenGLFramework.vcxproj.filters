@@ -122,12 +122,6 @@
     <ClInclude Include="Inputs\InputHandler.h">
       <Filter>Input</Filter>
     </ClInclude>
-    <ClInclude Include="Interfaces\IObject.h">
-      <Filter>Interface</Filter>
-    </ClInclude>
-    <ClInclude Include="Interfaces\IShader.h">
-      <Filter>Interface</Filter>
-    </ClInclude>
     <ClInclude Include="IO\MeshLoader.h">
       <Filter>IO</Filter>
     </ClInclude>
@@ -192,6 +186,12 @@
       <Filter>Rendering</Filter>
     </ClInclude>
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Rendering\BaseShader.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\BaseObject.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Shaders\advanced.frag">

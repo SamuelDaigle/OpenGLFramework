@@ -5,20 +5,20 @@
 #pragma once
 
 #include "Rendering\Model.h"
-#include "Interfaces\IObject.h"
+#include "Framework\BaseObject.h"
 
-class Sun : public Interface::IObject
+class Sun : public Framework::BaseObject
 {
 public:
 	void Initialize(IO::MeshLoader* _meshLoader) override;
-	void SetShader(Interface::IShader* _shader);
+	void SetShader(Rendering::BaseShader* _shader);
 
 	void Destroy() override;
 
-	void Render(Interface::IShader& _shader) override;
+	void Render(Rendering::BaseShader& _shader) override;
 
 private:
 	Rendering::Model* model;
-	Interface::IShader* shader;
+	Rendering::BaseShader* shader;
 };
 

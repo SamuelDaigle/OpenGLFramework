@@ -56,7 +56,7 @@ namespace Framework
 
 	}
 
-	void  Skybox::Render(Interface::IShader& _shader)
+	void  Skybox::Render(Rendering::BaseShader& _shader)
 	{
 		// skybox cube
 		glBindVertexArray(skyboxVAO);

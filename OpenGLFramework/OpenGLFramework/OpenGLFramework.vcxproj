@@ -45,17 +45,17 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera\Camera.h" />
+    <ClInclude Include="Framework\BaseObject.h" />
     <ClInclude Include="Framework\OpenGL.h" />
     <ClInclude Include="Framework\Scene.h" />
     <ClInclude Include="Framework\Skybox.h" />
     <ClInclude Include="Framework\Window.h" />
     <ClInclude Include="Inputs\InputHandler.h" />
-    <ClInclude Include="Interfaces\IObject.h" />
-    <ClInclude Include="Interfaces\IShader.h" />
     <ClInclude Include="IO\MeshLoader.h" />
     <ClInclude Include="IO\ShaderLoader.h" />
     <ClInclude Include="IO\TextureLoader.h" />
     <ClInclude Include="Rendering\AdvancedShader.h" />
+    <ClInclude Include="Rendering\BaseShader.h" />
     <ClInclude Include="Rendering\BasicShader.h" />
     <ClInclude Include="Rendering\Light.h" />
     <ClInclude Include="Rendering\Mesh.h" />

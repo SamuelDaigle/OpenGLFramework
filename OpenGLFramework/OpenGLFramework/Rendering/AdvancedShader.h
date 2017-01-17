@@ -10,7 +10,7 @@
 namespace Rendering
 {
 
-	class AdvancedShader : public Interface::IShader
+	class AdvancedShader : public BaseShader
 	{
 	public:
 		AdvancedShader();
