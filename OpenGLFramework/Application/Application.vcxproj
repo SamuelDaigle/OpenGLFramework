@@ -127,10 +127,12 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Planet.cpp" />
+    <ClCompile Include="Scene.cpp" />
     <ClCompile Include="Sun.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Planet.h" />
+    <ClInclude Include="Scene.h" />
     <ClInclude Include="Sun.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

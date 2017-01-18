@@ -12,22 +12,23 @@ namespace Framework
 
 		inputhandler = new Input::InputHandler();
 		inputhandler->Initialize();
-
-		scene = new Scene();
-		scene->Initialize(openGL, inputhandler);
 	}
 
 	void Window::Destroy()
 	{
 		SAFE_DESTROY(openGL);
 		SAFE_DESTROY(inputhandler);
-		SAFE_DESTROY(scene);
 	}
 
 	void Window::Frame()
 	{
 		openGL->BeginScene();
-		scene->Frame();
+		if (scene)
+		{
+			scene->input();
+			scene->update();
+			scene->render();
+		}
 		openGL->EndScene();
 		inputhandler->LateUpdate();
 
@@ -71,6 +72,21 @@ namespace Framework
 	bool Window::hasExited()
 	{
 		return inputhandler->IsKeyDown(VK_ESCAPE);
+	}
+
+	void Window::SetScene(IScene& _scene)
+	{
+		scene = &_scene;
+	}
+
+	OpenGL& Window::GetOpenGL()
+	{
+		return *openGL;
+	}
+
+	Input::InputHandler& Window::GetInputHandler()
+	{
+		return *inputhandler;
 	}
 
 }

@@ -3,6 +3,7 @@
 /************************************************************************/
 
 #include "Framework\Window.h"
+#include "Scene.h"
 
 #include <iostream>
 #include <fstream>
@@ -10,7 +11,40 @@
 
 using namespace std;
 
+void Frame(int timeId);
+void OnKeyPress(unsigned char _key, int _data1, int _data2);
+void OnKeyRelease(unsigned char _key, int _data1, int _data2);
+void OnMouseMove(int _x, int _y);
+
 Framework::Window* window;
+Application::Scene* scene;
+
+int main(int argc, char* argv[])
+{
+	glutInit(&argc, argv);
+
+	window = new Framework::Window();
+	window->Initialize();
+
+	scene = new Application::Scene();
+	scene->Initialize(window->GetOpenGL(), window->GetInputHandler());
+	window->SetScene(*scene);
+
+	glutTimerFunc(1, Frame, 1);
+	glutKeyboardFunc(OnKeyPress);
+	glutKeyboardUpFunc(OnKeyRelease);
+	glutPassiveMotionFunc(OnMouseMove);
+
+	glutMainLoop();
+
+	system("PAUSE");
+
+	window->Destroy();
+	delete window;
+
+	return 0;
+}
+
 
 void Frame(int timeId)
 {
@@ -31,26 +65,4 @@ void OnKeyRelease(unsigned char _key, int _data1, int _data2)
 void OnMouseMove(int _x, int _y)
 {
 	window->OnMouseMove(_x, _y);
-}
-
-int main(int argc, char* argv[])
-{
-	glutInit(&argc, argv);
-
-	window = new Framework::Window();
-	window->Initialize();
-
-	glutTimerFunc(1, Frame, 1);
-	glutKeyboardFunc(OnKeyPress);
-	glutKeyboardUpFunc(OnKeyRelease);
-	glutPassiveMotionFunc(OnMouseMove);
-
-	glutMainLoop();
-
-	system("PAUSE");
-
-	window->Destroy();
-	delete window;
-
-	return 0;
 }

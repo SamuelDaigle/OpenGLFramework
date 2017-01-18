@@ -4,8 +4,8 @@
 
 #include "..\stdafx.h"
 #include "OpenGL.h"
-#include "..\Inputs\InputHandler.h"
-#include "Scene.h"
+#include "..\Input\InputHandler.h"
+#include "..\Interface\IScene.h"
 
 #pragma once
 
@@ -22,16 +22,19 @@ namespace Framework
 		void OnKeyPress(unsigned char _key, int _x, int _y);
 		void OnKeyRelease(unsigned char _key, int _x, int _y);
 		void OnMouseMove(int _x, int _y);
-		void Update();
+
+		void SetScene(IScene& _scene);
+
+		OpenGL& GetOpenGL();
+		Input::InputHandler& GetInputHandler();
 
 	private:
 		void initializeWindow();
-		void manageInput();
 		bool hasExited();
 
 		OpenGL* openGL;
 		Input::InputHandler* inputhandler;
-		Scene* scene;
+		IScene* scene;
 
 		int screenWidth;
 		int screenHeight;

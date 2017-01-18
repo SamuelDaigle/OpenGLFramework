@@ -21,10 +21,9 @@
   <ItemGroup>
     <ClCompile Include="Camera\Camera.cpp" />
     <ClCompile Include="Framework\OpenGL.cpp" />
-    <ClCompile Include="Framework\Scene.cpp" />
     <ClCompile Include="Framework\Skybox.cpp" />
     <ClCompile Include="Framework\Window.cpp" />
-    <ClCompile Include="Inputs\InputHandler.cpp" />
+    <ClCompile Include="Input\InputHandler.cpp" />
     <ClCompile Include="IO\MeshLoader.cpp" />
     <ClCompile Include="IO\ShaderLoader.cpp" />
     <ClCompile Include="IO\TextureLoader.cpp" />
@@ -47,10 +46,10 @@
     <ClInclude Include="Camera\Camera.h" />
     <ClInclude Include="Framework\BaseObject.h" />
     <ClInclude Include="Framework\OpenGL.h" />
-    <ClInclude Include="Framework\Scene.h" />
     <ClInclude Include="Framework\Skybox.h" />
     <ClInclude Include="Framework\Window.h" />
-    <ClInclude Include="Inputs\InputHandler.h" />
+    <ClInclude Include="Input\InputHandler.h" />
+    <ClInclude Include="Interface\IScene.h" />
     <ClInclude Include="IO\MeshLoader.h" />
     <ClInclude Include="IO\ShaderLoader.h" />
     <ClInclude Include="IO\TextureLoader.h" />

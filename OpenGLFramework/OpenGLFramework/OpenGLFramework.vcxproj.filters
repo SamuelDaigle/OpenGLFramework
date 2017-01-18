@@ -36,9 +36,6 @@
     <ClCompile Include="Framework\OpenGL.cpp">
       <Filter>Framework</Filter>
     </ClCompile>
-    <ClCompile Include="Framework\Scene.cpp">
-      <Filter>Framework</Filter>
-    </ClCompile>
     <ClCompile Include="Framework\Skybox.cpp">
       <Filter>Framework</Filter>
     </ClCompile>
@@ -47,9 +44,6 @@
     </ClCompile>
     <ClCompile Include="Camera\Camera.cpp">
       <Filter>Camera</Filter>
-    </ClCompile>
-    <ClCompile Include="Inputs\InputHandler.cpp">
-      <Filter>Input</Filter>
     </ClCompile>
     <ClCompile Include="IO\MeshLoader.cpp">
       <Filter>IO</Filter>
@@ -102,12 +96,12 @@
     <ClCompile Include="Rendering\Triangle.cpp">
       <Filter>Rendering</Filter>
     </ClCompile>
+    <ClCompile Include="Input\InputHandler.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Framework\OpenGL.h">
-      <Filter>Framework</Filter>
-    </ClInclude>
-    <ClInclude Include="Framework\Scene.h">
       <Filter>Framework</Filter>
     </ClInclude>
     <ClInclude Include="Framework\Skybox.h">
@@ -118,9 +112,6 @@
     </ClInclude>
     <ClInclude Include="Camera\Camera.h">
       <Filter>Camera</Filter>
-    </ClInclude>
-    <ClInclude Include="Inputs\InputHandler.h">
-      <Filter>Input</Filter>
     </ClInclude>
     <ClInclude Include="IO\MeshLoader.h">
       <Filter>IO</Filter>
@@ -191,6 +182,12 @@
     </ClInclude>
     <ClInclude Include="Framework\BaseObject.h">
       <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Input\InputHandler.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Interface\IScene.h">
+      <Filter>Interface</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
