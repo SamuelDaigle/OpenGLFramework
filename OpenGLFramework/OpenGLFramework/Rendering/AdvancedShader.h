@@ -10,11 +10,14 @@
 namespace Rendering
 {
 
-	class AdvancedShader : public BaseShader
+	class AdvancedShader : public IShader
 	{
 	public:
 		AdvancedShader();
 		~AdvancedShader();
+
+		void Use() override;
+		unsigned int GetGlProgram() override;
 
 		void SetWorldMatrix(mat4 _worldMatrix) override;
 		void SetViewMatrix(mat4 _viewMatrix) override;
@@ -22,6 +25,8 @@ namespace Rendering
 
 	private:
 		GLfloat* MatrixToFloatArray(mat4 _matrix);
+
+		unsigned int glProgram;
 	};
 
 }

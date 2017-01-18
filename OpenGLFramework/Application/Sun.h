@@ -10,15 +10,14 @@
 class Sun : public Framework::BaseObject
 {
 public:
-	void Initialize(IO::MeshLoader* _meshLoader) override;
-	void SetShader(Rendering::BaseShader* _shader);
+	Sun(IO::MeshLoader* _meshLoader, IShader& _shader);
 
 	void Destroy() override;
 
-	void Render(Rendering::BaseShader& _shader) override;
+	void Render() override;
 
 private:
 	Rendering::Model* model;
-	Rendering::BaseShader* shader;
+	IShader* shader;
 };
 

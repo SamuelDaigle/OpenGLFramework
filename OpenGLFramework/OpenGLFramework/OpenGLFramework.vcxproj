@@ -49,12 +49,12 @@
     <ClInclude Include="Framework\Skybox.h" />
     <ClInclude Include="Framework\Window.h" />
     <ClInclude Include="Input\InputHandler.h" />
+    <ClInclude Include="Interface\IShader.h" />
     <ClInclude Include="Interface\IScene.h" />
     <ClInclude Include="IO\MeshLoader.h" />
     <ClInclude Include="IO\ShaderLoader.h" />
     <ClInclude Include="IO\TextureLoader.h" />
     <ClInclude Include="Rendering\AdvancedShader.h" />
-    <ClInclude Include="Rendering\BaseShader.h" />
     <ClInclude Include="Rendering\BasicShader.h" />
     <ClInclude Include="Rendering\Light.h" />
     <ClInclude Include="Rendering\Mesh.h" />

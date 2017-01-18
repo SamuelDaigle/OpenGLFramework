@@ -18,7 +18,7 @@ namespace Framework
 		void Initialize(const GLchar* _filename, IO::TextureLoader* _textureLoader);
 		void Destroy();
 
-		void Render(Rendering::BaseShader& _shader);
+		void Render(IShader& _shader);
 
 	private:
 		void loadMesh();

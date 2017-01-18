@@ -1,6 +1,7 @@
 #include "Sun.h"
 
-void Sun::Initialize(IO::MeshLoader* _meshLoader)
+Sun::Sun(IO::MeshLoader* _meshLoader, IShader& _shader) :
+	BaseObject(_meshLoader, _shader)
 {
 	model = new Rendering::Model("../Content/planet/sun.obj", _meshLoader);
 	scaling.x = 1.0f;
@@ -8,20 +9,11 @@ void Sun::Initialize(IO::MeshLoader* _meshLoader)
 	scaling.z = 1.0f;
 }
 
-void Sun::SetShader(Rendering::BaseShader* _shader)
-{
-	shader = _shader;
-}
-
 void Sun::Destroy()
 {
 }
 
-void Sun::Render(Rendering::BaseShader& _shader)
+void Sun::Render()
 {
-	if (shader == NULL)
-	{
-		shader = &_shader;
-	}
 	model->Draw(*shader);
 }

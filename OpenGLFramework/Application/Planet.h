@@ -10,11 +10,11 @@
 class Planet : public Framework::BaseObject
 {
 public:
-	void Initialize(IO::MeshLoader* _meshLoader) override;
+	Planet(IO::MeshLoader* _meshLoader, IShader& _shader);
 
 	void Destroy() override;
 
-	void Render(Rendering::BaseShader& _shader) override;
+	void Render() override;
 
 private:
 	Rendering::Model* model;

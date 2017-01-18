@@ -14,18 +14,17 @@ namespace Application
 		IO::MeshLoader* meshLoader = new IO::MeshLoader();
 		meshLoader->Initialize(textureLoader);
 
-
-		Utils::Composite* planetComposite = new Utils::Composite();
-		planetComposite->Initialize(meshLoader);
-		planetComposite->Translate(6, 0, 0);
-		planetComposite->SetColor(0, 1, 0.2f);
-
-		rootObject = new Utils::Composite();
-		rootObject->Add(planetComposite);
-
 		basicShader = new Rendering::BasicShader();
 		skyboxShader = new Rendering::SkyboxShader();
 		advancedShader = new Rendering::AdvancedShader();
+		customShader = new Application::CustomShader();
+
+		Utils::Composite* planetComposite = new Utils::Composite(meshLoader, *customShader);
+		planetComposite->Translate(6, 0, 0);
+		planetComposite->SetColor(0, 1, 0.2f);
+
+		rootObject = new Utils::Composite(meshLoader, *customShader);
+		rootObject->Add(planetComposite);
 
 		skybox = new Framework::Skybox();
 		skybox->Initialize("../Content/skybox/space.bmp", textureLoader);
@@ -93,7 +92,7 @@ namespace Application
 		advancedShader->SetViewMatrix(ptrOpenGL->GetViewMatrix());
 		advancedShader->SetProjectionMatrix(ptrOpenGL->GetProjMatrix());
 
-		glUniform3f(glGetUniformLocation(advancedShader->glProgram, "viewPos"), ptrOpenGL->GetCamera()->position.x, ptrOpenGL->GetCamera()->position.y, ptrOpenGL->GetCamera()->position.z);
+		glUniform3f(glGetUniformLocation(advancedShader->GetGlProgram(), "viewPos"), ptrOpenGL->GetCamera()->position.x, ptrOpenGL->GetCamera()->position.y, ptrOpenGL->GetCamera()->position.z);
 		light->Apply(advancedShader);
 		//rootObject->Render(*advancedShader);
 	}

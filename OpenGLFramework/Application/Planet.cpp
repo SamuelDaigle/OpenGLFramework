@@ -1,6 +1,7 @@
 #include "Planet.h"
 
-void Planet::Initialize(IO::MeshLoader* _meshLoader)
+Planet::Planet(IO::MeshLoader* _meshLoader, IShader& _shader) :
+	BaseObject(_meshLoader,_shader)
 {
 	model = new Rendering::Model("../Content/planet/planet.obj", _meshLoader);
 	scaling.x = 1.0f;
@@ -12,9 +13,9 @@ void Planet::Destroy()
 {
 }
 
-void Planet::Render(Rendering::BaseShader& _shader)
+void Planet::Render()
 {
 	// Color
-	glUniform4f(glGetUniformLocation(_shader.glProgram, "Color"), r, g, b, 1.0f);
-	model->Draw(_shader);
+	glUniform4f(glGetUniformLocation(shader->GetGlProgram(), "Color"), r, g, b, 1.0f);
+	model->Draw(*shader);
 }

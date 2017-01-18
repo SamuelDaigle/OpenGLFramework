@@ -177,9 +177,6 @@
       <Filter>Rendering</Filter>
     </ClInclude>
     <ClInclude Include="stdafx.h" />
-    <ClInclude Include="Rendering\BaseShader.h">
-      <Filter>Rendering</Filter>
-    </ClInclude>
     <ClInclude Include="Framework\BaseObject.h">
       <Filter>Framework</Filter>
     </ClInclude>
@@ -187,6 +184,9 @@
       <Filter>Input</Filter>
     </ClInclude>
     <ClInclude Include="Interface\IScene.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Interface\IShader.h">
       <Filter>Interface</Filter>
     </ClInclude>
   </ItemGroup>

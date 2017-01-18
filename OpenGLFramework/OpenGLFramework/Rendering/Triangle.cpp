@@ -3,7 +3,8 @@
 namespace Rendering
 {
 
-	void Triangle::Initialize(IO::MeshLoader* _meshLoader)
+	Triangle::Triangle(IO::MeshLoader* _meshLoader, IShader& _shader) :
+		BaseObject(_meshLoader, _shader)
 	{
 		scaling.x = 1;
 		scaling.y = 1;
@@ -16,7 +17,7 @@ namespace Rendering
 		shutdownBuffers();
 	}
 
-	void Triangle::Render(Rendering::BaseShader& _shader)
+	void Triangle::Render()
 	{
 		glBindVertexArray(vertexArrayId);
 		glDrawElements(GL_TRIANGLES, indexCount, GL_UNSIGNED_INT, 0);

@@ -10,6 +10,7 @@
 #include "Rendering\BasicShader.h"
 #include "Rendering\AdvancedShader.h"
 #include "Rendering\SkyboxShader.h"
+#include "CustomShader.h"
 #include "Input\InputHandler.h"
 #include "Rendering\Square.h"
 #include "Rendering\Light.h"
@@ -37,9 +38,10 @@ namespace Application
 		Framework::OpenGL* ptrOpenGL;
 		Input::InputHandler* ptrInputHandler;
 		Utils::Composite* rootObject;
-		Rendering::BaseShader* basicShader;
-		Rendering::BaseShader* advancedShader;
-		Rendering::BaseShader* skyboxShader;
+		IShader* basicShader;
+		IShader* advancedShader;
+		IShader* skyboxShader;
+		IShader* customShader;
 		Framework::Skybox* skybox;
 		Rendering::Light* light;
 	};

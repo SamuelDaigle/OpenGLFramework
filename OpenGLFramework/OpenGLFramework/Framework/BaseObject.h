@@ -8,7 +8,7 @@
 #include "..\Dependencies\glm\gtx\euler_angles.hpp"
 #include "..\Dependencies\glm\gtx\transform.hpp"
 #include "..\IO\MeshLoader.h"
-#include "..\Rendering\BaseShader.h"
+#include "..\Interface\IShader.h"
 
 using namespace glm;
 
@@ -18,10 +18,20 @@ namespace Framework
 	class BaseObject
 	{
 	public:
-		virtual void Initialize(IO::MeshLoader* _meshLoader) = 0;
-		virtual void Destroy() = 0;
+		BaseObject(IO::MeshLoader* _meshLoader, IShader& _shader)
+		{
+			shader = &_shader;
+		}
 
-		virtual void Render(Rendering::BaseShader& _shader) = 0;
+		virtual void Destroy()
+		{
+
+		}
+
+		virtual void Render()
+		{
+
+		}
 
 		virtual void Update()
 		{
@@ -76,6 +86,7 @@ namespace Framework
 		float g = 1;
 		float b = 0.2f;
 		float speedRotation = 0.001f;
+		IShader* shader;
 
 	private:
 		virtual mat4 GetRotationMatrix()

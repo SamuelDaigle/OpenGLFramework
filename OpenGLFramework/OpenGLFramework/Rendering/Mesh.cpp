@@ -12,10 +12,10 @@ namespace Rendering
 		setupMesh();
 	}
 
-	void Mesh::Draw(Rendering::BaseShader& shader)
+	void Mesh::Draw(IShader& shader)
 	{
 		// Texture
-		glUniform1i(glGetUniformLocation(shader.glProgram, "textureSample"), 0);
+		glUniform1i(glGetUniformLocation(shader.GetGlProgram(), "textureSample"), 0);
 		glActiveTexture(GL_TEXTURE0);
 		glBindTexture(GL_TEXTURE_2D, texture);
 

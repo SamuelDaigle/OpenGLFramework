@@ -30,6 +30,16 @@ namespace Rendering
 	{
 	}
 
+	void BasicShader::Use()
+	{
+		glUseProgram(glProgram);
+	}
+
+	unsigned int BasicShader::GetGlProgram()
+	{
+		return glProgram;
+	}
+
 	void BasicShader::SetWorldMatrix(mat4 _worldMatrix)
 	{
 		unsigned int shaderVariableLocation;

@@ -13,13 +13,12 @@ namespace Rendering
 	class Square : public Framework::BaseObject
 	{
 	public:
-		Square();
+		Square(IO::MeshLoader* _meshLoader, IShader& _shader);
 		~Square();
 
-		void Initialize(IO::MeshLoader* _meshLoader) override;
 		void Destroy() override;
 
-		void Render(BaseShader& _shader) override;
+		void Render() override;
 		void Translate(float _x, float _y, float _z) override;
 		void Rotate(float _angleX, float _angleY, float _angleZ) override;
 		void Scale(float _scaleX, float _scaleY, float _scaleZ) override;

@@ -28,6 +28,16 @@ namespace Rendering
 	{
 	}
 
+	void SkyboxShader::Use()
+	{
+		glUseProgram(glProgram);
+	}
+
+	unsigned int SkyboxShader::GetGlProgram()
+	{
+		return glProgram;
+	}
+
 	void SkyboxShader::SetWorldMatrix(mat4 _worldMatrix)
 	{
 		unsigned int shaderVariableLocation;

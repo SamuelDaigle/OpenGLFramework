@@ -125,12 +125,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CustomShader.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Planet.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="Sun.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CustomShader.h" />
     <ClInclude Include="Planet.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="Sun.h" />

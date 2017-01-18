@@ -3,7 +3,8 @@
 namespace Utils
 {
 
-	void Composite::Initialize(IO::MeshLoader* _meshLoader)
+	Composite::Composite(IO::MeshLoader* _meshLoader, IShader& _shader) :
+		BaseObject(_meshLoader, _shader)
 	{
 	}
 
@@ -41,12 +42,12 @@ namespace Utils
 		}
 	}
 
-	void Composite::Render(Rendering::BaseShader& _shader)
+	void Composite::Render()
 	{
 		if (planet != NULL)
 		{
-			_shader.SetWorldMatrix(planet->GetWorldMatrix());
-			planet->Render(_shader);
+			shader->SetWorldMatrix(planet->GetWorldMatrix());
+			planet->Render();
 		}
 		for each (Framework::BaseObject* childObject in childObjects)
 		{
@@ -55,8 +56,8 @@ namespace Utils
 			{
 				parentWorldMatrix = planet->GetWorldMatrix();
 			}
-			_shader.SetWorldMatrix(parentWorldMatrix * childObject->GetWorldMatrix());
-			childObject->Render(_shader);
+			shader->SetWorldMatrix(parentWorldMatrix * childObject->GetWorldMatrix());
+			childObject->Render();
 		}
 	}
 

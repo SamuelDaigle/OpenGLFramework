@@ -56,12 +56,12 @@ namespace Framework
 
 	}
 
-	void  Skybox::Render(Rendering::BaseShader& _shader)
+	void  Skybox::Render(IShader& _shader)
 	{
 		// skybox cube
 		glBindVertexArray(skyboxVAO);
 		glActiveTexture(GL_TEXTURE0);
-		glUniform1i(glGetUniformLocation(_shader.glProgram, "skybox"), 0);
+		glUniform1i(glGetUniformLocation(_shader.GetGlProgram(), "skybox"), 0);
 		glBindTexture(GL_TEXTURE_CUBE_MAP, cubemapID);
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 		glBindVertexArray(0);

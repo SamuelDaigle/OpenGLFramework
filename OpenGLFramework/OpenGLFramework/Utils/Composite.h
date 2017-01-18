@@ -14,7 +14,7 @@ namespace Utils
 	class Composite : public Framework::BaseObject
 	{
 	public:
-		void Initialize(IO::MeshLoader* _meshLoader) override;
+		Composite(IO::MeshLoader* _meshLoader, IShader& _shader);
 
 		void SetSelfObject(Framework::BaseObject* _object);
 
@@ -24,7 +24,7 @@ namespace Utils
 
 		void SetColor(float _r, float _g, float _b) override;
 
-		void Render(Rendering::BaseShader& _shader) override;
+		void Render() override;
 
 		void Translate(float _x, float _y, float _z) override;
 

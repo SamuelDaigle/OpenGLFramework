@@ -3,11 +3,13 @@
 namespace Rendering
 {
 
-	Square::Square()
+	Square::Square(IO::MeshLoader* _meshLoader, IShader& _shader) :
+		BaseObject(_meshLoader, _shader)
 	{
 		scaling.x = 1.0f;
 		scaling.y = 1.0f;
 		scaling.z = 1.0f;
+		initializeBuffers();
 	}
 
 
@@ -15,19 +17,13 @@ namespace Rendering
 	{
 	}
 
-	void Square::Initialize(IO::MeshLoader* _meshLoader)
-	{
-		initializeBuffers();
-	}
-
 	void Square::Destroy()
 	{
 		shutdownBuffers();
 	}
 
-	void Square::Render(Rendering::BaseShader& _shader)
+	void Square::Render()
 	{
-
 		glBindVertexArray(vertexArrayId);
 		glDrawElements(GL_TRIANGLES, indexCount, GL_UNSIGNED_INT, 0);
 	}

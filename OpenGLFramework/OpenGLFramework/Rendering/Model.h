@@ -23,7 +23,7 @@ namespace Rendering
 	{
 	public:
 		Model(const char* path, IO::MeshLoader* _meshLoader);
-		void Draw(Rendering::BaseShader& shader);
+		void Draw(IShader& shader);
 
 	private:
 		vector<Mesh*> meshes;
