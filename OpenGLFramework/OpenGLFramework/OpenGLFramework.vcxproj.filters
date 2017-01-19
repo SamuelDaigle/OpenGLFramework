@@ -54,9 +54,6 @@
     <ClCompile Include="IO\TextureLoader.cpp">
       <Filter>IO</Filter>
     </ClCompile>
-    <ClCompile Include="Utils\Composite.cpp">
-      <Filter>Utils</Filter>
-    </ClCompile>
     <ClCompile Include="Utils\MeshBank.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
@@ -98,6 +95,12 @@
     </ClCompile>
     <ClCompile Include="Input\InputHandler.cpp">
       <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\BaseObject.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\Composite.hpp">
+      <Filter>Utils</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Camera\Camera.cpp" />
+    <ClCompile Include="Framework\BaseObject.cpp" />
     <ClCompile Include="Framework\OpenGL.cpp" />
     <ClCompile Include="Framework\Skybox.cpp" />
     <ClCompile Include="Framework\Window.cpp" />
@@ -37,7 +38,7 @@
     <ClCompile Include="Rendering\Triangle.cpp" />
     <ClCompile Include="Text\Text.cpp" />
     <ClCompile Include="Text\TextHolder.cpp" />
-    <ClCompile Include="Utils\Composite.cpp" />
+    <ClInclude Include="Utils\Composite.hpp" />
     <ClCompile Include="Utils\MeshBank.cpp" />
     <ClCompile Include="Utils\TextureBank.cpp" />
     <ClCompile Include="Utils\Vertex.cpp" />

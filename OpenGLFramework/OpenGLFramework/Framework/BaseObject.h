@@ -9,74 +9,31 @@
 #include "..\Dependencies\glm\gtx\transform.hpp"
 #include "..\IO\MeshLoader.h"
 #include "..\Interface\IShader.h"
+#include "..\Utils\Composite.h"
 
 using namespace glm;
 
 namespace Framework
 {
 
-	class BaseObject
+	class BaseObject : public Utils::Composite<BaseObject>
 	{
 	public:
-		BaseObject(IO::MeshLoader* _meshLoader, IShader& _shader)
-		{
-			shader = &_shader;
-		}
+		BaseObject(IO::MeshLoader* _meshLoader, IShader& _shader);
+		virtual void Destroy();
+		virtual void Render();
+		virtual void Update();
 
-		virtual void Destroy()
-		{
+		virtual void SetColor(float _r, float _g, float _b);
+		virtual void Translate(float _x, float _y, float _z);
+		virtual void Rotate(float _angleX, float _angleY, float _angleZ);
+		virtual void Scale(float _scaleX, float _scaleY, float _scaleZ);
 
-		}
-
-		virtual void Render()
-		{
-
-		}
-
-		virtual void Update()
-		{
-			rotation.z += speedRotation;
-		}
-
-		virtual void SetColor(float _r, float _g, float _b)
-		{
-			r = _r;
-			g = _g;
-			b = _b;
-		}
-
-		virtual void Translate(float _x, float _y, float _z)
-		{
-			translation.x += _x;
-			translation.y += _y;
-			translation.z += _z;
-		}
-
-		virtual void Rotate(float _angleX, float _angleY, float _angleZ)
-		{
-			rotation.x += _angleX;
-			rotation.y += _angleZ;
-			rotation.z += _angleY;
-		}
-
-		virtual void Scale(float _scaleX, float _scaleY, float _scaleZ)
-		{
-			scaling.x = _scaleX;
-			scaling.y = _scaleY;
-			scaling.z = _scaleZ;
-		}
-
-		virtual mat4 GetWorldMatrix()
-		{
-			return GetRotationMatrix() * GetScalingMatrix() * GetTranslateMatrix();
-		}
-
-		virtual void SetRotationSpeed(float _speed)
-		{
-			speedRotation = _speed;
-		}
+		virtual mat4 GetWorldMatrix();
+		virtual void SetRotationSpeed(float _speed);
 
 		vec3 translation;
+
 	protected:
 		int vertexCount, indexCount;
 		unsigned int vertexArrayId, vertexBufferId, indexBufferId;
@@ -89,20 +46,11 @@ namespace Framework
 		IShader* shader;
 
 	private:
-		virtual mat4 GetRotationMatrix()
-		{
-			return orientate4(rotation);
-		}
+		BaseObject();
 
-		virtual mat4 GetScalingMatrix()
-		{
-			return scale(scaling);
-		}
-
-		virtual mat4 GetTranslateMatrix()
-		{
-			return translate(translation);
-		}
+		virtual mat4 GetRotationMatrix();
+		virtual mat4 GetScalingMatrix();
+		virtual mat4 GetTranslateMatrix();
 	};
 
 }

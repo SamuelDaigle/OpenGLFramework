@@ -19,11 +19,10 @@ namespace Application
 		advancedShader = new Rendering::AdvancedShader();
 		customShader = new Application::CustomShader();
 
-		Utils::Composite* planetComposite = new Utils::Composite(meshLoader, *customShader);
+		Framework::BaseObject* planetComposite = new Framework::BaseObject(meshLoader, *customShader);
 		planetComposite->Translate(6, 0, 0);
-		planetComposite->SetColor(0, 1, 0.2f);
 
-		rootObject = new Utils::Composite(meshLoader, *customShader);
+		rootObject = new Framework::BaseObject(meshLoader, *customShader);
 		rootObject->Add(planetComposite);
 
 		skybox = new Framework::Skybox();

@@ -37,7 +37,7 @@ namespace Application
 	private:
 		Framework::OpenGL* ptrOpenGL;
 		Input::InputHandler* ptrInputHandler;
-		Utils::Composite* rootObject;
+		Framework::BaseObject* rootObject;
 		IShader* basicShader;
 		IShader* advancedShader;
 		IShader* skyboxShader;

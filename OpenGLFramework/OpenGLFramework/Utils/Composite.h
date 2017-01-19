@@ -2,41 +2,38 @@
 /* Author: Samuel Daigle                                                */
 /************************************************************************/
 
-#include "..\stdafx.h"
-
-using namespace std;
-
 #pragma once
+
+#include <vector>
 
 namespace Utils
 {
 
-	class Composite : public Framework::BaseObject
-	{
-	public:
-		Composite(IO::MeshLoader* _meshLoader, IShader& _shader);
+template <class T>
+class Composite
+{
+public:
+	Composite();
 
-		void SetSelfObject(Framework::BaseObject* _object);
+	void DestroyChilds();
 
-		void Destroy() override;
+	void UpdateChilds();
 
-		void Update() override;
+	void RenderChilds();
 
-		void SetColor(float _r, float _g, float _b) override;
+	void TranslateChilds(float _x, float _y, float _z);
 
-		void Render() override;
+	void RotateChilds(float _angleX, float _angleY, float _angleZ);
 
-		void Translate(float _x, float _y, float _z) override;
+	void ScaleChilds(float _scaleX, float _scaleY, float _scaleZ);
 
-		void Rotate(float _angleX, float _angleY, float _angleZ) override;
+	void Add(T* _object);
 
-		void Scale(float _scaleX, float _scaleY, float _scaleZ) override;
-
-		void Add(Framework::BaseObject* _object);
-
-	private:
-		vector<Framework::BaseObject*> childObjects;
-		Framework::BaseObject * planet;
-	};
+private:
+	std::vector<T*> childObjects;
+};
 
 }
+
+
+#include "Composite.hpp"
