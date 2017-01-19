@@ -14,6 +14,7 @@
 #include "Input\InputHandler.h"
 #include "Rendering\Square.h"
 #include "Rendering\Light.h"
+#include "Planet.h"
 #include "Text\Text.h"
 #include "Interface\IScene.h"
 

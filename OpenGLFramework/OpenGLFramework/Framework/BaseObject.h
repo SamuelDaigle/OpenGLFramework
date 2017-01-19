@@ -19,12 +19,13 @@ namespace Framework
 	class BaseObject : public Utils::Composite<BaseObject>
 	{
 	public:
-		BaseObject(IO::MeshLoader* _meshLoader, IShader& _shader);
+		BaseObject(IShader& _shader);
 		virtual void Destroy();
 		virtual void Render();
 		virtual void Update();
 
 		virtual void SetColor(float _r, float _g, float _b);
+		virtual void SetPosition(float _x, float _y, float _z);
 		virtual void Translate(float _x, float _y, float _z);
 		virtual void Rotate(float _angleX, float _angleY, float _angleZ);
 		virtual void Scale(float _scaleX, float _scaleY, float _scaleZ);
@@ -32,11 +33,10 @@ namespace Framework
 		virtual mat4 GetWorldMatrix();
 		virtual void SetRotationSpeed(float _speed);
 
-		vec3 translation;
-
 	protected:
 		int vertexCount, indexCount;
 		unsigned int vertexArrayId, vertexBufferId, indexBufferId;
+		vec3 position;
 		vec3 scaling;
 		vec3 rotation;
 		float r = 1;

@@ -9,15 +9,14 @@
 namespace Rendering
 {
 
-	class Light
+	class Light : public Framework::BaseObject
 	{
 	public:
-		void Initialize();
+		Light(IShader& _shader);
 		void Destroy();
 
-		void Apply(IShader* _shader);
+		void Apply();
 
-		vec3 Position;
 		vec3 Ambiant;
 		vec3 Diffuse;
 		vec3 Specular;

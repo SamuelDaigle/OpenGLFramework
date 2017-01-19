@@ -63,8 +63,8 @@ namespace Application
 
 	GLfloat* CustomShader::MatrixToFloatArray(mat4 _matrix)
 	{
-		GLfloat* floatArray = new GLfloat[16];
 		const int MATRIX_SIZE = 4;
+		GLfloat* floatArray = new GLfloat[MATRIX_SIZE*MATRIX_SIZE];
 		for (int i = 0; i < MATRIX_SIZE; i++)
 		{
 			for (int j = 0; j < MATRIX_SIZE; j++)

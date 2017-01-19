@@ -3,8 +3,8 @@
 namespace Rendering
 {
 
-	Square::Square(IO::MeshLoader* _meshLoader, IShader& _shader) :
-		BaseObject(_meshLoader, _shader)
+	Square::Square(IShader& _shader) :
+		BaseObject(_shader)
 	{
 		scaling.x = 1.0f;
 		scaling.y = 1.0f;

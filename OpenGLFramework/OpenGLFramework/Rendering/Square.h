@@ -13,7 +13,7 @@ namespace Rendering
 	class Square : public Framework::BaseObject
 	{
 	public:
-		Square(IO::MeshLoader* _meshLoader, IShader& _shader);
+		Square(IShader& _shader);
 		~Square();
 
 		void Destroy() override;

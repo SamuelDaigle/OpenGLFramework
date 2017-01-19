@@ -3,7 +3,7 @@
 namespace Framework
 {
 
-BaseObject::BaseObject(IO::MeshLoader* _meshLoader, IShader& _shader) :
+BaseObject::BaseObject(IShader& _shader) :
 	Utils::Composite<BaseObject>()
 {
 	shader = &_shader;
@@ -32,12 +32,20 @@ void BaseObject::SetColor(float _r, float _g, float _b)
 	b = _b;
 }
 
+void BaseObject::SetPosition(float _x, float _y, float _z)
+{
+	Utils::Composite<BaseObject>::SetChildsPosition(_x, _y, _z);
+	position.x += _x;
+	position.y += _y;
+	position.z += _z;
+}
+
 void BaseObject::Translate(float _x, float _y, float _z)
 {
 	Utils::Composite<BaseObject>::TranslateChilds(_x, _y, _z);
-	translation.x += _x;
-	translation.y += _y;
-	translation.z += _z;
+	position.x += _x;
+	position.y += _y;
+	position.z += _z;
 }
 
 void BaseObject::Rotate(float _angleX, float _angleY, float _angleZ)
@@ -78,7 +86,7 @@ mat4 BaseObject::GetScalingMatrix()
 
 mat4 BaseObject::GetTranslateMatrix()
 {
-	return translate(translation);
+	return translate(position);
 }
 
 }

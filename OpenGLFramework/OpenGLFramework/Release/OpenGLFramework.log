@@ -1,12 +1,2 @@
-﻿  BaseObject.cpp
-  Skybox.cpp
-  Window.cpp
-  AdvancedShader.cpp
-  BasicShader.cpp
-  Light.cpp
-  SkyboxShader.cpp
-  Square.cpp
-  Triangle.cpp
-  Text.cpp
-  TextHolder.cpp
+﻿  Window.cpp
   OpenGLFramework.vcxproj -> C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.lib

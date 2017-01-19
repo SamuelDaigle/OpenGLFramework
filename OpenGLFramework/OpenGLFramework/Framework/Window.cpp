@@ -61,7 +61,7 @@ namespace Framework
 		GLenum err = glewInit();
 		if (GLEW_OK != err)
 		{
-			/* Problem: glewInit failed, something is seriously wrong. */
+			// Problem: glewInit failed, something is seriously wrong.
 			cout << "glewInit failed, aborting." << endl;
 			exit(1);
 		}

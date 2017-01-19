@@ -21,6 +21,8 @@ public:
 
 	void RenderChilds();
 
+	void SetChildsPosition(float _x, float _y, float _z);
+
 	void TranslateChilds(float _x, float _y, float _z);
 
 	void RotateChilds(float _angleX, float _angleY, float _angleZ);

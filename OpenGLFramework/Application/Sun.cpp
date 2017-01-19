@@ -1,7 +1,7 @@
 #include "Sun.h"
 
 Sun::Sun(IO::MeshLoader* _meshLoader, IShader& _shader) :
-	BaseObject(_meshLoader, _shader)
+	BaseObject(_shader)
 {
 	model = new Rendering::Model("../Content/planet/sun.obj", _meshLoader);
 	scaling.x = 1.0f;

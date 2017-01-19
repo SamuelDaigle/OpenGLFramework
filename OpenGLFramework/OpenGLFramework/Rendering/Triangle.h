@@ -13,7 +13,7 @@ namespace Rendering
 	class Triangle : public Framework::BaseObject
 	{
 	public:
-		Triangle(IO::MeshLoader* _meshLoader, IShader& _shader);
+		Triangle(IShader& _shader);
 		void Destroy() override;
 
 		void Render() override;

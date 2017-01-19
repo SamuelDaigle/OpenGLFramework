@@ -38,6 +38,15 @@ namespace Utils
 	}
 
 	template <class T>
+	void Composite<T>::SetChildsPosition(float _x, float _y, float _z)
+	{
+		for each (T* childObject in childObjects)
+		{
+			childObject->SetPosition(_x, _y, _z);
+		}
+	}
+
+	template <class T>
 	void Composite<T>::TranslateChilds(float _x, float _y, float _z)
 	{
 		for each (T* childObject in childObjects)

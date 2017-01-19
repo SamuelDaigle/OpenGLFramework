@@ -3,8 +3,8 @@
 namespace Rendering
 {
 
-	Triangle::Triangle(IO::MeshLoader* _meshLoader, IShader& _shader) :
-		BaseObject(_meshLoader, _shader)
+	Triangle::Triangle(IShader& _shader) :
+		BaseObject(_shader)
 	{
 		scaling.x = 1;
 		scaling.y = 1;
