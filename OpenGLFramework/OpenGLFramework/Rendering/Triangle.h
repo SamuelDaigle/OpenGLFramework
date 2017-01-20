@@ -16,7 +16,7 @@ namespace Rendering
 		Triangle(IShader& _shader);
 		void Destroy() override;
 
-		void Render() override;
+		void Render(Framework::OpenGL& _openGL) override;
 	private:
 		void initializeBuffers();
 		void shutdownBuffers();

@@ -14,7 +14,6 @@ namespace Rendering
 
 	void Mesh::Draw(IShader& shader)
 	{
-		cout << "Shader: " << indices.size() << endl;
 		// Texture
 		glUniform1i(glGetUniformLocation(shader.GetGlProgram(), "textureSample"), 0);
 		glActiveTexture(GL_TEXTURE0);

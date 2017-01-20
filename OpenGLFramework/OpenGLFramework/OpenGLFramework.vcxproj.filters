@@ -99,6 +99,9 @@
     <ClCompile Include="Framework\BaseObject.cpp">
       <Filter>Framework</Filter>
     </ClCompile>
+    <ClCompile Include="Rendering\BaseShader.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Framework\OpenGL.h">
@@ -189,7 +192,12 @@
     <ClInclude Include="Interface\IShader.h">
       <Filter>Interface</Filter>
     </ClInclude>
-    <ClInclude Include="Utils\Composite.hpp" />
+    <ClInclude Include="Utils\Composite.hpp">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Rendering\BaseShader.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Shaders\advanced.frag">

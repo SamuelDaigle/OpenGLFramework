@@ -3,6 +3,11 @@
 namespace Framework
 {
 
+	Skybox::Skybox()
+	{
+		shader = new Rendering::SkyboxShader();
+	}
+
 	void Skybox::Initialize(vector<const GLchar*> _filePaths, IO::TextureLoader* _textureLoader)
 	{
 		int width, height;
@@ -56,15 +61,26 @@ namespace Framework
 
 	}
 
-	void  Skybox::Render(IShader& _shader)
+	void Skybox::Render(vec3 _cameraRotation)
 	{
-		// skybox cube
+		// Prepare shader.
+		glDepthMask(GL_FALSE);
+		shader->Use();
+		mat4 proj = perspective<float>(90.0f, (float)glutGet(GLUT_SCREEN_WIDTH) / (float)glutGet(GLUT_SCREEN_HEIGHT), 0.1f, 100000.0f);
+		mat4 view = orientate4(_cameraRotation);
+		shader->SetProjectionMatrix(proj);
+		shader->SetViewMatrix(view);
+
+		// Draw.
 		glBindVertexArray(skyboxVAO);
 		glActiveTexture(GL_TEXTURE0);
-		glUniform1i(glGetUniformLocation(_shader.GetGlProgram(), "skybox"), 0);
+		glUniform1i(glGetUniformLocation(shader->GetGlProgram(), "skybox"), 0);
 		glBindTexture(GL_TEXTURE_CUBE_MAP, cubemapID);
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 		glBindVertexArray(0);
+
+		glDepthMask(GL_TRUE);
+
 	}
 
 	void Skybox::loadMesh()

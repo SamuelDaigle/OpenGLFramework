@@ -14,9 +14,9 @@ void Planet::Destroy()
 	BaseObject::Destroy();
 }
 
-void Planet::Render()
+void Planet::Render(Framework::OpenGL& _openGL)
 {
-	BaseObject::Render();
+	BaseObject::Render(_openGL);
 	// Color
 	glUniform4f(glGetUniformLocation(shader->GetGlProgram(), "Color"), r, g, b, 1.0f);
 	model->Draw(*shader);

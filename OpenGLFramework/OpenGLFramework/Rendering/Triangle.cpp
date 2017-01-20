@@ -17,7 +17,7 @@ namespace Rendering
 		shutdownBuffers();
 	}
 
-	void Triangle::Render()
+	void Triangle::Render(Framework::OpenGL& _openGL)
 	{
 		glBindVertexArray(vertexArrayId);
 		glDrawElements(GL_TRIANGLES, indexCount, GL_UNSIGNED_INT, 0);

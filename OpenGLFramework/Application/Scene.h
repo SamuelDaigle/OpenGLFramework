@@ -9,7 +9,6 @@
 #include "Framework\Skybox.h"
 #include "Rendering\BasicShader.h"
 #include "Rendering\AdvancedShader.h"
-#include "Rendering\SkyboxShader.h"
 #include "CustomShader.h"
 #include "Input\InputHandler.h"
 #include "Rendering\Square.h"
@@ -41,7 +40,6 @@ namespace Application
 		Framework::BaseObject* rootObject;
 		IShader* basicShader;
 		IShader* advancedShader;
-		IShader* skyboxShader;
 		IShader* customShader;
 		Framework::Skybox* skybox;
 		Rendering::Light* light;

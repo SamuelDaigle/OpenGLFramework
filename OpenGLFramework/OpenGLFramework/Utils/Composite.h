@@ -5,6 +5,7 @@
 #pragma once
 
 #include <vector>
+#include "..\Framework\OpenGL.h"
 
 namespace Utils
 {
@@ -19,7 +20,7 @@ public:
 
 	void UpdateChilds();
 
-	void RenderChilds();
+	void RenderChilds(Framework::OpenGL& _openGL);
 
 	void SetChildsPosition(float _x, float _y, float _z);
 

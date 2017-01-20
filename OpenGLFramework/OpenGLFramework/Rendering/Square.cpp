@@ -22,7 +22,7 @@ namespace Rendering
 		shutdownBuffers();
 	}
 
-	void Square::Render()
+	void Square::Render(Framework::OpenGL& _openGL)
 	{
 		glBindVertexArray(vertexArrayId);
 		glDrawElements(GL_TRIANGLES, indexCount, GL_UNSIGNED_INT, 0);

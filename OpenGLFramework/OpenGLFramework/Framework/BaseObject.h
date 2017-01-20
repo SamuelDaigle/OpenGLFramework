@@ -10,6 +10,7 @@
 #include "..\IO\MeshLoader.h"
 #include "..\Interface\IShader.h"
 #include "..\Utils\Composite.h"
+#include "OpenGL.h"
 
 using namespace glm;
 
@@ -21,7 +22,7 @@ namespace Framework
 	public:
 		BaseObject(IShader& _shader);
 		virtual void Destroy();
-		virtual void Render();
+		virtual void Render(OpenGL& _openGL);
 		virtual void Update();
 
 		virtual void SetColor(float _r, float _g, float _b);

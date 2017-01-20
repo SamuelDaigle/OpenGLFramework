@@ -14,9 +14,14 @@ void BaseObject::Destroy()
 	Utils::Composite<BaseObject>::DestroyChilds();
 }
 
-void BaseObject::Render()
+void BaseObject::Render(OpenGL& _openGL)
 {
-	Utils::Composite<BaseObject>::RenderChilds();
+	Utils::Composite<BaseObject>::RenderChilds(_openGL);
+
+	shader->Use();
+	shader->SetViewMatrix(_openGL.GetViewMatrix());
+	shader->SetProjectionMatrix(_openGL.GetProjMatrix());
+	shader->SetWorldMatrix(GetWorldMatrix());
 }
 
 void BaseObject::Update()

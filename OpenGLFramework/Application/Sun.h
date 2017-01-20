@@ -14,7 +14,7 @@ public:
 
 	void Destroy() override;
 
-	void Render() override;
+	void Render(Framework::OpenGL& _openGL) override;
 
 private:
 	Rendering::Model* model;

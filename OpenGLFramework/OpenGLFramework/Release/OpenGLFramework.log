@@ -1,2 +1,3 @@
-﻿  Mesh.cpp
+﻿  BaseObject.cpp
+  Skybox.cpp
   OpenGLFramework.vcxproj -> C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.lib

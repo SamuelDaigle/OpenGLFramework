@@ -15,7 +15,6 @@ namespace Application
 		meshLoader->Initialize(textureLoader);
 
 		basicShader = new Rendering::BasicShader();
-		skyboxShader = new Rendering::SkyboxShader();
 		advancedShader = new Rendering::AdvancedShader();
 		customShader = new Application::CustomShader();
 
@@ -70,29 +69,12 @@ namespace Application
 
 	void Scene::render()
 	{
-		// Draw skybox.
-		glDepthMask(GL_FALSE);
-		skyboxShader->Use();
-		mat4 proj = perspective<float>(90.0f, (float)glutGet(GLUT_SCREEN_WIDTH) / (float)glutGet(GLUT_SCREEN_HEIGHT), 0.1f, 100000.0f);
-		mat4 view = orientate4(vec3(-ptrOpenGL->GetCamera()->rotation.x, ptrOpenGL->GetCamera()->rotation.y, ptrOpenGL->GetCamera()->rotation.z));
-		skyboxShader->SetViewMatrix(view);
-		skyboxShader->SetProjectionMatrix(proj);
-		skybox->Render(*skyboxShader);
-		glDepthMask(GL_TRUE);
+		skybox->Render(ptrOpenGL->GetCamera()->rotation);
 
 		// Draw sun.
-		basicShader->Use();
-		basicShader->SetWorldMatrix(rootObject->GetWorldMatrix());
-		basicShader->SetViewMatrix(ptrOpenGL->GetViewMatrix());
-		basicShader->SetProjectionMatrix(ptrOpenGL->GetProjMatrix());
-		rootObject->Render();
-
+		rootObject->Render(*ptrOpenGL);
 
 		// Draw every planets.
-		advancedShader->Use();
-		advancedShader->SetViewMatrix(ptrOpenGL->GetViewMatrix());
-		advancedShader->SetProjectionMatrix(ptrOpenGL->GetProjMatrix());
-
 		glUniform3f(glGetUniformLocation(advancedShader->GetGlProgram(), "viewPos"), ptrOpenGL->GetCamera()->position.x, ptrOpenGL->GetCamera()->position.y, ptrOpenGL->GetCamera()->position.z);
 		light->Apply();
 	}

@@ -13,7 +13,7 @@ void Sun::Destroy()
 {
 }
 
-void Sun::Render()
+void Sun::Render(Framework::OpenGL& _openGL)
 {
 	model->Draw(*shader);
 }
