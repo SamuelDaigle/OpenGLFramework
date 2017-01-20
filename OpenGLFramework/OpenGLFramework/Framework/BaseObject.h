@@ -34,8 +34,6 @@ namespace Framework
 		virtual void SetRotationSpeed(float _speed);
 
 	protected:
-		int vertexCount, indexCount;
-		unsigned int vertexArrayId, vertexBufferId, indexBufferId;
 		vec3 position;
 		vec3 scaling;
 		vec3 rotation;

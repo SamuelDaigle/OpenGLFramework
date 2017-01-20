@@ -20,6 +20,10 @@ namespace Rendering
 	private:
 		void initializeBuffers();
 		void shutdownBuffers();
+
+
+		int vertexCount, indexCount;
+		unsigned int vertexArrayId, vertexBufferId, indexBufferId;
 	};
 
 }

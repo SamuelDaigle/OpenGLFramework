@@ -12,6 +12,7 @@ namespace Framework
 		glDepthMask(GL_ALWAYS);
 		glDepthFunc(GL_LESS);
 		glEnable(GL_STENCIL_TEST);
+		glDisable(GL_CULL_FACE); // Render both sides, to remove later..
 
 		projectionMatrix = perspective<float>(radians(45.0f), (float)glutGet(GLUT_SCREEN_WIDTH) / (float)glutGet(GLUT_SCREEN_HEIGHT), 0.1f, 1000.0f);
 	}

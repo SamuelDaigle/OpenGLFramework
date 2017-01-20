@@ -38,7 +38,6 @@ namespace Rendering
 
 	private:
 		GLuint VAO, VBO, EBO;
-		int NbIndices;
 
 		void setupMesh();
 	};
