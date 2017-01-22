@@ -68,7 +68,7 @@ namespace Framework
 		shader->Use();
 		Math::Matrix4 proj = perspective<float>(90.0f, (float)glutGet(GLUT_SCREEN_WIDTH) / (float)glutGet(GLUT_SCREEN_HEIGHT), 0.1f, 100000.0f);
 		shader->SetProjectionMatrix(proj);
-		shader->SetViewMatrix(_view);
+		shader->SetViewMatrix(Math::Matrix4::Inverse(_view));
 
 		// Draw.
 		glBindVertexArray(skyboxVAO);

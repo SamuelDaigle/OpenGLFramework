@@ -7,10 +7,7 @@ BaseObject::BaseObject() :
 	Utils::Composite<BaseObject>()
 {
 	scale = Math::Vector3(1.0f, 1.0f, 1.0f);
-	rotation = Math::Quaternion(0.0f, 0.0f, 0.0f);
 	position = Math::Vector3(0, 0, 0);
-	direction = Math::Vector3(0, 0, 0);
-	targetVector = Math::Vector3(0, 0, 1);
 	upVector = Math::Vector3(0, 1, 0);
 }
 
@@ -42,11 +39,10 @@ void BaseObject::Render(Math::Matrix4& _view, Math::Matrix4& _projection)
 void BaseObject::Update()
 {
 	Utils::Composite<BaseObject>::UpdateChilds();
-	/*targetVector = Math::Quaternion::QuaternionToForwardVector(rotation);
-	forwardVector = Math::Vector3::Normalize(targetVector);
-	rightVector = Math::Vector3::Normalize(Math::Vector3::Cross(upVector, forwardVector));
 
-	LookAt(forwardVector);*/
+	rightVector = -Math::Vector3(rotation[0][0], rotation[0][1], rotation[0][2]);
+	upVector = -Math::Vector3(rotation[1][0], rotation[1][1], rotation[2][2]);
+	forwardVector = -Math::Vector3(rotation[2][0], rotation[2][1], rotation[2][2]);
 }
 
 void BaseObject::SetColor(float _r, float _g, float _b)
@@ -64,12 +60,9 @@ void BaseObject::Translate(float _x, float _y, float _z)
 	position.z += _z;
 }
 
-void BaseObject::Rotate(float _angleX, float _angleY, float _angleZ)
+void BaseObject::Rotate(float _angle, Math::Vector3& _axis)
 {
-	direction.x -= _angleX;
-	direction.z += _angleY;
-	direction.y += _angleZ;
-	rotation.Set(direction);
+	rotation = Math::Matrix4::Rotate(rotation, _angle, _axis);
 }
 
 void BaseObject::Scale(float _scaleX, float _scaleY, float _scaleZ)
@@ -89,9 +82,9 @@ Math::Matrix4 BaseObject::GetWorldMatrix()
 {
 	Math::Matrix4 rotationMatrix = GetRotationMatrix();
 	Math::Matrix4 scalingMatrix = GetScalingMatrix();
-	Math::Matrix4 TranslateMatrix = GetTranslateMatrix();
+	Math::Matrix4 translateMatrix = GetTranslateMatrix();
 
-	return rotationMatrix * scalingMatrix * TranslateMatrix;
+	return rotationMatrix * scalingMatrix * translateMatrix;
 }
 
 void BaseObject::SetRotationSpeed(float _speed)
@@ -101,11 +94,13 @@ void BaseObject::SetRotationSpeed(float _speed)
 
 Math::Matrix4 BaseObject::GetRotationMatrix()
 {
-	return Math::Matrix4::QuaternionToRotationMatrix(rotation);
+	return rotation;
 }
 
 Math::Matrix4 BaseObject::GetScalingMatrix()
 {
+	if (scale.x == 0.0f || scale.y == 0.0f || scale.z == 0.0f)
+		std::cout << "WARNING -- An object has a scale of 0." << std::endl;
 	return Math::Matrix4::VectorToScaleMatrix(scale);
 }
 

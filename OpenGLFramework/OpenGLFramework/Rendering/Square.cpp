@@ -28,18 +28,6 @@ namespace Rendering
 		glDrawElements(GL_TRIANGLES, indexCount, GL_UNSIGNED_INT, 0);
 	}
 
-	void Square::Translate(float _x, float _y, float _z)
-	{
-	}
-
-	void Square::Rotate(float _angleX, float _angleY, float _angleZ)
-	{
-	}
-
-	void Square::Scale(float _scaleX, float _scaleY, float _scaleZ)
-	{
-	}
-
 	void Square::initializeBuffers()
 	{
 		Utils::VertexType* vertices;

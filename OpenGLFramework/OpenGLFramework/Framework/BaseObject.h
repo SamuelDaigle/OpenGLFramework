@@ -27,7 +27,7 @@ namespace Framework
 
 		virtual void SetColor(float _r, float _g, float _b);
 		virtual void Translate(float _x, float _y, float _z);
-		virtual void Rotate(float _angleX, float _angleY, float _angleZ);
+		virtual void Rotate(float _angle, Math::Vector3& _axis);
 		virtual void Scale(float _scaleX, float _scaleY, float _scaleZ);
 
 		virtual void LookAt(Math::Vector3 _position);
@@ -44,8 +44,7 @@ namespace Framework
 
 		Math::Vector3 position;
 		Math::Vector3 scale;
-		Math::Quaternion rotation;
-		Math::Vector3 direction;
+		Math::Matrix4 rotation;
 
 	protected:
 		float r = 1;
@@ -53,7 +52,6 @@ namespace Framework
 		float b = 0.2f;
 		float speedRotation = 0.001f;
 		IShader* shader;
-		Math::Vector3 targetVector;
 
 		virtual Math::Matrix4 GetRotationMatrix();
 		virtual Math::Matrix4 GetScalingMatrix();

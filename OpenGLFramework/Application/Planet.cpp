@@ -1,7 +1,7 @@
 #include "Planet.h"
 
 Planet::Planet(IO::MeshLoader* _meshLoader, IShader& _shader) :
-	BaseObject(_shader)
+	BaseObject::BaseObject(_shader)
 {
 	model = new Rendering::Model("../Content/planet/planet.obj", _meshLoader);
 }

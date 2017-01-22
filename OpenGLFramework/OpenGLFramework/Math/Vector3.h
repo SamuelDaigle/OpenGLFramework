@@ -13,7 +13,7 @@ namespace Math
 		static Vector3 Cross(glm::vec3& _vectorA, glm::vec3& _vectorB);
 		static float Dot(glm::vec3& _vectorA, glm::vec3& _vectorB);
 		static Vector3 Normalize(glm::vec3& _vector);
-		static Vector3 Rotate(glm::vec3& _vector, float _angleX, float _angleY, float _angleZ);
+		static Vector3 Rotate(glm::vec3& _vector, float _angle, glm::vec3& _axis);
 
 		Vector3();
 		Vector3(glm::vec3 _vector);

@@ -1,12 +1,12 @@
 ﻿  Scene.cpp
-Scene.cpp(54): warning C4305: 'argument': truncation from 'double' to 'float'
-Scene.cpp(58): warning C4305: 'argument': truncation from 'double' to 'float'
-Scene.cpp(62): warning C4305: 'argument': truncation from 'double' to 'float'
-Scene.cpp(66): warning C4305: 'argument': truncation from 'double' to 'float'
+Scene.cpp(55): warning C4305: 'argument': truncation from 'double' to 'float'
+Scene.cpp(59): warning C4305: 'argument': truncation from 'double' to 'float'
+Scene.cpp(63): warning C4305: 'argument': truncation from 'double' to 'float'
+Scene.cpp(67): warning C4305: 'argument': truncation from 'double' to 'float'
   Generating code
-  1 of 1459 functions ( 0.1%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+  45 of 1439 functions ( 3.1%) were compiled, the rest were copied from previous compilation.
+    42 functions were new in current compilation
+    31 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Application.vcxproj -> C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\Release\Application.exe
   Application.vcxproj -> C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\Release\Application.pdb (Full PDB)

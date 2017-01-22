@@ -1,3 +1,2 @@
-﻿  BaseObject.cpp
-Framework\BaseObject.cpp(10): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+﻿  Camera.cpp
   OpenGLFramework.vcxproj -> C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.lib

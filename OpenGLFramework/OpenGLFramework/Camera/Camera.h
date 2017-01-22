@@ -16,8 +16,14 @@ namespace Camera
 		Camera();
 		void Destroy();
 
+		virtual void Rotate(float _angle, Math::Vector3& _axis) override;
+
 		void Update();
 		Math::Matrix4 GetViewMatrix();
-		Math::Matrix4 GetRotationMatrix();
+		Math::Matrix4 GetRotationMatrix() override;
+
+	private:
+		float bearing;
+		float tilt;
 	};
 }

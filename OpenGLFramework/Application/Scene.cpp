@@ -23,7 +23,6 @@ namespace Application
 		rootObject = new Planet(meshLoader, *basicShader);
 		rootObject->Add(planetComposite);
 
-
 		planetComposite->position = Math::Vector3(25, 0, 0);
 
 		skybox = new Framework::Skybox();
@@ -32,7 +31,7 @@ namespace Application
 		light = new Rendering::Light(*advancedShader);
 
 		camera = new Camera::Camera();
-		camera->position.z += 5;
+		camera->position.z -= 5;
 	}
 
 	void Scene::Destroy()
@@ -44,24 +43,26 @@ namespace Application
 
 	void Scene::input()
 	{
+		camera->Update();
+
 		// Rotation
-		camera->Rotate(0, -ptrInputHandler->GetCursorDelta().x / 10, 0);
-		camera->Rotate(ptrInputHandler->GetCursorDelta().y / 10, 0, 0);
+		camera->Rotate(ptrInputHandler->GetCursorDelta().x / 500, Math::Vector3(1.0f, 0.0f, 0.0f));
+		camera->Rotate(ptrInputHandler->GetCursorDelta().y / 500, Math::Vector3(0.0f, 1.0f, 0.0f));
 
 		// Move with arrow.
 		if (ptrInputHandler->IsKeyDown('a'))
 		{
 			camera->position -= camera->right() * Math::Vector3(0.05, 0.05, 0.05);
 		}
-		else if (ptrInputHandler->IsKeyDown('w'))
+		if (ptrInputHandler->IsKeyDown('w'))
 		{
 			camera->position -= camera->forward() * Math::Vector3(0.05, 0.05, 0.05);
 		}
-		else if (ptrInputHandler->IsKeyDown('d'))
+		if (ptrInputHandler->IsKeyDown('d'))
 		{
 			camera->position += camera->right() * Math::Vector3(0.05, 0.05, 0.05);
 		}
-		else if (ptrInputHandler->IsKeyDown('s'))
+		if (ptrInputHandler->IsKeyDown('s'))
 		{
 			camera->position += camera->forward() * Math::Vector3(0.05, 0.05, 0.05);
 		}
@@ -69,9 +70,9 @@ namespace Application
 
 	void Scene::render()
 	{
-		camera->Update();
 		skybox->Render(camera->GetRotationMatrix(), ptrOpenGL->GetProjMatrix());
-		//rootObject->Render(camera->GetViewMatrix(), ptrOpenGL->GetProjMatrix());
+		rootObject->Scale(1, 1, 1);
+		rootObject->Render(camera->GetViewMatrix(), ptrOpenGL->GetProjMatrix());
 	}
 
 	void Scene::update()

@@ -36,12 +36,9 @@ namespace Math
 		return glm::normalize(_vector);
 	}
 
-	Vector3 Vector3::Rotate(glm::vec3& _vector, float _angleX, float _angleY, float _angleZ)
+	Vector3 Vector3::Rotate(glm::vec3& _vector, float _angle, glm::vec3& _axis)
 	{
-		glm::vec3 result = glm::rotateX(_vector, _angleX);
-		result = glm::rotateY(result, _angleY);
-		result = glm::rotateZ(result, _angleZ);
-		return result;
+		return glm::rotate(_vector, _angle, _axis);
 	}
 
 	Vector3 Vector3::operator-()

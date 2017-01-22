@@ -33,4 +33,18 @@ namespace Math
 		return glm::translate(_translationVector);
 	}
 
+	Matrix4 Matrix4::Inverse(glm::mat4& _matrix)
+	{
+		return glm::inverse(_matrix);
+	}
+
+	Matrix4 Matrix4::LookAt(glm::vec3& _position, glm::vec3& _direction)
+	{
+		return glm::lookAt(_position, _direction, glm::vec3(0.0f, 1.0f, 0.0f));
+	}
+
+	Matrix4 Matrix4::Rotate(glm::mat4& _vector, float _angle, glm::vec3& _axis)
+	{
+		return glm::rotate(_vector, _angle, _axis);
+	}
 }
