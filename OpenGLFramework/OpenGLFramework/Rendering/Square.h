@@ -18,7 +18,7 @@ namespace Rendering
 
 		void Destroy() override;
 
-		void Render(Framework::OpenGL& _openGL) override;
+		void Render(Math::Matrix4& _view, Math::Matrix4& _projection) override;
 		void Translate(float _x, float _y, float _z) override;
 		void Rotate(float _angleX, float _angleY, float _angleZ) override;
 		void Scale(float _scaleX, float _scaleY, float _scaleZ) override;

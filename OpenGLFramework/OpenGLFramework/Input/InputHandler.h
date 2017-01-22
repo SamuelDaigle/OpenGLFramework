@@ -4,9 +4,7 @@
 
 #pragma once
 
-#include "..\Dependencies\glm\glm.hpp"
-
-using namespace glm;
+#include "..\Math\Vector2.h"
 
 namespace Input
 {
@@ -19,8 +17,8 @@ namespace Input
 		void LateUpdate();
 
 		bool IsKeyDown(unsigned char _key);
-		vec2 GetCursorPosition();
-		vec2 GetCursorDelta();
+		Math::Vector2 GetCursorPosition();
+		Math::Vector2 GetCursorDelta();
 
 		void OnKeyDown(unsigned char _key);
 		void OnKeyUp(unsigned char _key);
@@ -29,9 +27,9 @@ namespace Input
 
 		bool keyStates[256];
 
-		vec2 previousCursorPosition;
-		vec2 cursorPosition;
-		vec2 deltaCursor;
+		Math::Vector2 previousCursorPosition;
+		Math::Vector2 cursorPosition;
+		Math::Vector2 deltaCursor;
 	};
 
 }

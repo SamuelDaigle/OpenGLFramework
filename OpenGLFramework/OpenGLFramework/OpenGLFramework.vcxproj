@@ -28,6 +28,11 @@
     <ClCompile Include="IO\MeshLoader.cpp" />
     <ClCompile Include="IO\ShaderLoader.cpp" />
     <ClCompile Include="IO\TextureLoader.cpp" />
+    <ClCompile Include="Math\Matrix3.cpp" />
+    <ClCompile Include="Math\Matrix4.cpp" />
+    <ClCompile Include="Math\Quaternion.cpp" />
+    <ClCompile Include="Math\Vector2.cpp" />
+    <ClCompile Include="Math\Vector3.cpp" />
     <ClCompile Include="Rendering\AdvancedShader.cpp" />
     <ClCompile Include="Rendering\BaseShader.cpp" />
     <ClCompile Include="Rendering\BasicShader.cpp" />
@@ -55,6 +60,11 @@
     <ClInclude Include="IO\MeshLoader.h" />
     <ClInclude Include="IO\ShaderLoader.h" />
     <ClInclude Include="IO\TextureLoader.h" />
+    <ClInclude Include="Math\Matrix3.h" />
+    <ClInclude Include="Math\Matrix4.h" />
+    <ClInclude Include="Math\Quaternion.h" />
+    <ClInclude Include="Math\Vector2.h" />
+    <ClInclude Include="Math\Vector3.h" />
     <ClInclude Include="Rendering\AdvancedShader.h" />
     <ClInclude Include="Rendering\BaseShader.h" />
     <ClInclude Include="Rendering\BasicShader.h" />

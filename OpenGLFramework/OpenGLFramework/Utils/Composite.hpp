@@ -29,11 +29,11 @@ namespace Utils
 	}
 
 	template <class T>
-	void Composite<T>::RenderChilds(Framework::OpenGL& _openGL)
+	void Composite<T>::RenderChilds(Math::Matrix4& _view, Math::Matrix4& _projection)
 	{
 		for each (T* childObject in childObjects)
 		{
-			childObject->Render(_openGL);
+			childObject->Render(_view, _projection);
 		}
 	}
 

@@ -3,43 +3,24 @@
 namespace Framework
 {
 
-	void OpenGL::Initialize()
+	OpenGL::OpenGL()
 	{
-		camera = new Camera::Camera();
-		camera->Initialize();
-
 		glEnable(GL_DEPTH_TEST);
 		glDepthMask(GL_ALWAYS);
 		glDepthFunc(GL_LESS);
 		glEnable(GL_STENCIL_TEST);
 		glDisable(GL_CULL_FACE); // Render both sides, to remove later..
 
-		projectionMatrix = perspective<float>(radians(45.0f), (float)glutGet(GLUT_SCREEN_WIDTH) / (float)glutGet(GLUT_SCREEN_HEIGHT), 0.1f, 1000.0f);
+		projectionMatrix = glm::perspective<float>(glm::radians(45.0f), (float)glutGet(GLUT_SCREEN_WIDTH) / (float)glutGet(GLUT_SCREEN_HEIGHT), 0.1f, 1000.0f);
 	}
 
 	void OpenGL::Destroy()
 	{
-		if (camera)
-		{
-			camera->Destroy();
-			delete camera;
-			camera = NULL;
-		}
 	}
 
-	mat4& OpenGL::GetViewMatrix()
-	{
-		return camera->GetViewMatrix();
-	}
-
-	mat4& OpenGL::GetProjMatrix()
+	Math::Matrix4& OpenGL::GetProjMatrix()
 	{
 		return projectionMatrix;
-	}
-
-	Camera::Camera* OpenGL::GetCamera()
-	{
-		return camera;
 	}
 
 	void OpenGL::BeginScene()
@@ -47,7 +28,7 @@ namespace Framework
 		glClearColor(0, 0, 0, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-		camera->Update();
+		//camera->Update();
 	}
 
 	void OpenGL::EndScene()

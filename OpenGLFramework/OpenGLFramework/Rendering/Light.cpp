@@ -6,10 +6,10 @@ namespace Rendering
 	Light::Light(IShader& _shader) :
 		Framework::BaseObject(_shader)
 	{
-		SetPosition(-5, 0, 0);
-		Ambiant = vec3(0.01f, 0.01f, 0.01f);
-		Diffuse = vec3(1.0f, 1.0f, 1.0f);
-		Specular = vec3(1.0f, 1.0f, 1.0f);
+		Translate(-5, 0, 0);
+		Ambiant = Math::Vector3(0.01f, 0.01f, 0.01f);
+		Diffuse = Math::Vector3(1.0f, 1.0f, 1.0f);
+		Specular = Math::Vector3(1.0f, 1.0f, 1.0f);
 	}
 
 	void Light::Destroy()

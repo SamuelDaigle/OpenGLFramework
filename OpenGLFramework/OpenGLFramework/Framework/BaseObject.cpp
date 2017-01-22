@@ -3,10 +3,22 @@
 namespace Framework
 {
 
+BaseObject::BaseObject() :
+	Utils::Composite<BaseObject>()
+{
+	scale = Math::Vector3(1.0f, 1.0f, 1.0f);
+	rotation = Math::Quaternion(0.0f, 0.0f, 0.0f);
+	position = Math::Vector3(0, 0, 0);
+	direction = Math::Vector3(0, 0, 0);
+	targetVector = Math::Vector3(0, 0, 1);
+	upVector = Math::Vector3(0, 1, 0);
+}
+
 BaseObject::BaseObject(IShader& _shader) :
 	Utils::Composite<BaseObject>()
 {
 	shader = &_shader;
+	BaseObject::BaseObject();
 }
 
 void BaseObject::Destroy()
@@ -14,20 +26,27 @@ void BaseObject::Destroy()
 	Utils::Composite<BaseObject>::DestroyChilds();
 }
 
-void BaseObject::Render(OpenGL& _openGL)
+void BaseObject::Render(Math::Matrix4& _view, Math::Matrix4& _projection)
 {
-	Utils::Composite<BaseObject>::RenderChilds(_openGL);
+	Utils::Composite<BaseObject>::RenderChilds(_view, _projection);
 
-	shader->Use();
-	shader->SetViewMatrix(_openGL.GetViewMatrix());
-	shader->SetProjectionMatrix(_openGL.GetProjMatrix());
-	shader->SetWorldMatrix(GetWorldMatrix());
+	if (shader)
+	{
+		shader->Use();
+		shader->SetViewMatrix(_view);
+		shader->SetProjectionMatrix(_projection);
+		shader->SetWorldMatrix(GetWorldMatrix());
+	}
 }
 
 void BaseObject::Update()
 {
 	Utils::Composite<BaseObject>::UpdateChilds();
-	rotation.z += speedRotation;
+	/*targetVector = Math::Quaternion::QuaternionToForwardVector(rotation);
+	forwardVector = Math::Vector3::Normalize(targetVector);
+	rightVector = Math::Vector3::Normalize(Math::Vector3::Cross(upVector, forwardVector));
+
+	LookAt(forwardVector);*/
 }
 
 void BaseObject::SetColor(float _r, float _g, float _b)
@@ -35,14 +54,6 @@ void BaseObject::SetColor(float _r, float _g, float _b)
 	r = _r;
 	g = _g;
 	b = _b;
-}
-
-void BaseObject::SetPosition(float _x, float _y, float _z)
-{
-	Utils::Composite<BaseObject>::SetChildsPosition(_x, _y, _z);
-	position.x += _x;
-	position.y += _y;
-	position.z += _z;
 }
 
 void BaseObject::Translate(float _x, float _y, float _z)
@@ -55,23 +66,32 @@ void BaseObject::Translate(float _x, float _y, float _z)
 
 void BaseObject::Rotate(float _angleX, float _angleY, float _angleZ)
 {
-	Utils::Composite<BaseObject>::RotateChilds(_angleX, _angleY, _angleZ);
-	rotation.x += _angleX;
-	rotation.y += _angleZ;
-	rotation.z += _angleY;
+	direction.x -= _angleX;
+	direction.z += _angleY;
+	direction.y += _angleZ;
+	rotation.Set(direction);
 }
 
 void BaseObject::Scale(float _scaleX, float _scaleY, float _scaleZ)
 {
 	Utils::Composite<BaseObject>::ScaleChilds(_scaleX, _scaleY, _scaleZ);
-	scaling.x = _scaleX;
-	scaling.y = _scaleY;
-	scaling.z = _scaleZ;
+	scale.x = _scaleX;
+	scale.y = _scaleY;
+	scale.z = _scaleZ;
 }
 
-mat4 BaseObject::GetWorldMatrix()
+void BaseObject::LookAt(Math::Vector3 _targetPosition)
 {
-	return GetRotationMatrix() * GetScalingMatrix() * GetTranslateMatrix();
+	//rotation = Math::Quaternion::LookAt(position, _targetPosition);
+}
+
+Math::Matrix4 BaseObject::GetWorldMatrix()
+{
+	Math::Matrix4 rotationMatrix = GetRotationMatrix();
+	Math::Matrix4 scalingMatrix = GetScalingMatrix();
+	Math::Matrix4 TranslateMatrix = GetTranslateMatrix();
+
+	return rotationMatrix * scalingMatrix * TranslateMatrix;
 }
 
 void BaseObject::SetRotationSpeed(float _speed)
@@ -79,19 +99,49 @@ void BaseObject::SetRotationSpeed(float _speed)
 	speedRotation = _speed;
 }
 
-mat4 BaseObject::GetRotationMatrix()
+Math::Matrix4 BaseObject::GetRotationMatrix()
 {
-	return orientate4(rotation);
+	return Math::Matrix4::QuaternionToRotationMatrix(rotation);
 }
 
-mat4 BaseObject::GetScalingMatrix()
+Math::Matrix4 BaseObject::GetScalingMatrix()
 {
-	return scale(scaling);
+	return Math::Matrix4::VectorToScaleMatrix(scale);
 }
 
-mat4 BaseObject::GetTranslateMatrix()
+Math::Matrix4 BaseObject::GetTranslateMatrix()
 {
-	return translate(position);
+	return Math::Matrix4::VectorToTranslationMatrix(position);
+}
+
+Math::Vector3& BaseObject::forward()
+{
+	return forwardVector;
+}
+
+Math::Vector3& BaseObject::back()
+{
+	return -forwardVector;
+}
+
+Math::Vector3& BaseObject::left() 
+{
+	return -rightVector;
+}
+
+Math::Vector3& BaseObject::right()
+{
+	return rightVector;
+}
+
+Math::Vector3& BaseObject::up()
+{
+	return upVector;
+}
+
+Math::Vector3& BaseObject::down()
+{
+	return -upVector;
 }
 
 }

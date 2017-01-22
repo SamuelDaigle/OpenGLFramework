@@ -6,9 +6,9 @@ namespace Rendering
 	Square::Square(IShader& _shader) :
 		BaseObject(_shader)
 	{
-		scaling.x = 1.0f;
-		scaling.y = 1.0f;
-		scaling.z = 1.0f;
+		scale.x = 1.0f;
+		scale.y = 1.0f;
+		scale.z = 1.0f;
 		initializeBuffers();
 	}
 
@@ -22,7 +22,7 @@ namespace Rendering
 		shutdownBuffers();
 	}
 
-	void Square::Render(Framework::OpenGL& _openGL)
+	void Square::Render(Math::Matrix4& _view, Math::Matrix4& _projection)
 	{
 		glBindVertexArray(vertexArrayId);
 		glDrawElements(GL_TRIANGLES, indexCount, GL_UNSIGNED_INT, 0);

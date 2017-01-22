@@ -4,31 +4,20 @@
 
 #pragma once
 
-#include "..\Dependencies\glm\gtc\matrix_transform.hpp"
-#include "..\Dependencies\glm\gtx\euler_angles.hpp"
-#include "..\Dependencies\glm\gtx\transform.hpp"
+#include "..\Framework\BaseObject.h"
 
 using namespace glm;
 
 namespace Camera
 {
-	class Camera
+	class Camera : public Framework::BaseObject
 	{
 	public:
-		void Initialize();
+		Camera();
 		void Destroy();
 
 		void Update();
-		void LookAt(vec3 _position);
-		mat4 GetViewMatrix();
-
-		mat4 view;
-		vec3 rotation;
-
-		vec3 position;
-		vec3 target;
-		vec3 forward;
-		vec3 up;
-		vec3 right;
+		Math::Matrix4 GetViewMatrix();
+		Math::Matrix4 GetRotationMatrix();
 	};
 }

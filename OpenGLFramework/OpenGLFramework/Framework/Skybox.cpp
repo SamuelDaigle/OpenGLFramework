@@ -61,15 +61,14 @@ namespace Framework
 
 	}
 
-	void Skybox::Render(vec3 _cameraRotation)
+	void Skybox::Render(Math::Matrix4& _view, Math::Matrix4& _projection)
 	{
 		// Prepare shader.
 		glDepthMask(GL_FALSE);
 		shader->Use();
-		mat4 proj = perspective<float>(90.0f, (float)glutGet(GLUT_SCREEN_WIDTH) / (float)glutGet(GLUT_SCREEN_HEIGHT), 0.1f, 100000.0f);
-		mat4 view = orientate4(_cameraRotation);
+		Math::Matrix4 proj = perspective<float>(90.0f, (float)glutGet(GLUT_SCREEN_WIDTH) / (float)glutGet(GLUT_SCREEN_HEIGHT), 0.1f, 100000.0f);
 		shader->SetProjectionMatrix(proj);
-		shader->SetViewMatrix(view);
+		shader->SetViewMatrix(_view);
 
 		// Draw.
 		glBindVertexArray(skyboxVAO);

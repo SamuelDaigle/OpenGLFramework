@@ -6,9 +6,9 @@ namespace Rendering
 	Triangle::Triangle(IShader& _shader) :
 		BaseObject(_shader)
 	{
-		scaling.x = 1;
-		scaling.y = 1;
-		scaling.z = 1;
+		scale.x = 1;
+		scale.y = 1;
+		scale.z = 1;
 		initializeBuffers();
 	}
 
@@ -17,7 +17,7 @@ namespace Rendering
 		shutdownBuffers();
 	}
 
-	void Triangle::Render(Framework::OpenGL& _openGL)
+	void Triangle::Render(Math::Matrix4& _view, Math::Matrix4& _projection)
 	{
 		glBindVertexArray(vertexArrayId);
 		glDrawElements(GL_TRIANGLES, indexCount, GL_UNSIGNED_INT, 0);

@@ -16,8 +16,8 @@
 #include "Planet.h"
 #include "Text\Text.h"
 #include "Interface\IScene.h"
-
-#include "Dependencies\glm\common.hpp"
+#include "Camera\Camera.h"
+#include "Math\Vector3.h"
 
 #pragma once
 
@@ -43,6 +43,7 @@ namespace Application
 		IShader* customShader;
 		Framework::Skybox* skybox;
 		Rendering::Light* light;
+		Camera::Camera* camera;
 	};
 
 }

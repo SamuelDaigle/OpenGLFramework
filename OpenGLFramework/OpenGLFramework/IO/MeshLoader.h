@@ -12,11 +12,6 @@
 
 using namespace std;
 
-#include "..\Dependencies\glm\glm.hpp"
-#include "..\Dependencies\glm\gtc\matrix_transform.hpp"
-
-using namespace glm;
-
 #include "..\Dependencies\assimp\Importer.hpp"
 #include "..\Dependencies\assimp\scene.h"
 #include "..\Dependencies\assimp\postprocess.h"

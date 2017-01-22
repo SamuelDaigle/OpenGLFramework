@@ -5,7 +5,7 @@
 #pragma once
 
 #include <vector>
-#include "..\Framework\OpenGL.h"
+#include "..\Math\Matrix4.h"
 
 namespace Utils
 {
@@ -20,7 +20,7 @@ public:
 
 	void UpdateChilds();
 
-	void RenderChilds(Framework::OpenGL& _openGL);
+	void RenderChilds(Math::Matrix4& _view, Math::Matrix4& _projection);
 
 	void SetChildsPosition(float _x, float _y, float _z);
 

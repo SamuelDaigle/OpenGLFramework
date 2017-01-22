@@ -14,7 +14,7 @@ public:
 
 	void Destroy() override;
 
-	void Render(Framework::OpenGL& _openGL) override;
+	void Render(Math::Matrix4& _view, Math::Matrix4& _projection) override;
 
 private:
 	Rendering::Model* model;

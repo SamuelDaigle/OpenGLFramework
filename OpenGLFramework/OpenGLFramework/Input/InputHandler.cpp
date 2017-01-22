@@ -26,12 +26,12 @@ namespace Input
 		return keyStates[_key];
 	}
 
-	vec2 InputHandler::GetCursorPosition()
+	Math::Vector2 InputHandler::GetCursorPosition()
 	{
 		return cursorPosition;
 	}
 
-	vec2 InputHandler::GetCursorDelta()
+	Math::Vector2 InputHandler::GetCursorDelta()
 	{
 		return cursorPosition - previousCursorPosition;
 	}
@@ -49,7 +49,7 @@ namespace Input
 	void InputHandler::OnMouseMove(int _x, int _y)
 	{
 		previousCursorPosition = cursorPosition;
-		cursorPosition = vec2(_x, _y);
+		cursorPosition = Math::Vector2(_x, _y);
 		if (previousCursorPosition.x == 0 && previousCursorPosition.y == 0)
 		{
 			LateUpdate();

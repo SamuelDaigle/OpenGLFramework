@@ -24,15 +24,15 @@ namespace Application
 		rootObject->Add(planetComposite);
 
 
-		planetComposite->SetPosition(25, 0, 0);
+		planetComposite->position = Math::Vector3(25, 0, 0);
 
 		skybox = new Framework::Skybox();
 		skybox->Initialize("../Content/skybox/space.bmp", textureLoader);
 
 		light = new Rendering::Light(*advancedShader);
 
-		ptrOpenGL->GetCamera()->position.z += 5;
-
+		camera = new Camera::Camera();
+		camera->position.z += 5;
 	}
 
 	void Scene::Destroy()
@@ -45,38 +45,33 @@ namespace Application
 	void Scene::input()
 	{
 		// Rotation
-		ptrOpenGL->GetCamera()->rotation.z -= ptrInputHandler->GetCursorDelta().x / 500;
-		ptrOpenGL->GetCamera()->rotation.x += ptrInputHandler->GetCursorDelta().y / 500;
+		camera->Rotate(0, -ptrInputHandler->GetCursorDelta().x / 10, 0);
+		camera->Rotate(ptrInputHandler->GetCursorDelta().y / 10, 0, 0);
 
 		// Move with arrow.
 		if (ptrInputHandler->IsKeyDown('a'))
 		{
-			ptrOpenGL->GetCamera()->position -= ptrOpenGL->GetCamera()->right * vec3(0.05, 0.05, 0.05);
+			camera->position -= camera->right() * Math::Vector3(0.05, 0.05, 0.05);
 		}
 		else if (ptrInputHandler->IsKeyDown('w'))
 		{
-			ptrOpenGL->GetCamera()->position -= ptrOpenGL->GetCamera()->forward * vec3(0.05, 0.05, 0.05);
+			camera->position -= camera->forward() * Math::Vector3(0.05, 0.05, 0.05);
 		}
 		else if (ptrInputHandler->IsKeyDown('d'))
 		{
-			ptrOpenGL->GetCamera()->position += ptrOpenGL->GetCamera()->right * vec3(0.05, 0.05, 0.05);
+			camera->position += camera->right() * Math::Vector3(0.05, 0.05, 0.05);
 		}
 		else if (ptrInputHandler->IsKeyDown('s'))
 		{
-			ptrOpenGL->GetCamera()->position += ptrOpenGL->GetCamera()->forward * vec3(0.05, 0.05, 0.05);
+			camera->position += camera->forward() * Math::Vector3(0.05, 0.05, 0.05);
 		}
 	}
 
 	void Scene::render()
 	{
-		skybox->Render(ptrOpenGL->GetCamera()->rotation);
-
-		// Draw sun.
-		rootObject->Render(*ptrOpenGL);
-
-		// Draw every planets.
-		glUniform3f(glGetUniformLocation(advancedShader->GetGlProgram(), "viewPos"), ptrOpenGL->GetCamera()->position.x, ptrOpenGL->GetCamera()->position.y, ptrOpenGL->GetCamera()->position.z);
-		light->Apply();
+		camera->Update();
+		skybox->Render(camera->GetRotationMatrix(), ptrOpenGL->GetProjMatrix());
+		//rootObject->Render(camera->GetViewMatrix(), ptrOpenGL->GetProjMatrix());
 	}
 
 	void Scene::update()

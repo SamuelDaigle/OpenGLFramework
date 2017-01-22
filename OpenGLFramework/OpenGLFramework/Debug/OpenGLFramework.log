@@ -1,1 +1,40 @@
-﻿  OpenGLFramework.vcxproj -> C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\Debug\OpenGLFramework.lib
+﻿  Vector3.cpp
+  BaseObject.cpp
+c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\framework\baseobject.cpp(10): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Generating Code...
+c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\framework\baseobject.cpp(122): warning C4172: returning address of local variable or temporary
+c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\framework\baseobject.cpp(127): warning C4172: returning address of local variable or temporary
+c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\framework\baseobject.cpp(142): warning C4172: returning address of local variable or temporary
+c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\math\vector3.cpp(52): warning C4717: 'Math::Vector3::operator-': recursive on all control paths, function will cause runtime stack overflow
+c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\math\vector3.cpp(57): warning C4717: 'Math::Vector3::operator*': recursive on all control paths, function will cause runtime stack overflow
+  Compiling...
+  Vertex.cpp
+  MeshBank.cpp
+  TextHolder.cpp
+  Text.cpp
+  Triangle.cpp
+  Square.cpp
+  SkyboxShader.cpp
+  Model.cpp
+  Mesh.cpp
+  Light.cpp
+  BasicShader.cpp
+  BaseShader.cpp
+  AdvancedShader.cpp
+  Quaternion.cpp
+c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\math\quaternion.cpp(19): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\math\quaternion.cpp(26): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+  Matrix4.cpp
+  Matrix3.cpp
+  MeshLoader.cpp
+  Window.cpp
+  Skybox.cpp
+  OpenGL.cpp
+c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\framework\opengl.cpp(9): warning C4305: 'argument': truncation from 'int' to 'GLboolean'
+c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\framework\opengl.cpp(9): warning C4309: 'argument': truncation of constant value
+  Generating Code...
+c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\math\matrix3.cpp(19): warning C4717: 'Math::Matrix3::operator*': recursive on all control paths, function will cause runtime stack overflow
+  Compiling...
+  Camera.cpp
+  Generating Code...
+  OpenGLFramework.vcxproj -> C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\Debug\OpenGLFramework.lib

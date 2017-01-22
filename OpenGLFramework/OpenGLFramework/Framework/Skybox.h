@@ -20,7 +20,7 @@ namespace Framework
 		void Initialize(const GLchar* _filename, IO::TextureLoader* _textureLoader);
 		void Destroy();
 
-		void Render(vec3 _cameraRotation);
+		void Render(Math::Matrix4& _view, Math::Matrix4& _projection);
 
 	private:
 		void loadMesh();

@@ -1,6 +1,8 @@
-#include "..\Dependencies\glm\glm.hpp"
 
-using namespace glm;
+#pragma once
+
+#include "..\Math\Vector3.h"
+#include "..\Math\Vector2.h"
 
 namespace Utils
 {
@@ -9,11 +11,11 @@ namespace Utils
 	class Vertex
 	{
 	public:
-		Vertex(vec3 _position, vec2 _textureCoordinate, vec3 _normal);
+		Vertex(Math::Vector3 _position, Math::Vector2 _textureCoordinate, Math::Vector3 _normal);
 
-		vec3 Position;
-		vec2 TextureCoordinate;
-		vec3 Normal;
+		Math::Vector3 Position;
+		Math::Vector2 TextureCoordinate;
+		Math::Vector3 Normal;
 	};
 
 }

@@ -17,9 +17,9 @@ namespace Rendering
 
 		void Apply();
 
-		vec3 Ambiant;
-		vec3 Diffuse;
-		vec3 Specular;
+		Math::Vector3 Ambiant;
+		Math::Vector3 Diffuse;
+		Math::Vector3 Specular;
 	};
 
 }

@@ -23,28 +23,28 @@ namespace Rendering
 		return glProgram;
 	}
 
-	void BaseShader::SetWorldMatrix(mat4 _worldMatrix)
+	void BaseShader::SetWorldMatrix(Math::Matrix4 _worldMatrix)
 	{
 		unsigned int shaderVariableLocation;
 		shaderVariableLocation = glGetUniformLocation(glProgram, "worldMatrix");
 		glUniformMatrix4fv(shaderVariableLocation, 1, false, MatrixToFloatArray(_worldMatrix));
 	}
 
-	void BaseShader::SetViewMatrix(mat4 _viewMatrix)
+	void BaseShader::SetViewMatrix(Math::Matrix4 _viewMatrix)
 	{
 		unsigned int shaderVariableLocation;
 		shaderVariableLocation = glGetUniformLocation(glProgram, "viewMatrix");
 		glUniformMatrix4fv(shaderVariableLocation, 1, false, MatrixToFloatArray(_viewMatrix));
 	}
 
-	void BaseShader::SetProjectionMatrix(mat4 _projMatrix)
+	void BaseShader::SetProjectionMatrix(Math::Matrix4 _projMatrix)
 	{
 		unsigned int shaderVariableLocation;
 		shaderVariableLocation = glGetUniformLocation(glProgram, "projectionMatrix");
 		glUniformMatrix4fv(shaderVariableLocation, 1, false, MatrixToFloatArray(_projMatrix));
 	}
 
-	GLfloat* BaseShader::MatrixToFloatArray(mat4 _matrix)
+	GLfloat* BaseShader::MatrixToFloatArray(Math::Matrix4 _matrix)
 	{
 		GLfloat* floatArray = new GLfloat[16];
 		const int MATRIX_SIZE = 4;

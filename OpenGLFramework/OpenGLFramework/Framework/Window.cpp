@@ -8,7 +8,6 @@ namespace Framework
 		initializeWindow();
 
 		openGL = new OpenGL();
-		openGL->Initialize();
 
 		inputhandler = new Input::InputHandler();
 		inputhandler->Initialize();

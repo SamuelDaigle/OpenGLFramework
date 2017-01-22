@@ -4,8 +4,8 @@
 
 #pragma once
 
-#include "..\Camera\Camera.h"
 #include "..\IO\ShaderLoader.h"
+#include "..\Math\Matrix4.h"
 
 #include <iostream>
 #include <vector>
@@ -18,24 +18,19 @@ namespace Framework
 	class OpenGL
 	{
 	public:
-		void Initialize();
+		OpenGL();
 		void Destroy();
 
-		mat4& GetViewMatrix();
-		mat4& GetProjMatrix();
-		Camera::Camera* GetCamera();
+		Math::Matrix4& GetProjMatrix();
 
 		void BeginScene();
 		void EndScene();
 
 	private:
-		void setBuffer(int _objectID, int _bufferID, GLfloat* _bufferData);
-
 		unsigned int* vertexArrayObjID;
 		unsigned int* vertexBufferObjID[2];
 
-		Camera::Camera* camera;
-		mat4 projectionMatrix;
+		Math::Matrix4 projectionMatrix;
 	};
 
 }

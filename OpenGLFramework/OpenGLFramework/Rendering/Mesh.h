@@ -12,19 +12,18 @@
 #include <vector>
 using namespace std;
 
-#include "..\Dependencies\glm\glm.hpp"
-#include "..\Dependencies\glm\gtc\matrix_transform.hpp"
 #include "..\Dependencies\assimp\mesh.h"
-
 #include "..\Interface\IShader.h"
+#include "..\Math\Vector3.h"
+#include "..\Math\Vector2.h"
 
 namespace Rendering
 {
 
 	struct Vertex {
-		glm::vec3 Position;
-		glm::vec3 Normal;
-		glm::vec2 TexCoords;
+		Math::Vector3 Position;
+		Math::Vector3 Normal;
+		Math::Vector2 TexCoords;
 	};
 
 	class Mesh {

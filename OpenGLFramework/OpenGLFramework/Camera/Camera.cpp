@@ -2,36 +2,29 @@
 
 namespace Camera
 {
-	void Camera::Initialize()
+
+	Camera::Camera() :
+		BaseObject::BaseObject()
 	{
-		rotation = vec3(0, 0, 0);
-		position = vec3(0, 0, 0);
-		target = vec3(0, 0, 0);
-		up = vec3(0, 1, 0);
-		LookAt(target);
 	}
 
 	void Camera::Destroy()
 	{
-
+		BaseObject::Destroy();
 	}
 
 	void Camera::Update()
 	{
-		target = orientate3(rotation) * vec3(0, 0, 1);
-		forward = normalize(target);
-		right = normalize(cross(up, forward));
-
-		LookAt(forward);
+		BaseObject::Update();
 	}
 
-	void Camera::LookAt(vec3 _targetPosition)
+	Math::Matrix4 Camera::GetViewMatrix()
 	{
-		view = lookAt(vec3(0, 0, 0), _targetPosition, vec3(0.0f, 1.0f, 0.0f)) * translate(position);
+		return BaseObject::GetWorldMatrix();
 	}
 
-	mat4 Camera::GetViewMatrix()
+	Math::Matrix4 Camera::GetRotationMatrix()
 	{
-		return view;
+		return BaseObject::GetRotationMatrix();
 	}
 }

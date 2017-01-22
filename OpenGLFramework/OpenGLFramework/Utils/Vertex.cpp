@@ -3,7 +3,7 @@
 namespace Utils
 {
 
-	Vertex::Vertex(vec3 _position, vec2 _textureCoordinate, vec3 _normal)
+	Vertex::Vertex(Math::Vector3 _position, Math::Vector2 _textureCoordinate, Math::Vector3 _normal)
 	{
 		Position = _position;
 		TextureCoordinate = _textureCoordinate;

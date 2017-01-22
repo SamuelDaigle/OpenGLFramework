@@ -83,7 +83,7 @@ namespace IO
 		for (GLuint i = 0; i < mesh->mNumVertices; i++)
 		{
 			Rendering::Vertex vertex;
-			vec3 vertexPlaceholderData;
+			Math::Vector3 vertexPlaceholderData;
 
 			// Positions
 			vertexPlaceholderData.x = mesh->mVertices[i].x;
@@ -100,13 +100,13 @@ namespace IO
 			// Texture Coordinates
 			if (mesh->mTextureCoords[0])
 			{
-				vec2 vec;
+				Math::Vector2 vec;
 				vec.x = mesh->mTextureCoords[0][i].x;
 				vec.y = mesh->mTextureCoords[0][i].y;
 				vertex.TexCoords = vec;
 			}
 			else
-				vertex.TexCoords = vec2(0.0f, 0.0f);
+				vertex.TexCoords = Math::Vector2(0.0f, 0.0f);
 
 			vertices.push_back(vertex);
 		}
