@@ -29,11 +29,11 @@ namespace Utils
 	}
 
 	template <class T>
-	void Composite<T>::RenderChilds(ICamera& _camera)
+	void Composite<T>::RenderChilds(ICamera& _camera, Math::Matrix4& _parentWorldMatrix)
 	{
 		for each (T* childObject in childObjects)
 		{
-			childObject->Render(_camera);
+			childObject->Render(_camera, _parentWorldMatrix);
 		}
 	}
 
@@ -56,11 +56,11 @@ namespace Utils
 	}
 
 	template <class T>
-	void Composite<T>::RotateChilds(float _angleX, float _angleY, float _angleZ)
+	void Composite<T>::RotateChilds(float _angle, Math::Vector3& _axis)
 	{
 		for each (T* childObject in childObjects)
 		{
-			childObject->Rotate(_angleX, _angleY, _angleZ);
+			childObject->Rotate(_angle, _axis);
 		}
 	}
 

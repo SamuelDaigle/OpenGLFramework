@@ -23,13 +23,15 @@ namespace Framework
 		BaseObject();
 		BaseObject(IShader& _shader);
 		virtual void Destroy();
-		virtual void Render(ICamera& _camera);
+		virtual void Render(ICamera& _camera, Math::Matrix4& _parentWorldMatrix);
 		virtual void Update();
 
 		virtual void SetColor(float _r, float _g, float _b);
 		virtual void Translate(float _x, float _y, float _z);
 		virtual void Rotate(float _angle, Math::Vector3& _axis);
 		virtual void Scale(float _scaleX, float _scaleY, float _scaleZ);
+
+		virtual std::vector<BaseObject*> GetChilds();
 
 		virtual void LookAt(Math::Vector3 _position);
 
@@ -56,7 +58,7 @@ namespace Framework
 
 		virtual Math::Matrix4& GetRotationMatrix();
 		virtual Math::Matrix4 GetScalingMatrix();
-		virtual Math::Matrix4 GetTranslateMatrix();
+		virtual Math::Matrix4 GetTranslationMatrix();
 
 	private:
 		Math::Vector3 forwardVector;

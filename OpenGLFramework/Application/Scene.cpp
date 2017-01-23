@@ -20,6 +20,7 @@ namespace Application
 
 		rootObject = new Planet(meshLoader, *advancedShader);
 		light = new Framework::Light(*advancedShader);
+		rootObject->Add(light);
 		light->Translate(2.5f, 0, 0);
 		Framework::BaseObject* planetComposite = new Planet(meshLoader, *advancedShader);
 		rootObject->Add(planetComposite);
@@ -46,8 +47,8 @@ namespace Application
 		camera->Update();
 
 		// Rotation
-		camera->Rotate(ptrInputHandler->GetCursorDelta().x / 500, Math::Vector3(1.0f, 0.0f, 0.0f));
-		camera->Rotate(ptrInputHandler->GetCursorDelta().y / 500, Math::Vector3(0.0f, 1.0f, 0.0f));
+		camera->Rotate(ptrInputHandler->GetCursorDelta().x / 5, Math::Vector3(1.0f, 0.0f, 0.0f));
+		camera->Rotate(ptrInputHandler->GetCursorDelta().y / 5, Math::Vector3(0.0f, 1.0f, 0.0f));
 
 		// Move with arrow.
 		if (ptrInputHandler->IsKeyDown('a'))
@@ -66,14 +67,22 @@ namespace Application
 		{
 			camera->position += camera->forward() * Math::Vector3(0.05, 0.05, 0.05);
 		}
+		if (ptrInputHandler->IsKeyDown('l'))
+		{
+			rootObject->Rotate(1, Math::Vector3(0.0f, 1.0f, 0.0f));
+		}
+
+		if (ptrInputHandler->IsKeyDown('k'))
+		{
+			rootObject->GetChilds()[1]->Rotate(1, Math::Vector3(0.0f, 1.0f, 0.0f));
+		}
 	}
 
 	void Scene::render()
 	{
 		skybox->Render(*camera);
 		rootObject->Scale(1, 1, 1);
-		light->Render(*camera);
-		rootObject->Render(*camera);
+		rootObject->Render(*camera, Math::Matrix4());
 	}
 
 	void Scene::update()

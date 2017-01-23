@@ -23,16 +23,17 @@ void BaseObject::Destroy()
 	Utils::Composite<BaseObject>::DestroyChilds();
 }
 
-void BaseObject::Render(ICamera& _camera)
+void BaseObject::Render(ICamera& _camera, Math::Matrix4& _parentWorldMatrix)
 {
-	Utils::Composite<BaseObject>::RenderChilds(_camera);
+	Math::Matrix4 world = _parentWorldMatrix * GetWorldMatrix();
+	Utils::Composite<BaseObject>::RenderChilds(_camera, world);
 
 	if (shader)
 	{
 		shader->Use();
 		shader->SetViewMatrix(_camera.GetViewMatrix());
 		shader->SetProjectionMatrix(_camera.GetProjectionMatrix());
-		shader->SetWorldMatrix(GetWorldMatrix());
+		shader->SetWorldMatrix(world);
 	}
 }
 
@@ -73,6 +74,11 @@ void BaseObject::Scale(float _scaleX, float _scaleY, float _scaleZ)
 	scale.z = _scaleZ;
 }
 
+std::vector<BaseObject*> BaseObject::GetChilds()
+{
+	return childObjects;
+}
+
 void BaseObject::LookAt(Math::Vector3 _targetPosition)
 {
 	//rotation = Math::Quaternion::LookAt(position, _targetPosition);
@@ -82,9 +88,9 @@ Math::Matrix4 BaseObject::GetWorldMatrix()
 {
 	Math::Matrix4 rotationMatrix = GetRotationMatrix();
 	Math::Matrix4 scalingMatrix = GetScalingMatrix();
-	Math::Matrix4 translateMatrix = GetTranslateMatrix();
+	Math::Matrix4 translateMatrix = GetTranslationMatrix();
 
-	return rotationMatrix * scalingMatrix * translateMatrix;
+	return scalingMatrix * translateMatrix * rotationMatrix;
 }
 
 void BaseObject::SetRotationSpeed(float _speed)
@@ -104,7 +110,7 @@ Math::Matrix4 BaseObject::GetScalingMatrix()
 	return Math::Matrix4::VectorToScaleMatrix(scale);
 }
 
-Math::Matrix4 BaseObject::GetTranslateMatrix()
+Math::Matrix4 BaseObject::GetTranslationMatrix()
 {
 	return Math::Matrix4::VectorToTranslationMatrix(position);
 }

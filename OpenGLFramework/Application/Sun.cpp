@@ -11,8 +11,8 @@ void Sun::Destroy()
 	BaseObject::Destroy();
 }
 
-void Sun::Render(ICamera& _camera)
+void Sun::Render(ICamera& _camera, Math::Matrix4& _parentWorldMatrix)
 {
-	BaseObject::Render(_camera);
+	BaseObject::Render(_camera, _parentWorldMatrix);
 	model->Draw(*shader);
 }

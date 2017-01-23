@@ -44,7 +44,7 @@ namespace Camera
 
 	Math::Matrix4 Camera::GetViewMatrix()
 	{
-		return GetWorldMatrix();
+		return GetRotationMatrix() * GetScalingMatrix() * GetTranslationMatrix();
 	}
 
 	Math::Matrix4& Camera::GetRotation()

@@ -45,6 +45,6 @@ namespace Math
 
 	Matrix4 Matrix4::Rotate(glm::mat4& _vector, float _angle, glm::vec3& _axis)
 	{
-		return glm::rotate(_vector, _angle, _axis);
+		return glm::rotate(_vector, glm::radians(_angle), _axis);
 	}
 }
