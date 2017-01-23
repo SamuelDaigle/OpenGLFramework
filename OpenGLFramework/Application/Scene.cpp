@@ -24,8 +24,14 @@ namespace Application
 		light->Translate(2.5f, 0, 0);
 		Framework::BaseObject* planetComposite = new Planet(meshLoader, *advancedShader);
 		rootObject->Add(planetComposite);
-
 		planetComposite->position.x = 5;
+		planetComposite->Scale(0.5f, 0.5f, 0.5f);
+
+
+		Framework::BaseObject* moon = new Planet(meshLoader, *advancedShader);
+		planetComposite->Add(moon);
+		moon->Translate(0, 0, 10);
+		moon->Scale(0.25f, 0.25f, 0.25f);
 
 		skybox = new Framework::Skybox();
 		skybox->Initialize("../Content/skybox/space.bmp", textureLoader);
@@ -74,14 +80,18 @@ namespace Application
 
 		if (ptrInputHandler->IsKeyDown('k'))
 		{
-			rootObject->GetChilds()[1]->Rotate(1, Math::Vector3(0.0f, 1.0f, 0.0f));
+			rootObject->GetChilds()[1]->Rotate(-1, Math::Vector3(0.0f, 1.0f, 0.0f));
+		}
+
+		if (ptrInputHandler->IsKeyDown('j'))
+		{
+			rootObject->GetChilds()[1]->GetChilds()[0]->Rotate(1, Math::Vector3(0.0f, 1.0f, 0.0f));
 		}
 	}
 
 	void Scene::render()
 	{
 		skybox->Render(*camera);
-		rootObject->Scale(1, 1, 1);
 		rootObject->Render(*camera, Math::Matrix4());
 	}
 

@@ -1,10 +1,2 @@
-﻿  Camera.cpp
-  BaseObject.cpp
-  Light.cpp
-  Skybox.cpp
-  Square.cpp
-  Triangle.cpp
-  Window.cpp
-  Text.cpp
-  TextHolder.cpp
+﻿  BaseObject.cpp
   OpenGLFramework.vcxproj -> C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.lib

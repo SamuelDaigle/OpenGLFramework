@@ -4,15 +4,12 @@ namespace Framework
 {
 
 BaseObject::BaseObject() :
-	Utils::Composite<BaseObject>()
+	Utils::Composite<BaseObject>(),
+	scale(1, 1, 1), position(0, 0, 0), upVector(0, 1, 0)
 {
-	scale = Math::Vector3(1.0f, 1.0f, 1.0f);
-	position = Math::Vector3(0, 0, 0);
-	upVector = Math::Vector3(0, 1, 0);
 }
 
-BaseObject::BaseObject(IShader& _shader) :
-	Utils::Composite<BaseObject>()
+BaseObject::BaseObject(IShader& _shader)
 {
 	shader = &_shader;
 	BaseObject::BaseObject();
@@ -68,6 +65,8 @@ void BaseObject::Rotate(float _angle, Math::Vector3& _axis)
 
 void BaseObject::Scale(float _scaleX, float _scaleY, float _scaleZ)
 {
+	if (scale.x == 0.0f || scale.y == 0.0f || scale.z == 0.0f)
+		std::cout << "WARNING -- Setting an object with a scale of 0." << std::endl;
 	Utils::Composite<BaseObject>::ScaleChilds(_scaleX, _scaleY, _scaleZ);
 	scale.x = _scaleX;
 	scale.y = _scaleY;
@@ -91,11 +90,6 @@ Math::Matrix4 BaseObject::GetWorldMatrix()
 	Math::Matrix4 translateMatrix = GetTranslationMatrix();
 
 	return scalingMatrix * translateMatrix * rotationMatrix;
-}
-
-void BaseObject::SetRotationSpeed(float _speed)
-{
-	speedRotation = _speed;
 }
 
 Math::Matrix4& BaseObject::GetRotationMatrix()

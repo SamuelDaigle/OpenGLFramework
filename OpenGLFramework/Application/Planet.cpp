@@ -4,6 +4,7 @@ Planet::Planet(IO::MeshLoader* _meshLoader, IShader& _shader) :
 	BaseObject::BaseObject(_shader)
 {
 	model = new Rendering::Model("../Content/planet/planet.obj", _meshLoader);
+	BaseObject::Scale(1, 1, 1);
 }
 
 void Planet::Destroy()

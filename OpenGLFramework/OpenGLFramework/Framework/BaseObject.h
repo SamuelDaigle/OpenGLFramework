@@ -36,7 +36,6 @@ namespace Framework
 		virtual void LookAt(Math::Vector3 _position);
 
 		virtual Math::Matrix4 GetWorldMatrix();
-		virtual void SetRotationSpeed(float _speed);
 
 		virtual Math::Vector3& forward();
 		virtual Math::Vector3& back();
@@ -53,7 +52,6 @@ namespace Framework
 		float r = 1;
 		float g = 1;
 		float b = 0.2f;
-		float speedRotation = 0.001f;
 		IShader* shader;
 
 		virtual Math::Matrix4& GetRotationMatrix();
