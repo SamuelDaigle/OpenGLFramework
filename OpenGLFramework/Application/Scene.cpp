@@ -18,9 +18,9 @@ namespace Application
 		advancedShader = new Rendering::AdvancedShader();
 		customShader = new Application::CustomShader();
 
-		rootObject = new Planet(meshLoader, *basicShader);
+		rootObject = new Planet(meshLoader, *advancedShader);
 		light = new Framework::Light(*advancedShader);
-		//rootObject->Add(light);
+		light->Translate(2.5f, 0, 0);
 		Framework::BaseObject* planetComposite = new Planet(meshLoader, *advancedShader);
 		rootObject->Add(planetComposite);
 
@@ -72,6 +72,7 @@ namespace Application
 	{
 		skybox->Render(*camera);
 		rootObject->Scale(1, 1, 1);
+		light->Render(*camera);
 		rootObject->Render(*camera);
 	}
 
