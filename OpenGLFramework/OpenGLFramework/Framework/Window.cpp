@@ -9,8 +9,12 @@ namespace Framework
 
 		openGL = new OpenGL();
 
+		glutSetCursor(GLUT_CURSOR_NONE);
 		inputhandler = new Input::InputHandler();
-		inputhandler->Initialize();
+
+		Math::Vector2 cursorPosition = Math::Vector2((float)glutGet(GLUT_SCREEN_WIDTH) / 2.0f, (float)glutGet(GLUT_SCREEN_HEIGHT) / 2.0f);
+		inputhandler->Initialize(cursorPosition);
+		glutWarpPointer(cursorPosition.x, cursorPosition.y);
 	}
 
 	void Window::Destroy()
@@ -21,6 +25,9 @@ namespace Framework
 
 	void Window::Frame()
 	{
+		Math::Vector2 cursorPosition = Math::Vector2((float)glutGet(GLUT_SCREEN_WIDTH) / 2.0f, (float)glutGet(GLUT_SCREEN_HEIGHT) / 2.0f);
+		inputhandler->Update(cursorPosition);
+
 		openGL->BeginScene();
 		if (scene)
 		{
@@ -29,7 +36,11 @@ namespace Framework
 			scene->render();
 		}
 		openGL->EndScene();
-		inputhandler->LateUpdate();
+
+		if (inputhandler->HasMovedMouse())
+		{
+			glutWarpPointer(cursorPosition.x, cursorPosition.y);
+		}
 
 		if (hasExited())
 		{

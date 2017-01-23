@@ -30,7 +30,7 @@ namespace Application
 
 		Framework::BaseObject* moon = new Planet(meshLoader, *advancedShader);
 		planetComposite->Add(moon);
-		moon->Translate(0, 0, 10);
+		moon->Translate(0, 0, 7.5f);
 		moon->Scale(0.25f, 0.25f, 0.25f);
 
 		skybox = new Framework::Skybox();
@@ -80,7 +80,7 @@ namespace Application
 
 		if (ptrInputHandler->IsKeyDown('k'))
 		{
-			rootObject->GetChilds()[1]->Rotate(-1, Math::Vector3(0.0f, 1.0f, 0.0f));
+			rootObject->GetChilds()[1]->Rotate(-3, Math::Vector3(0.0f, 1.0f, 0.0f));
 		}
 
 		if (ptrInputHandler->IsKeyDown('j'))
