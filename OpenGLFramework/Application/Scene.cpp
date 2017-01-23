@@ -18,17 +18,16 @@ namespace Application
 		advancedShader = new Rendering::AdvancedShader();
 		customShader = new Application::CustomShader();
 
-		Framework::BaseObject* planetComposite = new Planet(meshLoader, *advancedShader);
-
 		rootObject = new Planet(meshLoader, *basicShader);
+		light = new Framework::Light(*advancedShader);
+		//rootObject->Add(light);
+		Framework::BaseObject* planetComposite = new Planet(meshLoader, *advancedShader);
 		rootObject->Add(planetComposite);
 
-		planetComposite->position = Math::Vector3(25, 0, 0);
+		planetComposite->position.x = 5;
 
 		skybox = new Framework::Skybox();
 		skybox->Initialize("../Content/skybox/space.bmp", textureLoader);
-
-		light = new Rendering::Light(*advancedShader);
 
 		camera = new Camera::Camera();
 		camera->position.z -= 5;
@@ -36,6 +35,7 @@ namespace Application
 
 	void Scene::Destroy()
 	{
+		SAFE_DESTROY(camera);
 		SAFE_DESTROY(light);
 		SAFE_DESTROY(rootObject); // destroys its childs.
 		// Do not delete ptrOpenGL as the window contains it.
@@ -70,9 +70,9 @@ namespace Application
 
 	void Scene::render()
 	{
-		skybox->Render(camera->GetRotationMatrix(), ptrOpenGL->GetProjMatrix());
+		skybox->Render(*camera);
 		rootObject->Scale(1, 1, 1);
-		rootObject->Render(camera->GetViewMatrix(), ptrOpenGL->GetProjMatrix());
+		rootObject->Render(*camera);
 	}
 
 	void Scene::update()

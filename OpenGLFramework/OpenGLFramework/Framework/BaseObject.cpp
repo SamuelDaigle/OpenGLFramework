@@ -23,15 +23,15 @@ void BaseObject::Destroy()
 	Utils::Composite<BaseObject>::DestroyChilds();
 }
 
-void BaseObject::Render(Math::Matrix4& _view, Math::Matrix4& _projection)
+void BaseObject::Render(ICamera& _camera)
 {
-	Utils::Composite<BaseObject>::RenderChilds(_view, _projection);
+	Utils::Composite<BaseObject>::RenderChilds(_camera);
 
 	if (shader)
 	{
 		shader->Use();
-		shader->SetViewMatrix(_view);
-		shader->SetProjectionMatrix(_projection);
+		shader->SetViewMatrix(_camera.GetViewMatrix());
+		shader->SetProjectionMatrix(_camera.GetProjectionMatrix());
 		shader->SetWorldMatrix(GetWorldMatrix());
 	}
 }
@@ -40,9 +40,9 @@ void BaseObject::Update()
 {
 	Utils::Composite<BaseObject>::UpdateChilds();
 
-	rightVector = -Math::Vector3(rotation[0][0], rotation[0][1], rotation[0][2]);
-	upVector = -Math::Vector3(rotation[1][0], rotation[1][1], rotation[2][2]);
-	forwardVector = -Math::Vector3(rotation[2][0], rotation[2][1], rotation[2][2]);
+	rightVector	  = -Math::Vector3(rotation[0][0], rotation[1][0], rotation[2][0]);
+	upVector	  = -Math::Vector3(rotation[0][1], rotation[1][1], rotation[2][1]);
+	forwardVector = -Math::Vector3(rotation[0][2], rotation[1][2], rotation[2][2]);
 }
 
 void BaseObject::SetColor(float _r, float _g, float _b)
@@ -92,7 +92,7 @@ void BaseObject::SetRotationSpeed(float _speed)
 	speedRotation = _speed;
 }
 
-Math::Matrix4 BaseObject::GetRotationMatrix()
+Math::Matrix4& BaseObject::GetRotationMatrix()
 {
 	return rotation;
 }

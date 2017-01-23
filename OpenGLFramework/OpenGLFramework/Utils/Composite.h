@@ -5,7 +5,7 @@
 #pragma once
 
 #include <vector>
-#include "..\Math\Matrix4.h"
+#include "..\Interface\ICamera.h"
 
 namespace Utils
 {
@@ -20,7 +20,7 @@ public:
 
 	void UpdateChilds();
 
-	void RenderChilds(Math::Matrix4& _view, Math::Matrix4& _projection);
+	void RenderChilds(ICamera& _camera);
 
 	void SetChildsPosition(float _x, float _y, float _z);
 

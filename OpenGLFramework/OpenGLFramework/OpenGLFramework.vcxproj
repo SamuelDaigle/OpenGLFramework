@@ -21,8 +21,11 @@
   <ItemGroup>
     <ClCompile Include="Camera\Camera.cpp" />
     <ClCompile Include="Framework\BaseObject.cpp" />
+    <ClCompile Include="Framework\Light.cpp" />
     <ClCompile Include="Framework\OpenGL.cpp" />
     <ClCompile Include="Framework\Skybox.cpp" />
+    <ClCompile Include="Framework\Square.cpp" />
+    <ClCompile Include="Framework\Triangle.cpp" />
     <ClCompile Include="Framework\Window.cpp" />
     <ClCompile Include="Input\InputHandler.cpp" />
     <ClCompile Include="IO\MeshLoader.cpp" />
@@ -36,12 +39,9 @@
     <ClCompile Include="Rendering\AdvancedShader.cpp" />
     <ClCompile Include="Rendering\BaseShader.cpp" />
     <ClCompile Include="Rendering\BasicShader.cpp" />
-    <ClCompile Include="Rendering\Light.cpp" />
     <ClCompile Include="Rendering\Mesh.cpp" />
     <ClCompile Include="Rendering\Model.cpp" />
     <ClCompile Include="Rendering\SkyboxShader.cpp" />
-    <ClCompile Include="Rendering\Square.cpp" />
-    <ClCompile Include="Rendering\Triangle.cpp" />
     <ClCompile Include="Text\Text.cpp" />
     <ClCompile Include="Text\TextHolder.cpp" />
     <ClCompile Include="Utils\MeshBank.cpp" />
@@ -51,10 +51,14 @@
   <ItemGroup>
     <ClInclude Include="Camera\Camera.h" />
     <ClInclude Include="Framework\BaseObject.h" />
+    <ClInclude Include="Framework\Light.h" />
     <ClInclude Include="Framework\OpenGL.h" />
     <ClInclude Include="Framework\Skybox.h" />
+    <ClInclude Include="Framework\Square.h" />
+    <ClInclude Include="Framework\Triangle.h" />
     <ClInclude Include="Framework\Window.h" />
     <ClInclude Include="Input\InputHandler.h" />
+    <ClInclude Include="Interface\ICamera.h" />
     <ClInclude Include="Interface\IShader.h" />
     <ClInclude Include="Interface\IScene.h" />
     <ClInclude Include="IO\MeshLoader.h" />
@@ -68,12 +72,9 @@
     <ClInclude Include="Rendering\AdvancedShader.h" />
     <ClInclude Include="Rendering\BaseShader.h" />
     <ClInclude Include="Rendering\BasicShader.h" />
-    <ClInclude Include="Rendering\Light.h" />
     <ClInclude Include="Rendering\Mesh.h" />
     <ClInclude Include="Rendering\Model.h" />
     <ClInclude Include="Rendering\SkyboxShader.h" />
-    <ClInclude Include="Rendering\Square.h" />
-    <ClInclude Include="Rendering\Triangle.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Text\Text.h" />
     <ClInclude Include="Text\TextHolder.h" />

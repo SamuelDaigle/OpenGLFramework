@@ -14,7 +14,7 @@ public:
 
 	void Destroy() override;
 
-	void Render(Math::Matrix4& _view, Math::Matrix4& _projection) override;
+	void Render(ICamera& _camera) override;
 
 private:
 	Rendering::Model* model;

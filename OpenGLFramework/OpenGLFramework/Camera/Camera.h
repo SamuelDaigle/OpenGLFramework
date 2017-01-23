@@ -4,13 +4,12 @@
 
 #pragma once
 
+#include "..\Interface\ICamera.h"
 #include "..\Framework\BaseObject.h"
-
-using namespace glm;
 
 namespace Camera
 {
-	class Camera : public Framework::BaseObject
+	class Camera : public Framework::BaseObject, public ICamera
 	{
 	public:
 		Camera();
@@ -19,10 +18,13 @@ namespace Camera
 		virtual void Rotate(float _angle, Math::Vector3& _axis) override;
 
 		void Update();
-		Math::Matrix4 GetViewMatrix();
-		Math::Matrix4 GetRotationMatrix() override;
+		Math::Vector3& GetPosition() override;
+		Math::Matrix4 GetViewMatrix() override;
+		Math::Matrix4& GetProjectionMatrix() override;
+		Math::Matrix4& GetRotation() override;
 
 	private:
+		Math::Matrix4 projectionMatrix;
 		float bearing;
 		float tilt;
 	};

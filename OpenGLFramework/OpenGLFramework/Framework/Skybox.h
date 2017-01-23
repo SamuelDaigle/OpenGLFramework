@@ -8,6 +8,7 @@
 #include "..\stdafx.h"
 #include "..\Dependencies\soil\SOIL.h"
 #include "..\Rendering\SkyboxShader.h"
+#include "..\Interface\ICamera.h"
 
 namespace Framework
 {
@@ -20,7 +21,7 @@ namespace Framework
 		void Initialize(const GLchar* _filename, IO::TextureLoader* _textureLoader);
 		void Destroy();
 
-		void Render(Math::Matrix4& _view, Math::Matrix4& _projection);
+		void Render(ICamera& _camera);
 
 	private:
 		void loadMesh();

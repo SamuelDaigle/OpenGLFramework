@@ -78,9 +78,6 @@
     <ClCompile Include="Rendering\BasicShader.cpp">
       <Filter>Rendering</Filter>
     </ClCompile>
-    <ClCompile Include="Rendering\Light.cpp">
-      <Filter>Rendering</Filter>
-    </ClCompile>
     <ClCompile Include="Rendering\Mesh.cpp">
       <Filter>Rendering</Filter>
     </ClCompile>
@@ -88,12 +85,6 @@
       <Filter>Rendering</Filter>
     </ClCompile>
     <ClCompile Include="Rendering\SkyboxShader.cpp">
-      <Filter>Rendering</Filter>
-    </ClCompile>
-    <ClCompile Include="Rendering\Square.cpp">
-      <Filter>Rendering</Filter>
-    </ClCompile>
-    <ClCompile Include="Rendering\Triangle.cpp">
       <Filter>Rendering</Filter>
     </ClCompile>
     <ClCompile Include="Input\InputHandler.cpp">
@@ -119,6 +110,15 @@
     </ClCompile>
     <ClCompile Include="Math\Matrix3.cpp">
       <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Light.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Square.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Triangle.cpp">
+      <Filter>Framework</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -179,9 +179,6 @@
     <ClInclude Include="Rendering\BasicShader.h">
       <Filter>Rendering</Filter>
     </ClInclude>
-    <ClInclude Include="Rendering\Light.h">
-      <Filter>Rendering</Filter>
-    </ClInclude>
     <ClInclude Include="Rendering\Mesh.h">
       <Filter>Rendering</Filter>
     </ClInclude>
@@ -189,12 +186,6 @@
       <Filter>Rendering</Filter>
     </ClInclude>
     <ClInclude Include="Rendering\SkyboxShader.h">
-      <Filter>Rendering</Filter>
-    </ClInclude>
-    <ClInclude Include="Rendering\Square.h">
-      <Filter>Rendering</Filter>
-    </ClInclude>
-    <ClInclude Include="Rendering\Triangle.h">
       <Filter>Rendering</Filter>
     </ClInclude>
     <ClInclude Include="stdafx.h" />
@@ -230,6 +221,18 @@
     </ClInclude>
     <ClInclude Include="Math\Matrix3.h">
       <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Light.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Square.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Triangle.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Interface\ICamera.h">
+      <Filter>Interface</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

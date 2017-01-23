@@ -3,7 +3,7 @@
 /************************************************************************/
 
 #include "stdafx.h"
-#include "Rendering\Triangle.h"
+#include "Framework\Triangle.h"
 #include "Framework\OpenGL.h"
 #include "Utils\Composite.h"
 #include "Framework\Skybox.h"
@@ -11,8 +11,8 @@
 #include "Rendering\AdvancedShader.h"
 #include "CustomShader.h"
 #include "Input\InputHandler.h"
-#include "Rendering\Square.h"
-#include "Rendering\Light.h"
+#include "Framework\Square.h"
+#include "Framework\Light.h"
 #include "Planet.h"
 #include "Text\Text.h"
 #include "Interface\IScene.h"
@@ -42,7 +42,7 @@ namespace Application
 		IShader* advancedShader;
 		IShader* customShader;
 		Framework::Skybox* skybox;
-		Rendering::Light* light;
+		Framework::Light* light;
 		Camera::Camera* camera;
 	};
 

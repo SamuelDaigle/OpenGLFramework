@@ -11,6 +11,7 @@
 #include <vector>
 #include "Utils\Color.h"
 #include "Utils\DynamicArray.h"
+#include "Interface\ICamera.h"
 #include "Framework\BaseObject.h"
 #include "Framework\OpenGL.h"
 

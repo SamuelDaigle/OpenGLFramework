@@ -7,6 +7,7 @@
 #include "..\IO\MeshLoader.h"
 #include "..\Interface\IShader.h"
 #include "..\Utils\Composite.h"
+#include "..\Interface\ICamera.h"
 #include "OpenGL.h"
 #include "..\Math\Quaternion.h"
 #include "..\Math\Matrix4.h"
@@ -22,7 +23,7 @@ namespace Framework
 		BaseObject();
 		BaseObject(IShader& _shader);
 		virtual void Destroy();
-		virtual void Render(Math::Matrix4& _view, Math::Matrix4& _projection);
+		virtual void Render(ICamera& _camera);
 		virtual void Update();
 
 		virtual void SetColor(float _r, float _g, float _b);
@@ -53,7 +54,7 @@ namespace Framework
 		float speedRotation = 0.001f;
 		IShader* shader;
 
-		virtual Math::Matrix4 GetRotationMatrix();
+		virtual Math::Matrix4& GetRotationMatrix();
 		virtual Math::Matrix4 GetScalingMatrix();
 		virtual Math::Matrix4 GetTranslateMatrix();
 

@@ -21,16 +21,12 @@ namespace Framework
 		OpenGL();
 		void Destroy();
 
-		Math::Matrix4& GetProjMatrix();
-
 		void BeginScene();
 		void EndScene();
 
 	private:
 		unsigned int* vertexArrayObjID;
 		unsigned int* vertexBufferObjID[2];
-
-		Math::Matrix4 projectionMatrix;
 	};
 
 }

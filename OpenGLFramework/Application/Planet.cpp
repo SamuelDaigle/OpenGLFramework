@@ -11,10 +11,9 @@ void Planet::Destroy()
 	BaseObject::Destroy();
 }
 
-void Planet::Render(Math::Matrix4& _view, Math::Matrix4& _projection)
+void Planet::Render(ICamera& _camera)
 {
-	BaseObject::Render(_view, _projection);
-	// Color
+	BaseObject::Render(_camera);
 	glUniform4f(glGetUniformLocation(shader->GetGlProgram(), "Color"), r, g, b, 1.0f);
 	model->Draw(*shader);
 }

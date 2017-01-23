@@ -29,11 +29,11 @@ namespace Utils
 	}
 
 	template <class T>
-	void Composite<T>::RenderChilds(Math::Matrix4& _view, Math::Matrix4& _projection)
+	void Composite<T>::RenderChilds(ICamera& _camera)
 	{
 		for each (T* childObject in childObjects)
 		{
-			childObject->Render(_view, _projection);
+			childObject->Render(_camera);
 		}
 	}
 
