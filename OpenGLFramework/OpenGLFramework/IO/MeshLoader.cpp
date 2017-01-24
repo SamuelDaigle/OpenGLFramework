@@ -37,23 +37,37 @@ namespace IO
 			return meshBank->GetMesh(_filepath);
 		}
 
-		cout << "Loading mesh..." << endl;
+		cout << "Loading mesh... test" << _filepath << endl;
 
-		string path = _filepath;
+		string path(_filepath);
+
+		cout << "Loading mesh...1" << endl;
 		const aiScene* scene = importer.ReadFile(path, aiProcess_Triangulate | aiProcess_FlipUVs);
+
+		cout << "Loading mesh...2" << endl;
 
 		// Check for errors
 		if (!scene || scene->mFlags == AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode)
 		{
 			cout << "ERROR::ASSIMP:: " << importer.GetErrorString() << endl;
+			return meshes;
 		}
 
+
+		cout << "Loading mesh...3" << endl;
+
 		directory = path.substr(0, path.find_last_of('/'));
+
+		cout << "Loading mesh...4" << endl;
 
 		// Process ASSIMP's root node recursively
 		processNode(scene->mRootNode, scene);
 
+		cout << "Loading mesh...5" << endl;
+
 		meshBank->AddMesh(_filepath, meshes);
+
+		cout << "Loading mesh...6" << endl;
 
 		return meshes;
 	}

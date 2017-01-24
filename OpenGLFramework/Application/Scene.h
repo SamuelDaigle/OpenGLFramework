@@ -9,6 +9,7 @@
 #include "Framework\Skybox.h"
 #include "Rendering\BasicShader.h"
 #include "Rendering\AdvancedShader.h"
+#include "Rendering\ColorShader.h"
 #include "CustomShader.h"
 #include "Input\InputHandler.h"
 #include "Framework\Square.h"
@@ -17,6 +18,7 @@
 #include "Text\Text.h"
 #include "Interface\IScene.h"
 #include "Camera\Camera.h"
+#include "CustomModel.h"
 #include "Math\Vector3.h"
 
 #pragma once
@@ -41,6 +43,7 @@ namespace Application
 		IShader* basicShader;
 		IShader* advancedShader;
 		IShader* customShader;
+		IShader* colorShader;
 		Framework::Skybox* skybox;
 		Framework::Light* light;
 		Camera::Camera* camera;

@@ -120,6 +120,9 @@
     <ClCompile Include="Framework\Triangle.cpp">
       <Filter>Framework</Filter>
     </ClCompile>
+    <ClCompile Include="Rendering\ColorShader.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Framework\OpenGL.h">
@@ -234,6 +237,9 @@
     <ClInclude Include="Interface\ICamera.h">
       <Filter>Interface</Filter>
     </ClInclude>
+    <ClInclude Include="Rendering\ColorShader.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Shaders\advanced.frag">
@@ -252,6 +258,12 @@
       <Filter>Shaders</Filter>
     </None>
     <None Include="Shaders\skybox.vert">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\color.frag">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\color.vert">
       <Filter>Shaders</Filter>
     </None>
   </ItemGroup>

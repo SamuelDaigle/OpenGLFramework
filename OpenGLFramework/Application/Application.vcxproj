@@ -125,6 +125,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CustomModel.cpp" />
     <ClCompile Include="CustomShader.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Planet.cpp" />
@@ -132,6 +133,7 @@
     <ClCompile Include="Sun.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CustomModel.h" />
     <ClInclude Include="CustomShader.h" />
     <ClInclude Include="Planet.h" />
     <ClInclude Include="Scene.h" />

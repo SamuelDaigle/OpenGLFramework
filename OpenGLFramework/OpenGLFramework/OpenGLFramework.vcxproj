@@ -39,6 +39,7 @@
     <ClCompile Include="Rendering\AdvancedShader.cpp" />
     <ClCompile Include="Rendering\BaseShader.cpp" />
     <ClCompile Include="Rendering\BasicShader.cpp" />
+    <ClCompile Include="Rendering\ColorShader.cpp" />
     <ClCompile Include="Rendering\Mesh.cpp" />
     <ClCompile Include="Rendering\Model.cpp" />
     <ClCompile Include="Rendering\SkyboxShader.cpp" />
@@ -72,6 +73,7 @@
     <ClInclude Include="Rendering\AdvancedShader.h" />
     <ClInclude Include="Rendering\BaseShader.h" />
     <ClInclude Include="Rendering\BasicShader.h" />
+    <ClInclude Include="Rendering\ColorShader.h" />
     <ClInclude Include="Rendering\Mesh.h" />
     <ClInclude Include="Rendering\Model.h" />
     <ClInclude Include="Rendering\SkyboxShader.h" />
@@ -93,6 +95,8 @@
     <None Include="Shaders\advanced.vert" />
     <None Include="Shaders\basic.frag" />
     <None Include="Shaders\basic.vert" />
+    <None Include="Shaders\color.frag" />
+    <None Include="Shaders\color.vert" />
     <None Include="Shaders\skybox.frag" />
     <None Include="Shaders\skybox.vert" />
   </ItemGroup>
