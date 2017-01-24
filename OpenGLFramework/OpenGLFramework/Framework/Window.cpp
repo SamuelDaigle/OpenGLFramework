@@ -12,7 +12,7 @@ namespace Framework
 		glutSetCursor(GLUT_CURSOR_NONE);
 		inputhandler = new Input::InputHandler();
 
-		Math::Vector2 cursorPosition = Math::Vector2((float)glutGet(GLUT_SCREEN_WIDTH) / 2.0f, (float)glutGet(GLUT_SCREEN_HEIGHT) / 2.0f);
+		Math::Vector2 cursorPosition = Math::Vector2(GetWidth() / 2.0f, GetHeight() / 2.0f);
 		inputhandler->Initialize(cursorPosition);
 		glutWarpPointer(cursorPosition.x, cursorPosition.y);
 	}
@@ -25,7 +25,7 @@ namespace Framework
 
 	void Window::Frame()
 	{
-		Math::Vector2 cursorPosition = Math::Vector2((float)glutGet(GLUT_SCREEN_WIDTH) / 2.0f, (float)glutGet(GLUT_SCREEN_HEIGHT) / 2.0f);
+		Math::Vector2 cursorPosition = Math::Vector2(GetWidth() / 2.0f, GetHeight() / 2.0f);
 		inputhandler->Update(cursorPosition);
 
 		openGL->BeginScene();
@@ -66,7 +66,7 @@ namespace Framework
 	void Window::initializeWindow()
 	{
 		glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA);
-		glutInitWindowSize(glutGet(GLUT_SCREEN_WIDTH), glutGet(GLUT_SCREEN_HEIGHT));
+		glutInitWindowSize(GetWidth(), GetHeight());
 		glutCreateWindow("OpenGL research");
 		GLenum err = glewInit();
 		if (GLEW_OK != err)
@@ -89,7 +89,7 @@ namespace Framework
 		scene = &_scene;
 	}
 
-	OpenGL& Window::GetOpenGL()
+	OpenGL& Window::GetOpenGLWrapper()
 	{
 		return *openGL;
 	}
@@ -97,6 +97,16 @@ namespace Framework
 	Input::InputHandler& Window::GetInputHandler()
 	{
 		return *inputhandler;
+	}
+
+	float Window::GetWidth()
+	{
+		return (float)glutGet(GLUT_SCREEN_WIDTH);
+	}
+
+	float Window::GetHeight()
+	{
+		return (float)glutGet(GLUT_SCREEN_HEIGHT);
 	}
 
 }

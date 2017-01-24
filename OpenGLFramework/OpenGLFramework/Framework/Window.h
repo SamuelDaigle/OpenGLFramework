@@ -6,13 +6,14 @@
 #include "OpenGL.h"
 #include "..\Input\InputHandler.h"
 #include "..\Interface\IScene.h"
+#include "..\Interface\IWindow.h"
 
 #pragma once
 
 namespace Framework
 {
 
-	class Window
+	class Window : public IWindow
 	{
 	public:
 		void Initialize();
@@ -25,8 +26,10 @@ namespace Framework
 
 		void SetScene(IScene& _scene);
 
-		OpenGL& GetOpenGL();
-		Input::InputHandler& GetInputHandler();
+		OpenGL& GetOpenGLWrapper() override;
+		Input::InputHandler& GetInputHandler() override;
+		float GetWidth() override;
+		float GetHeight() override;
 
 	private:
 		void initializeWindow();

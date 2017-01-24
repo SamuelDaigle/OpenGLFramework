@@ -1,18 +1,17 @@
-﻿  Scene.cpp
-  Generating code
-  1 of 1473 functions ( 0.1%) were compiled, the rest were copied from previous compilation.
+﻿  Generating code
+  3 of 1560 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+    1 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
 OpenGLFramework.lib(Model.obj) : warning LNK4099: PDB 'OpenGLFramework.pdb' was not found with 'OpenGLFramework.lib(Model.obj)' or at 'C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.pdb'; linking object as if no debug info
 OpenGLFramework.lib(BaseShader.obj) : warning LNK4099: PDB 'OpenGLFramework.pdb' was not found with 'OpenGLFramework.lib(BaseShader.obj)' or at 'C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.pdb'; linking object as if no debug info
 OpenGLFramework.lib(Vector3.obj) : warning LNK4099: PDB 'OpenGLFramework.pdb' was not found with 'OpenGLFramework.lib(Vector3.obj)' or at 'C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.pdb'; linking object as if no debug info
+OpenGLFramework.lib(Vector2.obj) : warning LNK4099: PDB 'OpenGLFramework.pdb' was not found with 'OpenGLFramework.lib(Vector2.obj)' or at 'C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.pdb'; linking object as if no debug info
 OpenGLFramework.lib(TextureLoader.obj) : warning LNK4099: PDB 'OpenGLFramework.pdb' was not found with 'OpenGLFramework.lib(TextureLoader.obj)' or at 'C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.pdb'; linking object as if no debug info
 OpenGLFramework.lib(AdvancedShader.obj) : warning LNK4099: PDB 'OpenGLFramework.pdb' was not found with 'OpenGLFramework.lib(AdvancedShader.obj)' or at 'C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.pdb'; linking object as if no debug info
 OpenGLFramework.lib(BasicShader.obj) : warning LNK4099: PDB 'OpenGLFramework.pdb' was not found with 'OpenGLFramework.lib(BasicShader.obj)' or at 'C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.pdb'; linking object as if no debug info
 OpenGLFramework.lib(Mesh.obj) : warning LNK4099: PDB 'OpenGLFramework.pdb' was not found with 'OpenGLFramework.lib(Mesh.obj)' or at 'C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.pdb'; linking object as if no debug info
 OpenGLFramework.lib(OpenGL.obj) : warning LNK4099: PDB 'OpenGLFramework.pdb' was not found with 'OpenGLFramework.lib(OpenGL.obj)' or at 'C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.pdb'; linking object as if no debug info
-OpenGLFramework.lib(Vector2.obj) : warning LNK4099: PDB 'OpenGLFramework.pdb' was not found with 'OpenGLFramework.lib(Vector2.obj)' or at 'C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.pdb'; linking object as if no debug info
 OpenGLFramework.lib(SkyboxShader.obj) : warning LNK4099: PDB 'OpenGLFramework.pdb' was not found with 'OpenGLFramework.lib(SkyboxShader.obj)' or at 'C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.pdb'; linking object as if no debug info
 OpenGLFramework.lib(MeshBank.obj) : warning LNK4099: PDB 'OpenGLFramework.pdb' was not found with 'OpenGLFramework.lib(MeshBank.obj)' or at 'C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.pdb'; linking object as if no debug info
 OpenGLFramework.lib(TextureBank.obj) : warning LNK4099: PDB 'OpenGLFramework.pdb' was not found with 'OpenGLFramework.lib(TextureBank.obj)' or at 'C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.pdb'; linking object as if no debug info

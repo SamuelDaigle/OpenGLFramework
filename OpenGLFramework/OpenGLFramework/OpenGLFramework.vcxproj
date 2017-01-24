@@ -62,6 +62,7 @@
     <ClInclude Include="Interface\ICamera.h" />
     <ClInclude Include="Interface\IShader.h" />
     <ClInclude Include="Interface\IScene.h" />
+    <ClInclude Include="Interface\IWindow.h" />
     <ClInclude Include="IO\MeshLoader.h" />
     <ClInclude Include="IO\ShaderLoader.h" />
     <ClInclude Include="IO\TextureLoader.h" />

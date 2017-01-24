@@ -4,6 +4,7 @@
 
 #pragma once
 #include "Text.h"
+#include "..\Math\Vector2.h"
 
 namespace Text
 {
@@ -11,14 +12,16 @@ namespace Text
 	class TextHolder
 	{
 	public:
-		TextHolder();
+		TextHolder(Math::Vector2& _position);
 		~TextHolder();
 
 		void DrawTexts();
-		void NewText(const char * _value, float _x, float _y, float _r, float _g, float _b);
+		void AddText(std::string& _value);
 
 	private:
 		vector<Text *> texts;
+		Math::Vector2 position;
+		float spacing;
 	};
 
 }

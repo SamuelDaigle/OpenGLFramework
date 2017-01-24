@@ -15,11 +15,12 @@
 #include "Framework\Square.h"
 #include "Framework\Light.h"
 #include "Planet.h"
-#include "Text\Text.h"
+#include "Text\TextHolder.h"
 #include "Interface\IScene.h"
 #include "Camera\Camera.h"
 #include "CustomModel.h"
 #include "Math\Vector3.h"
+#include "Interface\IWindow.h"
 
 #pragma once
 
@@ -29,7 +30,7 @@ namespace Application
 	class Scene : public IScene
 	{
 	public:
-		void Initialize(Framework::OpenGL& _ptrOpenGL, Input::InputHandler& _ptrInput);
+		Scene(IWindow& _window);
 		void Destroy();
 
 		void input();
@@ -37,8 +38,7 @@ namespace Application
 		void render();
 
 	private:
-		Framework::OpenGL* ptrOpenGL;
-		Input::InputHandler* ptrInputHandler;
+		IWindow* window;
 		Framework::BaseObject* rootObject;
 		IShader* basicShader;
 		IShader* advancedShader;
@@ -47,6 +47,7 @@ namespace Application
 		Framework::Skybox* skybox;
 		Framework::Light* light;
 		Camera::Camera* camera;
+		Text::TextHolder* hierarchyText;
 	};
 
 }

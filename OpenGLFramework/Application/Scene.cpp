@@ -3,10 +3,9 @@
 namespace Application
 {
 
-	void Scene::Initialize(Framework::OpenGL& _ptrOpenGL, Input::InputHandler& _ptrInputHandler)
+	Scene::Scene(IWindow& _window)
 	{
-		ptrOpenGL = &_ptrOpenGL;
-		ptrInputHandler = &_ptrInputHandler;
+		window = &_window;
 
 		IO::TextureLoader* textureLoader = new IO::TextureLoader();
 		textureLoader->Initialize();
@@ -44,13 +43,19 @@ namespace Application
 		building->Scale(0.0001f, 0.0001f, 0.0001f);
 		building->Rotate(-90, Math::Vector3(1.0f, 0.0f, 0.0f));
 
-
-
 		skybox = new Framework::Skybox();
 		skybox->Initialize("../Content/skybox/space.bmp", textureLoader);
 
 		camera = new Camera::Camera();
 		camera->position.z -= 5;
+
+		hierarchyText = new Text::TextHolder(Math::Vector2(50, window->GetHeight() - 100));
+		std::string test = "test";
+		hierarchyText->AddText(test);
+		hierarchyText->AddText(test);
+		hierarchyText->AddText(test);
+		hierarchyText->AddText(test);
+		hierarchyText->AddText(test);
 	}
 
 	void Scene::Destroy()
@@ -67,37 +72,37 @@ namespace Application
 		camera->Update();
 
 		// Rotation
-		camera->Rotate(ptrInputHandler->GetCursorDelta().x / 5, Math::Vector3(1.0f, 0.0f, 0.0f));
-		camera->Rotate(ptrInputHandler->GetCursorDelta().y / 5, Math::Vector3(0.0f, 1.0f, 0.0f));
+		camera->Rotate(window->GetInputHandler().GetCursorDelta().x / 5, Math::Vector3(1.0f, 0.0f, 0.0f));
+		camera->Rotate(window->GetInputHandler().GetCursorDelta().y / 5, Math::Vector3(0.0f, 1.0f, 0.0f));
 
 		// Move with arrow.
-		if (ptrInputHandler->IsKeyDown('a'))
+		if (window->GetInputHandler().IsKeyDown('a'))
 		{
 			camera->position -= camera->right() * Math::Vector3(CAMERA_SPEED, CAMERA_SPEED, CAMERA_SPEED);
 		}
-		if (ptrInputHandler->IsKeyDown('w'))
+		if (window->GetInputHandler().IsKeyDown('w'))
 		{
 			camera->position -= camera->forward() * Math::Vector3(CAMERA_SPEED, CAMERA_SPEED, CAMERA_SPEED);
 		}
-		if (ptrInputHandler->IsKeyDown('d'))
+		if (window->GetInputHandler().IsKeyDown('d'))
 		{
 			camera->position += camera->right() * Math::Vector3(CAMERA_SPEED, CAMERA_SPEED, CAMERA_SPEED);
 		}
-		if (ptrInputHandler->IsKeyDown('s'))
+		if (window->GetInputHandler().IsKeyDown('s'))
 		{
 			camera->position += camera->forward() * Math::Vector3(CAMERA_SPEED, CAMERA_SPEED, CAMERA_SPEED);
 		}
-		if (ptrInputHandler->IsKeyDown('l'))
+		if (window->GetInputHandler().IsKeyDown('l'))
 		{
 			rootObject->Rotate(1, Math::Vector3(0.0f, 1.0f, 0.0f));
 		}
 
-		if (ptrInputHandler->IsKeyDown('k'))
+		if (window->GetInputHandler().IsKeyDown('k'))
 		{
 			rootObject->GetChilds()[1]->Rotate(-3, Math::Vector3(0.0f, 1.0f, 0.0f));
 		}
 
-		if (ptrInputHandler->IsKeyDown('j'))
+		if (window->GetInputHandler().IsKeyDown('j'))
 		{
 			rootObject->GetChilds()[1]->GetChilds()[0]->Rotate(1, Math::Vector3(0.0f, 1.0f, 0.0f));
 		}
@@ -106,6 +111,7 @@ namespace Application
 	void Scene::render()
 	{
 		skybox->Render(*camera);
+		hierarchyText->DrawTexts();
 		rootObject->Render(*camera, Math::Matrix4());
 	}
 

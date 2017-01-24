@@ -11,15 +11,14 @@ namespace Text
 	class Text
 	{
 	public:
-		Text();
+		Text(std::string& _value, float _x, float _y, float _r, float _g, float _b);
 		~Text();
 
 		void Draw();
-		void NewText(const char * _value, float _x, float _y, float _r, float _g, float _b);
 		void Destroy();
 
 	private:
-		const char * strings;
+		std::string strings;
 		float xPosition;
 		float yPosition;
 		float r;

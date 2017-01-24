@@ -26,8 +26,7 @@ int main(int argc, char* argv[])
 	window = new Framework::Window();
 	window->Initialize();
 
-	scene = new Application::Scene();
-	scene->Initialize(window->GetOpenGL(), window->GetInputHandler());
+	scene = new Application::Scene(*window);
 	window->SetScene(*scene);
 
 	glutTimerFunc(1, Frame, 1);

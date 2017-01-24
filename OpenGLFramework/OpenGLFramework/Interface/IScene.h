@@ -6,7 +6,6 @@
 class IScene
 {
 public:
-	virtual void Initialize(Framework::OpenGL& _ptrOpenGL, Input::InputHandler& _ptrInput) = 0;
 	virtual void Destroy() = 0;
 
 	virtual void input() = 0;

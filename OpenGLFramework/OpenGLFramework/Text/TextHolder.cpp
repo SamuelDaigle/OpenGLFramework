@@ -3,10 +3,11 @@
 namespace Text
 {
 
-	TextHolder::TextHolder()
+	TextHolder::TextHolder(Math::Vector2& _position) :
+		position(_position)
 	{
+		spacing = glutBitmapHeight(GLUT_BITMAP_TIMES_ROMAN_24);
 	}
-
 
 	TextHolder::~TextHolder()
 	{
@@ -19,17 +20,21 @@ namespace Text
 	void TextHolder::DrawTexts()
 	{
 		glDepthFunc(GL_FALSE);
+		glDisable(GL_TEXTURE_2D);
+		glDisable(GL_LIGHTING);
+		glBindTexture(GL_TEXTURE_2D, 0);
 		for each (Text * text in texts)
 		{
 			text->Draw();
 		}
+		glEnable(GL_LIGHTING);
+		glEnable(GL_TEXTURE_2D);
 		glDepthFunc(GL_TRUE);
 	}
 
-	void TextHolder::NewText(const char * _value, float _x, float _y, float _r, float _g, float _b)
+	void TextHolder::AddText(std::string& _value)
 	{
-		Text * text = new Text();
-		text->NewText(_value, _x, _y, _r, _g, _b);
+		Text* text = new Text(_value, position.x, position.y - texts.size() * spacing, 255, 0, 0);
 		texts.push_back(text);
 	}
 
