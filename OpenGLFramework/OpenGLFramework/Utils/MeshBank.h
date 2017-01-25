@@ -5,6 +5,7 @@
 #pragma once
 
 #include "..\Rendering\Mesh.h"
+#include "Log.h"
 
 #include <map>
 #include <vector>

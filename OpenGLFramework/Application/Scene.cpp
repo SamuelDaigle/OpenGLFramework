@@ -50,12 +50,50 @@ namespace Application
 		camera->position.z -= 5;
 
 		hierarchyText = new Text::TextHolder(Math::Vector2(50, window->GetHeight() - 100));
-		std::string test = "test";
-		hierarchyText->AddText(test);
-		hierarchyText->AddText(test);
-		hierarchyText->AddText(test);
-		hierarchyText->AddText(test);
-		hierarchyText->AddText(test);
+		UpdateHierarchyText();
+
+		consoleText = new Text::TextHolder(Math::Vector2(50, 450));
+		UpdateConsoleText();
+	}
+
+	void Scene::UpdateHierarchyText()
+	{
+		hierarchyText->Clear();
+		hierarchyText->AddLine(std::string("Hierarchy"));
+		hierarchyText->AddLine(std::string("-------------------------"));
+		
+		AddChildStringTo(*hierarchyText, *rootObject, 0);
+	}
+
+
+	void Scene::UpdateConsoleText()
+	{
+		consoleText->Clear();
+		consoleText->AddLine(std::string("========================="));
+		consoleText->AddLine(std::string("                      Console"));
+		consoleText->AddLine(std::string("========================="));
+
+		std::vector<std::string> output = Utils::Log::GetLastOutput(10);
+		for (int i = 0; i < output.size(); i++)
+			consoleText->AddLine(output[i]);
+
+		consoleText->AddLine(std::string("-------------------------"));
+	}
+
+
+	void Scene::AddChildStringTo(Text::TextHolder& _hierarchyText, Framework::BaseObject& _parent, int _depth)
+	{
+		std::string childText = " ";
+		for (int j = 0; j < _depth; j++)
+			childText += "-";
+		childText += " ";
+		childText += typeid(_parent).name();
+		_hierarchyText.AddLine(childText);
+		vector<Framework::BaseObject*> childObjects = _parent.GetChilds();
+		for (int i = 0; i < childObjects.size(); i++)
+		{
+			AddChildStringTo(_hierarchyText, *childObjects[i], _depth + 1);
+		}
 	}
 
 	void Scene::Destroy()
@@ -112,12 +150,14 @@ namespace Application
 	{
 		skybox->Render(*camera);
 		hierarchyText->DrawTexts();
+		consoleText->DrawTexts();
 		rootObject->Render(*camera, Math::Matrix4());
 	}
 
 	void Scene::update()
 	{
 		rootObject->Update();
+		UpdateConsoleText();
 	}
 
 }

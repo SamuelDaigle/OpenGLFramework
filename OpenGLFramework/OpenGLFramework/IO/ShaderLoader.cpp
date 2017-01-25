@@ -48,7 +48,7 @@ namespace IO
 		glGetShaderiv(_shader, GL_COMPILE_STATUS, &compiled);
 		if (!compiled)
 		{
-			cout << "Shader not compiled." << endl;
+			Utils::Log::DebugLog("Shader not compiled.");
 			printShaderInfoLog(_shader);
 		}
 	}
@@ -69,12 +69,12 @@ namespace IO
 			file.seekg(0, ios::beg);
 			file.read(memblock, size);
 			file.close();
-			cout << "file " << _filepath << " loaded" << endl;
+			Utils::Log::DebugLog(3, "file ", _filepath, " loaded");
 			text.assign(memblock);
 		}
 		else
 		{
-			cout << "Unable to open file " << _filepath << endl;
+			Utils::Log::DebugLog(2, "Unable to open file ", _filepath);
 			exit(1);
 		}
 		return memblock;
@@ -93,7 +93,8 @@ namespace IO
 			infoLog = new GLchar[infoLogLen];
 			// error check for fail to allocate memory omitted
 			glGetShaderInfoLog(shader, infoLogLen, &charsWritten, infoLog);
-			cout << "InfoLog:" << endl << infoLog << endl;
+			Utils::Log::DebugLog("InfoLog:");
+			Utils::Log::DebugLog(infoLog);
 			delete[] infoLog;
 		}
 	}

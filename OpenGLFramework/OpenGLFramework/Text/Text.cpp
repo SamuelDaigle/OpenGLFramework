@@ -20,10 +20,10 @@ namespace Text
 	
 	void Text::Draw()
 	{
-		glColor3f(255, 0, 0);
+		glColor3f(r, g, b);
 		glWindowPos2f(xPosition, yPosition);
 		for (int i = 0; i < strings.size(); i++)
-			glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, strings[i]);
+			glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, strings[i]);
 	}
 
 	void Text::Destroy()

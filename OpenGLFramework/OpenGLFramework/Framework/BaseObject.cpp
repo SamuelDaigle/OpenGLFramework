@@ -66,7 +66,7 @@ void BaseObject::Rotate(float _angle, Math::Vector3& _axis)
 void BaseObject::Scale(float _scaleX, float _scaleY, float _scaleZ)
 {
 	if (scale.x == 0.0f || scale.y == 0.0f || scale.z == 0.0f)
-		std::cout << "WARNING -- Setting an object with a scale of 0." << std::endl;
+		Utils::Log::DebugLog("WARNING -- Setting an object with a scale of 0.");
 	Utils::Composite<BaseObject>::ScaleChilds(_scaleX, _scaleY, _scaleZ);
 	scale.x = _scaleX;
 	scale.y = _scaleY;
@@ -100,7 +100,7 @@ Math::Matrix4& BaseObject::GetRotationMatrix()
 Math::Matrix4 BaseObject::GetScalingMatrix()
 {
 	if (scale.x == 0.0f || scale.y == 0.0f || scale.z == 0.0f)
-		std::cout << "WARNING -- An object has a scale of 0." << std::endl;
+		Utils::Log::DebugLog("WARNING -- An object has a scale of 0.");
 	return Math::Matrix4::VectorToScaleMatrix(scale);
 }
 

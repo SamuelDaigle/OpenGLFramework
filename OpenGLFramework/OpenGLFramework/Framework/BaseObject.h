@@ -11,6 +11,7 @@
 #include "OpenGL.h"
 #include "..\Math\Quaternion.h"
 #include "..\Math\Matrix4.h"
+#include "..\Utils\Log.h"
 
 using namespace glm;
 

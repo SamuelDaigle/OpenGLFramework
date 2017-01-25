@@ -45,6 +45,7 @@
     <ClCompile Include="Rendering\SkyboxShader.cpp" />
     <ClCompile Include="Text\Text.cpp" />
     <ClCompile Include="Text\TextHolder.cpp" />
+    <ClCompile Include="Utils\Log.cpp" />
     <ClCompile Include="Utils\MeshBank.cpp" />
     <ClCompile Include="Utils\TextureBank.cpp" />
     <ClCompile Include="Utils\Vertex.cpp" />
@@ -86,6 +87,7 @@
     <ClInclude Include="Utils\Composite.hpp" />
     <ClInclude Include="Utils\DynamicArray.h" />
     <ClInclude Include="Utils\DynamicArray.hpp" />
+    <ClInclude Include="Utils\Log.h" />
     <ClInclude Include="Utils\MeshBank.h" />
     <ClInclude Include="Utils\TextureBank.h" />
     <ClInclude Include="Utils\Vertex.h" />

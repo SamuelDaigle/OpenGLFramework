@@ -9,6 +9,7 @@
 #include "TextureLoader.h"
 #include "..\Rendering\Mesh.h"
 #include <vector>
+#include "..\Utils\Log.h"
 
 using namespace std;
 

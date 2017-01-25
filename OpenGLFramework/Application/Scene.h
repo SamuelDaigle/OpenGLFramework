@@ -38,6 +38,10 @@ namespace Application
 		void render();
 
 	private:
+		void UpdateHierarchyText();
+		void UpdateConsoleText();
+		void AddChildStringTo(Text::TextHolder& _hierarchyText, Framework::BaseObject& _parent, int _depth);
+
 		IWindow* window;
 		Framework::BaseObject* rootObject;
 		IShader* basicShader;
@@ -48,6 +52,7 @@ namespace Application
 		Framework::Light* light;
 		Camera::Camera* camera;
 		Text::TextHolder* hierarchyText;
+		Text::TextHolder* consoleText;
 	};
 
 }

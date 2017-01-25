@@ -9,6 +9,7 @@ namespace Framework
 		Ambiant = Math::Vector3(0.01f, 0.01f, 0.01f);
 		Diffuse = Math::Vector3(1.0f, 1.0f, 1.0f);
 		Specular = Math::Vector3(1.0f, 1.0f, 1.0f);
+		BaseObject::Scale(1, 1, 1);
 	}
 
 	void Light::Destroy()

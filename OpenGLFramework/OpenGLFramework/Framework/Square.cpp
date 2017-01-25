@@ -6,10 +6,8 @@ namespace Framework
 	Square::Square(IShader& _shader) :
 		BaseObject(_shader)
 	{
-		scale.x = 1.0f;
-		scale.y = 1.0f;
-		scale.z = 1.0f;
 		initializeBuffers();
+		BaseObject::Scale(1, 1, 1);
 	}
 
 

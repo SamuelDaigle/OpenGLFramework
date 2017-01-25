@@ -6,9 +6,7 @@ namespace Framework
 	Triangle::Triangle(IShader& _shader) :
 		BaseObject(_shader)
 	{
-		scale.x = 1;
-		scale.y = 1;
-		scale.z = 1;
+		BaseObject::Scale(1, 1, 1);
 		initializeBuffers();
 	}
 

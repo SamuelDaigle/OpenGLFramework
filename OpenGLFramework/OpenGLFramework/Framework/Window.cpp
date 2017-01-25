@@ -72,11 +72,11 @@ namespace Framework
 		if (GLEW_OK != err)
 		{
 			// Problem: glewInit failed, something is seriously wrong.
-			cout << "glewInit failed, aborting." << endl;
+			Utils::Log::DebugLog("glewInit failed, aborting.");
 			exit(1);
 		}
-		cout << "Status: Using GLEW " << glewGetString(GLEW_VERSION) << endl;
-		cout << "OpenGL version " << glGetString(GL_VERSION) << " supported" << endl;
+		Utils::Log::DebugLog(2, "Status: Using GLEW ", glewGetString(GLEW_VERSION));
+		Utils::Log::DebugLog(3, "OpenGL version ", glGetString(GL_VERSION), " supported");
 	}
 
 	bool Window::hasExited()

@@ -4,6 +4,7 @@ Sun::Sun(IO::MeshLoader* _meshLoader, IShader& _shader) :
 	BaseObject::BaseObject(_shader)
 {
 	model = new Rendering::Model("../Content/planet/sun.obj", _meshLoader);
+	BaseObject::Scale(1, 1, 1);
 }
 
 void Sun::Destroy()

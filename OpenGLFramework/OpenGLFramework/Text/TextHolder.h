@@ -16,7 +16,8 @@ namespace Text
 		~TextHolder();
 
 		void DrawTexts();
-		void AddText(std::string& _value);
+		void AddLine(std::string& _value);
+		void Clear();
 
 	private:
 		vector<Text *> texts;

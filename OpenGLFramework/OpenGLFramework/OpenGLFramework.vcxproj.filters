@@ -123,6 +123,9 @@
     <ClCompile Include="Rendering\ColorShader.cpp">
       <Filter>Rendering</Filter>
     </ClCompile>
+    <ClCompile Include="Utils\Log.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Framework\OpenGL.h">
@@ -242,6 +245,9 @@
     </ClInclude>
     <ClInclude Include="Interface\IWindow.h">
       <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\Log.h">
+      <Filter>Utils</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
