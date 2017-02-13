@@ -94,9 +94,9 @@ namespace IO
 			vertex.Position = vertexPlaceholderData;
 
 			// Normals
-			vertexPlaceholderData.x = mesh->mNormals[i].x;
-			vertexPlaceholderData.y = mesh->mNormals[i].y;
-			vertexPlaceholderData.z = mesh->mNormals[i].z;
+			//vertexPlaceholderData.x = mesh->mNormals[i].x;
+			//vertexPlaceholderData.y = mesh->mNormals[i].y;
+			//vertexPlaceholderData.z = mesh->mNormals[i].z;
 			vertex.Normal = vertexPlaceholderData;
 
 			// Texture Coordinates
@@ -139,6 +139,7 @@ namespace IO
 		dirStr.Append("/");
 		dirStr.Append(str.C_Str());
 
+		Utils::Log::DebugLog(2, "Load material: ", dirStr.C_Str());
 		return textureLoader->GetTexture(dirStr.C_Str());
 	}
 

@@ -33,11 +33,14 @@ namespace Application
 		moon->Translate(0, 0, 7.5f);
 		moon->Scale(0.25f, 0.25f, 0.25f);
 
-		CustomModel* barModel = new CustomModel(meshLoader, *colorShader, "../Content/room/War_room.obj"); //../Content/bar/cb5e6e00cb294d0f81021426f4dc5c8a.obj
+		CustomModel* barModel = new CustomModel(meshLoader, *basicShader, "../Content/low_poly_bldg_715_3ds/low_poly_bldg_715.3DS"); //../Content/bar/cb5e6e00cb294d0f81021426f4dc5c8a.obj
 		rootObject->Add(barModel);
-		barModel->Translate(100, 0, 50);
+		barModel->Scale(0.0001f, 0.0001f, 0.0001f);
+		barModel->Translate(100000, 0, 50);
+		barModel->Rotate(-90, Math::Vector3(1.0f, 0.0f, 0.0f));
+		barModel->Rotate(-90, Math::Vector3(0.0f, 0.0f, 1.0f));
 
-		CustomModel* building = new CustomModel(meshLoader, *colorShader, "../Content/low_poly_bldg_715_3ds/low_poly_bldg_715.3DS"); //../Content/bar/cb5e6e00cb294d0f81021426f4dc5c8a.obj
+		CustomModel* building = new CustomModel(meshLoader, *basicShader, "../Content/low_poly_bldg_715_3ds/low_poly_bldg_715.3DS"); //../Content/bar/cb5e6e00cb294d0f81021426f4dc5c8a.obj
 		rootObject->Add(building);
 		building->Translate(-100000, 0, 50);
 		building->Scale(0.0001f, 0.0001f, 0.0001f);

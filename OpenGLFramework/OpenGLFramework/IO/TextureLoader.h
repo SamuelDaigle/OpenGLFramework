@@ -6,6 +6,7 @@
 
 #include "..\Dependencies\soil\SOIL.h"
 #include "..\Utils\TextureBank.h"
+#include "..\Utils\Log.h"
 
 namespace IO
 {

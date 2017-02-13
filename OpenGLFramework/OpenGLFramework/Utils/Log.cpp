@@ -18,6 +18,7 @@ namespace Utils
 		for (int j = 0; j<_argumentCount; j++)
 			oss << va_arg(ap, const char*);
 		va_end(ap);
+		std::cout << std::string(oss.str().c_str()) << std::endl;
 		output.push_back(std::string(oss.str().c_str()));
 	}
 

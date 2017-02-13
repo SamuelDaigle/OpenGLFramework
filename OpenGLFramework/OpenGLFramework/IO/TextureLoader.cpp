@@ -26,6 +26,7 @@ namespace IO
 	{
 		if (textureBank->HasTexture(_texturePath))
 		{
+			Utils::Log::DebugLog(2, "Reuse texture: ", _texturePath);
 			return textureBank->GetTexture(_texturePath);
 		}
 
@@ -43,7 +44,10 @@ namespace IO
 		glGenTextures(1, &textureID);
 
 		// Load texture file.
-		unsigned char* image = SOIL_load_image(path, &width, &height, 0, SOIL_LOAD_RGB);
+		unsigned char* image = SOIL_load_image(path, &width, &height, 0, SOIL_LOAD_AUTO);
+
+		if (!image)
+			Utils::Log::DebugLog("image load failed");
 
 		// Assign texture to ID
 		glBindTexture(GL_TEXTURE_2D, textureID);

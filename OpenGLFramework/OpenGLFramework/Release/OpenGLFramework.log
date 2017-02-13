@@ -1,3 +1,2 @@
-﻿  Text.cpp
-Text\Text.cpp(25): warning C4018: '<': signed/unsigned mismatch
+﻿  TextureLoader.cpp
   OpenGLFramework.vcxproj -> C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.lib
