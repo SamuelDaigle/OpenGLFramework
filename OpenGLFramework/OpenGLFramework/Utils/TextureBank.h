@@ -4,11 +4,8 @@
 
 #pragma once
 #include "..\Dependencies\glew\glew.h"
-#include "..\Dependencies\cimg\CImg.h"
 #include <map>
 
-using namespace std;
-using namespace cimg_library;
 
 namespace Utils
 {
@@ -24,7 +21,7 @@ namespace Utils
 		GLuint GetTexture(const char* _path);
 
 	private:
-		map<string, GLuint> textureLocations;
+		std::map<std::string, GLuint> textureLocations;
 	};
 
 }

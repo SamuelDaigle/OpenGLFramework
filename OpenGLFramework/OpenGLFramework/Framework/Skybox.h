@@ -5,8 +5,7 @@
 
 #pragma once
 
-#include "..\stdafx.h"
-#include "..\Dependencies\soil\SOIL.h"
+#include "..\IO\TextureLoader.h"
 #include "..\Rendering\SkyboxShader.h"
 #include "..\Interface\ICamera.h"
 
@@ -17,7 +16,7 @@ namespace Framework
 	{
 	public:
 		Skybox();
-		void Initialize(vector<const GLchar*> _filePaths, IO::TextureLoader* _textureLoader);
+		void Initialize(std::vector<const GLchar*> _filePaths, IO::TextureLoader* _textureLoader);
 		void Initialize(const GLchar* _filename, IO::TextureLoader* _textureLoader);
 		void Destroy();
 

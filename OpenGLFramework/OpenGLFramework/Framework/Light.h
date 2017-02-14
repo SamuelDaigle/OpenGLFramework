@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "..\stdafx.h"
+#include "BaseObject.h"
 
 namespace Framework
 {

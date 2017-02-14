@@ -2,7 +2,7 @@
 /* Author: Samuel Daigle et Sébastien Rousseau                          */
 /************************************************************************/
 
-#include "..\stdafx.h"
+#include "..\Framework\BaseObject.h"
 #include "..\Utils\VertexType.h"
 
 #pragma once

@@ -3,6 +3,8 @@
 /************************************************************************/
 
 #pragma once
+#include <string>
+#include "..\Framework\OpenGL.h"
 #include "..\stdafx.h"
 
 namespace Text

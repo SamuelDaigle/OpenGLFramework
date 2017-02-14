@@ -26,11 +26,11 @@ namespace IO
 		}
 	}
 
-	vector<Rendering::Mesh*> MeshLoader::LoadMeshes(const char* _filepath)
+	std::vector<Rendering::Mesh*> MeshLoader::LoadMeshes(const char* _filepath)
 	{
 		Importer importer;
 
-		meshes.clear();
+		meshesToProcess.clear();
 
 		if (meshBank->HasMesh(_filepath))
 		{
@@ -39,7 +39,7 @@ namespace IO
 
 		Utils::Log::DebugLog(2, "Loading mesh... test", _filepath);
 
-		string path(_filepath);
+		std::string path(_filepath);
 
 		const aiScene* scene = importer.ReadFile(path, aiProcess_Triangulate | aiProcess_FlipUVs);
 
@@ -47,7 +47,7 @@ namespace IO
 		if (!scene || scene->mFlags == AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode)
 		{
 			Utils::Log::DebugLog(2, "ERROR::ASSIMP:: ", importer.GetErrorString());
-			return meshes;
+			return meshesToProcess;
 		}
 
 		directory = path.substr(0, path.find_last_of('/'));
@@ -55,9 +55,9 @@ namespace IO
 		// Process ASSIMP's root node recursively
 		processNode(scene->mRootNode, scene);
 
-		meshBank->AddMesh(_filepath, meshes);
+		meshBank->AddMesh(_filepath, meshesToProcess);
 
-		return meshes;
+		return meshesToProcess;
 	}
 
 	void MeshLoader::processNode(aiNode* node, const aiScene* scene)
@@ -65,7 +65,7 @@ namespace IO
 		for (GLuint i = 0; i < node->mNumMeshes; i++)
 		{
 			aiMesh* mesh = scene->mMeshes[node->mMeshes[i]];
-			meshes.push_back(processMesh(mesh, scene));
+			meshesToProcess.push_back(processMesh(mesh, scene));
 		}
 
 		for (GLuint i = 0; i < node->mNumChildren; i++)
@@ -77,8 +77,8 @@ namespace IO
 
 	Rendering::Mesh* MeshLoader::processMesh(aiMesh* mesh, const aiScene* scene)
 	{
-		vector<Rendering::Vertex> vertices;
-		vector<GLuint> indices;
+		std::vector<Rendering::Vertex> vertices;
+		std::vector<GLuint> indices;
 		GLuint texture;
 
 		// Walk through each of the mesh's vertices
@@ -94,9 +94,16 @@ namespace IO
 			vertex.Position = vertexPlaceholderData;
 
 			// Normals
-			//vertexPlaceholderData.x = mesh->mNormals[i].x;
-			//vertexPlaceholderData.y = mesh->mNormals[i].y;
-			//vertexPlaceholderData.z = mesh->mNormals[i].z;
+			if (mesh->mNormals->Length() >= i)
+			{
+				vertexPlaceholderData.x = mesh->mNormals[i].x;
+				vertexPlaceholderData.y = mesh->mNormals[i].y;
+				vertexPlaceholderData.z = mesh->mNormals[i].z;
+			}
+			else
+			{
+				Utils::Log::DebugLog("Could not load vertex normal.");
+			}
 			vertex.Normal = vertexPlaceholderData;
 
 			// Texture Coordinates

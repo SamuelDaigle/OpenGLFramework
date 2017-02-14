@@ -6,6 +6,7 @@
 
 #include "..\Interface\ICamera.h"
 #include "..\Framework\BaseObject.h"
+#include "..\Framework\OpenGL.h"
 
 namespace Camera
 {

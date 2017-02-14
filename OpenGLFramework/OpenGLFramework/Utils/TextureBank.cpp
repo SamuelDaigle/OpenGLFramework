@@ -20,7 +20,7 @@ namespace Utils
 
 	void TextureBank::AddTexture(const char* _path, GLuint _texture)
 	{
-		string path = _path;
+		std::string path = _path;
 		textureLocations[path] = _texture;
 	}
 

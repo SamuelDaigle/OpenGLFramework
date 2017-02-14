@@ -3,17 +3,9 @@
 /************************************************************************/
 
 #pragma once
-
-#include <string>
-#include <fstream>
-#include <sstream>
-#include <iostream>
-#include <map>
 #include <vector>
-using namespace std;
 
 #include "..\IO\MeshLoader.h"
-#include "..\IO\TextureLoader.h"
 #include "Mesh.h"
 
 namespace Rendering
@@ -26,7 +18,7 @@ namespace Rendering
 		void Draw(IShader& shader);
 
 	private:
-		vector<Mesh*> meshes;
+		std::vector<Mesh*> meshes;
 	};
 
 }

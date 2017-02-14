@@ -10,8 +10,6 @@
 #include <map>
 #include <vector>
 
-using namespace std;
-
 namespace Utils
 {
 
@@ -22,11 +20,11 @@ namespace Utils
 		void Destroy();
 
 		bool HasMesh(const char* _path);
-		void AddMesh(const char* _path, vector<Rendering::Mesh*>& _mesh);
-		vector<Rendering::Mesh*> GetMesh(const char* _path);
+		void AddMesh(const char* _path, std::vector<Rendering::Mesh*>& _mesh);
+		std::vector<Rendering::Mesh*> GetMesh(const char* _path);
 
 	private:
-		map<string, vector<Rendering::Mesh*>> meshs;
+		std::map<std::string, std::vector<Rendering::Mesh*>> meshs;
 	};
 
 }

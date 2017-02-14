@@ -5,13 +5,11 @@
 
 #pragma once
 
-#include "..\Utils\MeshBank.h"
 #include "TextureLoader.h"
+#include "..\Utils\MeshBank.h"
 #include "..\Rendering\Mesh.h"
-#include <vector>
 #include "..\Utils\Log.h"
-
-using namespace std;
+#include <vector>
 
 #include "..\Dependencies\assimp\Importer.hpp"
 #include "..\Dependencies\assimp\scene.h"
@@ -28,15 +26,15 @@ namespace IO
 		void Initialize(TextureLoader* _textureLoader);
 		void ReleaseMeshes();
 
-		vector<Rendering::Mesh*> LoadMeshes(const char* _filepath);
+		std::vector<Rendering::Mesh*> LoadMeshes(const char* _filepath);
 
 	private:
 		void processNode(aiNode* node, const aiScene* scene);
 		Rendering::Mesh* processMesh(aiMesh* mesh, const aiScene* scene);
 		GLuint loadMaterialTextures(aiMaterial* mat);
 
-		vector<Rendering::Mesh*> meshes;
-		string directory;
+		std::vector<Rendering::Mesh*> meshesToProcess;
+		std::string directory;
 
 		Utils::MeshBank* meshBank;
 		TextureLoader* textureLoader;

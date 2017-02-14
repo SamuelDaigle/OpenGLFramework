@@ -1,8 +1,5 @@
 #pragma once
 
-#include "..\Framework\OpenGL.h"
-#include "..\Input\InputHandler.h"
-
 class IScene
 {
 public:

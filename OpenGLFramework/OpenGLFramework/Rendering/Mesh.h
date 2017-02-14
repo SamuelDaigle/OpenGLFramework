@@ -5,12 +5,7 @@
 
 #pragma once
 
-#include <string>
-#include <fstream>
-#include <sstream>
-#include <iostream>
 #include <vector>
-using namespace std;
 
 #include "..\Dependencies\assimp\mesh.h"
 #include "..\Interface\IShader.h"
@@ -28,11 +23,11 @@ namespace Rendering
 
 	class Mesh {
 	public:
-		vector<Vertex> vertices;
-		vector<GLuint> indices;
+		std::vector<Vertex> vertices;
+		std::vector<GLuint> indices;
 		GLuint texture;
 
-		Mesh(vector<Vertex> _vertices, vector<GLuint> _indices, GLuint _texture);
+		Mesh(std::vector<Vertex> _vertices, std::vector<GLuint> _indices, GLuint _texture);
 		void Draw(IShader& shader);
 
 	private:

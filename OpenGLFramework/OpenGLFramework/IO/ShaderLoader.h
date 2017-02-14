@@ -2,14 +2,11 @@
 /* Author: Samuel Daigle                                                */
 /************************************************************************/
 
-#include "..\Dependencies\glew\glew.h"
-#include "..\Dependencies\freeglut\freeglut.h"
 #include "..\Utils\Log.h"
+#include "..\Framework\OpenGL.h"
 
 #include <iostream>
 #include <fstream>
-
-using namespace std;
 
 #pragma once
 

@@ -1,5 +1,7 @@
 #pragma once
 
+#include "..\Framework\OpenGL.h"
+
 namespace Utils
 {
 

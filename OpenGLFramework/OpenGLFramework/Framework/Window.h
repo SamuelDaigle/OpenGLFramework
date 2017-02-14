@@ -2,11 +2,12 @@
 /* Author: Samuel Daigle et Sébastien Rousseau                          */
 /************************************************************************/
 
-#include "..\stdafx.h"
 #include "OpenGL.h"
 #include "..\Input\InputHandler.h"
 #include "..\Interface\IScene.h"
 #include "..\Interface\IWindow.h"
+#include "..\Utils\Log.h"
+#include "..\stdafx.h"
 
 #pragma once
 

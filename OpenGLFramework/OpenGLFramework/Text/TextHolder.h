@@ -5,6 +5,7 @@
 #pragma once
 #include "Text.h"
 #include "..\Math\Vector2.h"
+#include <vector>
 
 namespace Text
 {
@@ -20,7 +21,7 @@ namespace Text
 		void Clear();
 
 	private:
-		vector<Text *> texts;
+		std::vector<Text *> texts;
 		Math::Vector2 position;
 		float spacing;
 	};

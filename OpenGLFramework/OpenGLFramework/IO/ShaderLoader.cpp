@@ -18,11 +18,11 @@ namespace IO
 
 		const char* shaderFile;
 
-		if (_shaderType == VERTEX)
+		if (_shaderType == ShaderType::VERTEX)
 		{
 			shader = glCreateShader(GL_VERTEX_SHADER);
 		}
-		else if (_shaderType == FRAGMENTATION)
+		else if (_shaderType == ShaderType::FRAGMENTATION)
 		{
 			shader = glCreateShader(GL_FRAGMENT_SHADER);
 		}
@@ -55,18 +55,18 @@ namespace IO
 
 	char* ShaderLoader::loadShaderFile(char* _filepath, GLint& _shaderLength)
 	{
-		ifstream::pos_type size;
+		std::ifstream::pos_type size;
 		char * memblock;
-		string text;
+		std::string text;
 
 		// file read based on example in cplusplus.com tutorial
-		ifstream file(_filepath, ios::in | ios::binary | ios::ate);
+		std::ifstream file(_filepath, std::ios::in | std::ios::binary | std::ios::ate);
 		if (file.is_open())
 		{
 			size = file.tellg();
 			_shaderLength = (GLuint)size;
 			memblock = new char[size];
-			file.seekg(0, ios::beg);
+			file.seekg(0, std::ios::beg);
 			file.read(memblock, size);
 			file.close();
 			Utils::Log::DebugLog(3, "file ", _filepath, " loaded");

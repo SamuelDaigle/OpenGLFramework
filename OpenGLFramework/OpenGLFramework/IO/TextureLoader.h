@@ -20,8 +20,6 @@ namespace IO
 		GLuint GetTexture(const char* _texturePath);
 		GLuint LoadTextureFromFile(const char* path);
 
-		unsigned char* GetUnloadedTexture(const char* _path);
-
 	private:
 		Utils::TextureBank* textureBank;
 	};

@@ -92,7 +92,7 @@ namespace Application
 		childText += " ";
 		childText += typeid(_parent).name();
 		_hierarchyText.AddLine(childText);
-		vector<Framework::BaseObject*> childObjects = _parent.GetChilds();
+		std::vector<Framework::BaseObject*> childObjects = _parent.GetChilds();
 		for (int i = 0; i < childObjects.size(); i++)
 		{
 			AddChildStringTo(_hierarchyText, *childObjects[i], _depth + 1);

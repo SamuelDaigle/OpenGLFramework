@@ -8,7 +8,7 @@ namespace Framework
 		shader = new Rendering::SkyboxShader();
 	}
 
-	void Skybox::Initialize(vector<const GLchar*> _filePaths, IO::TextureLoader* _textureLoader)
+	void Skybox::Initialize(std::vector<const GLchar*> _filePaths, IO::TextureLoader* _textureLoader)
 	{
 		int width, height;
 		unsigned char* image;

@@ -4,12 +4,9 @@
 
 #pragma once
 
-#include "..\IO\MeshLoader.h"
 #include "..\Interface\IShader.h"
 #include "..\Utils\Composite.h"
 #include "..\Interface\ICamera.h"
-#include "OpenGL.h"
-#include "..\Math\Quaternion.h"
 #include "..\Math\Matrix4.h"
 #include "..\Utils\Log.h"
 

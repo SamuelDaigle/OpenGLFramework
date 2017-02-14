@@ -3,7 +3,7 @@
 namespace Rendering
 {
 
-	Mesh::Mesh(vector<Vertex> _vertices, vector<GLuint> _indices, GLuint _texture)
+	Mesh::Mesh(std::vector<Vertex> _vertices, std::vector<GLuint> _indices, GLuint _texture)
 	{
 		vertices = _vertices;
 		indices = _indices;

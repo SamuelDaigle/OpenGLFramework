@@ -4,13 +4,8 @@
 
 #pragma once
 
-#include "..\IO\ShaderLoader.h"
-#include "..\Math\Matrix4.h"
-
-#include <iostream>
-#include <vector>
-
-using namespace std;
+#include "..\Dependencies\glew\glew.h"
+#include "..\Dependencies\freeglut\freeglut.h"
 
 namespace Framework
 {
