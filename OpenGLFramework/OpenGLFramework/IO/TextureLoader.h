@@ -5,7 +5,7 @@
 #pragma once
 
 #include "..\Dependencies\soil\SOIL.h"
-#include "..\Utils\TextureBank.h"
+#include "TextureBank.h"
 #include "..\Utils\Log.h"
 
 namespace IO
@@ -21,7 +21,7 @@ namespace IO
 		GLuint LoadTextureFromFile(const char* path);
 
 	private:
-		Utils::TextureBank* textureBank;
+		TextureBank* textureBank;
 	};
 
 }

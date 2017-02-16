@@ -28,8 +28,10 @@
     <ClCompile Include="Framework\Triangle.cpp" />
     <ClCompile Include="Framework\Window.cpp" />
     <ClCompile Include="Input\InputHandler.cpp" />
+    <ClCompile Include="IO\MeshBank.cpp" />
     <ClCompile Include="IO\MeshLoader.cpp" />
     <ClCompile Include="IO\ShaderLoader.cpp" />
+    <ClCompile Include="IO\TextureBank.cpp" />
     <ClCompile Include="IO\TextureLoader.cpp" />
     <ClCompile Include="Math\Matrix3.cpp" />
     <ClCompile Include="Math\Matrix4.cpp" />
@@ -46,8 +48,6 @@
     <ClCompile Include="Text\Text.cpp" />
     <ClCompile Include="Text\TextHolder.cpp" />
     <ClCompile Include="Utils\Log.cpp" />
-    <ClCompile Include="Utils\MeshBank.cpp" />
-    <ClCompile Include="Utils\TextureBank.cpp" />
     <ClCompile Include="Utils\Vertex.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -64,8 +64,10 @@
     <ClInclude Include="Interface\IShader.h" />
     <ClInclude Include="Interface\IScene.h" />
     <ClInclude Include="Interface\IWindow.h" />
+    <ClInclude Include="IO\MeshBank.h" />
     <ClInclude Include="IO\MeshLoader.h" />
     <ClInclude Include="IO\ShaderLoader.h" />
+    <ClInclude Include="IO\TextureBank.h" />
     <ClInclude Include="IO\TextureLoader.h" />
     <ClInclude Include="Math\Matrix3.h" />
     <ClInclude Include="Math\Matrix4.h" />
@@ -88,8 +90,6 @@
     <ClInclude Include="Utils\DynamicArray.h" />
     <ClInclude Include="Utils\DynamicArray.hpp" />
     <ClInclude Include="Utils\Log.h" />
-    <ClInclude Include="Utils\MeshBank.h" />
-    <ClInclude Include="Utils\TextureBank.h" />
     <ClInclude Include="Utils\Vertex.h" />
     <ClInclude Include="Utils\VertexType.h" />
   </ItemGroup>

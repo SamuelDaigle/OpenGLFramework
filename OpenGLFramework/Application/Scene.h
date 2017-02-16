@@ -2,27 +2,22 @@
 /* Author: Samuel Daigle et Sébastien Rousseau                          */
 /************************************************************************/
 
+#pragma once
+
 #include "stdafx.h"
-#include "Framework\Triangle.h"
-#include "Framework\OpenGL.h"
-#include "Utils\Composite.h"
 #include "Framework\Skybox.h"
 #include "Rendering\BasicShader.h"
 #include "Rendering\AdvancedShader.h"
 #include "Rendering\ColorShader.h"
 #include "CustomShader.h"
 #include "Input\InputHandler.h"
-#include "Framework\Square.h"
 #include "Framework\Light.h"
 #include "Planet.h"
 #include "Text\TextHolder.h"
 #include "Interface\IScene.h"
 #include "Camera\Camera.h"
 #include "CustomModel.h"
-#include "Math\Vector3.h"
 #include "Interface\IWindow.h"
-
-#pragma once
 
 namespace Application
 {

@@ -6,9 +6,7 @@
 #pragma once
 
 #include "TextureLoader.h"
-#include "..\Utils\MeshBank.h"
-#include "..\Rendering\Mesh.h"
-#include "..\Utils\Log.h"
+#include "MeshBank.h"
 #include <vector>
 
 #include "..\Dependencies\assimp\Importer.hpp"
@@ -36,7 +34,7 @@ namespace IO
 		std::vector<Rendering::Mesh*> meshesToProcess;
 		std::string directory;
 
-		Utils::MeshBank* meshBank;
+		MeshBank* meshBank;
 		TextureLoader* textureLoader;
 	};
 

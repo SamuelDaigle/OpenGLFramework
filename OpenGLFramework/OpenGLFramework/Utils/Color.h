@@ -1,6 +1,5 @@
 #pragma once
 
-#include "..\Framework\OpenGL.h"
 
 namespace Utils
 {
@@ -19,7 +18,7 @@ namespace Utils
 			b = _b;
 		}
 
-		GLfloat r = 0, g = 0, b = 0;
+		float r = 0, g = 0, b = 0;
 	};
 
 }

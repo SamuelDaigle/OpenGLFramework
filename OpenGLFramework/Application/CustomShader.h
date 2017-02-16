@@ -5,7 +5,6 @@
 #pragma once
 
 #include "Rendering\BaseShader.h"
-#include "Framework\OpenGL.h"
 #include "IO\ShaderLoader.h"
 
 namespace Application

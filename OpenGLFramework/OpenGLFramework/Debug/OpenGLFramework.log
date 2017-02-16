@@ -1,2 +1,36 @@
-﻿  ColorShader.cpp
+﻿  Skybox.cpp
+c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\framework\skybox.cpp(13): warning C4101: 'height': unreferenced local variable
+c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\framework\skybox.cpp(13): warning C4101: 'width': unreferenced local variable
+c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\framework\skybox.cpp(14): warning C4101: 'image': unreferenced local variable
+  Generating Code...
+  Compiling...
+  SkyboxShader.cpp
+  Model.cpp
+  ColorShader.cpp
+  BasicShader.cpp
+  BaseShader.cpp
+  AdvancedShader.cpp
+  TextureLoader.cpp
+  TextureBank.cpp
+  ShaderLoader.cpp
+c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\io\shaderloader.cpp(68): warning C4244: 'initializing': conversion from 'std::streamoff' to 'unsigned int', possible loss of data
+  MeshLoader.cpp
+  Generating Code...
+  Compiling...
+  Triangle.cpp
+  Generating Code...
+  Compiling...
+  Window.cpp
+c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\framework\window.cpp(17): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\framework\window.cpp(42): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\framework\window.cpp(69): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Generating Code...
+  Compiling...
+  TextHolder.cpp
+c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\text\textholder.cpp(9): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  Text.cpp
+c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\text\text.cpp(25): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  OpenGL.cpp
   OpenGLFramework.vcxproj -> C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\Debug\OpenGLFramework.lib

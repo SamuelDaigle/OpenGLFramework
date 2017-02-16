@@ -7,7 +7,7 @@ namespace IO
 	{
 		if (textureBank == NULL)
 		{
-			textureBank = new Utils::TextureBank();
+			textureBank = new TextureBank();
 			textureBank->Initialize();
 		}
 	}

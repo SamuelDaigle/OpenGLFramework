@@ -2,10 +2,9 @@
 /* Author: Samuel Daigle                                                */
 /************************************************************************/
 
-#pragma  once
+#pragma once
 
 #include "..\Interface\IShader.h"
-#include "..\Framework\OpenGL.h"
 
 using namespace glm;
 

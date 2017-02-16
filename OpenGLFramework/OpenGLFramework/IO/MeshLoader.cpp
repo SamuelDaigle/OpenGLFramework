@@ -11,7 +11,7 @@ namespace IO
 		}
 		if (meshBank == NULL)
 		{
-			meshBank = new Utils::MeshBank();
+			meshBank = new MeshBank();
 			meshBank->Initialize();
 		}
 	}

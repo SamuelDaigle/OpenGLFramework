@@ -7,7 +7,6 @@
 
 #include <vector>
 
-#include "..\Dependencies\assimp\mesh.h"
 #include "..\Interface\IShader.h"
 #include "..\Math\Vector3.h"
 #include "..\Math\Vector2.h"

@@ -2,13 +2,13 @@
 /* Author: Samuel Daigle                                                */
 /************************************************************************/
 
+#pragma once
+
 #include "..\Utils\Log.h"
 #include "..\Framework\OpenGL.h"
 
 #include <iostream>
 #include <fstream>
-
-#pragma once
 
 namespace IO
 {

@@ -2,14 +2,14 @@
 /* Author: Samuel Daigle et Sébastien Rousseau                          */
 /************************************************************************/
 
+#pragma once
+
 #include "OpenGL.h"
 #include "..\Input\InputHandler.h"
 #include "..\Interface\IScene.h"
 #include "..\Interface\IWindow.h"
 #include "..\Utils\Log.h"
 #include "..\stdafx.h"
-
-#pragma once
 
 namespace Framework
 {

@@ -2,10 +2,10 @@
 /* Author: Samuel Daigle et Sébastien Rousseau                          */
 /************************************************************************/
 
+#pragma once
+
 #include "..\Framework\BaseObject.h"
 #include "..\Utils\VertexType.h"
-
-#pragma once
 
 namespace Framework
 {

@@ -1,2 +1,8 @@
-﻿  MeshLoader.cpp
+﻿  Skybox.cpp
+Framework\Skybox.cpp(13): warning C4101: 'height': unreferenced local variable
+Framework\Skybox.cpp(13): warning C4101: 'width': unreferenced local variable
+Framework\Skybox.cpp(14): warning C4101: 'image': unreferenced local variable
+  MeshLoader.cpp
+  TextureLoader.cpp
+  Model.cpp
   OpenGLFramework.vcxproj -> C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.lib
