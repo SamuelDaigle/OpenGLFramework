@@ -25,3 +25,7 @@
 *.exe
 *.out
 *.app
+
+OpenGLFramework/\.vs/OpenGLFramework/v14/\.suo
+
+*.db
