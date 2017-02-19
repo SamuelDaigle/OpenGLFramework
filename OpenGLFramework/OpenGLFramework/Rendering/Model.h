@@ -15,7 +15,7 @@ namespace Rendering
 	{
 	public:
 		Model(const char* path, IO::MeshLoader* _meshLoader);
-		void Draw(IShader& shader);
+		void Draw(const IShader& shader) const;
 
 	private:
 		std::vector<Mesh*> meshes;

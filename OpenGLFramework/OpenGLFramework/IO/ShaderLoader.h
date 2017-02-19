@@ -25,12 +25,12 @@ namespace IO
 		ShaderLoader();
 		~ShaderLoader();
 
-		GLuint LoadShader(char* _filepath, ShaderType _shaderType);
-		void CompileShader(GLuint& _shader);
+		const GLuint LoadShader(char* _filepath, ShaderType _shaderType) const;
+		void CompileShader(const GLuint& _shader) const;
 
 	private:
 		char* loadShaderFile(char* _filepath, GLint& _shaderLength);
-		void printShaderInfoLog(GLuint& _shaderInfo);
+		void printShaderInfoLog(const GLuint& _shaderInfo) const;
 
 		GLuint vertexShader;
 		GLuint fragShader;

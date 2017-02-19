@@ -6,8 +6,8 @@
 class IWindow
 {
 public:
-	virtual Framework::OpenGL& GetOpenGLWrapper() = 0;
-	virtual Input::InputHandler& GetInputHandler() = 0;
-	virtual float GetWidth() = 0;
-	virtual float GetHeight() = 0;
+	virtual const Framework::OpenGL& GetOpenGLWrapper() const = 0;
+	virtual const Input::InputHandler& GetInputHandler() const = 0;
+	virtual const float GetWidth() const = 0;
+	virtual const float GetHeight() const = 0;
 };

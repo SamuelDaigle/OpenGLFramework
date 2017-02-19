@@ -12,7 +12,7 @@ namespace IO
 	{
 	}
 
-	GLuint ShaderLoader::LoadShader(char* _filepath, ShaderType _shaderType)
+	const GLuint ShaderLoader::LoadShader(char* _filepath, ShaderType _shaderType) const
 	{
 		GLuint shader;
 
@@ -40,7 +40,7 @@ namespace IO
 		return shader;
 	}
 
-	void ShaderLoader::CompileShader(GLuint& _shader)
+	void ShaderLoader::CompileShader(const GLuint& _shader) const
 	{
 		GLint compiled;
 
@@ -80,7 +80,7 @@ namespace IO
 		return memblock;
 	}
 
-	void ShaderLoader::printShaderInfoLog(GLuint& shader)
+	void ShaderLoader::printShaderInfoLog(const GLuint& shader) const
 	{
 		int infoLogLen = 0;
 		int charsWritten = 0;

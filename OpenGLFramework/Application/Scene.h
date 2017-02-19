@@ -30,7 +30,7 @@ namespace Application
 
 		void input();
 		void update();
-		void render();
+		void render() const;
 
 	private:
 		void UpdateHierarchyText();

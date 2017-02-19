@@ -16,16 +16,17 @@ namespace Input
 		void Destroy();
 		void Update(Math::Vector2 _centerScreenPosition);
 
-		bool IsKeyDown(unsigned char _key);
-		bool HasMovedMouse();
-		Math::Vector2 GetCursorPosition();
-		Math::Vector2 GetCursorDelta();
+		const bool IsKeyDown(const unsigned char _key) const;
+		const bool HasMovedMouse() const;
+		const Math::Vector2 GetCursorPosition() const;
+		const Math::Vector2 GetCursorDelta() const;
 
-		void OnKeyDown(unsigned char _key);
-		void OnKeyUp(unsigned char _key);
+		void OnKeyDown(const unsigned char _key);
+		void OnKeyUp(const unsigned char _key);
 
-		void OnMouseMove(int _x, int _y);
+		void OnMouseMove(const int _x, const int _y);
 
+	private:
 		bool keyStates[256];
 
 		Math::Vector2 cursorPosition;

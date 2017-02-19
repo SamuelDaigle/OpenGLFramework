@@ -1,1 +1,6 @@
-﻿  OpenGLFramework.vcxproj -> C:\Users\Yannick\OneDrive\Hiver 2017\Infographie\Projet\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.lib
+﻿  Camera.cpp
+  BaseObject.cpp
+  Light.cpp
+  Square.cpp
+  Triangle.cpp
+  OpenGLFramework.vcxproj -> C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.lib

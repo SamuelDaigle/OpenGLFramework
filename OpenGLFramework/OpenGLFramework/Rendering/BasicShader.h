@@ -15,7 +15,6 @@ namespace Rendering
 	public:
 		BasicShader();
 		~BasicShader();
-
 	};
 
 }

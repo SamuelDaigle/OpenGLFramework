@@ -16,13 +16,13 @@ namespace Camera
 		Camera();
 		void Destroy();
 
-		virtual void Rotate(float _angle, Math::Vector3& _axis) override;
+		virtual void Rotate(const float _angle, const Math::Vector3& _axis) override;
 
 		void Update();
-		Math::Vector3& GetPosition() override;
-		Math::Matrix4 GetViewMatrix() override;
-		Math::Matrix4& GetProjectionMatrix() override;
-		Math::Matrix4& GetRotation() override;
+		const Math::Vector3& GetPosition() const override;
+		const Math::Matrix4 GetViewMatrix() const override;
+		const Math::Matrix4& GetProjectionMatrix() const override;
+		const Math::Matrix4& GetRotation() const override;
 
 	private:
 		Math::Matrix4 projectionMatrix;

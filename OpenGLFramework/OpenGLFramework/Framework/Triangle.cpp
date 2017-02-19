@@ -15,7 +15,7 @@ namespace Framework
 		shutdownBuffers();
 	}
 
-	void Triangle::Render(ICamera& _camera, Math::Matrix4& _parentWorldMatrix)
+	void Triangle::Render(const ICamera& _camera, const Math::Matrix4& _parentWorldMatrix) const
 	{
 		glBindVertexArray(vertexArrayId);
 		glDrawElements(GL_TRIANGLES, indexCount, GL_UNSIGNED_INT, 0);

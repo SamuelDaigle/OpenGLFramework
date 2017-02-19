@@ -149,7 +149,7 @@ namespace Application
 		}
 	}
 
-	void Scene::render()
+	void Scene::render() const
 	{
 		skybox->Render(*camera);
 		hierarchyText->DrawTexts();

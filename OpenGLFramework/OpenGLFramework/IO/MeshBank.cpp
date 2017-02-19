@@ -13,22 +13,22 @@ namespace IO
 
 	}
 
-	bool MeshBank::HasMesh(const char* _path)
+	const bool MeshBank::HasMesh(const char* _path) const
 	{
 		return meshs.find(_path) != meshs.end();
 	}
 
-	void MeshBank::AddMesh(const char* _path, std::vector<Rendering::Mesh*>& _mesh)
+	void MeshBank::AddMesh(const char* _path, const std::vector<Rendering::Mesh*>& _mesh)
 	{
 		std::string path = _path;
 		Utils::Log::DebugLog(2, "Mesh loaded for path: ", path);
-		meshs[path] = _mesh;
+		meshs.emplace(path, _mesh);
 	}
 
-	std::vector<Rendering::Mesh*> MeshBank::GetMesh(const char* _path)
+	const std::vector<Rendering::Mesh*> MeshBank::GetMesh(const char* _path) const
 	{
 		Utils::Log::DebugLog("Mesh reused");
-		return meshs[_path];
+		return meshs.at(_path);
 	}
 
 }

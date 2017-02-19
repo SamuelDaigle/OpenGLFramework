@@ -12,12 +12,12 @@ using namespace glm;
 class IShader
 {
 public:
-	virtual void SetViewMatrix(Math::Matrix4 _viewMatrix) = 0;
-	virtual void SetProjectionMatrix(Math::Matrix4 _projMatrix) = 0;
-	virtual void SetWorldMatrix(Math::Matrix4 _worldMatrix) = 0;
-	virtual void Use() = 0;
-	virtual unsigned int GetGlProgram() = 0;
+	virtual void SetViewMatrix(const Math::Matrix4& _viewMatrix) const = 0;
+	virtual void SetProjectionMatrix(const Math::Matrix4& _projMatrix) const = 0;
+	virtual void SetWorldMatrix(const Math::Matrix4& _worldMatrix) const = 0;
+	virtual void Use() const = 0;
+	virtual const unsigned int GetGlProgram() const = 0;
 
 private:
-	virtual GLfloat* MatrixToFloatArray(Math::Matrix4 _matrix) = 0;
+	virtual const GLfloat* MatrixToFloatArray(const Math::Matrix4& _matrix) const = 0;
 };

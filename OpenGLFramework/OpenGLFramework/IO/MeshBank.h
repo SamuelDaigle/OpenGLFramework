@@ -19,12 +19,12 @@ namespace IO
 		void Initialize();
 		void Destroy();
 
-		bool HasMesh(const char* _path);
-		void AddMesh(const char* _path, std::vector<Rendering::Mesh*>& _mesh);
-		std::vector<Rendering::Mesh*> GetMesh(const char* _path);
+		const bool HasMesh(const char* _path) const;
+		void AddMesh(const char* _path, const std::vector<Rendering::Mesh*>& _mesh);
+		const std::vector<Rendering::Mesh*> GetMesh(const char* _path) const;
 
 	private:
-		std::map<std::string, std::vector<Rendering::Mesh*>> meshs;
+		std::map<std::string, const std::vector<Rendering::Mesh*>> meshs;
 	};
 
 }

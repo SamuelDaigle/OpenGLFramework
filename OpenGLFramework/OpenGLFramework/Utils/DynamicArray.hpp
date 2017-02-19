@@ -8,13 +8,13 @@ namespace Utils
 	}
 
 	template<class T>
-	void DynamicArray<T>::ReserveMemory(unsigned int _nbElements)
+	void DynamicArray<T>::ReserveMemory(const unsigned int _nbElements)
 	{
 		elements.push_back(T());
 	}
 
 	template<class T>
-	T& DynamicArray<T>::GetElement(unsigned int _position)
+	const T& DynamicArray<T>::GetElement(const unsigned int _position) const
 	{
 		if (_position >= GetNbElements())
 		{
@@ -24,7 +24,7 @@ namespace Utils
 	}
 
 	template<class T>
-	T* DynamicArray<T>::GetElements()
+	const T* DynamicArray<T>::GetElements() const
 	{
 		T* tabElements = new T[elements.size()];
 		for (int i = 0; i < elements.size(); i++)
@@ -35,7 +35,7 @@ namespace Utils
 	}
 
 	template<class T>
-	unsigned int DynamicArray<T>::GetNbElements()
+	const unsigned int DynamicArray<T>::GetNbElements() const
 	{
 		return elements.size();
 	}

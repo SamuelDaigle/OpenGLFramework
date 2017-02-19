@@ -15,20 +15,20 @@ namespace Math
 	{
 	public:
 		Quaternion();
-		Quaternion(glm::quat _quat);
-		Quaternion(int _eulerX, int _eulerY, int _eulerZ);
-		Quaternion(glm::vec3& _euler);
-		Quaternion(int x, int y, int z, float w);
+		Quaternion(const glm::quat _quat);
+		Quaternion(const int _eulerX, const int _eulerY, const int _eulerZ);
+		Quaternion(const glm::vec3& _euler);
+		Quaternion(const int x, const int y, const int z, const float w);
 
-		Vector3 eulerAngles();
-		void Set(glm::vec3& _angles);
+		const Vector3 eulerAngles() const;
+		void Set(const glm::vec3& _angles);
 
-		static Quaternion EulerAnglesToQuaternion(glm::vec3& _euler);
-		static Vector3 QuaternionToEulerAngles(glm::quat& _quat);
-		static Vector3 QuaternionToForwardVector(glm::quat& _quat);
-		static Quaternion LookAt(glm::vec3 sourcePoint, glm::vec3 direction);
+		static const Quaternion EulerAnglesToQuaternion(const glm::vec3& _euler);
+		static const Vector3 QuaternionToEulerAngles(const glm::quat& _quat);
+		static const Vector3 QuaternionToForwardVector(const glm::quat& _quat);
+		static const Quaternion LookAt(const glm::vec3 sourcePoint, const glm::vec3 direction);
 
-		static Quaternion GetIdentity();
+		static const Quaternion GetIdentity();
 	};
 
 }

@@ -16,11 +16,11 @@ namespace Framework
 	{
 	public:
 		Skybox();
-		void Initialize(std::vector<const GLchar*> _filePaths, IO::TextureLoader* _textureLoader);
-		void Initialize(const GLchar* _filename, IO::TextureLoader* _textureLoader);
+		void Initialize(const std::vector<const GLchar*> _filePaths, const IO::TextureLoader* _textureLoader);
+		void Initialize(const GLchar* _filename, const IO::TextureLoader* _textureLoader);
 		void Destroy();
 
-		void Render(ICamera& _camera);
+		void Render(const ICamera& _camera) const;
 
 	private:
 		void loadMesh();

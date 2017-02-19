@@ -21,15 +21,15 @@ public:
 
 	void UpdateChilds();
 
-	void RenderChilds(ICamera& _camera, Math::Matrix4& _parentWorldMatrix);
+	void RenderChilds(const ICamera& _camera, const Math::Matrix4& _parentWorldMatrix) const;
 
-	void SetChildsPosition(float _x, float _y, float _z);
+	void SetChildsPosition(const float _x, const float _y, const float _z);
 
-	void TranslateChilds(float _x, float _y, float _z);
+	void TranslateChilds(const float _x, const float _y, const float _z);
 
-	void RotateChilds(float _angle, Math::Vector3& _axis);
+	void RotateChilds(const float _angle, const Math::Vector3& _axis);
 
-	void ScaleChilds(float _scaleX, float _scaleY, float _scaleZ);
+	void ScaleChilds(const float _scaleX, const float _scaleY, const float _scaleZ);
 
 	void Add(T* _object);
 

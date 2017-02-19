@@ -10,7 +10,7 @@ namespace Utils
 	class Vertex
 	{
 	public:
-		Vertex(Math::Vector3 _position, Math::Vector2 _textureCoordinate, Math::Vector3 _normal);
+		Vertex(const Math::Vector3 _position, const Math::Vector2 _textureCoordinate, const Math::Vector3 _normal);
 
 		Math::Vector3 Position;
 		Math::Vector2 TextureCoordinate;

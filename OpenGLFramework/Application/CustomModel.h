@@ -17,7 +17,7 @@ namespace Application
 
 		void Destroy() override;
 
-		void Render(ICamera& _camera, Math::Matrix4& _parentWorldMatrix) override;
+		void Render(const ICamera& _camera, const Math::Matrix4& _parentWorldMatrix) const override;
 
 	private:
 		Rendering::Model* model;

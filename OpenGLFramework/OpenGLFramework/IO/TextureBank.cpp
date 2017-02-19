@@ -13,20 +13,20 @@ namespace IO
 
 	}
 
-	bool TextureBank::HasTexture(const char* _path)
+	const bool TextureBank::HasTexture(const char* _path) const
 	{
 		return textureLocations.find(_path) != textureLocations.end();
 	}
 
-	void TextureBank::AddTexture(const char* _path, GLuint _texture)
+	void TextureBank::AddTexture(const char* _path, const GLuint _texture)
 	{
 		std::string path = _path;
-		textureLocations[path] = _texture;
+		textureLocations.emplace(path, _texture);
 	}
 
-	GLuint TextureBank::GetTexture(const char* _path)
+	const GLuint TextureBank::GetTexture(const char* _path) const
 	{
-		return textureLocations[_path];
+		return textureLocations.at(_path);
 	}
 
 }

@@ -79,7 +79,7 @@ namespace Framework
 		Utils::Log::DebugLog(3, "OpenGL version ", glGetString(GL_VERSION), " supported");
 	}
 
-	bool Window::hasExited()
+	const bool Window::hasExited() const
 	{
 		return inputhandler->IsKeyDown(VK_ESCAPE);
 	}
@@ -89,22 +89,22 @@ namespace Framework
 		scene = &_scene;
 	}
 
-	OpenGL& Window::GetOpenGLWrapper()
+	const OpenGL& Window::GetOpenGLWrapper() const
 	{
 		return *openGL;
 	}
 
-	Input::InputHandler& Window::GetInputHandler()
+	const Input::InputHandler& Window::GetInputHandler() const
 	{
 		return *inputhandler;
 	}
 
-	float Window::GetWidth()
+	const float Window::GetWidth() const
 	{
 		return (float)glutGet(GLUT_SCREEN_WIDTH);
 	}
 
-	float Window::GetHeight()
+	const float Window::GetHeight() const
 	{
 		return (float)glutGet(GLUT_SCREEN_HEIGHT);
 	}

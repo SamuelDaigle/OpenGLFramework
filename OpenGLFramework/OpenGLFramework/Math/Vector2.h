@@ -9,11 +9,11 @@ namespace Math
 	{
 	public:
 		Vector2();
-		Vector2(float _x, float _y);
+		Vector2(const float _x, const float _y);
 
-		Vector2 operator-();
-		Vector2 operator-(glm::vec2& _other);
-		Vector2 operator*(glm::vec2& _other);
+		const Vector2 operator-();
+		const Vector2 operator-(const glm::vec2& _other);
+		const Vector2 operator*(const glm::vec2& _other);
 	};
 
 }

@@ -14,9 +14,9 @@ namespace Utils
 	{
 	public:
 		static void DebugLog(const char* _text);
-		static void DebugLog(int _argumentCount, ...);
-		static std::vector<std::string> GetOutput();
-		static std::vector<std::string> GetLastOutput(unsigned int _nbLines);
+		static void DebugLog(const int _argumentCount, ...);
+		static const std::vector<std::string> GetOutput();
+		static const std::vector<std::string> GetLastOutput(const unsigned int _nbLines);
 
 	private:
 		static std::vector<std::string> output;

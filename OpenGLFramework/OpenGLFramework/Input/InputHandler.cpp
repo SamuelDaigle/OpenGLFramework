@@ -22,37 +22,37 @@ namespace Input
 		deltaCursor = cursorPosition - _centerScreenPosition;
 	}
 
-	bool InputHandler::IsKeyDown(unsigned char _key)
+	const bool InputHandler::IsKeyDown(const unsigned char _key) const
 	{
 		return keyStates[_key];
 	}
 
-	bool InputHandler::HasMovedMouse()
+	const bool InputHandler::HasMovedMouse() const
 	{
 		return deltaCursor.x != 0.0f || deltaCursor.y != 0.0f;
 	}
 
-	Math::Vector2 InputHandler::GetCursorPosition()
+	const Math::Vector2 InputHandler::GetCursorPosition() const
 	{
 		return cursorPosition;
 	}
 
-	Math::Vector2 InputHandler::GetCursorDelta()
+	const Math::Vector2 InputHandler::GetCursorDelta() const
 	{
 		return deltaCursor;
 	}
 
-	void InputHandler::OnKeyDown(unsigned char _key)
+	void InputHandler::OnKeyDown(const unsigned char _key)
 	{
 		keyStates[_key] = true;
 	}
 
-	void InputHandler::OnKeyUp(unsigned char _key)
+	void InputHandler::OnKeyUp(const unsigned char _key)
 	{
 		keyStates[_key] = false;
 	}
 
-	void InputHandler::OnMouseMove(int _x, int _y)
+	void InputHandler::OnMouseMove(const int _x, const int _y)
 	{
 		cursorPosition = Math::Vector2(_x, _y);
 	}

@@ -26,7 +26,7 @@ namespace IO
 		}
 	}
 
-	std::vector<Rendering::Mesh*> MeshLoader::LoadMeshes(const char* _filepath)
+	const std::vector<Rendering::Mesh*> MeshLoader::LoadMeshes(const char* _filepath)
 	{
 		Importer importer;
 

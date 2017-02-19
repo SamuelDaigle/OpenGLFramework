@@ -3,7 +3,7 @@
 namespace Text
 {
 
-	Text::Text(std::string& _value, float _x, float _y, float _r, float _g, float _b)
+	Text::Text(const std::string& _value, float _x, float _y, float _r, float _g, float _b)
 	{
 		strings = _value;
 		xPosition = _x;
@@ -18,7 +18,7 @@ namespace Text
 	{
 	}
 	
-	void Text::Draw()
+	void Text::Draw() const
 	{
 		glColor3f(r, g, b);
 		glWindowPos2f(xPosition, yPosition);

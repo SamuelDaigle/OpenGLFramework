@@ -9,8 +9,8 @@
 class ICamera
 {
 public:
-	virtual Math::Vector3& GetPosition() = 0;
-	virtual Math::Matrix4 GetViewMatrix() = 0;
-	virtual Math::Matrix4& GetProjectionMatrix() = 0;
-	virtual Math::Matrix4& GetRotation() = 0;
+	virtual const Math::Vector3& GetPosition() const = 0;
+	virtual const Math::Matrix4 GetViewMatrix() const = 0;
+	virtual const Math::Matrix4& GetProjectionMatrix() const = 0;
+	virtual const Math::Matrix4& GetRotation() const = 0;
 };

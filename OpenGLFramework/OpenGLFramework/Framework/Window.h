@@ -27,14 +27,14 @@ namespace Framework
 
 		void SetScene(IScene& _scene);
 
-		OpenGL& GetOpenGLWrapper() override;
-		Input::InputHandler& GetInputHandler() override;
-		float GetWidth() override;
-		float GetHeight() override;
+		const OpenGL& GetOpenGLWrapper() const override;
+		const Input::InputHandler& GetInputHandler() const override;
+		const float GetWidth() const override;
+		const float GetHeight() const override;
 
 	private:
 		void initializeWindow();
-		bool hasExited();
+		const bool hasExited() const;
 
 		OpenGL* openGL;
 		Input::InputHandler* inputhandler;

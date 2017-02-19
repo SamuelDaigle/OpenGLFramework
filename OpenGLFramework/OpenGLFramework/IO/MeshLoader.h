@@ -24,7 +24,7 @@ namespace IO
 		void Initialize(TextureLoader* _textureLoader);
 		void ReleaseMeshes();
 
-		std::vector<Rendering::Mesh*> LoadMeshes(const char* _filepath);
+		const std::vector<Rendering::Mesh*> LoadMeshes(const char* _filepath);
 
 	private:
 		void processNode(aiNode* node, const aiScene* scene);

@@ -16,8 +16,8 @@ namespace Framework
 		OpenGL();
 		void Destroy();
 
-		void BeginScene();
-		void EndScene();
+		void BeginScene() const;
+		void EndScene() const;
 
 	private:
 		unsigned int* vertexArrayObjID;

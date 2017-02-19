@@ -12,7 +12,7 @@ void Sun::Destroy()
 	BaseObject::Destroy();
 }
 
-void Sun::Render(ICamera& _camera, Math::Matrix4& _parentWorldMatrix)
+void Sun::Render(const ICamera& _camera, const Math::Matrix4& _parentWorldMatrix) const
 {
 	BaseObject::Render(_camera, _parentWorldMatrix);
 	model->Draw(*shader);

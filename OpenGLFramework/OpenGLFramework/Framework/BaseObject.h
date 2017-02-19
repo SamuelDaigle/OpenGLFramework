@@ -21,27 +21,28 @@ namespace Framework
 		BaseObject();
 		BaseObject(IShader& _shader);
 		virtual void Destroy();
-		virtual void Render(ICamera& _camera, Math::Matrix4& _parentWorldMatrix);
+		virtual void Render(const ICamera& _camera, const Math::Matrix4& _parentWorldMatrix) const;
 		virtual void Update();
 
-		virtual void SetColor(float _r, float _g, float _b);
-		virtual void Translate(float _x, float _y, float _z);
-		virtual void Rotate(float _angle, Math::Vector3& _axis);
-		virtual void Scale(float _scaleX, float _scaleY, float _scaleZ);
+		virtual void SetColor(const float _r, const float _g, const float _b);
+		virtual void Translate(const float _x, const float _y, const float _z);
+		virtual void Rotate(const float _angle, const Math::Vector3& _axis);
+		virtual void Scale(const float _scaleX, const float _scaleY, const float _scaleZ);
 
 		virtual std::vector<BaseObject*> GetChilds();
 
-		virtual void LookAt(Math::Vector3 _position);
+		virtual void LookAt(const Math::Vector3 _position);
 
-		virtual Math::Matrix4 GetWorldMatrix();
+		virtual const Math::Matrix4 GetWorldMatrix() const;
 
-		virtual Math::Vector3& forward();
-		virtual Math::Vector3& back();
-		virtual Math::Vector3& left();
-		virtual Math::Vector3& right();
-		virtual Math::Vector3& up();
-		virtual Math::Vector3& down();
+		virtual const Math::Vector3& forward() const;
+		virtual const Math::Vector3& back() const;
+		virtual const Math::Vector3& left() const;
+		virtual const Math::Vector3& right() const;
+		virtual const Math::Vector3& up() const;
+		virtual const Math::Vector3& down() const;
 
+		// Public to allow all modification from external class.
 		Math::Vector3 position;
 		Math::Vector3 scale;
 		Math::Matrix4 rotation;
@@ -52,9 +53,9 @@ namespace Framework
 		float b = 0.2f;
 		IShader* shader;
 
-		virtual Math::Matrix4& GetRotationMatrix();
-		virtual Math::Matrix4 GetScalingMatrix();
-		virtual Math::Matrix4 GetTranslationMatrix();
+		virtual const Math::Matrix4& GetRotationMatrix() const;
+		virtual const Math::Matrix4 GetScalingMatrix() const;
+		virtual const Math::Matrix4 GetTranslationMatrix() const;
 
 	private:
 		Math::Vector3 forwardVector;

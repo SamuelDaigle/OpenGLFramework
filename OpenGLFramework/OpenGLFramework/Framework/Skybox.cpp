@@ -8,7 +8,7 @@ namespace Framework
 		shader = new Rendering::SkyboxShader();
 	}
 
-	void Skybox::Initialize(std::vector<const GLchar*> _filePaths, IO::TextureLoader* _textureLoader)
+	void Skybox::Initialize(const std::vector<const GLchar*> _filePaths, const IO::TextureLoader* _textureLoader)
 	{
 		int width, height;
 		unsigned char* image;
@@ -30,7 +30,7 @@ namespace Framework
 		loadMesh();
 	}
 
-	void Skybox::Initialize(const GLchar* _filename, IO::TextureLoader* _textureLoader)
+	void Skybox::Initialize(const GLchar* _filename, const IO::TextureLoader* _textureLoader)
 	{
 		int width, height;
 		unsigned char* image;
@@ -59,7 +59,7 @@ namespace Framework
 
 	}
 
-	void Skybox::Render(ICamera& _camera)
+	void Skybox::Render(const ICamera& _camera) const
 	{
 		// Prepare shader.
 		glDepthMask(GL_FALSE);

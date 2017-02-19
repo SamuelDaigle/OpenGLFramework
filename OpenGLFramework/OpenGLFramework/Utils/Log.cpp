@@ -10,7 +10,7 @@ namespace Utils
 		output.push_back(std::string(_text));
 	}
 
-	void Log::DebugLog(int _argumentCount, ...)
+	void Log::DebugLog(const int _argumentCount, ...)
 	{
 		va_list ap;
 		std::ostringstream oss;
@@ -22,13 +22,13 @@ namespace Utils
 		output.push_back(std::string(oss.str().c_str()));
 	}
 
-	std::vector<std::string> Log::GetOutput()
+	const std::vector<std::string> Log::GetOutput()
 	{
 		return output;
 	}
 
 
-	std::vector<std::string> Log::GetLastOutput(unsigned int _nbLines)
+	const std::vector<std::string> Log::GetLastOutput(const unsigned int _nbLines)
 	{
 		std::vector<std::string> result;
 		for (int i = output.size() - 1; result.size() <= _nbLines && i >= 0; i--)

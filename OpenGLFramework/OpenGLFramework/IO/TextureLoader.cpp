@@ -22,7 +22,7 @@ namespace IO
 		}
 	}
 
-	GLuint TextureLoader::GetTexture(const char* _texturePath)
+	const GLuint TextureLoader::GetTexture(const char* _texturePath) const
 	{
 		if (textureBank->HasTexture(_texturePath))
 		{
@@ -35,7 +35,7 @@ namespace IO
 		return loadedTexture;
 	}
 
-	GLuint TextureLoader::LoadTextureFromFile(const char* path)
+	const GLuint TextureLoader::LoadTextureFromFile(const char* path) const
 	{
 		int width, height;
 		GLuint textureID;

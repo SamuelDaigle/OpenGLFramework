@@ -17,7 +17,7 @@ namespace Framework
 		BaseObject::Destroy();
 	}
 
-	void Light::Render(ICamera& _camera, Math::Matrix4& _parentWorldMatrix)
+	void Light::Render(const ICamera& _camera, const Math::Matrix4& _parentWorldMatrix) const
 	{
 		BaseObject::Render(_camera, _parentWorldMatrix);
 		glUniform3f(glGetUniformLocation(shader->GetGlProgram(), "viewPos"), _camera.GetPosition().x, _camera.GetPosition().y, _camera.GetPosition().z);

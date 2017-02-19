@@ -29,7 +29,7 @@ namespace Utils
 	}
 
 	template <class T>
-	void Composite<T>::RenderChilds(ICamera& _camera, Math::Matrix4& _parentWorldMatrix)
+	void Composite<T>::RenderChilds(const ICamera& _camera, const Math::Matrix4& _parentWorldMatrix) const
 	{
 		for each (T* childObject in childObjects)
 		{
@@ -38,7 +38,7 @@ namespace Utils
 	}
 
 	template <class T>
-	void Composite<T>::SetChildsPosition(float _x, float _y, float _z)
+	void Composite<T>::SetChildsPosition(const float _x, const float _y, const float _z)
 	{
 		for each (T* childObject in childObjects)
 		{
@@ -47,7 +47,7 @@ namespace Utils
 	}
 
 	template <class T>
-	void Composite<T>::TranslateChilds(float _x, float _y, float _z)
+	void Composite<T>::TranslateChilds(const float _x, const float _y, const float _z)
 	{
 		for each (T* childObject in childObjects)
 		{
@@ -56,7 +56,7 @@ namespace Utils
 	}
 
 	template <class T>
-	void Composite<T>::RotateChilds(float _angle, Math::Vector3& _axis)
+	void Composite<T>::RotateChilds(const float _angle, const Math::Vector3& _axis)
 	{
 		for each (T* childObject in childObjects)
 		{
@@ -65,7 +65,7 @@ namespace Utils
 	}
 
 	template <class T>
-	void Composite<T>::ScaleChilds(float _scaleX, float _scaleY, float _scaleZ)
+	void Composite<T>::ScaleChilds(const float _scaleX, const float _scaleY, const float _scaleZ)
 	{
 		for each (T* childObject in childObjects)
 		{

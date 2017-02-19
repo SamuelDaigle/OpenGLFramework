@@ -16,8 +16,8 @@ namespace Text
 		TextHolder(Math::Vector2& _position);
 		~TextHolder();
 
-		void DrawTexts();
-		void AddLine(std::string& _value);
+		void DrawTexts() const;
+		void AddLine(const std::string& _value);
 		void Clear();
 
 	private:

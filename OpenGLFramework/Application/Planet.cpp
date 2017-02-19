@@ -12,7 +12,7 @@ void Planet::Destroy()
 	BaseObject::Destroy();
 }
 
-void Planet::Render(ICamera& _camera, Math::Matrix4& _parentWorldMatrix)
+void Planet::Render(const ICamera& _camera, const Math::Matrix4& _parentWorldMatrix) const
 {
 	BaseObject::Render(_camera, _parentWorldMatrix);
 	glUniform4f(glGetUniformLocation(shader->GetGlProgram(), "Color"), r, g, b, 1.0f);

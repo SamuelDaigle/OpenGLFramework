@@ -16,12 +16,12 @@ namespace IO
 		void Initialize();
 		void Destroy();
 
-		bool HasTexture(const char* _path);
-		void AddTexture(const char* _path, GLuint _texture);
-		GLuint GetTexture(const char* _path);
+		const bool HasTexture(const char* _path) const;
+		void AddTexture(const char* _path, const GLuint _texture);
+		const GLuint GetTexture(const char* _path) const;
 
 	private:
-		std::map<std::string, GLuint> textureLocations;
+		std::map<std::string, const GLuint> textureLocations;
 	};
 
 }

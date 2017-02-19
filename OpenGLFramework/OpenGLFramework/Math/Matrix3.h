@@ -13,11 +13,11 @@ namespace Math
 	class Matrix3 : public glm::mat3
 	{
 	public:
-		static Matrix3 QuaternionToRotationMatrix(Quaternion& _rotationQuaternion);
+		static const Matrix3 QuaternionToRotationMatrix(const Quaternion& _rotationQuaternion);
 
-		Vector3 operator*(Vector3& _other);
+		const Vector3 operator*(const Vector3& _other) const;
 
-		Matrix3(glm::mat3 _matrix);
+		Matrix3(const glm::mat3 _matrix);
 	};
 
 }

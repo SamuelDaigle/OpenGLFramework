@@ -9,11 +9,11 @@ namespace Utils
 	class DynamicArray
 	{
 	public:
-		void Add(T& _newElement);
-		void ReserveMemory(unsigned int _nbElements);
-		T& GetElement(unsigned int _position);
-		T* GetElements();
-		unsigned int GetNbElements();
+		void Add(const T& _newElement);
+		void ReserveMemory(const unsigned int _nbElements);
+		const T& GetElement(const unsigned int _position) const;
+		const T* GetElements() const;
+		const unsigned int GetNbElements() const;
 
 	private:
 		vector<T> elements;

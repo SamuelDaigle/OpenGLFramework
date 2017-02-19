@@ -8,7 +8,7 @@ namespace Rendering
 		meshes = _meshLoader->LoadMeshes(path);
 	}
 
-	void Model::Draw(IShader& shader)
+	void Model::Draw(const IShader& shader) const
 	{
 		for (GLuint i = 0; i < meshes.size(); i++)
 			meshes[i]->Draw(shader);

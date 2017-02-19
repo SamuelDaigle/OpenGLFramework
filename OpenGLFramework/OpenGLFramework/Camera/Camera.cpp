@@ -24,7 +24,7 @@ namespace Camera
 		BaseObject::Update();
 	}
 
-	void Camera::Rotate(float _angle, Math::Vector3& _axis)
+	void Camera::Rotate(const float _angle, const Math::Vector3& _axis)
 	{
 		if (_axis.x == 1.0f)
 			bearing -= _angle;
@@ -32,22 +32,22 @@ namespace Camera
 			tilt -= _angle;
 	}
 
-	Math::Vector3& Camera::GetPosition()
+	const Math::Vector3& Camera::GetPosition() const
 	{
 		return position;
 	}
 
-	Math::Matrix4& Camera::GetProjectionMatrix()
+	const Math::Matrix4& Camera::GetProjectionMatrix() const
 	{
 		return projectionMatrix;
 	}
 
-	Math::Matrix4 Camera::GetViewMatrix()
+	const Math::Matrix4 Camera::GetViewMatrix() const
 	{
 		return GetRotationMatrix() * GetScalingMatrix() * GetTranslationMatrix();
 	}
 
-	Math::Matrix4& Camera::GetRotation()
+	const Math::Matrix4& Camera::GetRotation() const
 	{
 		return rotation;
 	}

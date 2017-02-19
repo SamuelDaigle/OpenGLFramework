@@ -20,7 +20,7 @@ void BaseObject::Destroy()
 	Utils::Composite<BaseObject>::DestroyChilds();
 }
 
-void BaseObject::Render(ICamera& _camera, Math::Matrix4& _parentWorldMatrix)
+void BaseObject::Render(const ICamera& _camera, const Math::Matrix4& _parentWorldMatrix) const
 {
 	Math::Matrix4 world = _parentWorldMatrix * GetWorldMatrix();
 	Utils::Composite<BaseObject>::RenderChilds(_camera, world);
@@ -50,7 +50,7 @@ void BaseObject::SetColor(float _r, float _g, float _b)
 	b = _b;
 }
 
-void BaseObject::Translate(float _x, float _y, float _z)
+void BaseObject::Translate(const float _x, const float _y, const float _z)
 {
 	Utils::Composite<BaseObject>::TranslateChilds(_x, _y, _z);
 	position.x += _x;
@@ -58,12 +58,12 @@ void BaseObject::Translate(float _x, float _y, float _z)
 	position.z += _z;
 }
 
-void BaseObject::Rotate(float _angle, Math::Vector3& _axis)
+void BaseObject::Rotate(const float _angle, const Math::Vector3& _axis)
 {
 	rotation = Math::Matrix4::Rotate(rotation, _angle, _axis);
 }
 
-void BaseObject::Scale(float _scaleX, float _scaleY, float _scaleZ)
+void BaseObject::Scale(const float _scaleX, const float _scaleY, const float _scaleZ)
 {
 	if (scale.x == 0.0f || scale.y == 0.0f || scale.z == 0.0f)
 		Utils::Log::DebugLog("WARNING -- Setting an object with a scale of 0.");
@@ -78,12 +78,12 @@ std::vector<BaseObject*> BaseObject::GetChilds()
 	return childObjects;
 }
 
-void BaseObject::LookAt(Math::Vector3 _targetPosition)
+void BaseObject::LookAt(const Math::Vector3 _targetPosition)
 {
 	//rotation = Math::Quaternion::LookAt(position, _targetPosition);
 }
 
-Math::Matrix4 BaseObject::GetWorldMatrix()
+const Math::Matrix4 BaseObject::GetWorldMatrix() const
 {
 	Math::Matrix4 rotationMatrix = GetRotationMatrix();
 	Math::Matrix4 scalingMatrix = GetScalingMatrix();
@@ -92,49 +92,49 @@ Math::Matrix4 BaseObject::GetWorldMatrix()
 	return scalingMatrix * translateMatrix * rotationMatrix;
 }
 
-Math::Matrix4& BaseObject::GetRotationMatrix()
+const Math::Matrix4& BaseObject::GetRotationMatrix() const
 {
 	return rotation;
 }
 
-Math::Matrix4 BaseObject::GetScalingMatrix()
+const Math::Matrix4 BaseObject::GetScalingMatrix() const
 {
 	if (scale.x == 0.0f || scale.y == 0.0f || scale.z == 0.0f)
 		Utils::Log::DebugLog("WARNING -- An object has a scale of 0.");
 	return Math::Matrix4::VectorToScaleMatrix(scale);
 }
 
-Math::Matrix4 BaseObject::GetTranslationMatrix()
+const Math::Matrix4 BaseObject::GetTranslationMatrix() const
 {
 	return Math::Matrix4::VectorToTranslationMatrix(position);
 }
 
-Math::Vector3& BaseObject::forward()
+const Math::Vector3& BaseObject::forward() const
 {
 	return forwardVector;
 }
 
-Math::Vector3& BaseObject::back()
+const Math::Vector3& BaseObject::back() const
 {
 	return -forwardVector;
 }
 
-Math::Vector3& BaseObject::left() 
+const Math::Vector3& BaseObject::left() const
 {
 	return -rightVector;
 }
 
-Math::Vector3& BaseObject::right()
+const Math::Vector3& BaseObject::right() const
 {
 	return rightVector;
 }
 
-Math::Vector3& BaseObject::up()
+const Math::Vector3& BaseObject::up() const
 {
 	return upVector;
 }
 
-Math::Vector3& BaseObject::down()
+const Math::Vector3& BaseObject::down() const
 {
 	return -upVector;
 }

@@ -17,7 +17,7 @@ namespace Text
 		}
 	}
 
-	void TextHolder::DrawTexts()
+	void TextHolder::DrawTexts() const
 	{
 		glDepthFunc(GL_FALSE);
 		glDisable(GL_TEXTURE_2D);
@@ -32,7 +32,7 @@ namespace Text
 		glDepthFunc(GL_TRUE);
 	}
 
-	void TextHolder::AddLine(std::string& _value)
+	void TextHolder::AddLine(const std::string& _value)
 	{
 		Text* text = new Text(_value, position.x, position.y - texts.size() * spacing, 255, 0, 0);
 		texts.push_back(text);

@@ -9,20 +9,20 @@ namespace Framework
 		glDepthMask(GL_ALWAYS);
 		glDepthFunc(GL_LESS);
 		glEnable(GL_STENCIL_TEST);
-		glDisable(GL_CULL_FACE); // Render both sides, to remove later..
+		glDisable(GL_CULL_FACE); // Render both sides?, to remove later..
 	}
 
 	void OpenGL::Destroy()
 	{
 	}
 
-	void OpenGL::BeginScene()
+	void OpenGL::BeginScene() const
 	{
 		glClearColor(0, 0, 0, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	}
 
-	void OpenGL::EndScene()
+	void OpenGL::EndScene() const
 	{
 		glutSwapBuffers();
 	}

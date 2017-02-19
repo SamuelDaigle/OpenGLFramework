@@ -13,17 +13,17 @@ namespace Math
 	class Matrix4 : public glm::mat4
 	{
 	public:
-		static Matrix4 QuaternionToRotationMatrix(Quaternion& _rotationQuaternion);
-		static Matrix4 VectorToRotationMatrix(glm::vec3& _rotationVector);
-		static Matrix4 VectorToScaleMatrix(glm::vec3& _scaleVector);
-		static Matrix4 VectorToTranslationMatrix(glm::vec3& _translationVector);
-		static Matrix4 LookAt(glm::vec3& _position, glm::vec3& _direction);
-		static Matrix4 Rotate(glm::mat4& _vector, float _angle, glm::vec3& _axis);
+		static const Matrix4 QuaternionToRotationMatrix(const Quaternion& _rotationQuaternion);
+		static const Matrix4 VectorToRotationMatrix(const glm::vec3& _rotationVector);
+		static const Matrix4 VectorToScaleMatrix(const glm::vec3& _scaleVector);
+		static const Matrix4 VectorToTranslationMatrix(const glm::vec3& _translationVector);
+		static const Matrix4 LookAt(const glm::vec3& _position, const glm::vec3& _direction);
+		static const Matrix4 Rotate(const glm::mat4& _vector, const float _angle, const glm::vec3& _axis);
 
-		static Matrix4 Inverse(glm::mat4& _matrix);
+		static const Matrix4 Inverse(const glm::mat4& _matrix);
 
 		Matrix4();
-		Matrix4(glm::mat4 _matrix);
+		Matrix4(const glm::mat4 _matrix);
 	};
 
 }
