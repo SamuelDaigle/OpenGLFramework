@@ -7,10 +7,10 @@ namespace Framework
 	{
 		initializeWindow();
 
-		openGL = new OpenGL();
+		openGL = std::make_shared<OpenGL>(OpenGL());
 
 		glutSetCursor(GLUT_CURSOR_NONE);
-		inputhandler = new Input::InputHandler();
+		inputhandler = std::make_shared<Input::InputHandler>(Input::InputHandler());
 
 		Math::Vector2 cursorPosition = Math::Vector2(GetWidth() / 2.0f, GetHeight() / 2.0f);
 		inputhandler->Initialize(cursorPosition);
@@ -19,8 +19,8 @@ namespace Framework
 
 	void Window::Destroy()
 	{
-		SAFE_DESTROY(openGL);
-		SAFE_DESTROY(inputhandler);
+		openGL->Destroy();
+		inputhandler->Destroy();
 	}
 
 	void Window::Frame()
@@ -84,19 +84,19 @@ namespace Framework
 		return inputhandler->IsKeyDown(VK_ESCAPE);
 	}
 
-	void Window::SetScene(IScene& _scene)
+	void Window::SetScene(std::unique_ptr<IScene> _scene)
 	{
-		scene = &_scene;
+		scene = std::move(_scene);
 	}
 
-	const OpenGL& Window::GetOpenGLWrapper() const
+	const std::shared_ptr<OpenGL> Window::GetOpenGLWrapper() const
 	{
-		return *openGL;
+		return openGL;
 	}
 
-	const Input::InputHandler& Window::GetInputHandler() const
+	const std::shared_ptr<Input::InputHandler> Window::GetInputHandler() const
 	{
-		return *inputhandler;
+		return inputhandler;
 	}
 
 	const float Window::GetWidth() const

@@ -8,6 +8,7 @@
 #include "..\IO\TextureLoader.h"
 #include "..\Rendering\SkyboxShader.h"
 #include "..\Interface\ICamera.h"
+#include <memory>
 
 namespace Framework
 {
@@ -16,8 +17,8 @@ namespace Framework
 	{
 	public:
 		Skybox();
-		void Initialize(const std::vector<const GLchar*> _filePaths, const IO::TextureLoader* _textureLoader);
-		void Initialize(const GLchar* _filename, const IO::TextureLoader* _textureLoader);
+		void Initialize(const std::vector<const GLchar*> _filePaths, std::shared_ptr<const IO::TextureLoader> _textureLoader);
+		void Initialize(const GLchar* _filename, std::shared_ptr<const IO::TextureLoader> _textureLoader);
 		void Destroy();
 
 		void Render(const ICamera& _camera) const;
@@ -28,7 +29,7 @@ namespace Framework
 		GLuint cubemapID;
 		GLuint skyboxVAO;
 
-		IShader* shader;
+		std::unique_ptr<IShader> shader;
 	};
 
 }

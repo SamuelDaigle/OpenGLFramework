@@ -10,6 +10,7 @@
 #include "..\Interface\IWindow.h"
 #include "..\Utils\Log.h"
 #include "..\stdafx.h"
+#include <memory>
 
 namespace Framework
 {
@@ -25,10 +26,10 @@ namespace Framework
 		void OnKeyRelease(unsigned char _key, int _x, int _y);
 		void OnMouseMove(int _x, int _y);
 
-		void SetScene(IScene& _scene);
+		void SetScene(std::unique_ptr<IScene> _scene);
 
-		const OpenGL& GetOpenGLWrapper() const override;
-		const Input::InputHandler& GetInputHandler() const override;
+		const std::shared_ptr<OpenGL> GetOpenGLWrapper() const override;
+		const std::shared_ptr<Input::InputHandler> GetInputHandler() const override;
 		const float GetWidth() const override;
 		const float GetHeight() const override;
 
@@ -36,9 +37,9 @@ namespace Framework
 		void initializeWindow();
 		const bool hasExited() const;
 
-		OpenGL* openGL;
-		Input::InputHandler* inputhandler;
-		IScene* scene;
+		std::shared_ptr<OpenGL> openGL;
+		std::shared_ptr<Input::InputHandler> inputhandler;
+		std::unique_ptr<IScene> scene;
 
 		int screenWidth;
 		int screenHeight;

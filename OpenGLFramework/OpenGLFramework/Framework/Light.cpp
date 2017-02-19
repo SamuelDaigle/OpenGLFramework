@@ -3,7 +3,7 @@
 namespace Framework
 {
 
-	Light::Light(IShader& _shader) :
+	Light::Light(std::shared_ptr<IShader> _shader) :
 		BaseObject::BaseObject(_shader)
 	{
 		Ambiant = Math::Vector3(0.01f, 0.01f, 0.01f);

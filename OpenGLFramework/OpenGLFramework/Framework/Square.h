@@ -13,7 +13,7 @@ namespace Framework
 	class Square : public BaseObject
 	{
 	public:
-		Square(IShader& _shader);
+		Square(std::shared_ptr<IShader> _shader);
 		~Square();
 
 		void Destroy() override;
@@ -23,7 +23,6 @@ namespace Framework
 	private:
 		void initializeBuffers();
 		void shutdownBuffers();
-
 
 		int vertexCount, indexCount;
 		unsigned int vertexArrayId, vertexBufferId, indexBufferId;

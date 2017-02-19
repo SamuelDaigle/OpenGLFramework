@@ -3,30 +3,22 @@
 namespace IO
 {
 
-	void MeshLoader::Initialize(TextureLoader* _textureLoader)
+	void MeshLoader::Initialize(std::shared_ptr<TextureLoader> _textureLoader)
 	{
-		if (textureLoader == NULL)
+		if (textureLoader == nullptr)
 		{
 			textureLoader = _textureLoader;
 		}
-		if (meshBank == NULL)
-		{
-			meshBank = new MeshBank();
-			meshBank->Initialize();
-		}
+		meshBank = std::make_unique<MeshBank>(MeshBank());
+		meshBank->Initialize();
 	}
 
 	void MeshLoader::ReleaseMeshes()
 	{
-		if (meshBank != NULL)
-		{
-			meshBank->Destroy();
-			delete meshBank;
-			meshBank = 0;
-		}
+		meshBank->Destroy();
 	}
 
-	const std::vector<Rendering::Mesh*> MeshLoader::LoadMeshes(const char* _filepath)
+	std::vector<std::shared_ptr<Rendering::Mesh>> MeshLoader::LoadMeshes(const char* _filepath)
 	{
 		Importer importer;
 
@@ -65,7 +57,7 @@ namespace IO
 		for (GLuint i = 0; i < node->mNumMeshes; i++)
 		{
 			aiMesh* mesh = scene->mMeshes[node->mMeshes[i]];
-			meshesToProcess.push_back(processMesh(mesh, scene));
+			processMesh(mesh, scene, meshesToProcess);
 		}
 
 		for (GLuint i = 0; i < node->mNumChildren; i++)
@@ -74,8 +66,7 @@ namespace IO
 		}
 	}
 
-
-	Rendering::Mesh* MeshLoader::processMesh(aiMesh* mesh, const aiScene* scene)
+	void MeshLoader::processMesh(aiMesh* mesh, const aiScene* scene, std::vector<std::shared_ptr<Rendering::Mesh>>& meshList)
 	{
 		std::vector<Rendering::Vertex> vertices;
 		std::vector<GLuint> indices;
@@ -128,16 +119,13 @@ namespace IO
 		// Process materials
 		if (mesh->mMaterialIndex >= 0)
 		{
-			aiMaterial* material = scene->mMaterials[mesh->mMaterialIndex];
-
-			// 1. Diffuse maps
-			texture = loadMaterialTextures(material);
+			texture = loadMaterialTextures(std::make_unique<aiMaterial>(*scene->mMaterials[mesh->mMaterialIndex]));
 		}
 
-		return new Rendering::Mesh(vertices, indices, texture);
+		meshesToProcess.push_back(std::make_shared<Rendering::Mesh>(Rendering::Mesh(vertices, indices, texture)));
 	}
 
-	GLuint MeshLoader::loadMaterialTextures(aiMaterial* mat)
+	GLuint MeshLoader::loadMaterialTextures(std::unique_ptr<aiMaterial> mat)
 	{
 		aiString str;
 		mat->GetTexture(aiTextureType_DIFFUSE, 0, &str);

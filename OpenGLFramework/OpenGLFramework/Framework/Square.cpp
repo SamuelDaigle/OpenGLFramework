@@ -3,7 +3,7 @@
 namespace Framework
 {
 
-	Square::Square(IShader& _shader) :
+	Square::Square(std::shared_ptr<IShader> _shader) :
 		BaseObject(_shader)
 	{
 		initializeBuffers();

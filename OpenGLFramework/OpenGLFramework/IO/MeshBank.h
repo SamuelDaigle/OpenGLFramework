@@ -9,6 +9,7 @@
 
 #include <map>
 #include <vector>
+#include <memory>
 
 namespace IO
 {
@@ -20,11 +21,11 @@ namespace IO
 		void Destroy();
 
 		const bool HasMesh(const char* _path) const;
-		void AddMesh(const char* _path, const std::vector<Rendering::Mesh*>& _mesh);
-		const std::vector<Rendering::Mesh*> GetMesh(const char* _path) const;
+		void AddMesh(const char* _path, const std::vector<std::shared_ptr<Rendering::Mesh>>& _mesh);
+		const std::vector<std::shared_ptr<Rendering::Mesh>> GetMesh(const char* _path) const;
 
 	private:
-		std::map<std::string, const std::vector<Rendering::Mesh*>> meshs;
+		std::map<std::string, const std::vector<std::shared_ptr<Rendering::Mesh>>> meshs;
 	};
 
 }

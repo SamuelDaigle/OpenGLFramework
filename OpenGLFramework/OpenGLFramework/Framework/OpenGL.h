@@ -6,6 +6,7 @@
 
 #include "..\Dependencies\glew\glew.h"
 #include "..\Dependencies\freeglut\freeglut.h"
+#include <memory>
 
 namespace Framework
 {
@@ -20,8 +21,8 @@ namespace Framework
 		void EndScene() const;
 
 	private:
-		unsigned int* vertexArrayObjID;
-		unsigned int* vertexBufferObjID[2];
+		std::unique_ptr<unsigned int> vertexArrayObjID;
+		std::unique_ptr<unsigned int> vertexBufferObjID[2];
 	};
 
 }

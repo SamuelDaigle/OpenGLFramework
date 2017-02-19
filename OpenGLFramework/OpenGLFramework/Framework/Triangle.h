@@ -13,7 +13,7 @@ namespace Framework
 	class Triangle : public BaseObject
 	{
 	public:
-		Triangle(IShader& _shader);
+		Triangle(std::shared_ptr<IShader> _shader);
 		void Destroy() override;
 
 		void Render(const ICamera& _camera, const Math::Matrix4& _parentWorldMatrix) const override;

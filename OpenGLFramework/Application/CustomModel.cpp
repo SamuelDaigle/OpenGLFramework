@@ -3,10 +3,10 @@
 namespace Application
 {
 
-	CustomModel::CustomModel(IO::MeshLoader* _meshLoader, IShader& _shader, const char* _filepath) :
+	CustomModel::CustomModel(std::shared_ptr<IO::MeshLoader> _meshLoader, std::shared_ptr<IShader> _shader, const char* _filepath) :
 		BaseObject::BaseObject(_shader)
 	{
-		model = new Rendering::Model(_filepath, _meshLoader);
+		model = std::make_unique<Rendering::Model>(Rendering::Model(_filepath, _meshLoader));
 		BaseObject::Scale(1, 1, 1);
 	}
 

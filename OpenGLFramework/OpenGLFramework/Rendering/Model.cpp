@@ -3,7 +3,7 @@
 namespace Rendering
 {
 
-	Model::Model(const char* path, IO::MeshLoader* _meshLoader)
+	Model::Model(const char* path, std::shared_ptr<IO::MeshLoader> _meshLoader)
 	{
 		meshes = _meshLoader->LoadMeshes(path);
 	}

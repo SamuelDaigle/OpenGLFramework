@@ -9,6 +9,7 @@
 #include "..\Interface\ICamera.h"
 #include "..\Math\Matrix4.h"
 #include "..\Utils\Log.h"
+#include <memory>
 
 using namespace glm;
 
@@ -19,7 +20,7 @@ namespace Framework
 	{
 	public:
 		BaseObject();
-		BaseObject(IShader& _shader);
+		BaseObject(std::shared_ptr<IShader> _shader);
 		virtual void Destroy();
 		virtual void Render(const ICamera& _camera, const Math::Matrix4& _parentWorldMatrix) const;
 		virtual void Update();
@@ -51,7 +52,7 @@ namespace Framework
 		float r = 1;
 		float g = 1;
 		float b = 0.2f;
-		IShader* shader;
+		std::shared_ptr<IShader> shader;
 
 		virtual const Math::Matrix4& GetRotationMatrix() const;
 		virtual const Math::Matrix4 GetScalingMatrix() const;

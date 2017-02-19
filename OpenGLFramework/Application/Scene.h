@@ -25,7 +25,7 @@ namespace Application
 	class Scene : public IScene
 	{
 	public:
-		Scene(IWindow& _window);
+		Scene(std::unique_ptr<IWindow> _window);
 		void Destroy();
 
 		void input();
@@ -37,12 +37,12 @@ namespace Application
 		void UpdateConsoleText();
 		void AddChildStringTo(Text::TextHolder& _hierarchyText, Framework::BaseObject& _parent, int _depth);
 
-		IWindow* window;
+		std::unique_ptr<IWindow> window;
 		Framework::BaseObject* rootObject;
-		IShader* basicShader;
-		IShader* advancedShader;
-		IShader* customShader;
-		IShader* colorShader;
+		std::shared_ptr<IShader> basicShader;
+		std::shared_ptr<IShader> advancedShader;
+		std::shared_ptr<IShader> customShader;
+		std::shared_ptr<IShader> colorShader;
 		Framework::Skybox* skybox;
 		Framework::Light* light;
 		Camera::Camera* camera;

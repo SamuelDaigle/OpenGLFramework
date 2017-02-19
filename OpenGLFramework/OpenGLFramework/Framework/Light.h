@@ -12,7 +12,7 @@ namespace Framework
 	class Light : public BaseObject
 	{
 	public:
-		Light(IShader& _shader);
+		Light(std::shared_ptr<IShader> _shader);
 		void Destroy();
 
 		void Render(const ICamera& _camera, const Math::Matrix4& _parentWorldMatrix) const override;

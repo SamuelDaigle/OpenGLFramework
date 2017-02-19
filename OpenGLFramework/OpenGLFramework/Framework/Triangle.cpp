@@ -3,7 +3,7 @@
 namespace Framework
 {
 
-	Triangle::Triangle(IShader& _shader) :
+	Triangle::Triangle(std::shared_ptr<IShader> _shader) :
 		BaseObject(_shader)
 	{
 		BaseObject::Scale(1, 1, 1);

@@ -14,11 +14,11 @@ namespace Rendering
 	class Model
 	{
 	public:
-		Model(const char* path, IO::MeshLoader* _meshLoader);
+		Model(const char* path, std::shared_ptr<IO::MeshLoader> _meshLoader);
 		void Draw(const IShader& shader) const;
 
 	private:
-		std::vector<Mesh*> meshes;
+		std::vector<std::shared_ptr<Mesh>> meshes;
 	};
 
 }

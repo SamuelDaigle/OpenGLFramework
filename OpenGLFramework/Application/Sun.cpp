@@ -1,6 +1,6 @@
 #include "Sun.h"
 
-Sun::Sun(IO::MeshLoader* _meshLoader, IShader& _shader) :
+Sun::Sun(std::shared_ptr<IO::MeshLoader> _meshLoader, std::shared_ptr<IShader> _shader) :
 	BaseObject::BaseObject(_shader)
 {
 	model = new Rendering::Model("../Content/planet/sun.obj", _meshLoader);

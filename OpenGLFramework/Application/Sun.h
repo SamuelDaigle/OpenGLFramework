@@ -10,7 +10,7 @@
 class Sun : public Framework::BaseObject
 {
 public:
-	Sun(IO::MeshLoader* _meshLoader, IShader& _shader);
+	Sun(std::shared_ptr<IO::MeshLoader> _meshLoader, std::shared_ptr<IShader> _shader);
 
 	void Destroy() override;
 

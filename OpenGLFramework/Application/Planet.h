@@ -10,7 +10,7 @@
 class Planet : public Framework::BaseObject
 {
 public:
-	Planet(IO::MeshLoader* _meshLoader, IShader& _shader);
+	Planet(std::shared_ptr<IO::MeshLoader> _meshLoader, std::shared_ptr<IShader> _shader);
 
 	void Destroy() override;
 

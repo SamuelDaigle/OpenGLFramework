@@ -16,18 +16,18 @@ void OnKeyPress(unsigned char _key, int _data1, int _data2);
 void OnKeyRelease(unsigned char _key, int _data1, int _data2);
 void OnMouseMove(int _x, int _y);
 
-Framework::Window* window;
-Application::Scene* scene;
+std::unique_ptr<Framework::Window> window;
+std::unique_ptr<Application::Scene> scene;
 
 int main(int argc, char* argv[])
 {
 	glutInit(&argc, argv);
 
-	window = new Framework::Window();
+	window = std::make_unique<Framework::Window>(Framework::Window());
 	window->Initialize();
 
-	scene = new Application::Scene(*window);
-	window->SetScene(*scene);
+	scene = std::make_unique<Application::Scene>(Application::Scene(std::move(window)));
+	window->SetScene(std::move(scene));
 
 	glutTimerFunc(1, Frame, 1);
 	glutKeyboardFunc(OnKeyPress);
@@ -39,7 +39,6 @@ int main(int argc, char* argv[])
 	system("PAUSE");
 
 	window->Destroy();
-	delete window;
 
 	return 0;
 }

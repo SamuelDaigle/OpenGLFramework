@@ -9,9 +9,9 @@ BaseObject::BaseObject() :
 {
 }
 
-BaseObject::BaseObject(IShader& _shader)
+BaseObject::BaseObject(std::shared_ptr<IShader> _shader)
 {
-	shader = &_shader;
+	shader = _shader;
 	BaseObject::BaseObject();
 }
 

@@ -1,6 +1,6 @@
 #include "Planet.h"
 
-Planet::Planet(IO::MeshLoader* _meshLoader, IShader& _shader) :
+Planet::Planet(std::shared_ptr<IO::MeshLoader> _meshLoader, std::shared_ptr<IShader> _shader) :
 	BaseObject::BaseObject(_shader)
 {
 	model = new Rendering::Model("../Content/planet/planet.obj", _meshLoader);

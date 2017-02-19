@@ -21,21 +21,21 @@ namespace IO
 	class MeshLoader
 	{
 	public:
-		void Initialize(TextureLoader* _textureLoader);
+		void Initialize(std::shared_ptr<TextureLoader> _textureLoader);
 		void ReleaseMeshes();
 
-		const std::vector<Rendering::Mesh*> LoadMeshes(const char* _filepath);
+		std::vector<std::shared_ptr<Rendering::Mesh>> LoadMeshes(const char* _filepath);
 
 	private:
 		void processNode(aiNode* node, const aiScene* scene);
-		Rendering::Mesh* processMesh(aiMesh* mesh, const aiScene* scene);
-		GLuint loadMaterialTextures(aiMaterial* mat);
+		void processMesh(aiMesh* mesh, const aiScene* scene, std::vector<std::shared_ptr<Rendering::Mesh>>& meshList);
+		GLuint loadMaterialTextures(std::unique_ptr<aiMaterial> mat);
 
-		std::vector<Rendering::Mesh*> meshesToProcess;
+		std::vector<std::shared_ptr<Rendering::Mesh>> meshesToProcess;
 		std::string directory;
 
-		MeshBank* meshBank;
-		TextureLoader* textureLoader;
+		std::unique_ptr<MeshBank> meshBank;
+		std::shared_ptr<TextureLoader> textureLoader;
 	};
 
 }

@@ -1,6 +1,35 @@
 ﻿  Camera.cpp
   BaseObject.cpp
   Light.cpp
+  OpenGL.cpp
+Framework\OpenGL.cpp(9): warning C4305: 'argument': truncation from 'int' to 'GLboolean'
+Framework\OpenGL.cpp(9): warning C4309: 'argument': truncation of constant value
+  Skybox.cpp
+Framework\Skybox.cpp(13): warning C4101: 'height': unreferenced local variable
+Framework\Skybox.cpp(13): warning C4101: 'width': unreferenced local variable
+Framework\Skybox.cpp(14): warning C4101: 'image': unreferenced local variable
   Square.cpp
   Triangle.cpp
+  Window.cpp
+Framework\Window.cpp(17): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+Framework\Window.cpp(42): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+Framework\Window.cpp(69): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  MeshBank.cpp
+  MeshLoader.cpp
+  ShaderLoader.cpp
+IO\ShaderLoader.cpp(68): warning C4244: 'initializing': conversion from 'std::streamoff' to 'unsigned int', possible loss of data
+  TextureBank.cpp
+  TextureLoader.cpp
+  AdvancedShader.cpp
+  BaseShader.cpp
+  BasicShader.cpp
+  ColorShader.cpp
+  Mesh.cpp
+  Model.cpp
+  SkyboxShader.cpp
+  Compiling...
+  Text.cpp
+Text\Text.cpp(25): warning C4018: '<': signed/unsigned mismatch
+  TextHolder.cpp
+Text\TextHolder.cpp(9): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   OpenGLFramework.vcxproj -> C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.lib
