@@ -29,7 +29,6 @@
 OpenGLFramework/\.vs/OpenGLFramework/v14/\.suo
 
 *.db
-*.VC
 *.log
 
 *.tlog
