@@ -25,3 +25,15 @@
 *.exe
 *.out
 *.app
+
+OpenGLFramework/\.vs/OpenGLFramework/v14/\.suo
+
+*.db
+*.VC
+*.log
+
+*.tlog
+
+*.pdb
+
+*.lastbuildstate
