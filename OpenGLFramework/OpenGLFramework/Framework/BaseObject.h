@@ -9,6 +9,7 @@
 #include "..\Interface\ICamera.h"
 #include "..\Math\Matrix4.h"
 #include "..\Utils\Log.h"
+#include "..\Utils\Color.h"
 
 using namespace glm;
 
@@ -35,32 +36,30 @@ namespace Framework
 
 		virtual const Math::Matrix4 GetWorldMatrix() const;
 
-		virtual const Math::Vector3& forward() const;
-		virtual const Math::Vector3& back() const;
-		virtual const Math::Vector3& left() const;
-		virtual const Math::Vector3& right() const;
-		virtual const Math::Vector3& up() const;
-		virtual const Math::Vector3& down() const;
+		virtual const Math::Vector3& Forward() const;
+		virtual const Math::Vector3& Back() const;
+		virtual const Math::Vector3& Left() const;
+		virtual const Math::Vector3& Right() const;
+		virtual const Math::Vector3& Up() const;
+		virtual const Math::Vector3& Down() const;
 
 		// Public to allow all modification from external class.
-		Math::Vector3 position;
-		Math::Vector3 scale;
-		Math::Matrix4 rotation;
+		Math::Vector3 m_position;
+		Math::Vector3 m_scale;
+		Math::Matrix4 m_rotation;
 
 	protected:
-		float r = 1;
-		float g = 1;
-		float b = 0.2f;
-		IShader* shader;
+		Utils::Color m_color;
+		IShader* m_shader;
 
 		virtual const Math::Matrix4& GetRotationMatrix() const;
 		virtual const Math::Matrix4 GetScalingMatrix() const;
 		virtual const Math::Matrix4 GetTranslationMatrix() const;
 
 	private:
-		Math::Vector3 forwardVector;
-		Math::Vector3 upVector;
-		Math::Vector3 rightVector;
+		Math::Vector3 m_forwardVector;
+		Math::Vector3 m_upVector;
+		Math::Vector3 m_rightVector;
 	};
 
 }

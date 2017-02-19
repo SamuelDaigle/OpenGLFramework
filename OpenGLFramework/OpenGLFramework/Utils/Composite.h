@@ -34,7 +34,7 @@ public:
 	void Add(T* _object);
 
 protected:
-	std::vector<T*> childObjects;
+	std::vector<T*> m_childObjects;
 };
 
 }

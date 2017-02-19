@@ -29,11 +29,8 @@ namespace IO
 		void CompileShader(const GLuint& _shader) const;
 
 	private:
-		char* loadShaderFile(char* _filepath, GLint& _shaderLength);
-		void printShaderInfoLog(const GLuint& _shaderInfo) const;
-
-		GLuint vertexShader;
-		GLuint fragShader;
+		char* LoadShaderFile(char* _filepath, GLint& _shaderLength);
+		void PrintShaderInfoLog(const GLuint& _shaderInfo) const;
 	};
 
 }

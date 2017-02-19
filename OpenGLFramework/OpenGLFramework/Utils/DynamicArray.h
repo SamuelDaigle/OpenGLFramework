@@ -16,7 +16,7 @@ namespace Utils
 		const unsigned int GetNbElements() const;
 
 	private:
-		vector<T> elements;
+		vector<T> m_elements;
 	};
 
 }

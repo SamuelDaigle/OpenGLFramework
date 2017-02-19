@@ -5,14 +5,14 @@ namespace Framework
 
 BaseObject::BaseObject() :
 	Utils::Composite<BaseObject>(),
-	scale(1, 1, 1), position(0, 0, 0), upVector(0, 1, 0)
+	m_scale(1, 1, 1), m_position(0, 0, 0), m_upVector(0, 1, 0), m_color(1, 1, 1)
 {
 }
 
-BaseObject::BaseObject(IShader& _shader)
+BaseObject::BaseObject(IShader& _shader) :
+	BaseObject()
 {
-	shader = &_shader;
-	BaseObject::BaseObject();
+	m_shader = &_shader;
 }
 
 void BaseObject::Destroy()
@@ -25,12 +25,12 @@ void BaseObject::Render(const ICamera& _camera, const Math::Matrix4& _parentWorl
 	Math::Matrix4 world = _parentWorldMatrix * GetWorldMatrix();
 	Utils::Composite<BaseObject>::RenderChilds(_camera, world);
 
-	if (shader)
+	if (m_shader)
 	{
-		shader->Use();
-		shader->SetViewMatrix(_camera.GetViewMatrix());
-		shader->SetProjectionMatrix(_camera.GetProjectionMatrix());
-		shader->SetWorldMatrix(world);
+		m_shader->Use();
+		m_shader->SetViewMatrix(_camera.GetViewMatrix());
+		m_shader->SetProjectionMatrix(_camera.GetProjectionMatrix());
+		m_shader->SetWorldMatrix(world);
 	}
 }
 
@@ -38,44 +38,44 @@ void BaseObject::Update()
 {
 	Utils::Composite<BaseObject>::UpdateChilds();
 
-	rightVector	  = -Math::Vector3(rotation[0][0], rotation[1][0], rotation[2][0]);
-	upVector	  = -Math::Vector3(rotation[0][1], rotation[1][1], rotation[2][1]);
-	forwardVector = -Math::Vector3(rotation[0][2], rotation[1][2], rotation[2][2]);
+	m_rightVector	  = -Math::Vector3(m_rotation[0][0], m_rotation[1][0], m_rotation[2][0]);
+	m_upVector	  = -Math::Vector3(m_rotation[0][1], m_rotation[1][1], m_rotation[2][1]);
+	m_forwardVector = -Math::Vector3(m_rotation[0][2], m_rotation[1][2], m_rotation[2][2]);
 }
 
 void BaseObject::SetColor(float _r, float _g, float _b)
 {
-	r = _r;
-	g = _g;
-	b = _b;
+	m_color.r = _r;
+	m_color.g = _g;
+	m_color.b = _b;
 }
 
 void BaseObject::Translate(const float _x, const float _y, const float _z)
 {
 	Utils::Composite<BaseObject>::TranslateChilds(_x, _y, _z);
-	position.x += _x;
-	position.y += _y;
-	position.z += _z;
+	m_position.x += _x;
+	m_position.y += _y;
+	m_position.z += _z;
 }
 
 void BaseObject::Rotate(const float _angle, const Math::Vector3& _axis)
 {
-	rotation = Math::Matrix4::Rotate(rotation, _angle, _axis);
+	m_rotation = Math::Matrix4::Rotate(m_rotation, _angle, _axis);
 }
 
 void BaseObject::Scale(const float _scaleX, const float _scaleY, const float _scaleZ)
 {
-	if (scale.x == 0.0f || scale.y == 0.0f || scale.z == 0.0f)
+	if (m_scale.x == 0.0f || m_scale.y == 0.0f || m_scale.z == 0.0f)
 		Utils::Log::DebugLog("WARNING -- Setting an object with a scale of 0.");
 	Utils::Composite<BaseObject>::ScaleChilds(_scaleX, _scaleY, _scaleZ);
-	scale.x = _scaleX;
-	scale.y = _scaleY;
-	scale.z = _scaleZ;
+	m_scale.x = _scaleX;
+	m_scale.y = _scaleY;
+	m_scale.z = _scaleZ;
 }
 
 std::vector<BaseObject*> BaseObject::GetChilds()
 {
-	return childObjects;
+	return m_childObjects;
 }
 
 void BaseObject::LookAt(const Math::Vector3 _targetPosition)
@@ -94,49 +94,49 @@ const Math::Matrix4 BaseObject::GetWorldMatrix() const
 
 const Math::Matrix4& BaseObject::GetRotationMatrix() const
 {
-	return rotation;
+	return m_rotation;
 }
 
 const Math::Matrix4 BaseObject::GetScalingMatrix() const
 {
-	if (scale.x == 0.0f || scale.y == 0.0f || scale.z == 0.0f)
+	if (m_scale.x == 0.0f || m_scale.y == 0.0f || m_scale.z == 0.0f)
 		Utils::Log::DebugLog("WARNING -- An object has a scale of 0.");
-	return Math::Matrix4::VectorToScaleMatrix(scale);
+	return Math::Matrix4::VectorToScaleMatrix(m_scale);
 }
 
 const Math::Matrix4 BaseObject::GetTranslationMatrix() const
 {
-	return Math::Matrix4::VectorToTranslationMatrix(position);
+	return Math::Matrix4::VectorToTranslationMatrix(m_position);
 }
 
-const Math::Vector3& BaseObject::forward() const
+const Math::Vector3& BaseObject::Forward() const
 {
-	return forwardVector;
+	return m_forwardVector;
 }
 
-const Math::Vector3& BaseObject::back() const
+const Math::Vector3& BaseObject::Back() const
 {
-	return -forwardVector;
+	return -m_forwardVector;
 }
 
-const Math::Vector3& BaseObject::left() const
+const Math::Vector3& BaseObject::Left() const
 {
-	return -rightVector;
+	return -m_rightVector;
 }
 
-const Math::Vector3& BaseObject::right() const
+const Math::Vector3& BaseObject::Right() const
 {
-	return rightVector;
+	return m_rightVector;
 }
 
-const Math::Vector3& BaseObject::up() const
+const Math::Vector3& BaseObject::Up() const
 {
-	return upVector;
+	return m_upVector;
 }
 
-const Math::Vector3& BaseObject::down() const
+const Math::Vector3& BaseObject::Down() const
 {
-	return -upVector;
+	return -m_upVector;
 }
 
 }

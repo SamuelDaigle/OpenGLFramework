@@ -5,24 +5,24 @@ namespace IO
 
 	void MeshLoader::Initialize(TextureLoader* _textureLoader)
 	{
-		if (textureLoader == NULL)
+		if (m_textureLoader == NULL)
 		{
-			textureLoader = _textureLoader;
+			m_textureLoader = _textureLoader;
 		}
-		if (meshBank == NULL)
+		if (m_meshBank == NULL)
 		{
-			meshBank = new MeshBank();
-			meshBank->Initialize();
+			m_meshBank = new MeshBank();
+			m_meshBank->Initialize();
 		}
 	}
 
 	void MeshLoader::ReleaseMeshes()
 	{
-		if (meshBank != NULL)
+		if (m_meshBank != NULL)
 		{
-			meshBank->Destroy();
-			delete meshBank;
-			meshBank = 0;
+			m_meshBank->Destroy();
+			delete m_meshBank;
+			m_meshBank = 0;
 		}
 	}
 
@@ -30,11 +30,11 @@ namespace IO
 	{
 		Importer importer;
 
-		meshesToProcess.clear();
+		m_meshesToProcess.clear();
 
-		if (meshBank->HasMesh(_filepath))
+		if (m_meshBank->HasMesh(_filepath))
 		{
-			return meshBank->GetMesh(_filepath);
+			return m_meshBank->GetMesh(_filepath);
 		}
 
 		Utils::Log::DebugLog(2, "Loading mesh... test", _filepath);
@@ -47,58 +47,58 @@ namespace IO
 		if (!scene || scene->mFlags == AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode)
 		{
 			Utils::Log::DebugLog(2, "ERROR::ASSIMP:: ", importer.GetErrorString());
-			return meshesToProcess;
+			return m_meshesToProcess;
 		}
 
-		directory = path.substr(0, path.find_last_of('/'));
+		m_directory = path.substr(0, path.find_last_of('/'));
 
 		// Process ASSIMP's root node recursively
 		processNode(scene->mRootNode, scene);
 
-		meshBank->AddMesh(_filepath, meshesToProcess);
+		m_meshBank->AddMesh(_filepath, m_meshesToProcess);
 
-		return meshesToProcess;
+		return m_meshesToProcess;
 	}
 
-	void MeshLoader::processNode(aiNode* node, const aiScene* scene)
+	void MeshLoader::processNode(aiNode* _node, const aiScene* _scene)
 	{
-		for (GLuint i = 0; i < node->mNumMeshes; i++)
+		for (GLuint i = 0; i < _node->mNumMeshes; i++)
 		{
-			aiMesh* mesh = scene->mMeshes[node->mMeshes[i]];
-			meshesToProcess.push_back(processMesh(mesh, scene));
+			aiMesh* mesh = _scene->mMeshes[_node->mMeshes[i]];
+			m_meshesToProcess.push_back(processMesh(mesh, _scene));
 		}
 
-		for (GLuint i = 0; i < node->mNumChildren; i++)
+		for (GLuint i = 0; i < _node->mNumChildren; i++)
 		{
-			processNode(node->mChildren[i], scene);
+			processNode(_node->mChildren[i], _scene);
 		}
 	}
 
 
-	Rendering::Mesh* MeshLoader::processMesh(aiMesh* mesh, const aiScene* scene)
+	Rendering::Mesh* MeshLoader::processMesh(aiMesh* _mesh, const aiScene* _scene)
 	{
 		std::vector<Rendering::Vertex> vertices;
 		std::vector<GLuint> indices;
 		GLuint texture;
 
 		// Walk through each of the mesh's vertices
-		for (GLuint i = 0; i < mesh->mNumVertices; i++)
+		for (GLuint i = 0; i < _mesh->mNumVertices; i++)
 		{
 			Rendering::Vertex vertex;
 			Math::Vector3 vertexPlaceholderData;
 
 			// Positions
-			vertexPlaceholderData.x = mesh->mVertices[i].x;
-			vertexPlaceholderData.y = mesh->mVertices[i].y;
-			vertexPlaceholderData.z = mesh->mVertices[i].z;
+			vertexPlaceholderData.x = _mesh->mVertices[i].x;
+			vertexPlaceholderData.y = _mesh->mVertices[i].y;
+			vertexPlaceholderData.z = _mesh->mVertices[i].z;
 			vertex.Position = vertexPlaceholderData;
 
 			// Normals
-			if (mesh->mNormals->Length() >= i)
+			if (_mesh->mNormals->Length() >= i)
 			{
-				vertexPlaceholderData.x = mesh->mNormals[i].x;
-				vertexPlaceholderData.y = mesh->mNormals[i].y;
-				vertexPlaceholderData.z = mesh->mNormals[i].z;
+				vertexPlaceholderData.x = _mesh->mNormals[i].x;
+				vertexPlaceholderData.y = _mesh->mNormals[i].y;
+				vertexPlaceholderData.z = _mesh->mNormals[i].z;
 			}
 			else
 			{
@@ -107,11 +107,11 @@ namespace IO
 			vertex.Normal = vertexPlaceholderData;
 
 			// Texture Coordinates
-			if (mesh->mTextureCoords[0])
+			if (_mesh->mTextureCoords[0])
 			{
 				Math::Vector2 vec;
-				vec.x = mesh->mTextureCoords[0][i].x;
-				vec.y = mesh->mTextureCoords[0][i].y;
+				vec.x = _mesh->mTextureCoords[0][i].x;
+				vec.y = _mesh->mTextureCoords[0][i].y;
 				vertex.TexCoords = vec;
 			}
 			else
@@ -119,16 +119,16 @@ namespace IO
 
 			vertices.push_back(vertex);
 		}
-		for (GLuint i = 0; i < mesh->mNumFaces; i++)
+		for (GLuint i = 0; i < _mesh->mNumFaces; i++)
 		{
-			aiFace face = mesh->mFaces[i];
+			aiFace face = _mesh->mFaces[i];
 			for (GLuint j = 0; j < face.mNumIndices; j++)
 				indices.push_back(face.mIndices[j]);
 		}
 		// Process materials
-		if (mesh->mMaterialIndex >= 0)
+		if (_mesh->mMaterialIndex >= 0)
 		{
-			aiMaterial* material = scene->mMaterials[mesh->mMaterialIndex];
+			aiMaterial* material = _scene->mMaterials[_mesh->mMaterialIndex];
 
 			// 1. Diffuse maps
 			texture = loadMaterialTextures(material);
@@ -137,17 +137,17 @@ namespace IO
 		return new Rendering::Mesh(vertices, indices, texture);
 	}
 
-	GLuint MeshLoader::loadMaterialTextures(aiMaterial* mat)
+	GLuint MeshLoader::loadMaterialTextures(aiMaterial* _material)
 	{
 		aiString str;
-		mat->GetTexture(aiTextureType_DIFFUSE, 0, &str);
+		_material->GetTexture(aiTextureType_DIFFUSE, 0, &str);
 
-		aiString dirStr(directory);
+		aiString dirStr(m_directory);
 		dirStr.Append("/");
 		dirStr.Append(str.C_Str());
 
 		Utils::Log::DebugLog(2, "Load material: ", dirStr.C_Str());
-		return textureLoader->GetTexture(dirStr.C_Str());
+		return m_textureLoader->GetTexture(dirStr.C_Str());
 	}
 
 }

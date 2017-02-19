@@ -18,10 +18,6 @@ namespace Framework
 
 		void BeginScene() const;
 		void EndScene() const;
-
-	private:
-		unsigned int* vertexArrayObjID;
-		unsigned int* vertexBufferObjID[2];
 	};
 
 }

@@ -21,9 +21,9 @@ namespace Text
 		void Clear();
 
 	private:
-		std::vector<Text *> texts;
-		Math::Vector2 position;
-		float spacing;
+		std::vector<Text *> m_texts;
+		Math::Vector2 m_position;
+		float m_spacing;
 	};
 
 }

@@ -31,7 +31,7 @@ namespace IO
 		GLint shaderLength;
 
 		ShaderLoader shaderLoader;
-		shaderFile = shaderLoader.loadShaderFile(_filepath, shaderLength);
+		shaderFile = shaderLoader.LoadShaderFile(_filepath, shaderLength);
 
 		glShaderSource(shader, 1, &shaderFile, &shaderLength);
 
@@ -49,11 +49,11 @@ namespace IO
 		if (!compiled)
 		{
 			Utils::Log::DebugLog("Shader not compiled.");
-			printShaderInfoLog(_shader);
+			PrintShaderInfoLog(_shader);
 		}
 	}
 
-	char* ShaderLoader::loadShaderFile(char* _filepath, GLint& _shaderLength)
+	char* ShaderLoader::LoadShaderFile(char* _filepath, GLint& _shaderLength)
 	{
 		std::ifstream::pos_type size;
 		char * memblock;
@@ -80,19 +80,19 @@ namespace IO
 		return memblock;
 	}
 
-	void ShaderLoader::printShaderInfoLog(const GLuint& shader) const
+	void ShaderLoader::PrintShaderInfoLog(const GLuint& _shader) const
 	{
 		int infoLogLen = 0;
 		int charsWritten = 0;
 		GLchar *infoLog;
 
-		glGetShaderiv(shader, GL_INFO_LOG_LENGTH, &infoLogLen);
+		glGetShaderiv(_shader, GL_INFO_LOG_LENGTH, &infoLogLen);
 
 		if (infoLogLen > 0)
 		{
 			infoLog = new GLchar[infoLogLen];
 			// error check for fail to allocate memory omitted
-			glGetShaderInfoLog(shader, infoLogLen, &charsWritten, infoLog);
+			glGetShaderInfoLog(_shader, infoLogLen, &charsWritten, infoLog);
 			Utils::Log::DebugLog("InfoLog:");
 			Utils::Log::DebugLog(infoLog);
 			delete[] infoLog;

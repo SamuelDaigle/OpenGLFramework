@@ -24,7 +24,7 @@ namespace IO
 		const std::vector<Rendering::Mesh*> GetMesh(const char* _path) const;
 
 	private:
-		std::map<std::string, const std::vector<Rendering::Mesh*>> meshs;
+		std::map<std::string, const std::vector<Rendering::Mesh*>> m_meshes;
 	};
 
 }

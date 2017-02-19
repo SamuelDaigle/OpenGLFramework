@@ -20,7 +20,7 @@ namespace Application
 		void Render(const ICamera& _camera, const Math::Matrix4& _parentWorldMatrix) const override;
 
 	private:
-		Rendering::Model* model;
+		Rendering::Model* m_model;
 	};
 
 }

@@ -23,12 +23,12 @@ namespace Framework
 		void Render(const ICamera& _camera) const;
 
 	private:
-		void loadMesh();
+		void LoadMesh();
 
-		GLuint cubemapID;
-		GLuint skyboxVAO;
+		GLuint m_cubemapID;
+		GLuint m_skyboxVAO;
 
-		IShader* shader;
+		IShader* m_shader;
 	};
 
 }

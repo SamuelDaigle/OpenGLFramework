@@ -1,6 +1,1 @@
-﻿  Camera.cpp
-  BaseObject.cpp
-  Light.cpp
-  Square.cpp
-  Triangle.cpp
-  OpenGLFramework.vcxproj -> C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.lib
+﻿  OpenGLFramework.vcxproj -> C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.lib

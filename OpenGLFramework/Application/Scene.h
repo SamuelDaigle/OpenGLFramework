@@ -28,26 +28,26 @@ namespace Application
 		Scene(IWindow& _window);
 		void Destroy();
 
-		void input();
-		void update();
-		void render() const;
+		void Input() override;
+		void Update() override;
+		void Render() const override;
 
 	private:
 		void UpdateHierarchyText();
 		void UpdateConsoleText();
 		void AddChildStringTo(Text::TextHolder& _hierarchyText, Framework::BaseObject& _parent, int _depth);
 
-		IWindow* window;
-		Framework::BaseObject* rootObject;
-		IShader* basicShader;
-		IShader* advancedShader;
-		IShader* customShader;
-		IShader* colorShader;
-		Framework::Skybox* skybox;
-		Framework::Light* light;
-		Camera::Camera* camera;
-		Text::TextHolder* hierarchyText;
-		Text::TextHolder* consoleText;
+		IWindow* m_window;
+		Framework::BaseObject* m_rootObject;
+		IShader* m_basicShader;
+		IShader* m_advancedShader;
+		IShader* m_customShader;
+		IShader* m_colorShader;
+		Framework::Skybox* m_skybox;
+		Framework::Light* m_light;
+		Camera::Camera* m_camera;
+		Text::TextHolder* m_hierarchyText;
+		Text::TextHolder* m_consoleText;
 	};
 
 }

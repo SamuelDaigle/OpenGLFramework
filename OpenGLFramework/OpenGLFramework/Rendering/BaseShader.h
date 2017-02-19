@@ -26,7 +26,7 @@ namespace Rendering
 	protected:
 		virtual const GLfloat* MatrixToFloatArray(const Math::Matrix4& _matrix) const override;
 
-		unsigned int glProgram;
+		unsigned int m_glProgram;
 	};
 
 }

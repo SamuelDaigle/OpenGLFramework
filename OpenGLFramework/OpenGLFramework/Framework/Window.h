@@ -33,15 +33,12 @@ namespace Framework
 		const float GetHeight() const override;
 
 	private:
-		void initializeWindow();
-		const bool hasExited() const;
+		void InitializeWindow();
+		const bool HasExited() const;
 
-		OpenGL* openGL;
-		Input::InputHandler* inputhandler;
-		IScene* scene;
-
-		int screenWidth;
-		int screenHeight;
+		OpenGL* m_openGL;
+		Input::InputHandler* m_inputhandler;
+		IScene* m_scene;
 	};
 
 }

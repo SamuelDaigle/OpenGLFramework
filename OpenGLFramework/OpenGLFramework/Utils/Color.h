@@ -11,6 +11,10 @@ namespace Utils
 	class Color
 	{
 	public:
+		Color()
+		{
+		}
+
 		Color(const float _r, const float _g, const float _b)
 		{
 			r = _r;

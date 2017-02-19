@@ -18,10 +18,10 @@ namespace IO
 		void ReleaseTextures();
 
 		const GLuint GetTexture(const char* _texturePath) const;
-		const GLuint LoadTextureFromFile(const char* path) const;
+		const GLuint LoadTextureFromFile(const char* _path) const;
 
 	private:
-		TextureBank* textureBank;
+		TextureBank* m_textureBank;
 	};
 
 }

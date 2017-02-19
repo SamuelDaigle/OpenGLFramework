@@ -27,15 +27,15 @@ namespace IO
 		const std::vector<Rendering::Mesh*> LoadMeshes(const char* _filepath);
 
 	private:
-		void processNode(aiNode* node, const aiScene* scene);
-		Rendering::Mesh* processMesh(aiMesh* mesh, const aiScene* scene);
-		GLuint loadMaterialTextures(aiMaterial* mat);
+		void processNode(aiNode* _node, const aiScene* _scene);
+		Rendering::Mesh* processMesh(aiMesh* _mesh, const aiScene* _scene);
+		GLuint loadMaterialTextures(aiMaterial* _material);
 
-		std::vector<Rendering::Mesh*> meshesToProcess;
-		std::string directory;
+		std::vector<Rendering::Mesh*> m_meshesToProcess;
+		std::string m_directory;
 
-		MeshBank* meshBank;
-		TextureLoader* textureLoader;
+		MeshBank* m_meshBank;
+		TextureLoader* m_textureLoader;
 	};
 
 }

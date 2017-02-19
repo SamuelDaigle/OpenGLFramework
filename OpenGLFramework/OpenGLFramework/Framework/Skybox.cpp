@@ -5,7 +5,7 @@ namespace Framework
 
 	Skybox::Skybox()
 	{
-		shader = new Rendering::SkyboxShader();
+		m_shader = new Rendering::SkyboxShader();
 	}
 
 	void Skybox::Initialize(const std::vector<const GLchar*> _filePaths, const IO::TextureLoader* _textureLoader)
@@ -13,9 +13,9 @@ namespace Framework
 		int width, height;
 		unsigned char* image;
 
-		glGenTextures(1, &cubemapID);
+		glGenTextures(1, &m_cubemapID);
 
-		glBindTexture(GL_TEXTURE_CUBE_MAP, cubemapID);
+		glBindTexture(GL_TEXTURE_CUBE_MAP, m_cubemapID);
 		for (GLuint i = 0; i < _filePaths.size(); i++)
 		{
 			_textureLoader->GetTexture(_filePaths[i]);
@@ -27,7 +27,7 @@ namespace Framework
 		glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
 		glBindTexture(GL_TEXTURE_CUBE_MAP, 0);
 
-		loadMesh();
+		LoadMesh();
 	}
 
 	void Skybox::Initialize(const GLchar* _filename, const IO::TextureLoader* _textureLoader)
@@ -35,9 +35,9 @@ namespace Framework
 		int width, height;
 		unsigned char* image;
 
-		glGenTextures(1, &cubemapID);
+		glGenTextures(1, &m_cubemapID);
 
-		glBindTexture(GL_TEXTURE_CUBE_MAP, cubemapID);
+		glBindTexture(GL_TEXTURE_CUBE_MAP, m_cubemapID);
 		image = SOIL_load_image(_filename, &width, &height, 0, SOIL_LOAD_RGB);
 		for (GLuint i = 0; i < 6; i++)
 		{
@@ -51,7 +51,7 @@ namespace Framework
 		glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 		glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
 		glBindTexture(GL_TEXTURE_CUBE_MAP, 0);
-		loadMesh();
+		LoadMesh();
 	}
 
 	void Skybox::Destroy()
@@ -63,16 +63,16 @@ namespace Framework
 	{
 		// Prepare shader.
 		glDepthMask(GL_FALSE);
-		shader->Use();
+		m_shader->Use();
 		Math::Matrix4 proj = perspective<float>(90.0f, (float)glutGet(GLUT_SCREEN_WIDTH) / (float)glutGet(GLUT_SCREEN_HEIGHT), 0.1f, 100000.0f);
-		shader->SetProjectionMatrix(proj);
-		shader->SetViewMatrix(Math::Matrix4::Inverse(_camera.GetRotation()));
+		m_shader->SetProjectionMatrix(proj);
+		m_shader->SetViewMatrix(Math::Matrix4::Inverse(_camera.GetRotation()));
 
 		// Draw.
-		glBindVertexArray(skyboxVAO);
+		glBindVertexArray(m_skyboxVAO);
 		glActiveTexture(GL_TEXTURE0);
-		glUniform1i(glGetUniformLocation(shader->GetGlProgram(), "skybox"), 0);
-		glBindTexture(GL_TEXTURE_CUBE_MAP, cubemapID);
+		glUniform1i(glGetUniformLocation(m_shader->GetGlProgram(), "skybox"), 0);
+		glBindTexture(GL_TEXTURE_CUBE_MAP, m_cubemapID);
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 		glBindVertexArray(0);
 
@@ -80,7 +80,7 @@ namespace Framework
 
 	}
 
-	void Skybox::loadMesh()
+	void Skybox::LoadMesh()
 	{
 		const GLfloat VERTEX_DISTANCE = 1.0f;
 
@@ -132,9 +132,9 @@ namespace Framework
 
 		// Setup skybox VAO
 		GLuint skyboxVBO;
-		glGenVertexArrays(1, &skyboxVAO);
+		glGenVertexArrays(1, &m_skyboxVAO);
 		glGenBuffers(1, &skyboxVBO);
-		glBindVertexArray(skyboxVAO);
+		glBindVertexArray(m_skyboxVAO);
 		glBindBuffer(GL_ARRAY_BUFFER, skyboxVBO);
 		glBufferData(GL_ARRAY_BUFFER, sizeof(skyboxVertices), &skyboxVertices, GL_STATIC_DRAW);
 		glEnableVertexAttribArray(0);

@@ -3,11 +3,11 @@
 namespace Utils
 {
 
-	std::vector<std::string> Log::output;
+	std::vector<std::string> Log::m_output;
 
 	void Log::DebugLog(const char* _text)
 	{
-		output.push_back(std::string(_text));
+		m_output.push_back(std::string(_text));
 	}
 
 	void Log::DebugLog(const int _argumentCount, ...)
@@ -19,20 +19,20 @@ namespace Utils
 			oss << va_arg(ap, const char*);
 		va_end(ap);
 		std::cout << std::string(oss.str().c_str()) << std::endl;
-		output.push_back(std::string(oss.str().c_str()));
+		m_output.push_back(std::string(oss.str().c_str()));
 	}
 
 	const std::vector<std::string> Log::GetOutput()
 	{
-		return output;
+		return m_output;
 	}
 
 
 	const std::vector<std::string> Log::GetLastOutput(const unsigned int _nbLines)
 	{
 		std::vector<std::string> result;
-		for (int i = output.size() - 1; result.size() <= _nbLines && i >= 0; i--)
-			result.insert(result.begin(), output[i]);
+		for (int i = m_output.size() - 1; result.size() <= _nbLines && i >= 0; i--)
+			result.insert(result.begin(), m_output[i]);
 		return result;
 	}
 

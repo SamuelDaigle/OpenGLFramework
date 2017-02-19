@@ -16,18 +16,18 @@ void OnKeyPress(unsigned char _key, int _data1, int _data2);
 void OnKeyRelease(unsigned char _key, int _data1, int _data2);
 void OnMouseMove(int _x, int _y);
 
-Framework::Window* window;
-Application::Scene* scene;
+Framework::Window* m_window;
+Application::Scene* m_scene;
 
 int main(int argc, char* argv[])
 {
 	glutInit(&argc, argv);
 
-	window = new Framework::Window();
-	window->Initialize();
+	m_window = new Framework::Window();
+	m_window->Initialize();
 
-	scene = new Application::Scene(*window);
-	window->SetScene(*scene);
+	m_scene = new Application::Scene(*m_window);
+	m_window->SetScene(*m_scene);
 
 	glutTimerFunc(1, Frame, 1);
 	glutKeyboardFunc(OnKeyPress);
@@ -38,8 +38,8 @@ int main(int argc, char* argv[])
 
 	system("PAUSE");
 
-	window->Destroy();
-	delete window;
+	m_window->Destroy();
+	delete m_window;
 
 	return 0;
 }
@@ -47,21 +47,21 @@ int main(int argc, char* argv[])
 
 void Frame(int timeId)
 {
-	window->Frame();
+	m_window->Frame();
 	glutTimerFunc(1, Frame, 1);
 }
 
 void OnKeyPress(unsigned char _key, int _data1, int _data2)
 {
-	window->OnKeyPress(_key, _data1, _data2);
+	m_window->OnKeyPress(_key, _data1, _data2);
 }
 
 void OnKeyRelease(unsigned char _key, int _data1, int _data2)
 {
-	window->OnKeyRelease(_key, _data1, _data2);
+	m_window->OnKeyRelease(_key, _data1, _data2);
 }
 
 void OnMouseMove(int _x, int _y)
 {
-	window->OnMouseMove(_x, _y);
+	m_window->OnMouseMove(_x, _y);
 }

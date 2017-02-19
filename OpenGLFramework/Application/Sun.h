@@ -17,7 +17,7 @@ public:
 	void Render(const ICamera& _camera, const Math::Matrix4& _parentWorldMatrix) const override;
 
 private:
-	Rendering::Model* model;
-	IShader* shader;
+	Rendering::Model* m_model;
+	IShader* m_shader;
 };
 

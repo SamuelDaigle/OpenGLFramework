@@ -19,6 +19,6 @@ namespace Utils
 		static const std::vector<std::string> GetLastOutput(const unsigned int _nbLines);
 
 	private:
-		static std::vector<std::string> output;
+		static std::vector<std::string> m_output;
 	};
 }

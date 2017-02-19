@@ -25,8 +25,8 @@ namespace Camera
 		const Math::Matrix4& GetRotation() const override;
 
 	private:
-		Math::Matrix4 projectionMatrix;
-		float bearing;
-		float tilt;
+		Math::Matrix4 m_projectionMatrix;
+		float m_bearing;
+		float m_tilt;
 	};
 }

@@ -27,10 +27,10 @@ namespace Input
 		void OnMouseMove(const int _x, const int _y);
 
 	private:
-		bool keyStates[256];
+		bool m_keyStates[256];
 
-		Math::Vector2 cursorPosition;
-		Math::Vector2 deltaCursor;
+		Math::Vector2 m_cursorPosition;
+		Math::Vector2 m_deltaCursor;
 	};
 
 }

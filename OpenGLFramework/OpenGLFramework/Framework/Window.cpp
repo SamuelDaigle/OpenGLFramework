@@ -5,44 +5,44 @@ namespace Framework
 
 	void Window::Initialize()
 	{
-		initializeWindow();
+		InitializeWindow();
 
-		openGL = new OpenGL();
+		m_openGL = new OpenGL();
 
 		glutSetCursor(GLUT_CURSOR_NONE);
-		inputhandler = new Input::InputHandler();
+		m_inputhandler = new Input::InputHandler();
 
 		Math::Vector2 cursorPosition = Math::Vector2(GetWidth() / 2.0f, GetHeight() / 2.0f);
-		inputhandler->Initialize(cursorPosition);
+		m_inputhandler->Initialize(cursorPosition);
 		glutWarpPointer(cursorPosition.x, cursorPosition.y);
 	}
 
 	void Window::Destroy()
 	{
-		SAFE_DESTROY(openGL);
-		SAFE_DESTROY(inputhandler);
+		SAFE_DESTROY(m_openGL);
+		SAFE_DESTROY(m_inputhandler);
 	}
 
 	void Window::Frame()
 	{
 		Math::Vector2 cursorPosition = Math::Vector2(GetWidth() / 2.0f, GetHeight() / 2.0f);
-		inputhandler->Update(cursorPosition);
+		m_inputhandler->Update(cursorPosition);
 
-		openGL->BeginScene();
-		if (scene)
+		m_openGL->BeginScene();
+		if (m_scene)
 		{
-			scene->input();
-			scene->update();
-			scene->render();
+			m_scene->Input();
+			m_scene->Update();
+			m_scene->Render();
 		}
-		openGL->EndScene();
+		m_openGL->EndScene();
 
-		if (inputhandler->HasMovedMouse())
+		if (m_inputhandler->HasMovedMouse())
 		{
 			glutWarpPointer(cursorPosition.x, cursorPosition.y);
 		}
 
-		if (hasExited())
+		if (HasExited())
 		{
 			glutLeaveMainLoop();
 		}
@@ -50,20 +50,20 @@ namespace Framework
 
 	void Window::OnKeyPress(unsigned char _key, int _x, int _y)
 	{
-		inputhandler->OnKeyDown(_key);
+		m_inputhandler->OnKeyDown(_key);
 	}
 
 	void Window::OnKeyRelease(unsigned char _key, int _x, int _y)
 	{
-		inputhandler->OnKeyUp(_key);
+		m_inputhandler->OnKeyUp(_key);
 	}
 
 	void Window::OnMouseMove(int _x, int _y)
 	{
-		inputhandler->OnMouseMove(_x, _y);
+		m_inputhandler->OnMouseMove(_x, _y);
 	}
 
-	void Window::initializeWindow()
+	void Window::InitializeWindow()
 	{
 		glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA);
 		glutInitWindowSize(GetWidth(), GetHeight());
@@ -79,24 +79,24 @@ namespace Framework
 		Utils::Log::DebugLog(3, "OpenGL version ", glGetString(GL_VERSION), " supported");
 	}
 
-	const bool Window::hasExited() const
+	const bool Window::HasExited() const
 	{
-		return inputhandler->IsKeyDown(VK_ESCAPE);
+		return m_inputhandler->IsKeyDown(VK_ESCAPE);
 	}
 
 	void Window::SetScene(IScene& _scene)
 	{
-		scene = &_scene;
+		m_scene = &_scene;
 	}
 
 	const OpenGL& Window::GetOpenGLWrapper() const
 	{
-		return *openGL;
+		return *m_openGL;
 	}
 
 	const Input::InputHandler& Window::GetInputHandler() const
 	{
-		return *inputhandler;
+		return *m_inputhandler;
 	}
 
 	const float Window::GetWidth() const

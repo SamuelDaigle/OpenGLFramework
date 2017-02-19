@@ -3,15 +3,15 @@
 namespace Rendering
 {
 
-	Model::Model(const char* path, IO::MeshLoader* _meshLoader)
+	Model::Model(const char* _path, IO::MeshLoader* _meshLoader)
 	{
-		meshes = _meshLoader->LoadMeshes(path);
+		m_meshes = _meshLoader->LoadMeshes(_path);
 	}
 
-	void Model::Draw(const IShader& shader) const
+	void Model::Draw(const IShader& _shader) const
 	{
-		for (GLuint i = 0; i < meshes.size(); i++)
-			meshes[i]->Draw(shader);
+		for (GLuint i = 0; i < m_meshes.size(); i++)
+			m_meshes[i]->Draw(_shader);
 	}
 
 

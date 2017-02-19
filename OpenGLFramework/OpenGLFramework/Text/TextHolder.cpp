@@ -4,14 +4,14 @@ namespace Text
 {
 
 	TextHolder::TextHolder(Math::Vector2& _position) :
-		position(_position)
+		m_position(_position)
 	{
-		spacing = glutBitmapHeight(GLUT_BITMAP_HELVETICA_18);
+		m_spacing = glutBitmapHeight(GLUT_BITMAP_HELVETICA_18);
 	}
 
 	TextHolder::~TextHolder()
 	{
-		for each (Text * text in texts)
+		for each (Text * text in m_texts)
 		{
 			SAFE_DESTROY(text);
 		}
@@ -23,7 +23,7 @@ namespace Text
 		glDisable(GL_TEXTURE_2D);
 		glDisable(GL_LIGHTING);
 		glBindTexture(GL_TEXTURE_2D, 0);
-		for each (Text * text in texts)
+		for each (Text * text in m_texts)
 		{
 			text->Draw();
 		}
@@ -34,17 +34,17 @@ namespace Text
 
 	void TextHolder::AddLine(const std::string& _value)
 	{
-		Text* text = new Text(_value, position.x, position.y - texts.size() * spacing, 255, 0, 0);
-		texts.push_back(text);
+		Text* text = new Text(_value, Math::Vector2(m_position.x, m_position.y - m_texts.size() * m_spacing), Utils::Color(255, 0, 0));
+		m_texts.push_back(text);
 	}
 
 	void TextHolder::Clear()
 	{
-		for each (Text * text in texts)
+		for each (Text * text in m_texts)
 		{
 			SAFE_DESTROY(text);
 		}
-		texts.clear();
+		m_texts.clear();
 	}
 
 }

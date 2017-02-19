@@ -21,12 +21,12 @@ namespace Framework
 		void Render(const ICamera& _camera, const Math::Matrix4& _parentWorldMatrix) const override;
 
 	private:
-		void initializeBuffers();
-		void shutdownBuffers();
+		void InitializeBuffers();
+		void ShutdownBuffers();
 
 
-		int vertexCount, indexCount;
-		unsigned int vertexArrayId, vertexBufferId, indexBufferId;
+		int m_vertexCount, m_indexCount;
+		unsigned int m_vertexArrayId, m_vertexBufferId, m_indexBufferId;
 	};
 
 }

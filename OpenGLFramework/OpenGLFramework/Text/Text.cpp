@@ -3,14 +3,11 @@
 namespace Text
 {
 
-	Text::Text(const std::string& _value, float _x, float _y, float _r, float _g, float _b)
+	Text::Text(const std::string& _value, const Math::Vector2& _position, const Utils::Color& _color)
 	{
-		strings = _value;
-		xPosition = _x;
-		yPosition = _y;
-		r = _r;
-		g = _g;
-		b = _b;
+		m_strings = _value;
+		m_position = _position;
+		m_color = _color;
 	}
 
 
@@ -20,10 +17,10 @@ namespace Text
 	
 	void Text::Draw() const
 	{
-		glColor3f(r, g, b);
-		glWindowPos2f(xPosition, yPosition);
-		for (int i = 0; i < strings.size(); i++)
-			glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, strings[i]);
+		glColor3f(m_color.r, m_color.g, m_color.b);
+		glWindowPos2f(m_position.x, m_position.y);
+		for (int i = 0; i < m_strings.size(); i++)
+			glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, m_strings[i]);
 	}
 
 	void Text::Destroy()

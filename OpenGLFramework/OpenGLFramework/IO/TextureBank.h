@@ -21,7 +21,7 @@ namespace IO
 		const GLuint GetTexture(const char* _path) const;
 
 	private:
-		std::map<std::string, const GLuint> textureLocations;
+		std::map<std::string, const GLuint> m_textureLocations;
 	};
 
 }

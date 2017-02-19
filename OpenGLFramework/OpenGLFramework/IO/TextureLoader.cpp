@@ -5,37 +5,37 @@ namespace IO
 
 	void TextureLoader::Initialize()
 	{
-		if (textureBank == NULL)
+		if (m_textureBank == NULL)
 		{
-			textureBank = new TextureBank();
-			textureBank->Initialize();
+			m_textureBank = new TextureBank();
+			m_textureBank->Initialize();
 		}
 	}
 
 	void TextureLoader::ReleaseTextures()
 	{
-		if (textureBank)
+		if (m_textureBank)
 		{
-			textureBank->Destroy();
-			delete textureBank;
-			textureBank = 0;
+			m_textureBank->Destroy();
+			delete m_textureBank;
+			m_textureBank = 0;
 		}
 	}
 
 	const GLuint TextureLoader::GetTexture(const char* _texturePath) const
 	{
-		if (textureBank->HasTexture(_texturePath))
+		if (m_textureBank->HasTexture(_texturePath))
 		{
 			Utils::Log::DebugLog(2, "Reuse texture: ", _texturePath);
-			return textureBank->GetTexture(_texturePath);
+			return m_textureBank->GetTexture(_texturePath);
 		}
 
 		GLuint loadedTexture = LoadTextureFromFile(_texturePath);
-		textureBank->AddTexture(_texturePath, loadedTexture);
+		m_textureBank->AddTexture(_texturePath, loadedTexture);
 		return loadedTexture;
 	}
 
-	const GLuint TextureLoader::LoadTextureFromFile(const char* path) const
+	const GLuint TextureLoader::LoadTextureFromFile(const char* _path) const
 	{
 		int width, height;
 		GLuint textureID;
@@ -44,7 +44,7 @@ namespace IO
 		glGenTextures(1, &textureID);
 
 		// Load texture file.
-		unsigned char* image = SOIL_load_image(path, &width, &height, 0, SOIL_LOAD_AUTO);
+		unsigned char* image = SOIL_load_image(_path, &width, &height, 0, SOIL_LOAD_AUTO);
 
 		if (!image)
 			Utils::Log::DebugLog("image load failed");

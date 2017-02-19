@@ -23,15 +23,15 @@ namespace Rendering
 	class Mesh {
 	public:
 		Mesh(std::vector<Vertex> _vertices, std::vector<GLuint> _indices, GLuint _texture);
-		void Draw(const IShader& shader) const;
+		void Draw(const IShader& _shader) const;
 
 	private:
-		GLuint VAO, VBO, EBO;
-		std::vector<Vertex> vertices;
-		std::vector<GLuint> indices;
-		GLuint texture;
+		void SetupMesh();
 
-		void setupMesh();
+		GLuint m_VAO, m_VBO, m_EBO;
+		std::vector<Vertex> m_vertices;
+		std::vector<GLuint> m_indices;
+		GLuint m_texture;
 	};
 
 }
