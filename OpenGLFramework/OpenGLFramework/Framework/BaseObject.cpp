@@ -43,11 +43,26 @@ void BaseObject::Update()
 	m_forwardVector = -Math::Vector3(m_rotation[0][2], m_rotation[1][2], m_rotation[2][2]);
 }
 
-void BaseObject::SetColor(float _r, float _g, float _b)
+void BaseObject::SetColor(const Math::Vector3& _color)
+{
+	SetColor(_color.r, _color.g, _color.b);
+}
+
+void BaseObject::SetColor(const Utils::Color& _color)
+{
+	SetColor(_color.r, _color.g, _color.b);
+}
+
+void BaseObject::SetColor(const float _r, const float _g, const float _b)
 {
 	m_color.r = _r;
 	m_color.g = _g;
 	m_color.b = _b;
+}
+
+void BaseObject::Translate(const Math::Vector3& _translationVector)
+{
+	Translate(_translationVector.x, _translationVector.y, _translationVector.z);
 }
 
 void BaseObject::Translate(const float _x, const float _y, const float _z)
@@ -58,9 +73,26 @@ void BaseObject::Translate(const float _x, const float _y, const float _z)
 	m_position.z += _z;
 }
 
+void BaseObject::Rotate(const Math::Vector3& _eulerAngles)
+{
+	Rotate(_eulerAngles.x, _eulerAngles.y, _eulerAngles.z);
+}
+
 void BaseObject::Rotate(const float _angle, const Math::Vector3& _axis)
 {
 	m_rotation = Math::Matrix4::Rotate(m_rotation, _angle, _axis);
+}
+
+void BaseObject::Rotate(const float _eulerAnglesX, const float _eulerAnglesY, const float _eulerAngleZ)
+{
+	m_rotation = Math::Matrix4::Rotate(m_rotation, _eulerAnglesX, Math::Vector3(1, 0, 0));
+	m_rotation = Math::Matrix4::Rotate(m_rotation, _eulerAnglesX, Math::Vector3(0, 1, 0));
+	m_rotation = Math::Matrix4::Rotate(m_rotation, _eulerAnglesX, Math::Vector3(0, 0, 1));
+}
+
+void BaseObject::Scale(const Math::Vector3& _scale)
+{
+	Scale(_scale.x, _scale.y, _scale.z);
 }
 
 void BaseObject::Scale(const float _scaleX, const float _scaleY, const float _scaleZ)

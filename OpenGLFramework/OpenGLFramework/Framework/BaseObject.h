@@ -25,9 +25,15 @@ namespace Framework
 		virtual void Render(const ICamera& _camera, const Math::Matrix4& _parentWorldMatrix) const;
 		virtual void Update();
 
+		virtual void SetColor(const Math::Vector3& _color);
+		virtual void SetColor(const Utils::Color& _color);
 		virtual void SetColor(const float _r, const float _g, const float _b);
+		virtual void Translate(const Math::Vector3& _translationVector);
 		virtual void Translate(const float _x, const float _y, const float _z);
+		virtual void Rotate(const Math::Vector3& _eulerAngles);
 		virtual void Rotate(const float _angle, const Math::Vector3& _axis);
+		virtual void Rotate(const float _eulerAnglesX, const float _eulerAnglesY, const float _eulerAngleZ);
+		virtual void Scale(const Math::Vector3& _scale);
 		virtual void Scale(const float _scaleX, const float _scaleY, const float _scaleZ);
 
 		virtual std::vector<BaseObject*> GetChilds();

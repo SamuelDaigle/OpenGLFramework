@@ -47,6 +47,16 @@
     <ClCompile Include="Rendering\SkyboxShader.cpp" />
     <ClCompile Include="Text\Text.cpp" />
     <ClCompile Include="Text\TextHolder.cpp" />
+    <ClCompile Include="UI\Command.cpp" />
+    <ClCompile Include="UI\CommandStack.cpp" />
+    <ClCompile Include="UI\UIBaseObjectPopup.cpp" />
+    <ClCompile Include="UI\UICircle.cpp" />
+    <ClCompile Include="UI\UIHierarchyPopup.cpp" />
+    <ClCompile Include="UI\UIInterface.cpp" />
+    <ClCompile Include="UI\UILine.cpp" />
+    <ClCompile Include="UI\UIPopup.cpp" />
+    <ClCompile Include="UI\UIShape.cpp" />
+    <ClCompile Include="UI\UISquare.cpp" />
     <ClCompile Include="Utils\Log.cpp" />
     <ClCompile Include="Utils\Vertex.cpp" />
   </ItemGroup>
@@ -61,6 +71,7 @@
     <ClInclude Include="Framework\Window.h" />
     <ClInclude Include="Input\InputHandler.h" />
     <ClInclude Include="Interface\ICamera.h" />
+    <ClInclude Include="Interface\ICommandStack.h" />
     <ClInclude Include="Interface\IShader.h" />
     <ClInclude Include="Interface\IScene.h" />
     <ClInclude Include="Interface\IWindow.h" />
@@ -84,6 +95,16 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Text\Text.h" />
     <ClInclude Include="Text\TextHolder.h" />
+    <ClInclude Include="UI\Command.h" />
+    <ClInclude Include="UI\CommandStack.h" />
+    <ClInclude Include="UI\UIBaseObjectPopup.h" />
+    <ClInclude Include="UI\UICircle.h" />
+    <ClInclude Include="UI\UIHierarchyPopup.h" />
+    <ClInclude Include="UI\UIInterface.h" />
+    <ClInclude Include="UI\UILine.h" />
+    <ClInclude Include="UI\UIPopup.h" />
+    <ClInclude Include="UI\UIShape.h" />
+    <ClInclude Include="UI\UISquare.h" />
     <ClInclude Include="Utils\Color.h" />
     <ClInclude Include="Utils\Composite.h" />
     <ClInclude Include="Utils\Composite.hpp" />

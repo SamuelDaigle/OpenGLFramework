@@ -1,1 +1,7 @@
-﻿  OpenGLFramework.vcxproj -> C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.lib
+﻿  Command.cpp
+  CommandStack.cpp
+  UIBaseObjectPopup.cpp
+  UIHierarchyPopup.cpp
+  UIInterface.cpp
+  UIPopup.cpp
+  OpenGLFramework.vcxproj -> C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.lib
