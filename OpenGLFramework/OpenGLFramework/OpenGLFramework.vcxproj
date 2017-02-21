@@ -100,6 +100,7 @@
     <ClInclude Include="Rendering\Model.h" />
     <ClInclude Include="Rendering\Renderer.h" />
     <ClInclude Include="Rendering\SkyboxShader.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Text\Text.h" />
     <ClInclude Include="Text\TextHolder.h" />
@@ -131,6 +132,9 @@
     <None Include="Shaders\color.vert" />
     <None Include="Shaders\skybox.frag" />
     <None Include="Shaders\skybox.vert" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="OpenGLFramework.rc" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{7368AF22-0AC1-402D-8387-9E98C0B2C2C2}</ProjectGuid>
