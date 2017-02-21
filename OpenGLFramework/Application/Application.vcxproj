@@ -111,7 +111,7 @@
     <Link>
       <EnableCOMDATFolding>false</EnableCOMDATFolding>
       <OptimizeReferences>false</OptimizeReferences>
-      <AdditionalDependencies>OpenGLFramework.lib;..\OpenGLFramework\Dependencies\soil\SOIL.lib;..\OpenGLFramework\Dependencies\assimp\assimp.lib;opengl32.lib;..\OpenGLFramework\Dependencies\freeglut\freeglut.lib;..\OpenGLFramework\Dependencies\glew\glew32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>OpenGLFramework.lib;..\OpenGLFramework\Dependencies\soil\SOIL.lib;..\OpenGLFramework\Dependencies\assimp\assimp.lib;opengl32.lib;..\OpenGLFramework\Dependencies\freeglut\freeglut.lib;..\OpenGLFramework\Dependencies\bullet\BulletCollision.lib;..\OpenGLFramework\Dependencies\bullet\BulletDynamics.lib;..\OpenGLFramework\Dependencies\bullet\LinearMath.lib;..\OpenGLFramework\Dependencies\glew\glew32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
     </Link>
   </ItemDefinitionGroup>
@@ -129,19 +129,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CustomModel.cpp" />
     <ClCompile Include="CustomShader.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Planet.cpp" />
     <ClCompile Include="Scene.cpp" />
-    <ClCompile Include="Sun.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CustomModel.h" />
     <ClInclude Include="CustomShader.h" />
-    <ClInclude Include="Planet.h" />
     <ClInclude Include="Scene.h" />
-    <ClInclude Include="Sun.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

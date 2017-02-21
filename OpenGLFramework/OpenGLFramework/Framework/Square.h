@@ -13,7 +13,7 @@ namespace Framework
 	class Square : public BaseObject
 	{
 	public:
-		Square(IShader& _shader);
+		Square();
 		~Square();
 
 		void Destroy() override;

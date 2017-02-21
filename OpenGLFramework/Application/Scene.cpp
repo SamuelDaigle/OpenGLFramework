@@ -18,39 +18,35 @@ namespace Application
 		m_customShader = new Application::CustomShader();
 		m_colorShader = new Rendering::ColorShader();
 
-		m_rootObject = new Planet(meshLoader, *m_advancedShader);
-		m_light = new Framework::Light(*m_advancedShader);
-		m_rootObject->Add(m_light);
-		m_light->Translate(2.5f, 0, 0);
-		Framework::BaseObject* planetComposite = new Planet(meshLoader, *m_advancedShader);
-		m_rootObject->Add(planetComposite);
-		planetComposite->m_position.x = 5;
-		planetComposite->Scale(0.5f, 0.5f, 0.5f);
+		m_physicsWorld = new Physics::PhysicsWorld();
 
+		m_rootObject = new Framework::BaseObject();
 
-		Framework::BaseObject* moon = new Planet(meshLoader, *m_advancedShader);
-		planetComposite->Add(moon);
-		moon->Translate(0, 0, 7.5f);
-		moon->Scale(0.25f, 0.25f, 0.25f);
+		Framework::BaseObject* light = new Framework::BaseObject();
+		light->Translate(2.5f, 0, 0);
+		Framework::Light* lightComponent = new Framework::Light(*light, *m_advancedShader);
+		light->AddComponent(*lightComponent);
+		m_rootObject->Add(light);
 
-		CustomModel* barModel = new CustomModel(meshLoader, *m_basicShader, "../Content/low_poly_bldg_715_3ds/low_poly_bldg_715.3DS"); //../Content/bar/cb5e6e00cb294d0f81021426f4dc5c8a.obj
-		m_rootObject->Add(barModel);
-		barModel->Scale(0.0001f, 0.0001f, 0.0001f);
-		barModel->Translate(100000, 0, 50);
-		barModel->Rotate(-90, Math::Vector3(1.0f, 0.0f, 0.0f));
-		barModel->Rotate(-90, Math::Vector3(0.0f, 0.0f, 1.0f));
+		Framework::BaseObject* planet = new Framework::BaseObject();
+		m_rootObject->Add(planet);
+		Physics::Rigidbody* planetRigidbody = new Physics::Rigidbody(*planet, *new btSphereShape(1), 1);
+		m_physicsWorld->AddRigidbody(*planetRigidbody);
+		Rendering::Renderer* planetRenderer = new Rendering::Renderer("../Content/planet/planet.obj", *meshLoader, *m_advancedShader);
+		planet->AddComponent(*planetRenderer);
+		planet->AddComponent(*planetRigidbody);
 
-		CustomModel* building = new CustomModel(meshLoader, *m_basicShader, "../Content/low_poly_bldg_715_3ds/low_poly_bldg_715.3DS"); //../Content/bar/cb5e6e00cb294d0f81021426f4dc5c8a.obj
-		m_rootObject->Add(building);
-		building->Translate(-100000, 0, 50);
-		building->Scale(0.0001f, 0.0001f, 0.0001f);
-		building->Rotate(-90, Math::Vector3(1.0f, 0.0f, 0.0f));
+		Framework::BaseObject* terrain = new Framework::BaseObject();
+		terrain->Translate(0, -15, 0);
+		Physics::Rigidbody* m_rigidbody = new Physics::Rigidbody(*terrain, *new btStaticPlaneShape(btVector3(0, 1, 0), 10), 0);
+		m_physicsWorld->AddRigidbody(*m_rigidbody);
+		m_rootObject->Add(terrain);
 
 		m_skybox = new Framework::Skybox();
 		m_skybox->Initialize("../Content/skybox/space.bmp", textureLoader);
 
 		m_camera = new Camera::Camera();
-		m_camera->m_position.z -= 5;
+		m_camera->m_position.z -= 20;
 
 		m_hierarchyText = new Text::TextHolder(Math::Vector2(50, m_window->GetHeight() - 100));
 		UpdateHierarchyText();
@@ -102,7 +98,6 @@ namespace Application
 	void Scene::Destroy()
 	{
 		SAFE_DESTROY(m_camera);
-		SAFE_DESTROY(m_light);
 		SAFE_DESTROY(m_rootObject); // destroys its childs.
 		// Do not delete ptrOpenGL as the window contains it.
 	}
@@ -159,6 +154,7 @@ namespace Application
 
 	void Scene::Update()
 	{
+		m_physicsWorld->Update();
 		m_rootObject->Update();
 		UpdateConsoleText();
 	}

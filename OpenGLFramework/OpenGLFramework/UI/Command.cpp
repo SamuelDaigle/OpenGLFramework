@@ -13,7 +13,6 @@ namespace UI
 		m_appliedObject->Translate(m_data.translationChange);
 		m_appliedObject->Rotate(m_data.rotationChange);
 		m_appliedObject->Scale(m_data.scalingChange);
-		m_appliedObject->SetColor(m_data.colorChange);
 	}
 
 	void Command::ReverseExecute() const
@@ -21,7 +20,6 @@ namespace UI
 		m_appliedObject->Translate(-m_data.translationChange);
 		m_appliedObject->Rotate(-m_data.rotationChange);
 		m_appliedObject->Scale(-m_data.scalingChange);
-		m_appliedObject->SetColor(-m_data.colorChange.r, -m_data.colorChange.g, -m_data.colorChange.b);
 	}
 
 }

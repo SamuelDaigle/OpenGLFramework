@@ -16,18 +16,15 @@ using namespace glm;
 namespace Framework
 {
 
+	class Component;
 	class BaseObject : public Utils::Composite<BaseObject>
 	{
 	public:
 		BaseObject();
-		BaseObject(IShader& _shader);
 		virtual void Destroy();
 		virtual void Render(const ICamera& _camera, const Math::Matrix4& _parentWorldMatrix) const;
 		virtual void Update();
 
-		virtual void SetColor(const Math::Vector3& _color);
-		virtual void SetColor(const Utils::Color& _color);
-		virtual void SetColor(const float _r, const float _g, const float _b);
 		virtual void Translate(const Math::Vector3& _translationVector);
 		virtual void Translate(const float _x, const float _y, const float _z);
 		virtual void Rotate(const Math::Vector3& _eulerAngles);
@@ -38,7 +35,7 @@ namespace Framework
 
 		virtual std::vector<BaseObject*> GetChilds();
 
-		virtual void LookAt(const Math::Vector3 _position);
+		virtual void AddComponent(Component& _component);
 
 		virtual const Math::Matrix4 GetWorldMatrix() const;
 
@@ -55,9 +52,6 @@ namespace Framework
 		Math::Matrix4 m_rotation;
 
 	protected:
-		Utils::Color m_color;
-		IShader* m_shader;
-
 		virtual const Math::Matrix4& GetRotationMatrix() const;
 		virtual const Math::Matrix4 GetScalingMatrix() const;
 		virtual const Math::Matrix4 GetTranslationMatrix() const;
@@ -66,6 +60,8 @@ namespace Framework
 		Math::Vector3 m_forwardVector;
 		Math::Vector3 m_upVector;
 		Math::Vector3 m_rightVector;
+
+		std::vector<Component*> m_components;
 	};
 
 }

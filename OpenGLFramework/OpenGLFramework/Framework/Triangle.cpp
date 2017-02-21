@@ -3,10 +3,8 @@
 namespace Framework
 {
 
-	Triangle::Triangle(IShader& _shader) :
-		BaseObject(_shader)
+	Triangle::Triangle()
 	{
-		BaseObject::Scale(1, 1, 1);
 		InitializeBuffers();
 	}
 

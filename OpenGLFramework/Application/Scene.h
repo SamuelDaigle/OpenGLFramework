@@ -12,12 +12,12 @@
 #include "CustomShader.h"
 #include "Input\InputHandler.h"
 #include "Framework\Light.h"
-#include "Planet.h"
 #include "Text\TextHolder.h"
 #include "Interface\IScene.h"
 #include "Camera\Camera.h"
-#include "CustomModel.h"
 #include "Interface\IWindow.h"
+#include "Physics\PhysicsWorld.h"
+#include "Rendering\Renderer.h"
 
 namespace Application
 {
@@ -44,10 +44,10 @@ namespace Application
 		IShader* m_customShader;
 		IShader* m_colorShader;
 		Framework::Skybox* m_skybox;
-		Framework::Light* m_light;
 		Camera::Camera* m_camera;
 		Text::TextHolder* m_hierarchyText;
 		Text::TextHolder* m_consoleText;
+		Physics::PhysicsWorld* m_physicsWorld;
 	};
 
 }

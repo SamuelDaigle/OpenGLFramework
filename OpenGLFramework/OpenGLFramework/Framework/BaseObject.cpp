@@ -1,18 +1,13 @@
 #include "BaseObject.h"
+#include "Component.h"
 
 namespace Framework
 {
 
 BaseObject::BaseObject() :
 	Utils::Composite<BaseObject>(),
-	m_scale(1, 1, 1), m_position(0, 0, 0), m_upVector(0, 1, 0), m_color(1, 1, 1)
+	m_scale(1, 1, 1), m_position(0, 0, 0), m_upVector(0, 1, 0)
 {
-}
-
-BaseObject::BaseObject(IShader& _shader) :
-	BaseObject()
-{
-	m_shader = &_shader;
 }
 
 void BaseObject::Destroy()
@@ -25,12 +20,9 @@ void BaseObject::Render(const ICamera& _camera, const Math::Matrix4& _parentWorl
 	Math::Matrix4 world = _parentWorldMatrix * GetWorldMatrix();
 	Utils::Composite<BaseObject>::RenderChilds(_camera, world);
 
-	if (m_shader)
+	for (int i = 0; i < m_components.size(); i++)
 	{
-		m_shader->Use();
-		m_shader->SetViewMatrix(_camera.GetViewMatrix());
-		m_shader->SetProjectionMatrix(_camera.GetProjectionMatrix());
-		m_shader->SetWorldMatrix(world);
+		m_components[i]->Render(_camera, world);
 	}
 }
 
@@ -41,23 +33,11 @@ void BaseObject::Update()
 	m_rightVector	  = -Math::Vector3(m_rotation[0][0], m_rotation[1][0], m_rotation[2][0]);
 	m_upVector	  = -Math::Vector3(m_rotation[0][1], m_rotation[1][1], m_rotation[2][1]);
 	m_forwardVector = -Math::Vector3(m_rotation[0][2], m_rotation[1][2], m_rotation[2][2]);
-}
 
-void BaseObject::SetColor(const Math::Vector3& _color)
-{
-	SetColor(_color.r, _color.g, _color.b);
-}
-
-void BaseObject::SetColor(const Utils::Color& _color)
-{
-	SetColor(_color.r, _color.g, _color.b);
-}
-
-void BaseObject::SetColor(const float _r, const float _g, const float _b)
-{
-	m_color.r = _r;
-	m_color.g = _g;
-	m_color.b = _b;
+	for (int i = 0; i < m_components.size(); i++)
+	{
+		m_components[i]->Update();
+	}
 }
 
 void BaseObject::Translate(const Math::Vector3& _translationVector)
@@ -110,9 +90,9 @@ std::vector<BaseObject*> BaseObject::GetChilds()
 	return m_childObjects;
 }
 
-void BaseObject::LookAt(const Math::Vector3 _targetPosition)
+void BaseObject::AddComponent(Component& _component)
 {
-	//rotation = Math::Quaternion::LookAt(position, _targetPosition);
+	m_components.push_back(&_component);
 }
 
 const Math::Matrix4 BaseObject::GetWorldMatrix() const

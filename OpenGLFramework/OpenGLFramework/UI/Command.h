@@ -17,7 +17,6 @@ namespace UI
 			Math::Vector3 rotationChange;
 			Math::Vector3 scalingChange;
 			Math::Vector3 translationChange;
-			Utils::Color colorChange;
 		};
 
 		Command(Framework::BaseObject& _appliedObject, CommandData _data);

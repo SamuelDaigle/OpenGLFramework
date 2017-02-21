@@ -3,8 +3,7 @@
 namespace Framework
 {
 
-	Square::Square(IShader& _shader) :
-		BaseObject(_shader)
+	Square::Square()
 	{
 		InitializeBuffers();
 		BaseObject::Scale(1, 1, 1);
