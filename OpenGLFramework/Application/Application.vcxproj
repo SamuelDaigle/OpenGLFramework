@@ -76,6 +76,10 @@
     <IncludePath>..\OpenGLFramework;$(IncludePath)</IncludePath>
     <LibraryPath>..\Release;..\OpenGLFramework\Dependencies;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86</LibraryPath>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>..\OpenGLFramework;$(IncludePath)</IncludePath>
+    <LibraryPath>..\Release;..\OpenGLFramework\Dependencies;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -122,10 +126,12 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>../OpenGLFramework;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>OpenGLFramework.lib;..\OpenGLFramework\Dependencies\soil\SOIL.lib;..\OpenGLFramework\Dependencies\assimp\assimp.lib;opengl32.lib;..\OpenGLFramework\Dependencies\freeglut\freeglut.lib;..\OpenGLFramework\Dependencies\bullet\BulletCollision.lib;..\OpenGLFramework\Dependencies\bullet\BulletDynamics.lib;..\OpenGLFramework\Dependencies\bullet\LinearMath.lib;..\OpenGLFramework\Dependencies\glew\glew32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
