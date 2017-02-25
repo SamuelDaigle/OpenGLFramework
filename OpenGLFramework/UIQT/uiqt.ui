@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>485</width>
-    <height>457</height>
+    <width>497</width>
+    <height>477</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -27,7 +27,7 @@
      <enum>QFrame::Plain</enum>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="objetPage">
      <widget class="QFrame" name="objet">
@@ -369,9 +369,12 @@
         </widget>
        </item>
        <item row="3" column="0">
-        <widget class="QLabel" name="yallLabel">
+        <widget class="QLabel" name="yawLabel">
+         <property name="cursor">
+          <cursorShape>ArrowCursor</cursorShape>
+         </property>
          <property name="text">
-          <string>Yall</string>
+          <string>Yaw</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -450,7 +453,7 @@
        </item>
       </layout>
       <zorder>pitchLabel</zorder>
-      <zorder>yallLabel</zorder>
+      <zorder>yawLabel</zorder>
       <zorder>cameraLabel</zorder>
       <zorder>zoomLabel</zorder>
       <zorder>nearLabel</zorder>
@@ -463,11 +466,328 @@
      </widget>
     </widget>
    </widget>
+   <widget class="QSpinBox" name="pageSpinBox">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>400</y>
+      <width>42</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>1</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="setPageLabel">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>400</y>
+      <width>31</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Page</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>positionYSpinBox</tabstop>
+  <tabstop>couleurGSpinBox</tabstop>
+  <tabstop>rotationXSpinBox</tabstop>
+  <tabstop>couleurBSpinBox</tabstop>
+  <tabstop>rotationYSpinBox</tabstop>
+  <tabstop>scaleSpinBox</tabstop>
+  <tabstop>couleurRSpinBox</tabstop>
+  <tabstop>positionZSpinBox</tabstop>
+  <tabstop>rotationZSpinBox</tabstop>
+  <tabstop>positionXSpinBox</tabstop>
+  <tabstop>pitchSpinBox</tabstop>
+  <tabstop>yallSpinBox</tabstop>
+  <tabstop>zoomSpinBox</tabstop>
+  <tabstop>nearSpinBox</tabstop>
+  <tabstop>farSpinBox</tabstop>
+ </tabstops>
  <resources>
   <include location="uiqt.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pageSpinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>stackedWidget</receiver>
+   <slot>setCurrentIndex(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>380</x>
+     <y>430</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>255</x>
+     <y>220</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>positionXSpinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>newXPosition()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>161</x>
+     <y>158</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>159</x>
+     <y>15</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>positionYSpinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>newYPosition()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>246</x>
+     <y>159</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>249</x>
+     <y>18</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>positionZSpinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>newZPosition()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>368</x>
+     <y>159</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>370</x>
+     <y>19</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rotationXSpinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>newXRotation()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>134</x>
+     <y>202</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>21</x>
+     <y>60</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rotationYSpinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>newYRotation()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>270</x>
+     <y>202</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>19</x>
+     <y>96</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rotationZSpinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>newZRotation()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>383</x>
+     <y>208</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>28</x>
+     <y>129</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>couleurRSpinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>newRColor()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>154</x>
+     <y>247</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>26</x>
+     <y>172</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>couleurGSpinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>newGColor()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>257</x>
+     <y>241</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>27</x>
+     <y>206</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>couleurBSpinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>newBColor()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>373</x>
+     <y>253</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>28</x>
+     <y>237</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>scaleSpinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>newScale()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>269</x>
+     <y>295</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>35</x>
+     <y>278</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pitchSpinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>newPitch()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>250</x>
+     <y>150</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>35</x>
+     <y>86</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>yallSpinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>newYaw()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>217</x>
+     <y>193</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>30</x>
+     <y>123</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>zoomSpinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>newZoom()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>253</x>
+     <y>239</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>32</x>
+     <y>159</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>nearSpinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>newNear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>217</x>
+     <y>281</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>30</x>
+     <y>198</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>farSpinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>newFar()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>209</x>
+     <y>328</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>51</x>
+     <y>254</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>newXPosition()</slot>
+  <slot>newYPosition()</slot>
+  <slot>newZPosition()</slot>
+  <slot>newXRotation()</slot>
+  <slot>newYRotation()</slot>
+  <slot>newZRotation()</slot>
+  <slot>newRColor()</slot>
+  <slot>newGColor()</slot>
+  <slot>newBColor()</slot>
+  <slot>newScale()</slot>
+  <slot>newPitch()</slot>
+  <slot>newYaw()</slot>
+  <slot>newZoom()</slot>
+  <slot>newNear()</slot>
+  <slot>newFar()</slot>
+ </slots>
 </ui>

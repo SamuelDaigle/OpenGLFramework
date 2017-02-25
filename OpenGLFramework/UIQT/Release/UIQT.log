@@ -1,1 +1,6 @@
-﻿  UIQT.vcxproj -> C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\Win32\Release\UIQT.exe
+﻿  Moc'ing uiqt.h...
+  moc_uiqt.cpp
+  main.cpp
+  uiqt.cpp
+  Génération de code en cours...
+  UIQT.vcxproj -> C:\Users\Yannick\OneDrive\Hiver2017\Infographie\OpenGLFramework\OpenGLFramework\Win32\Release\UIQT.exe

@@ -1,36 +1,79 @@
-﻿  Skybox.cpp
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\framework\skybox.cpp(13): warning C4101: 'height': unreferenced local variable
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\framework\skybox.cpp(13): warning C4101: 'width': unreferenced local variable
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\framework\skybox.cpp(14): warning C4101: 'image': unreferenced local variable
-  Generating Code...
-  Compiling...
-  SkyboxShader.cpp
-  Model.cpp
-  ColorShader.cpp
-  BasicShader.cpp
-  BaseShader.cpp
-  AdvancedShader.cpp
-  TextureLoader.cpp
-  TextureBank.cpp
-  ShaderLoader.cpp
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\io\shaderloader.cpp(68): warning C4244: 'initializing': conversion from 'std::streamoff' to 'unsigned int', possible loss of data
-  MeshLoader.cpp
-  Generating Code...
-  Compiling...
-  Triangle.cpp
-  Generating Code...
-  Compiling...
-  Window.cpp
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\framework\window.cpp(17): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\framework\window.cpp(42): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\framework\window.cpp(69): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  Generating Code...
-  Compiling...
+﻿  Vertex.cpp
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\math\vector3.h(3): fatal error C1083: Impossible d'ouvrir le fichier include : 'glm\vec3.hpp' : No such file or directory
+  UIPopup.cpp
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\math\vector3.h(3): fatal error C1083: Impossible d'ouvrir le fichier include : 'glm\vec3.hpp' : No such file or directory
+  UIInterface.cpp
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\math\vector3.h(3): fatal error C1083: Impossible d'ouvrir le fichier include : 'glm\vec3.hpp' : No such file or directory
+  UIHierarchyPopup.cpp
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\math\vector3.h(3): fatal error C1083: Impossible d'ouvrir le fichier include : 'glm\vec3.hpp' : No such file or directory
+  UIBaseObjectPopup.cpp
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\math\vector3.h(3): fatal error C1083: Impossible d'ouvrir le fichier include : 'glm\vec3.hpp' : No such file or directory
+  CommandStack.cpp
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\math\vector3.h(3): fatal error C1083: Impossible d'ouvrir le fichier include : 'glm\vec3.hpp' : No such file or directory
+  Command.cpp
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\math\vector3.h(3): fatal error C1083: Impossible d'ouvrir le fichier include : 'glm\vec3.hpp' : No such file or directory
   TextHolder.cpp
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\text\textholder.cpp(9): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\math\vector2.h(3): fatal error C1083: Impossible d'ouvrir le fichier include : 'glm\vec2.hpp' : No such file or directory
   Text.cpp
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\text\text.cpp(25): warning C4018: '<': signed/unsigned mismatch
-  Generating Code...
-  Skipping... (no relevant changes detected)
-  OpenGL.cpp
-  OpenGLFramework.vcxproj -> C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\Debug\OpenGLFramework.lib
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\math\vector2.h(3): fatal error C1083: Impossible d'ouvrir le fichier include : 'glm\vec2.hpp' : No such file or directory
+  SkyboxShader.cpp
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\math\matrix4.h(3): fatal error C1083: Impossible d'ouvrir le fichier include : 'glm\mat4x4.hpp' : No such file or directory
+  Renderer.cpp
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\math\matrix4.h(3): fatal error C1083: Impossible d'ouvrir le fichier include : 'glm\mat4x4.hpp' : No such file or directory
+  Model.cpp
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\math\matrix4.h(3): fatal error C1083: Impossible d'ouvrir le fichier include : 'glm\mat4x4.hpp' : No such file or directory
+  Mesh.cpp
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\math\matrix4.h(3): fatal error C1083: Impossible d'ouvrir le fichier include : 'glm\mat4x4.hpp' : No such file or directory
+  ColorShader.cpp
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\math\matrix4.h(3): fatal error C1083: Impossible d'ouvrir le fichier include : 'glm\mat4x4.hpp' : No such file or directory
+  BasicShader.cpp
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\math\matrix4.h(3): fatal error C1083: Impossible d'ouvrir le fichier include : 'glm\mat4x4.hpp' : No such file or directory
+  BaseShader.cpp
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\math\matrix4.h(3): fatal error C1083: Impossible d'ouvrir le fichier include : 'glm\mat4x4.hpp' : No such file or directory
+  AdvancedShader.cpp
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\math\matrix4.h(3): fatal error C1083: Impossible d'ouvrir le fichier include : 'glm\mat4x4.hpp' : No such file or directory
+  Rigidbody.cpp
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\dependencies\bullet\src\linearmath\btidebugdraw.h(169): warning C4305: 'argument' : troncation de 'double' à 'const btScalar'
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\dependencies\bullet\src\linearmath\btidebugdraw.h(170): warning C4305: 'argument' : troncation de 'double' à 'const btScalar'
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\dependencies\bullet\src\linearmath\btidebugdraw.h(171): warning C4305: 'argument' : troncation de 'double' à 'const btScalar'
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\math\vector3.h(3): fatal error C1083: Impossible d'ouvrir le fichier include : 'glm\vec3.hpp' : No such file or directory
+  PhysicsWorld.cpp
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\dependencies\bullet\src\linearmath\btidebugdraw.h(169): warning C4305: 'argument' : troncation de 'double' à 'const btScalar'
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\dependencies\bullet\src\linearmath\btidebugdraw.h(170): warning C4305: 'argument' : troncation de 'double' à 'const btScalar'
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\dependencies\bullet\src\linearmath\btidebugdraw.h(171): warning C4305: 'argument' : troncation de 'double' à 'const btScalar'
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\math\vector3.h(3): fatal error C1083: Impossible d'ouvrir le fichier include : 'glm\vec3.hpp' : No such file or directory
+  Vector3.cpp
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\math\vector3.h(3): fatal error C1083: Impossible d'ouvrir le fichier include : 'glm\vec3.hpp' : No such file or directory
+  Génération de code en cours...
+  Compilation en cours...
+  Vector2.cpp
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\math\vector2.h(3): fatal error C1083: Impossible d'ouvrir le fichier include : 'glm\vec2.hpp' : No such file or directory
+  Quaternion.cpp
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\math\quaternion.h(3): fatal error C1083: Impossible d'ouvrir le fichier include : 'glm\gtc\quaternion.hpp' : No such file or directory
+  Matrix4.cpp
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\math\matrix4.h(3): fatal error C1083: Impossible d'ouvrir le fichier include : 'glm\mat4x4.hpp' : No such file or directory
+  Matrix3.cpp
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\math\matrix3.h(3): fatal error C1083: Impossible d'ouvrir le fichier include : 'glm\mat3x3.hpp' : No such file or directory
+  InputHandler.cpp
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\math\vector2.h(3): fatal error C1083: Impossible d'ouvrir le fichier include : 'glm\vec2.hpp' : No such file or directory
+  MeshLoader.cpp
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\math\matrix4.h(3): fatal error C1083: Impossible d'ouvrir le fichier include : 'glm\mat4x4.hpp' : No such file or directory
+  MeshBank.cpp
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\math\matrix4.h(3): fatal error C1083: Impossible d'ouvrir le fichier include : 'glm\mat4x4.hpp' : No such file or directory
+  Window.cpp
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\math\vector2.h(3): fatal error C1083: Impossible d'ouvrir le fichier include : 'glm\vec2.hpp' : No such file or directory
+  Triangle.cpp
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\math\matrix4.h(3): fatal error C1083: Impossible d'ouvrir le fichier include : 'glm\mat4x4.hpp' : No such file or directory
+  Square.cpp
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\math\matrix4.h(3): fatal error C1083: Impossible d'ouvrir le fichier include : 'glm\mat4x4.hpp' : No such file or directory
+  Skybox.cpp
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\math\matrix4.h(3): fatal error C1083: Impossible d'ouvrir le fichier include : 'glm\mat4x4.hpp' : No such file or directory
+  Light.cpp
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\math\matrix4.h(3): fatal error C1083: Impossible d'ouvrir le fichier include : 'glm\mat4x4.hpp' : No such file or directory
+  Component.cpp
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\math\matrix4.h(3): fatal error C1083: Impossible d'ouvrir le fichier include : 'glm\mat4x4.hpp' : No such file or directory
+  BaseObject.cpp
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\math\matrix4.h(3): fatal error C1083: Impossible d'ouvrir le fichier include : 'glm\mat4x4.hpp' : No such file or directory
+  Camera.cpp
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\math\matrix4.h(3): fatal error C1083: Impossible d'ouvrir le fichier include : 'glm\mat4x4.hpp' : No such file or directory
+  Génération de code en cours...
