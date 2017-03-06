@@ -7,8 +7,6 @@
 #include "..\Framework\OpenGL.h"
 #include "..\Math\Matrix4.h"
 
-using namespace glm;
-
 class IShader
 {
 public:

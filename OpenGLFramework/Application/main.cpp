@@ -9,8 +9,6 @@
 #include <fstream>
 #include <string>
 
-using namespace std;
-
 void Frame(int timeId);
 void OnKeyPress(unsigned char _key, int _data1, int _data2);
 void OnKeyRelease(unsigned char _key, int _data1, int _data2);

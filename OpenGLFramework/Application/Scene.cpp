@@ -15,7 +15,6 @@ namespace Application
 
 		m_basicShader = new Rendering::BasicShader();
 		m_advancedShader = new Rendering::AdvancedShader();
-		m_customShader = new Application::CustomShader();
 		m_colorShader = new Rendering::ColorShader();
 
 		m_physicsWorld = new Physics::PhysicsWorld();

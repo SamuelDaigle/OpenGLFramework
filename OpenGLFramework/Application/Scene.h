@@ -9,7 +9,6 @@
 #include "Rendering\BasicShader.h"
 #include "Rendering\AdvancedShader.h"
 #include "Rendering\ColorShader.h"
-#include "CustomShader.h"
 #include "Input\InputHandler.h"
 #include "Framework\Light.h"
 #include "Text\TextHolder.h"
@@ -41,7 +40,6 @@ namespace Application
 		Framework::BaseObject* m_rootObject;
 		IShader* m_basicShader;
 		IShader* m_advancedShader;
-		IShader* m_customShader;
 		IShader* m_colorShader;
 		Framework::Skybox* m_skybox;
 		Camera::Camera* m_camera;

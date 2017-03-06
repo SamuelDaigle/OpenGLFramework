@@ -11,8 +11,6 @@
 #include "..\Utils\Log.h"
 #include "..\Utils\Color.h"
 
-using namespace glm;
-
 namespace Framework
 {
 
