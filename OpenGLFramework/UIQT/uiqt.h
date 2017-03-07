@@ -6,6 +6,8 @@
 #include "Framework\Light.h"
 #include "Text\TextHolder.h"
 
+
+
 class UIQT : public QMainWindow
 {
 	Q_OBJECT
@@ -29,7 +31,9 @@ public:
 	void presentZoom(int _zoom);
 	void presentNear(int _near);
 	void presentFar(int _far);
-	void AddChildStringTo(Text::TextHolder& _hierarchyText, Framework::BaseObject& _parent, int _depth);
+	void addChildStringTo(Text::TextHolder& _hierarchyText, Framework::BaseObject& _parent, int _depth);
+	void addObjectToListView();
+	
 	~UIQT();
 
 	
@@ -65,12 +69,12 @@ void currentZPosition(int zPosition);
 void currentXRotation(int xRotation);
 void currentYRotation(int yRotation);
 void currentZRotation(int zRotation);
-void currentScale(int scale);
-void currentPitch(int pitch);
-void currentYaw(int yaw);
-void currentZoom(int zoom);
-void currentNear(int near);
-void currentFar(int far);
+void currentScale(int _scale);
+void currentPitch(int _pitch);
+void currentYaw(int _yaw);
+void currentZoom(int _zoom);
+void currentNear(int _near);
+void currentFar(int _far);
 //void setHierarchyText(QString);
 
 private:

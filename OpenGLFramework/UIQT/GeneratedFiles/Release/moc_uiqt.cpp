@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_UIQT_t {
-    QByteArrayData data[53];
-    char stringdata0[525];
+    QByteArrayData data[47];
+    char stringdata0[495];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -52,38 +52,32 @@ QT_MOC_LITERAL(17, 194, 9), // "yRotation"
 QT_MOC_LITERAL(18, 204, 16), // "currentZRotation"
 QT_MOC_LITERAL(19, 221, 9), // "zRotation"
 QT_MOC_LITERAL(20, 231, 12), // "currentScale"
-QT_MOC_LITERAL(21, 244, 5), // "scale"
-QT_MOC_LITERAL(22, 250, 12), // "currentPitch"
-QT_MOC_LITERAL(23, 263, 5), // "pitch"
-QT_MOC_LITERAL(24, 269, 10), // "currentYaw"
-QT_MOC_LITERAL(25, 280, 3), // "yaw"
-QT_MOC_LITERAL(26, 284, 11), // "currentZoom"
-QT_MOC_LITERAL(27, 296, 4), // "zoom"
-QT_MOC_LITERAL(28, 301, 11), // "currentNear"
-QT_MOC_LITERAL(29, 313, 4), // "near"
-QT_MOC_LITERAL(30, 318, 10), // "currentFar"
-QT_MOC_LITERAL(31, 329, 3), // "far"
-QT_MOC_LITERAL(32, 333, 9), // "newRColor"
-QT_MOC_LITERAL(33, 343, 9), // "newGColor"
-QT_MOC_LITERAL(34, 353, 9), // "newBColor"
-QT_MOC_LITERAL(35, 363, 12), // "newXPosition"
-QT_MOC_LITERAL(36, 376, 12), // "newYPosition"
-QT_MOC_LITERAL(37, 389, 12), // "newZPosition"
-QT_MOC_LITERAL(38, 402, 12), // "newXRotation"
-QT_MOC_LITERAL(39, 415, 12), // "newYRotation"
-QT_MOC_LITERAL(40, 428, 12), // "newZRotation"
-QT_MOC_LITERAL(41, 441, 8), // "newScale"
-QT_MOC_LITERAL(42, 450, 6), // "_scale"
-QT_MOC_LITERAL(43, 457, 8), // "newPitch"
-QT_MOC_LITERAL(44, 466, 6), // "_pitch"
-QT_MOC_LITERAL(45, 473, 6), // "newYaw"
-QT_MOC_LITERAL(46, 480, 4), // "_yaw"
-QT_MOC_LITERAL(47, 485, 7), // "newZoom"
-QT_MOC_LITERAL(48, 493, 5), // "_zoom"
-QT_MOC_LITERAL(49, 499, 7), // "newNear"
-QT_MOC_LITERAL(50, 507, 5), // "_near"
-QT_MOC_LITERAL(51, 513, 6), // "newFar"
-QT_MOC_LITERAL(52, 520, 4) // "_far"
+QT_MOC_LITERAL(21, 244, 6), // "_scale"
+QT_MOC_LITERAL(22, 251, 12), // "currentPitch"
+QT_MOC_LITERAL(23, 264, 6), // "_pitch"
+QT_MOC_LITERAL(24, 271, 10), // "currentYaw"
+QT_MOC_LITERAL(25, 282, 4), // "_yaw"
+QT_MOC_LITERAL(26, 287, 11), // "currentZoom"
+QT_MOC_LITERAL(27, 299, 5), // "_zoom"
+QT_MOC_LITERAL(28, 305, 11), // "currentNear"
+QT_MOC_LITERAL(29, 317, 5), // "_near"
+QT_MOC_LITERAL(30, 323, 10), // "currentFar"
+QT_MOC_LITERAL(31, 334, 4), // "_far"
+QT_MOC_LITERAL(32, 339, 9), // "newRColor"
+QT_MOC_LITERAL(33, 349, 9), // "newGColor"
+QT_MOC_LITERAL(34, 359, 9), // "newBColor"
+QT_MOC_LITERAL(35, 369, 12), // "newXPosition"
+QT_MOC_LITERAL(36, 382, 12), // "newYPosition"
+QT_MOC_LITERAL(37, 395, 12), // "newZPosition"
+QT_MOC_LITERAL(38, 408, 12), // "newXRotation"
+QT_MOC_LITERAL(39, 421, 12), // "newYRotation"
+QT_MOC_LITERAL(40, 434, 12), // "newZRotation"
+QT_MOC_LITERAL(41, 447, 8), // "newScale"
+QT_MOC_LITERAL(42, 456, 8), // "newPitch"
+QT_MOC_LITERAL(43, 465, 6), // "newYaw"
+QT_MOC_LITERAL(44, 472, 7), // "newZoom"
+QT_MOC_LITERAL(45, 480, 7), // "newNear"
+QT_MOC_LITERAL(46, 488, 6) // "newFar"
 
     },
     "UIQT\0currentRColor\0\0rColor\0currentGColor\0"
@@ -92,15 +86,14 @@ QT_MOC_LITERAL(52, 520, 4) // "_far"
     "yPosition\0currentZPosition\0zPosition\0"
     "currentXRotation\0xRotation\0currentYRotation\0"
     "yRotation\0currentZRotation\0zRotation\0"
-    "currentScale\0scale\0currentPitch\0pitch\0"
-    "currentYaw\0yaw\0currentZoom\0zoom\0"
-    "currentNear\0near\0currentFar\0far\0"
-    "newRColor\0newGColor\0newBColor\0"
+    "currentScale\0_scale\0currentPitch\0"
+    "_pitch\0currentYaw\0_yaw\0currentZoom\0"
+    "_zoom\0currentNear\0_near\0currentFar\0"
+    "_far\0newRColor\0newGColor\0newBColor\0"
     "newXPosition\0newYPosition\0newZPosition\0"
     "newXRotation\0newYRotation\0newZRotation\0"
-    "newScale\0_scale\0newPitch\0_pitch\0newYaw\0"
-    "_yaw\0newZoom\0_zoom\0newNear\0_near\0"
-    "newFar\0_far"
+    "newScale\0newPitch\0newYaw\0newZoom\0"
+    "newNear\0newFar"
 };
 #undef QT_MOC_LITERAL
 
@@ -145,11 +138,11 @@ static const uint qt_meta_data_UIQT[] = {
       39,    1,  230,    2, 0x08 /* Private */,
       40,    1,  233,    2, 0x08 /* Private */,
       41,    1,  236,    2, 0x08 /* Private */,
-      43,    1,  239,    2, 0x08 /* Private */,
-      45,    1,  242,    2, 0x08 /* Private */,
-      47,    1,  245,    2, 0x08 /* Private */,
-      49,    1,  248,    2, 0x08 /* Private */,
-      51,    1,  251,    2, 0x08 /* Private */,
+      42,    1,  239,    2, 0x08 /* Private */,
+      43,    1,  242,    2, 0x08 /* Private */,
+      44,    1,  245,    2, 0x08 /* Private */,
+      45,    1,  248,    2, 0x08 /* Private */,
+      46,    1,  251,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Int,    3,
@@ -178,12 +171,12 @@ static const uint qt_meta_data_UIQT[] = {
     QMetaType::Int, QMetaType::Int,   15,
     QMetaType::Int, QMetaType::Int,   17,
     QMetaType::Int, QMetaType::Int,   19,
-    QMetaType::Int, QMetaType::Int,   42,
-    QMetaType::Int, QMetaType::Int,   44,
-    QMetaType::Int, QMetaType::Int,   46,
-    QMetaType::Int, QMetaType::Int,   48,
-    QMetaType::Int, QMetaType::Int,   50,
-    QMetaType::Int, QMetaType::Int,   52,
+    QMetaType::Int, QMetaType::Int,   21,
+    QMetaType::Int, QMetaType::Int,   23,
+    QMetaType::Int, QMetaType::Int,   25,
+    QMetaType::Int, QMetaType::Int,   27,
+    QMetaType::Int, QMetaType::Int,   29,
+    QMetaType::Int, QMetaType::Int,   31,
 
        0        // eod
 };

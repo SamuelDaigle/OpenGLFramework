@@ -16,6 +16,7 @@ void Frame(int timeId);
 void OnKeyPress(unsigned char _key, int _data1, int _data2);
 void OnKeyRelease(unsigned char _key, int _data1, int _data2);
 void OnMouseMove(int _x, int _y);
+void OnMouseStateChanged(int button, int state, int x, int y);
 
 Framework::Window* m_window;
 Application::Scene* m_scene;
@@ -38,9 +39,13 @@ int main(int argc, char* argv[])
 	glutPassiveMotionFunc(OnMouseMove);
 	
 
+
 	QApplication a(argc, argv);
 	UIQT w;
 	w.show();
+
+	
+	w.presentRColor(255);
 
 	glutMainLoop();
 
@@ -75,5 +80,10 @@ void OnKeyRelease(unsigned char _key, int _data1, int _data2)
 void OnMouseMove(int _x, int _y)
 {
 	m_window->OnMouseMove(_x, _y);
+}
+
+void OnMouseStateChanged(int button, int state, int x, int y)
+{
+	m_window->OnMouseStateChanged(button, state, x, y);
 }
 

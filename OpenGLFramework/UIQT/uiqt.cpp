@@ -10,7 +10,7 @@ UIQT::UIQT(QWidget *parent)
 
 
 
-void UIQT::AddChildStringTo(Text::TextHolder& _hierarchyText, Framework::BaseObject& _parent, int _depth)
+void UIQT::addChildStringTo(Text::TextHolder& _hierarchyText, Framework::BaseObject& _parent, int _depth)
 {
 
 	std::string childText = " ";
@@ -22,9 +22,17 @@ void UIQT::AddChildStringTo(Text::TextHolder& _hierarchyText, Framework::BaseObj
 		std::vector<Framework::BaseObject*> childObjects = _parent.GetChilds();
 		for (int i = 0; i < childObjects.size(); i++)
 		{
-			AddChildStringTo(_hierarchyText, *childObjects[i], _depth + 1);
+			addChildStringTo(_hierarchyText, *childObjects[i], _depth + 1);
 		}
 
+
+}
+
+void UIQT::addObjectToListView()
+{
+
+	Ui_UIQTClass ui;
+	ui.hierarchyListView->setGeometry(QRect(60, 130, 200, 350));
 
 }
 
@@ -114,7 +122,6 @@ int UIQT::newFar(int _far)
 void UIQT::presentRColor(int rColor)
 {
 	emit currentRColor(rColor);
-	//couleurRSpinBox->setValue(rColor);
 }
 
 void UIQT::presentGColor(int gColor)

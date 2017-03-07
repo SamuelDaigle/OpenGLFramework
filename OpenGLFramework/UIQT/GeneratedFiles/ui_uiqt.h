@@ -17,6 +17,7 @@
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QListView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QSpinBox>
 #include <QtWidgets/QStackedWidget>
@@ -70,7 +71,7 @@ public:
     QSpinBox *nearSpinBox;
     QLabel *farLabel;
     QSpinBox *farSpinBox;
-    QLabel *hierarchyLabel;
+    QListView *hierarchyListView;
 
     void setupUi(QMainWindow *UIQTClass)
     {
@@ -82,7 +83,7 @@ public:
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         stackedWidget = new QStackedWidget(centralWidget);
         stackedWidget->setObjectName(QStringLiteral("stackedWidget"));
-        stackedWidget->setGeometry(QRect(290, 70, 371, 361));
+        stackedWidget->setGeometry(QRect(450, 80, 371, 361));
         stackedWidget->setFrameShadow(QFrame::Plain);
         objetPage = new QWidget();
         objetPage->setObjectName(QStringLiteral("objetPage"));
@@ -357,9 +358,9 @@ public:
         nearSpinBox->raise();
         farSpinBox->raise();
         stackedWidget->addWidget(cameraPage);
-        hierarchyLabel = new QLabel(centralWidget);
-        hierarchyLabel->setObjectName(QStringLiteral("hierarchyLabel"));
-        hierarchyLabel->setGeometry(QRect(30, 80, 221, 251));
+        hierarchyListView = new QListView(centralWidget);
+        hierarchyListView->setObjectName(QStringLiteral("hierarchyListView"));
+        hierarchyListView->setGeometry(QRect(60, 130, 321, 291));
         UIQTClass->setCentralWidget(centralWidget);
         QWidget::setTabOrder(positionYSpinBox, couleurGSpinBox);
         QWidget::setTabOrder(couleurGSpinBox, rotationXSpinBox);
@@ -392,7 +393,6 @@ public:
         QObject::connect(zoomSpinBox, SIGNAL(valueChanged(int)), UIQTClass, SLOT(newZoom(int)));
         QObject::connect(nearSpinBox, SIGNAL(valueChanged(int)), UIQTClass, SLOT(newNear(int)));
         QObject::connect(farSpinBox, SIGNAL(valueChanged(int)), UIQTClass, SLOT(newFar(int)));
-        QObject::connect(UIQTClass, SIGNAL(setHierarchyText(QString)), hierarchyLabel, SLOT(setText(QString)));
         QObject::connect(UIQTClass, SIGNAL(currentXPosition(int)), positionXSpinBox, SLOT(setValue(int)));
         QObject::connect(UIQTClass, SIGNAL(currentYPosition(int)), positionYSpinBox, SLOT(setValue(int)));
         QObject::connect(UIQTClass, SIGNAL(currentZPosition(int)), positionZSpinBox, SLOT(setValue(int)));
@@ -438,7 +438,6 @@ public:
         zoomLabel->setText(QApplication::translate("UIQTClass", "Zoom", Q_NULLPTR));
         nearLabel->setText(QApplication::translate("UIQTClass", "Near", Q_NULLPTR));
         farLabel->setText(QApplication::translate("UIQTClass", "Far", Q_NULLPTR));
-        hierarchyLabel->setText(QApplication::translate("UIQTClass", "TextLabel", Q_NULLPTR));
     } // retranslateUi
 
 };

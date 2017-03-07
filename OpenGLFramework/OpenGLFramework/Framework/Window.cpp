@@ -16,10 +16,8 @@ namespace Framework
 
 		Math::Vector2 cursorPosition = Math::Vector2(GetWidth() / 2.0f, GetHeight() / 2.0f);
 		m_inputhandler->Initialize(cursorPosition);
-		if (RI_MOUSE_RIGHT_BUTTON_DOWN == true)
-		{
-			glutWarpPointer(cursorPosition.x, cursorPosition.y);
-		}
+		glutWarpPointer(cursorPosition.x, cursorPosition.y);
+		
 		
 	}
 
@@ -43,8 +41,9 @@ namespace Framework
 		}
 		m_openGL->EndScene();
 
-		if (m_inputhandler->HasMovedMouse() && RI_MOUSE_RIGHT_BUTTON_DOWN == true)
+		if (m_inputhandler->HasMovedMouse())
 		{
+			glutSetCursor(GLUT_CURSOR_NONE);
 			glutWarpPointer(cursorPosition.x, cursorPosition.y);
 		}
 
@@ -69,6 +68,12 @@ namespace Framework
 		m_inputhandler->OnMouseMove(_x, _y);
 	}
 
+
+	void Window::OnMouseStateChanged(int button, int state, int x, int y)
+	{
+		m_inputhandler->OnMouseStateChanged(button, state, x, y);
+	}
+
 	void Window::InitializeWindow()
 	{
 		glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA);
@@ -89,6 +94,8 @@ namespace Framework
 	{
 		return m_inputhandler->IsKeyDown(VK_ESCAPE);
 	}
+
+	
 
 	void Window::SetScene(IScene& _scene)
 	{

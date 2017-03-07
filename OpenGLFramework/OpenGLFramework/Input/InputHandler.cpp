@@ -1,4 +1,7 @@
 #include "InputHandler.h"
+#include "..\Framework\OpenGL.h"
+
+
 
 namespace Input
 {
@@ -58,5 +61,19 @@ namespace Input
 		
 		m_cursorPosition = Math::Vector2(_x, _y);
 	}
+
+	void InputHandler::OnMouseStateChanged(int button, int state, int x, int y)
+	{
+
+		if (state == GLUT_DOWN && button == GLUT_LEFT_BUTTON)
+		{
+			m_cursorPosition = Math::Vector2(x, y);
+		}
+		
+
+
+
+	}
+
 
 }
