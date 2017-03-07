@@ -22,6 +22,8 @@ Application::Scene* m_scene;
 
 int main(int argc, char* argv[])
 {
+	
+
 	glutInit(&argc, argv);
 
 	m_window = new Framework::Window();
@@ -34,6 +36,7 @@ int main(int argc, char* argv[])
 	glutKeyboardFunc(OnKeyPress);
 	glutKeyboardUpFunc(OnKeyRelease);
 	glutPassiveMotionFunc(OnMouseMove);
+	
 
 	QApplication a(argc, argv);
 	UIQT w;
@@ -41,11 +44,14 @@ int main(int argc, char* argv[])
 
 	glutMainLoop();
 
+
 	system("PAUSE");
 
 	m_window->Destroy();
 	delete m_window;
 	
+	
+
 	return a.exec();
 }
 

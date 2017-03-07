@@ -63,26 +63,26 @@ public:
     QLabel *pitchLabel;
     QSpinBox *pitchSpinBox;
     QLabel *yawLabel;
-    QSpinBox *yallSpinBox;
+    QSpinBox *yawSpinBox;
     QLabel *zoomLabel;
     QSpinBox *zoomSpinBox;
     QLabel *nearLabel;
     QSpinBox *nearSpinBox;
     QLabel *farLabel;
     QSpinBox *farSpinBox;
-    QSpinBox *pageSpinBox;
-    QLabel *setPageLabel;
+    QLabel *hierarchyLabel;
 
     void setupUi(QMainWindow *UIQTClass)
     {
         if (UIQTClass->objectName().isEmpty())
             UIQTClass->setObjectName(QStringLiteral("UIQTClass"));
-        UIQTClass->resize(497, 477);
+        UIQTClass->resize(900, 598);
+        UIQTClass->setWindowOpacity(0.5);
         centralWidget = new QWidget(UIQTClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         stackedWidget = new QStackedWidget(centralWidget);
         stackedWidget->setObjectName(QStringLiteral("stackedWidget"));
-        stackedWidget->setGeometry(QRect(70, 40, 371, 361));
+        stackedWidget->setGeometry(QRect(290, 70, 371, 361));
         stackedWidget->setFrameShadow(QFrame::Plain);
         objetPage = new QWidget();
         objetPage->setObjectName(QStringLiteral("objetPage"));
@@ -300,11 +300,11 @@ public:
 
         gridLayout_2->addWidget(yawLabel, 3, 0, 1, 1);
 
-        yallSpinBox = new QSpinBox(camera);
-        yallSpinBox->setObjectName(QStringLiteral("yallSpinBox"));
-        yallSpinBox->setAlignment(Qt::AlignCenter);
+        yawSpinBox = new QSpinBox(camera);
+        yawSpinBox->setObjectName(QStringLiteral("yawSpinBox"));
+        yawSpinBox->setAlignment(Qt::AlignCenter);
 
-        gridLayout_2->addWidget(yallSpinBox, 4, 0, 1, 1);
+        gridLayout_2->addWidget(yawSpinBox, 4, 0, 1, 1);
 
         zoomLabel = new QLabel(camera);
         zoomLabel->setObjectName(QStringLiteral("zoomLabel"));
@@ -352,18 +352,14 @@ public:
         nearLabel->raise();
         farLabel->raise();
         pitchSpinBox->raise();
-        yallSpinBox->raise();
+        yawSpinBox->raise();
         zoomSpinBox->raise();
         nearSpinBox->raise();
         farSpinBox->raise();
         stackedWidget->addWidget(cameraPage);
-        pageSpinBox = new QSpinBox(centralWidget);
-        pageSpinBox->setObjectName(QStringLiteral("pageSpinBox"));
-        pageSpinBox->setGeometry(QRect(370, 400, 42, 22));
-        pageSpinBox->setMaximum(1);
-        setPageLabel = new QLabel(centralWidget);
-        setPageLabel->setObjectName(QStringLiteral("setPageLabel"));
-        setPageLabel->setGeometry(QRect(330, 400, 31, 16));
+        hierarchyLabel = new QLabel(centralWidget);
+        hierarchyLabel->setObjectName(QStringLiteral("hierarchyLabel"));
+        hierarchyLabel->setGeometry(QRect(30, 80, 221, 251));
         UIQTClass->setCentralWidget(centralWidget);
         QWidget::setTabOrder(positionYSpinBox, couleurGSpinBox);
         QWidget::setTabOrder(couleurGSpinBox, rotationXSpinBox);
@@ -375,30 +371,45 @@ public:
         QWidget::setTabOrder(positionZSpinBox, rotationZSpinBox);
         QWidget::setTabOrder(rotationZSpinBox, positionXSpinBox);
         QWidget::setTabOrder(positionXSpinBox, pitchSpinBox);
-        QWidget::setTabOrder(pitchSpinBox, yallSpinBox);
-        QWidget::setTabOrder(yallSpinBox, zoomSpinBox);
+        QWidget::setTabOrder(pitchSpinBox, yawSpinBox);
+        QWidget::setTabOrder(yawSpinBox, zoomSpinBox);
         QWidget::setTabOrder(zoomSpinBox, nearSpinBox);
         QWidget::setTabOrder(nearSpinBox, farSpinBox);
 
         retranslateUi(UIQTClass);
-        QObject::connect(pageSpinBox, SIGNAL(valueChanged(int)), stackedWidget, SLOT(setCurrentIndex(int)));
-        QObject::connect(positionXSpinBox, SIGNAL(valueChanged(int)), UIQTClass, SLOT(newXPosition()));
-        QObject::connect(positionYSpinBox, SIGNAL(valueChanged(int)), UIQTClass, SLOT(newYPosition()));
-        QObject::connect(positionZSpinBox, SIGNAL(valueChanged(int)), UIQTClass, SLOT(newZPosition()));
-        QObject::connect(rotationXSpinBox, SIGNAL(valueChanged(int)), UIQTClass, SLOT(newXRotation()));
-        QObject::connect(rotationYSpinBox, SIGNAL(valueChanged(int)), UIQTClass, SLOT(newYRotation()));
-        QObject::connect(rotationZSpinBox, SIGNAL(valueChanged(int)), UIQTClass, SLOT(newZRotation()));
-        QObject::connect(couleurRSpinBox, SIGNAL(valueChanged(int)), UIQTClass, SLOT(newRColor()));
-        QObject::connect(couleurGSpinBox, SIGNAL(valueChanged(int)), UIQTClass, SLOT(newGColor()));
-        QObject::connect(couleurBSpinBox, SIGNAL(valueChanged(int)), UIQTClass, SLOT(newBColor()));
-        QObject::connect(scaleSpinBox, SIGNAL(valueChanged(int)), UIQTClass, SLOT(newScale()));
-        QObject::connect(pitchSpinBox, SIGNAL(valueChanged(int)), UIQTClass, SLOT(newPitch()));
-        QObject::connect(yallSpinBox, SIGNAL(valueChanged(int)), UIQTClass, SLOT(newYaw()));
-        QObject::connect(zoomSpinBox, SIGNAL(valueChanged(int)), UIQTClass, SLOT(newZoom()));
-        QObject::connect(nearSpinBox, SIGNAL(valueChanged(int)), UIQTClass, SLOT(newNear()));
-        QObject::connect(farSpinBox, SIGNAL(valueChanged(int)), UIQTClass, SLOT(newFar()));
+        QObject::connect(positionXSpinBox, SIGNAL(valueChanged(int)), UIQTClass, SLOT(newXPosition(int)));
+        QObject::connect(positionYSpinBox, SIGNAL(valueChanged(int)), UIQTClass, SLOT(newYPosition(int)));
+        QObject::connect(positionZSpinBox, SIGNAL(valueChanged(int)), UIQTClass, SLOT(newZPosition(int)));
+        QObject::connect(rotationXSpinBox, SIGNAL(valueChanged(int)), UIQTClass, SLOT(newXRotation(int)));
+        QObject::connect(rotationYSpinBox, SIGNAL(valueChanged(int)), UIQTClass, SLOT(newYRotation(int)));
+        QObject::connect(rotationZSpinBox, SIGNAL(valueChanged(int)), UIQTClass, SLOT(newZRotation(int)));
+        QObject::connect(couleurRSpinBox, SIGNAL(valueChanged(int)), UIQTClass, SLOT(newRColor(int)));
+        QObject::connect(couleurGSpinBox, SIGNAL(valueChanged(int)), UIQTClass, SLOT(newGColor(int)));
+        QObject::connect(couleurBSpinBox, SIGNAL(valueChanged(int)), UIQTClass, SLOT(newBColor(int)));
+        QObject::connect(scaleSpinBox, SIGNAL(valueChanged(int)), UIQTClass, SLOT(newScale(int)));
+        QObject::connect(pitchSpinBox, SIGNAL(valueChanged(int)), UIQTClass, SLOT(newPitch(int)));
+        QObject::connect(yawSpinBox, SIGNAL(valueChanged(int)), UIQTClass, SLOT(newYaw(int)));
+        QObject::connect(zoomSpinBox, SIGNAL(valueChanged(int)), UIQTClass, SLOT(newZoom(int)));
+        QObject::connect(nearSpinBox, SIGNAL(valueChanged(int)), UIQTClass, SLOT(newNear(int)));
+        QObject::connect(farSpinBox, SIGNAL(valueChanged(int)), UIQTClass, SLOT(newFar(int)));
+        QObject::connect(UIQTClass, SIGNAL(setHierarchyText(QString)), hierarchyLabel, SLOT(setText(QString)));
+        QObject::connect(UIQTClass, SIGNAL(currentXPosition(int)), positionXSpinBox, SLOT(setValue(int)));
+        QObject::connect(UIQTClass, SIGNAL(currentYPosition(int)), positionYSpinBox, SLOT(setValue(int)));
+        QObject::connect(UIQTClass, SIGNAL(currentZPosition(int)), positionZSpinBox, SLOT(setValue(int)));
+        QObject::connect(UIQTClass, SIGNAL(currentXRotation(int)), rotationXSpinBox, SLOT(setValue(int)));
+        QObject::connect(UIQTClass, SIGNAL(currentYRotation(int)), rotationYSpinBox, SLOT(setValue(int)));
+        QObject::connect(UIQTClass, SIGNAL(currentZRotation(int)), rotationZSpinBox, SLOT(setValue(int)));
+        QObject::connect(UIQTClass, SIGNAL(currentRColor(int)), couleurRSpinBox, SLOT(setValue(int)));
+        QObject::connect(UIQTClass, SIGNAL(currentGColor(int)), couleurGSpinBox, SLOT(setValue(int)));
+        QObject::connect(UIQTClass, SIGNAL(currentBColor(int)), couleurBSpinBox, SLOT(setValue(int)));
+        QObject::connect(UIQTClass, SIGNAL(currentScale(int)), scaleSpinBox, SLOT(setValue(int)));
+        QObject::connect(UIQTClass, SIGNAL(currentPitch(int)), pitchSpinBox, SLOT(setValue(int)));
+        QObject::connect(UIQTClass, SIGNAL(currentYaw(int)), yawSpinBox, SLOT(setValue(int)));
+        QObject::connect(UIQTClass, SIGNAL(currentZoom(int)), zoomSpinBox, SLOT(setValue(int)));
+        QObject::connect(UIQTClass, SIGNAL(currentNear(int)), nearSpinBox, SLOT(setValue(int)));
+        QObject::connect(UIQTClass, SIGNAL(currentFar(int)), farSpinBox, SLOT(setValue(int)));
 
-        stackedWidget->setCurrentIndex(1);
+        stackedWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(UIQTClass);
@@ -427,7 +438,7 @@ public:
         zoomLabel->setText(QApplication::translate("UIQTClass", "Zoom", Q_NULLPTR));
         nearLabel->setText(QApplication::translate("UIQTClass", "Near", Q_NULLPTR));
         farLabel->setText(QApplication::translate("UIQTClass", "Far", Q_NULLPTR));
-        setPageLabel->setText(QApplication::translate("UIQTClass", "Page", Q_NULLPTR));
+        hierarchyLabel->setText(QApplication::translate("UIQTClass", "TextLabel", Q_NULLPTR));
     } // retranslateUi
 
 };

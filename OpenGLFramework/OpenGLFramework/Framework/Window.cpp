@@ -9,12 +9,18 @@ namespace Framework
 
 		m_openGL = new OpenGL();
 
-		glutSetCursor(GLUT_CURSOR_NONE);
+		
+
+		glutSetCursor(GLUT_CURSOR_FULL_CROSSHAIR);							//Curseur
 		m_inputhandler = new Input::InputHandler();
 
 		Math::Vector2 cursorPosition = Math::Vector2(GetWidth() / 2.0f, GetHeight() / 2.0f);
 		m_inputhandler->Initialize(cursorPosition);
-		glutWarpPointer(cursorPosition.x, cursorPosition.y);
+		if (RI_MOUSE_RIGHT_BUTTON_DOWN == true)
+		{
+			glutWarpPointer(cursorPosition.x, cursorPosition.y);
+		}
+		
 	}
 
 	void Window::Destroy()
@@ -37,7 +43,7 @@ namespace Framework
 		}
 		m_openGL->EndScene();
 
-		if (m_inputhandler->HasMovedMouse())
+		if (m_inputhandler->HasMovedMouse() && RI_MOUSE_RIGHT_BUTTON_DOWN == true)
 		{
 			glutWarpPointer(cursorPosition.x, cursorPosition.y);
 		}

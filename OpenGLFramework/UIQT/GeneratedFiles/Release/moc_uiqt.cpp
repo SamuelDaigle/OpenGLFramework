@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_UIQT_t {
-    QByteArrayData data[17];
-    char stringdata0[165];
+    QByteArrayData data[53];
+    char stringdata0[525];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,29 +32,75 @@ struct qt_meta_stringdata_UIQT_t {
 static const qt_meta_stringdata_UIQT_t qt_meta_stringdata_UIQT = {
     {
 QT_MOC_LITERAL(0, 0, 4), // "UIQT"
-QT_MOC_LITERAL(1, 5, 9), // "newRColor"
-QT_MOC_LITERAL(2, 15, 0), // ""
-QT_MOC_LITERAL(3, 16, 9), // "newGColor"
-QT_MOC_LITERAL(4, 26, 9), // "newBColor"
-QT_MOC_LITERAL(5, 36, 12), // "newXPosition"
-QT_MOC_LITERAL(6, 49, 12), // "newYPosition"
-QT_MOC_LITERAL(7, 62, 12), // "newZPosition"
-QT_MOC_LITERAL(8, 75, 13), // "newXRotationn"
-QT_MOC_LITERAL(9, 89, 13), // "newYRotationn"
-QT_MOC_LITERAL(10, 103, 13), // "newZRotationn"
-QT_MOC_LITERAL(11, 117, 8), // "newScale"
-QT_MOC_LITERAL(12, 126, 8), // "newPitch"
-QT_MOC_LITERAL(13, 135, 6), // "newYaw"
-QT_MOC_LITERAL(14, 142, 7), // "newZoom"
-QT_MOC_LITERAL(15, 150, 7), // "newNear"
-QT_MOC_LITERAL(16, 158, 6) // "newFar"
+QT_MOC_LITERAL(1, 5, 13), // "currentRColor"
+QT_MOC_LITERAL(2, 19, 0), // ""
+QT_MOC_LITERAL(3, 20, 6), // "rColor"
+QT_MOC_LITERAL(4, 27, 13), // "currentGColor"
+QT_MOC_LITERAL(5, 41, 6), // "gColor"
+QT_MOC_LITERAL(6, 48, 13), // "currentBColor"
+QT_MOC_LITERAL(7, 62, 6), // "bColor"
+QT_MOC_LITERAL(8, 69, 16), // "currentXPosition"
+QT_MOC_LITERAL(9, 86, 9), // "xPosition"
+QT_MOC_LITERAL(10, 96, 16), // "currentYPosition"
+QT_MOC_LITERAL(11, 113, 9), // "yPosition"
+QT_MOC_LITERAL(12, 123, 16), // "currentZPosition"
+QT_MOC_LITERAL(13, 140, 9), // "zPosition"
+QT_MOC_LITERAL(14, 150, 16), // "currentXRotation"
+QT_MOC_LITERAL(15, 167, 9), // "xRotation"
+QT_MOC_LITERAL(16, 177, 16), // "currentYRotation"
+QT_MOC_LITERAL(17, 194, 9), // "yRotation"
+QT_MOC_LITERAL(18, 204, 16), // "currentZRotation"
+QT_MOC_LITERAL(19, 221, 9), // "zRotation"
+QT_MOC_LITERAL(20, 231, 12), // "currentScale"
+QT_MOC_LITERAL(21, 244, 5), // "scale"
+QT_MOC_LITERAL(22, 250, 12), // "currentPitch"
+QT_MOC_LITERAL(23, 263, 5), // "pitch"
+QT_MOC_LITERAL(24, 269, 10), // "currentYaw"
+QT_MOC_LITERAL(25, 280, 3), // "yaw"
+QT_MOC_LITERAL(26, 284, 11), // "currentZoom"
+QT_MOC_LITERAL(27, 296, 4), // "zoom"
+QT_MOC_LITERAL(28, 301, 11), // "currentNear"
+QT_MOC_LITERAL(29, 313, 4), // "near"
+QT_MOC_LITERAL(30, 318, 10), // "currentFar"
+QT_MOC_LITERAL(31, 329, 3), // "far"
+QT_MOC_LITERAL(32, 333, 9), // "newRColor"
+QT_MOC_LITERAL(33, 343, 9), // "newGColor"
+QT_MOC_LITERAL(34, 353, 9), // "newBColor"
+QT_MOC_LITERAL(35, 363, 12), // "newXPosition"
+QT_MOC_LITERAL(36, 376, 12), // "newYPosition"
+QT_MOC_LITERAL(37, 389, 12), // "newZPosition"
+QT_MOC_LITERAL(38, 402, 12), // "newXRotation"
+QT_MOC_LITERAL(39, 415, 12), // "newYRotation"
+QT_MOC_LITERAL(40, 428, 12), // "newZRotation"
+QT_MOC_LITERAL(41, 441, 8), // "newScale"
+QT_MOC_LITERAL(42, 450, 6), // "_scale"
+QT_MOC_LITERAL(43, 457, 8), // "newPitch"
+QT_MOC_LITERAL(44, 466, 6), // "_pitch"
+QT_MOC_LITERAL(45, 473, 6), // "newYaw"
+QT_MOC_LITERAL(46, 480, 4), // "_yaw"
+QT_MOC_LITERAL(47, 485, 7), // "newZoom"
+QT_MOC_LITERAL(48, 493, 5), // "_zoom"
+QT_MOC_LITERAL(49, 499, 7), // "newNear"
+QT_MOC_LITERAL(50, 507, 5), // "_near"
+QT_MOC_LITERAL(51, 513, 6), // "newFar"
+QT_MOC_LITERAL(52, 520, 4) // "_far"
 
     },
-    "UIQT\0newRColor\0\0newGColor\0newBColor\0"
+    "UIQT\0currentRColor\0\0rColor\0currentGColor\0"
+    "gColor\0currentBColor\0bColor\0"
+    "currentXPosition\0xPosition\0currentYPosition\0"
+    "yPosition\0currentZPosition\0zPosition\0"
+    "currentXRotation\0xRotation\0currentYRotation\0"
+    "yRotation\0currentZRotation\0zRotation\0"
+    "currentScale\0scale\0currentPitch\0pitch\0"
+    "currentYaw\0yaw\0currentZoom\0zoom\0"
+    "currentNear\0near\0currentFar\0far\0"
+    "newRColor\0newGColor\0newBColor\0"
     "newXPosition\0newYPosition\0newZPosition\0"
-    "newXRotationn\0newYRotationn\0newZRotationn\0"
-    "newScale\0newPitch\0newYaw\0newZoom\0"
-    "newNear\0newFar"
+    "newXRotation\0newYRotation\0newZRotation\0"
+    "newScale\0_scale\0newPitch\0_pitch\0newYaw\0"
+    "_yaw\0newZoom\0_zoom\0newNear\0_near\0"
+    "newFar\0_far"
 };
 #undef QT_MOC_LITERAL
 
@@ -64,46 +110,80 @@ static const uint qt_meta_data_UIQT[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      15,   14, // methods
+      30,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       0,       // signalCount
+      15,       // signalCount
+
+ // signals: name, argc, parameters, tag, flags
+       1,    1,  164,    2, 0x06 /* Public */,
+       4,    1,  167,    2, 0x06 /* Public */,
+       6,    1,  170,    2, 0x06 /* Public */,
+       8,    1,  173,    2, 0x06 /* Public */,
+      10,    1,  176,    2, 0x06 /* Public */,
+      12,    1,  179,    2, 0x06 /* Public */,
+      14,    1,  182,    2, 0x06 /* Public */,
+      16,    1,  185,    2, 0x06 /* Public */,
+      18,    1,  188,    2, 0x06 /* Public */,
+      20,    1,  191,    2, 0x06 /* Public */,
+      22,    1,  194,    2, 0x06 /* Public */,
+      24,    1,  197,    2, 0x06 /* Public */,
+      26,    1,  200,    2, 0x06 /* Public */,
+      28,    1,  203,    2, 0x06 /* Public */,
+      30,    1,  206,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   89,    2, 0x08 /* Private */,
-       3,    0,   90,    2, 0x08 /* Private */,
-       4,    0,   91,    2, 0x08 /* Private */,
-       5,    0,   92,    2, 0x08 /* Private */,
-       6,    0,   93,    2, 0x08 /* Private */,
-       7,    0,   94,    2, 0x08 /* Private */,
-       8,    0,   95,    2, 0x08 /* Private */,
-       9,    0,   96,    2, 0x08 /* Private */,
-      10,    0,   97,    2, 0x08 /* Private */,
-      11,    0,   98,    2, 0x08 /* Private */,
-      12,    0,   99,    2, 0x08 /* Private */,
-      13,    0,  100,    2, 0x08 /* Private */,
-      14,    0,  101,    2, 0x08 /* Private */,
-      15,    0,  102,    2, 0x08 /* Private */,
-      16,    0,  103,    2, 0x08 /* Private */,
+      32,    1,  209,    2, 0x08 /* Private */,
+      33,    1,  212,    2, 0x08 /* Private */,
+      34,    1,  215,    2, 0x08 /* Private */,
+      35,    1,  218,    2, 0x08 /* Private */,
+      36,    1,  221,    2, 0x08 /* Private */,
+      37,    1,  224,    2, 0x08 /* Private */,
+      38,    1,  227,    2, 0x08 /* Private */,
+      39,    1,  230,    2, 0x08 /* Private */,
+      40,    1,  233,    2, 0x08 /* Private */,
+      41,    1,  236,    2, 0x08 /* Private */,
+      43,    1,  239,    2, 0x08 /* Private */,
+      45,    1,  242,    2, 0x08 /* Private */,
+      47,    1,  245,    2, 0x08 /* Private */,
+      49,    1,  248,    2, 0x08 /* Private */,
+      51,    1,  251,    2, 0x08 /* Private */,
+
+ // signals: parameters
+    QMetaType::Void, QMetaType::Int,    3,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Int,    7,
+    QMetaType::Void, QMetaType::Int,    9,
+    QMetaType::Void, QMetaType::Int,   11,
+    QMetaType::Void, QMetaType::Int,   13,
+    QMetaType::Void, QMetaType::Int,   15,
+    QMetaType::Void, QMetaType::Int,   17,
+    QMetaType::Void, QMetaType::Int,   19,
+    QMetaType::Void, QMetaType::Int,   21,
+    QMetaType::Void, QMetaType::Int,   23,
+    QMetaType::Void, QMetaType::Int,   25,
+    QMetaType::Void, QMetaType::Int,   27,
+    QMetaType::Void, QMetaType::Int,   29,
+    QMetaType::Void, QMetaType::Int,   31,
 
  // slots: parameters
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
+    QMetaType::Int, QMetaType::Int,    3,
+    QMetaType::Int, QMetaType::Int,    5,
+    QMetaType::Int, QMetaType::Int,    7,
+    QMetaType::Int, QMetaType::Int,    9,
+    QMetaType::Int, QMetaType::Int,   11,
+    QMetaType::Int, QMetaType::Int,   13,
+    QMetaType::Int, QMetaType::Int,   15,
+    QMetaType::Int, QMetaType::Int,   17,
+    QMetaType::Int, QMetaType::Int,   19,
+    QMetaType::Int, QMetaType::Int,   42,
+    QMetaType::Int, QMetaType::Int,   44,
+    QMetaType::Int, QMetaType::Int,   46,
+    QMetaType::Int, QMetaType::Int,   48,
+    QMetaType::Int, QMetaType::Int,   50,
+    QMetaType::Int, QMetaType::Int,   52,
 
        0        // eod
 };
@@ -114,25 +194,162 @@ void UIQT::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void *
         UIQT *_t = static_cast<UIQT *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->newRColor(); break;
-        case 1: _t->newGColor(); break;
-        case 2: _t->newBColor(); break;
-        case 3: _t->newXPosition(); break;
-        case 4: _t->newYPosition(); break;
-        case 5: _t->newZPosition(); break;
-        case 6: _t->newXRotationn(); break;
-        case 7: _t->newYRotationn(); break;
-        case 8: _t->newZRotationn(); break;
-        case 9: _t->newScale(); break;
-        case 10: _t->newPitch(); break;
-        case 11: _t->newYaw(); break;
-        case 12: _t->newZoom(); break;
-        case 13: _t->newNear(); break;
-        case 14: _t->newFar(); break;
+        case 0: _t->currentRColor((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 1: _t->currentGColor((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 2: _t->currentBColor((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 3: _t->currentXPosition((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 4: _t->currentYPosition((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 5: _t->currentZPosition((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 6: _t->currentXRotation((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 7: _t->currentYRotation((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 8: _t->currentZRotation((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 9: _t->currentScale((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 10: _t->currentPitch((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 11: _t->currentYaw((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 12: _t->currentZoom((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 13: _t->currentNear((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 14: _t->currentFar((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 15: { int _r = _t->newRColor((*reinterpret_cast< int(*)>(_a[1])));
+            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
+        case 16: { int _r = _t->newGColor((*reinterpret_cast< int(*)>(_a[1])));
+            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
+        case 17: { int _r = _t->newBColor((*reinterpret_cast< int(*)>(_a[1])));
+            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
+        case 18: { int _r = _t->newXPosition((*reinterpret_cast< int(*)>(_a[1])));
+            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
+        case 19: { int _r = _t->newYPosition((*reinterpret_cast< int(*)>(_a[1])));
+            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
+        case 20: { int _r = _t->newZPosition((*reinterpret_cast< int(*)>(_a[1])));
+            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
+        case 21: { int _r = _t->newXRotation((*reinterpret_cast< int(*)>(_a[1])));
+            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
+        case 22: { int _r = _t->newYRotation((*reinterpret_cast< int(*)>(_a[1])));
+            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
+        case 23: { int _r = _t->newZRotation((*reinterpret_cast< int(*)>(_a[1])));
+            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
+        case 24: { int _r = _t->newScale((*reinterpret_cast< int(*)>(_a[1])));
+            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
+        case 25: { int _r = _t->newPitch((*reinterpret_cast< int(*)>(_a[1])));
+            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
+        case 26: { int _r = _t->newYaw((*reinterpret_cast< int(*)>(_a[1])));
+            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
+        case 27: { int _r = _t->newZoom((*reinterpret_cast< int(*)>(_a[1])));
+            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
+        case 28: { int _r = _t->newNear((*reinterpret_cast< int(*)>(_a[1])));
+            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
+        case 29: { int _r = _t->newFar((*reinterpret_cast< int(*)>(_a[1])));
+            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
         default: ;
         }
+    } else if (_c == QMetaObject::IndexOfMethod) {
+        int *result = reinterpret_cast<int *>(_a[0]);
+        void **func = reinterpret_cast<void **>(_a[1]);
+        {
+            typedef void (UIQT::*_t)(int );
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&UIQT::currentRColor)) {
+                *result = 0;
+                return;
+            }
+        }
+        {
+            typedef void (UIQT::*_t)(int );
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&UIQT::currentGColor)) {
+                *result = 1;
+                return;
+            }
+        }
+        {
+            typedef void (UIQT::*_t)(int );
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&UIQT::currentBColor)) {
+                *result = 2;
+                return;
+            }
+        }
+        {
+            typedef void (UIQT::*_t)(int );
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&UIQT::currentXPosition)) {
+                *result = 3;
+                return;
+            }
+        }
+        {
+            typedef void (UIQT::*_t)(int );
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&UIQT::currentYPosition)) {
+                *result = 4;
+                return;
+            }
+        }
+        {
+            typedef void (UIQT::*_t)(int );
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&UIQT::currentZPosition)) {
+                *result = 5;
+                return;
+            }
+        }
+        {
+            typedef void (UIQT::*_t)(int );
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&UIQT::currentXRotation)) {
+                *result = 6;
+                return;
+            }
+        }
+        {
+            typedef void (UIQT::*_t)(int );
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&UIQT::currentYRotation)) {
+                *result = 7;
+                return;
+            }
+        }
+        {
+            typedef void (UIQT::*_t)(int );
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&UIQT::currentZRotation)) {
+                *result = 8;
+                return;
+            }
+        }
+        {
+            typedef void (UIQT::*_t)(int );
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&UIQT::currentScale)) {
+                *result = 9;
+                return;
+            }
+        }
+        {
+            typedef void (UIQT::*_t)(int );
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&UIQT::currentPitch)) {
+                *result = 10;
+                return;
+            }
+        }
+        {
+            typedef void (UIQT::*_t)(int );
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&UIQT::currentYaw)) {
+                *result = 11;
+                return;
+            }
+        }
+        {
+            typedef void (UIQT::*_t)(int );
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&UIQT::currentZoom)) {
+                *result = 12;
+                return;
+            }
+        }
+        {
+            typedef void (UIQT::*_t)(int );
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&UIQT::currentNear)) {
+                *result = 13;
+                return;
+            }
+        }
+        {
+            typedef void (UIQT::*_t)(int );
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&UIQT::currentFar)) {
+                *result = 14;
+                return;
+            }
+        }
     }
-    Q_UNUSED(_a);
 }
 
 const QMetaObject UIQT::staticMetaObject = {
@@ -160,15 +377,120 @@ int UIQT::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 15)
+        if (_id < 30)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 15;
+        _id -= 30;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 15)
+        if (_id < 30)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 15;
+        _id -= 30;
     }
     return _id;
+}
+
+// SIGNAL 0
+void UIQT::currentRColor(int _t1)
+{
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 0, _a);
+}
+
+// SIGNAL 1
+void UIQT::currentGColor(int _t1)
+{
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 1, _a);
+}
+
+// SIGNAL 2
+void UIQT::currentBColor(int _t1)
+{
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 2, _a);
+}
+
+// SIGNAL 3
+void UIQT::currentXPosition(int _t1)
+{
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 3, _a);
+}
+
+// SIGNAL 4
+void UIQT::currentYPosition(int _t1)
+{
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 4, _a);
+}
+
+// SIGNAL 5
+void UIQT::currentZPosition(int _t1)
+{
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 5, _a);
+}
+
+// SIGNAL 6
+void UIQT::currentXRotation(int _t1)
+{
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 6, _a);
+}
+
+// SIGNAL 7
+void UIQT::currentYRotation(int _t1)
+{
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 7, _a);
+}
+
+// SIGNAL 8
+void UIQT::currentZRotation(int _t1)
+{
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 8, _a);
+}
+
+// SIGNAL 9
+void UIQT::currentScale(int _t1)
+{
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 9, _a);
+}
+
+// SIGNAL 10
+void UIQT::currentPitch(int _t1)
+{
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 10, _a);
+}
+
+// SIGNAL 11
+void UIQT::currentYaw(int _t1)
+{
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 11, _a);
+}
+
+// SIGNAL 12
+void UIQT::currentZoom(int _t1)
+{
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 12, _a);
+}
+
+// SIGNAL 13
+void UIQT::currentNear(int _t1)
+{
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 13, _a);
+}
+
+// SIGNAL 14
+void UIQT::currentFar(int _t1)
+{
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 14, _a);
 }
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE

@@ -52,8 +52,10 @@ namespace Input
 		m_keyStates[_key] = false;
 	}
 
+
 	void InputHandler::OnMouseMove(const int _x, const int _y)
 	{
+		
 		m_cursorPosition = Math::Vector2(_x, _y);
 	}
 
