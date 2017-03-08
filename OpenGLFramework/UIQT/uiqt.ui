@@ -49,16 +49,10 @@
        <enum>QFrame::Raised</enum>
       </property>
       <layout class="QGridLayout" name="gridLayout">
-       <item row="2" column="3">
-        <widget class="QSpinBox" name="positionYSpinBox">
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="minimum">
-          <number>-999999999</number>
-         </property>
-         <property name="maximum">
-          <number>999999999</number>
+       <item row="2" column="4">
+        <widget class="QLabel" name="positionZLabel">
+         <property name="text">
+          <string>Z:</string>
          </property>
         </widget>
        </item>
@@ -85,13 +79,6 @@
          </property>
         </widget>
        </item>
-       <item row="21" column="0">
-        <widget class="QLabel" name="couleurRLabel">
-         <property name="text">
-          <string>R:</string>
-         </property>
-        </widget>
-       </item>
        <item row="8" column="1">
         <widget class="QSpinBox" name="rotationXSpinBox">
          <property name="alignment">
@@ -105,6 +92,13 @@
          </property>
         </widget>
        </item>
+       <item row="21" column="0">
+        <widget class="QLabel" name="couleurRLabel">
+         <property name="text">
+          <string>R:</string>
+         </property>
+        </widget>
+       </item>
        <item row="21" column="2">
         <widget class="QLabel" name="couleurGLabel">
          <property name="text">
@@ -112,10 +106,16 @@
          </property>
         </widget>
        </item>
-       <item row="2" column="4">
-        <widget class="QLabel" name="positionZLabel">
-         <property name="text">
-          <string>Z:</string>
+       <item row="2" column="3">
+        <widget class="QSpinBox" name="positionYSpinBox">
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="minimum">
+          <number>-999999999</number>
+         </property>
+         <property name="maximum">
+          <number>999999999</number>
          </property>
         </widget>
        </item>
@@ -123,6 +123,19 @@
         <widget class="QLabel" name="couleurBLabel">
          <property name="text">
           <string>B:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1" colspan="5">
+        <widget class="QLabel" name="rotationLabel">
+         <property name="text">
+          <string>Rotation</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="textInteractionFlags">
+          <set>Qt::NoTextInteraction</set>
          </property>
         </widget>
        </item>
@@ -143,10 +156,17 @@
          </property>
         </widget>
        </item>
-       <item row="7" column="1" colspan="5">
-        <widget class="QLabel" name="rotationLabel">
+       <item row="8" column="4">
+        <widget class="QLabel" name="rotationZLabel">
          <property name="text">
-          <string>Rotation</string>
+          <string>Z:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1" colspan="5">
+        <widget class="QLabel" name="positionLabel">
+         <property name="text">
+          <string>Position</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -182,59 +202,6 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="1" colspan="5">
-        <widget class="QLabel" name="positionLabel">
-         <property name="text">
-          <string>Position</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="textInteractionFlags">
-          <set>Qt::NoTextInteraction</set>
-         </property>
-        </widget>
-       </item>
-       <item row="22" column="3">
-        <widget class="QLabel" name="scaleLabel">
-         <property name="text">
-          <string>Scale</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="textInteractionFlags">
-          <set>Qt::NoTextInteraction</set>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="4">
-        <widget class="QLabel" name="rotationZLabel">
-         <property name="text">
-          <string>Z:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="23" column="3">
-        <widget class="QSpinBox" name="scaleSpinBox">
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="minimum">
-          <number>-999999999</number>
-         </property>
-         <property name="maximum">
-          <number>999999999</number>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="2">
-        <widget class="QLabel" name="positionYLabel">
-         <property name="text">
-          <string>Y:</string>
-         </property>
-        </widget>
-       </item>
        <item row="21" column="1">
         <widget class="QSpinBox" name="couleurRSpinBox">
          <property name="alignment">
@@ -242,6 +209,13 @@
          </property>
          <property name="maximum">
           <number>255</number>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="QLabel" name="positionYLabel">
+         <property name="text">
+          <string>Y:</string>
          </property>
         </widget>
        </item>
@@ -255,13 +229,6 @@
          </property>
          <property name="maximum">
           <number>999999999</number>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="0">
-        <widget class="QLabel" name="rotationXLabel">
-         <property name="text">
-          <string>X:</string>
          </property>
         </widget>
        </item>
@@ -302,6 +269,74 @@
          </property>
          <property name="textInteractionFlags">
           <set>Qt::NoTextInteraction</set>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="0">
+        <widget class="QLabel" name="rotationXLabel">
+         <property name="text">
+          <string>X:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="3">
+        <widget class="QLabel" name="scaleLabel">
+         <property name="text">
+          <string>Scale</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="textInteractionFlags">
+          <set>Qt::NoTextInteraction</set>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="1">
+        <widget class="QSpinBox" name="scaleXSpinBox">
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="3">
+        <widget class="QSpinBox" name="scaleYSpinBox">
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="minimum">
+          <number>-999999999</number>
+         </property>
+         <property name="maximum">
+          <number>999999999</number>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="5">
+        <widget class="QSpinBox" name="scaleZSpinBox">
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="4">
+        <widget class="QLabel" name="scaleZLabel">
+         <property name="text">
+          <string>Z:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="2">
+        <widget class="QLabel" name="scaleYLabel">
+         <property name="text">
+          <string>Y:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="0">
+        <widget class="QLabel" name="scaleXLabel">
+         <property name="text">
+          <string>X:</string>
          </property>
         </widget>
        </item>
@@ -469,13 +504,13 @@
      </widget>
     </widget>
    </widget>
-   <widget class="QListView" name="hierarchyListView">
+   <widget class="QTreeView" name="hierarchyTreeView">
     <property name="geometry">
      <rect>
       <x>60</x>
-      <y>130</y>
-      <width>321</width>
-      <height>291</height>
+      <y>70</y>
+      <width>311</width>
+      <height>391</height>
      </rect>
     </property>
    </widget>
@@ -488,7 +523,6 @@
   <tabstop>rotationXSpinBox</tabstop>
   <tabstop>couleurBSpinBox</tabstop>
   <tabstop>rotationYSpinBox</tabstop>
-  <tabstop>scaleSpinBox</tabstop>
   <tabstop>couleurRSpinBox</tabstop>
   <tabstop>positionZSpinBox</tabstop>
   <tabstop>rotationZSpinBox</tabstop>
@@ -510,8 +544,8 @@
    <slot>newXPosition(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>338</x>
-     <y>199</y>
+     <x>498</x>
+     <y>209</y>
     </hint>
     <hint type="destinationlabel">
      <x>159</x>
@@ -526,8 +560,8 @@
    <slot>newYPosition(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>444</x>
-     <y>199</y>
+     <x>604</x>
+     <y>209</y>
     </hint>
     <hint type="destinationlabel">
      <x>249</x>
@@ -542,8 +576,8 @@
    <slot>newZPosition(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>607</x>
-     <y>199</y>
+     <x>791</x>
+     <y>209</y>
     </hint>
     <hint type="destinationlabel">
      <x>370</x>
@@ -558,8 +592,8 @@
    <slot>newXRotation(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>338</x>
-     <y>244</y>
+     <x>498</x>
+     <y>254</y>
     </hint>
     <hint type="destinationlabel">
      <x>21</x>
@@ -574,8 +608,8 @@
    <slot>newYRotation(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>444</x>
-     <y>244</y>
+     <x>604</x>
+     <y>254</y>
     </hint>
     <hint type="destinationlabel">
      <x>19</x>
@@ -590,8 +624,8 @@
    <slot>newZRotation(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>622</x>
-     <y>244</y>
+     <x>791</x>
+     <y>254</y>
     </hint>
     <hint type="destinationlabel">
      <x>28</x>
@@ -606,8 +640,8 @@
    <slot>newRColor(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>338</x>
-     <y>289</y>
+     <x>498</x>
+     <y>344</y>
     </hint>
     <hint type="destinationlabel">
      <x>26</x>
@@ -622,8 +656,8 @@
    <slot>newGColor(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>444</x>
-     <y>289</y>
+     <x>604</x>
+     <y>344</y>
     </hint>
     <hint type="destinationlabel">
      <x>27</x>
@@ -638,8 +672,8 @@
    <slot>newBColor(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>612</x>
-     <y>289</y>
+     <x>791</x>
+     <y>344</y>
     </hint>
     <hint type="destinationlabel">
      <x>28</x>
@@ -648,14 +682,14 @@
    </hints>
   </connection>
   <connection>
-   <sender>scaleSpinBox</sender>
+   <sender>scaleYSpinBox</sender>
    <signal>valueChanged(int)</signal>
    <receiver>UIQTClass</receiver>
    <slot>newScale(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>444</x>
-     <y>334</y>
+     <x>604</x>
+     <y>299</y>
     </hint>
     <hint type="destinationlabel">
      <x>35</x>
@@ -670,8 +704,8 @@
    <slot>newPitch(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>421</x>
-     <y>189</y>
+     <x>581</x>
+     <y>199</y>
     </hint>
     <hint type="destinationlabel">
      <x>35</x>
@@ -686,8 +720,8 @@
    <slot>newYaw(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>421</x>
-     <y>234</y>
+     <x>581</x>
+     <y>244</y>
     </hint>
     <hint type="destinationlabel">
      <x>30</x>
@@ -702,8 +736,8 @@
    <slot>newZoom(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>421</x>
-     <y>279</y>
+     <x>581</x>
+     <y>289</y>
     </hint>
     <hint type="destinationlabel">
      <x>32</x>
@@ -718,8 +752,8 @@
    <slot>newNear(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>421</x>
-     <y>324</y>
+     <x>581</x>
+     <y>334</y>
     </hint>
     <hint type="destinationlabel">
      <x>30</x>
@@ -734,8 +768,8 @@
    <slot>newFar(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>421</x>
-     <y>369</y>
+     <x>581</x>
+     <y>379</y>
     </hint>
     <hint type="destinationlabel">
      <x>51</x>
@@ -754,8 +788,8 @@
      <y>50</y>
     </hint>
     <hint type="destinationlabel">
-     <x>339</x>
-     <y>191</y>
+     <x>498</x>
+     <y>209</y>
     </hint>
    </hints>
   </connection>
@@ -770,8 +804,8 @@
      <y>45</y>
     </hint>
     <hint type="destinationlabel">
-     <x>482</x>
-     <y>188</y>
+     <x>616</x>
+     <y>209</y>
     </hint>
    </hints>
   </connection>
@@ -786,8 +820,8 @@
      <y>40</y>
     </hint>
     <hint type="destinationlabel">
-     <x>589</x>
-     <y>185</y>
+     <x>791</x>
+     <y>209</y>
     </hint>
    </hints>
   </connection>
@@ -802,8 +836,8 @@
      <y>46</y>
     </hint>
     <hint type="destinationlabel">
-     <x>346</x>
-     <y>236</y>
+     <x>498</x>
+     <y>254</y>
     </hint>
    </hints>
   </connection>
@@ -818,8 +852,8 @@
      <y>46</y>
     </hint>
     <hint type="destinationlabel">
-     <x>457</x>
-     <y>235</y>
+     <x>604</x>
+     <y>254</y>
     </hint>
    </hints>
   </connection>
@@ -834,8 +868,8 @@
      <y>207</y>
     </hint>
     <hint type="destinationlabel">
-     <x>604</x>
-     <y>236</y>
+     <x>791</x>
+     <y>254</y>
     </hint>
    </hints>
   </connection>
@@ -850,8 +884,8 @@
      <y>484</y>
     </hint>
     <hint type="destinationlabel">
-     <x>376</x>
-     <y>283</y>
+     <x>498</x>
+     <y>344</y>
     </hint>
    </hints>
   </connection>
@@ -866,8 +900,8 @@
      <y>448</y>
     </hint>
     <hint type="destinationlabel">
-     <x>498</x>
-     <y>285</y>
+     <x>632</x>
+     <y>344</y>
     </hint>
    </hints>
   </connection>
@@ -882,15 +916,15 @@
      <y>244</y>
     </hint>
     <hint type="destinationlabel">
-     <x>599</x>
-     <y>284</y>
+     <x>791</x>
+     <y>344</y>
     </hint>
    </hints>
   </connection>
   <connection>
    <sender>UIQTClass</sender>
-   <signal>currentScale(int)</signal>
-   <receiver>scaleSpinBox</receiver>
+   <signal>currentYScale(int)</signal>
+   <receiver>scaleYSpinBox</receiver>
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -898,8 +932,8 @@
      <y>467</y>
     </hint>
     <hint type="destinationlabel">
-     <x>510</x>
-     <y>324</y>
+     <x>644</x>
+     <y>299</y>
     </hint>
    </hints>
   </connection>
@@ -914,8 +948,8 @@
      <y>191</y>
     </hint>
     <hint type="destinationlabel">
-     <x>501</x>
-     <y>179</y>
+     <x>581</x>
+     <y>199</y>
     </hint>
    </hints>
   </connection>
@@ -930,8 +964,8 @@
      <y>247</y>
     </hint>
     <hint type="destinationlabel">
-     <x>500</x>
-     <y>229</y>
+     <x>581</x>
+     <y>244</y>
     </hint>
    </hints>
   </connection>
@@ -946,8 +980,8 @@
      <y>268</y>
     </hint>
     <hint type="destinationlabel">
-     <x>473</x>
-     <y>267</y>
+     <x>581</x>
+     <y>289</y>
     </hint>
    </hints>
   </connection>
@@ -962,8 +996,8 @@
      <y>333</y>
     </hint>
     <hint type="destinationlabel">
-     <x>495</x>
-     <y>314</y>
+     <x>581</x>
+     <y>334</y>
     </hint>
    </hints>
   </connection>
@@ -978,8 +1012,72 @@
      <y>379</y>
     </hint>
     <hint type="destinationlabel">
-     <x>512</x>
-     <y>362</y>
+     <x>581</x>
+     <y>379</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>scaleXSpinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>newXScale(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>541</x>
+     <y>287</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>529</x>
+     <y>478</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>scaleZSpinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>newZScale(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>737</x>
+     <y>291</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>741</x>
+     <y>473</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UIQTClass</sender>
+   <signal>currentXScale(int)</signal>
+   <receiver>scaleXSpinBox</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>558</x>
+     <y>455</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>550</x>
+     <y>289</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UIQTClass</sender>
+   <signal>currentZScale(int)</signal>
+   <receiver>scaleZSpinBox</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>741</x>
+     <y>38</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>755</x>
+     <y>293</y>
     </hint>
    </hints>
   </connection>
@@ -994,13 +1092,15 @@
   <signal>currentXRotation(int)</signal>
   <signal>currentYRotation(int)</signal>
   <signal>currentZRotation(int)</signal>
-  <signal>currentScale(int)</signal>
+  <signal>currentYScale(int)</signal>
   <signal>currentPitch(int)</signal>
   <signal>currentYaw(int)</signal>
   <signal>currentZoom(int)</signal>
   <signal>currentNear(int)</signal>
   <signal>currentFar(int)</signal>
   <signal>setHierarchyText(QString)</signal>
+  <signal>currentXScale(int)</signal>
+  <signal>currentZScale(int)</signal>
   <slot>newXPosition(int)</slot>
   <slot>newYPosition(int)</slot>
   <slot>newZPosition(int)</slot>
@@ -1010,11 +1110,13 @@
   <slot>newRColor(int)</slot>
   <slot>newGColor(int)</slot>
   <slot>newBColor(int)</slot>
-  <slot>newScale(int)</slot>
+  <slot>newYScale(int)</slot>
   <slot>newPitch(int)</slot>
   <slot>newYaw(int)</slot>
   <slot>newZoom(int)</slot>
   <slot>newNear(int)</slot>
   <slot>newFar(int)</slot>
+  <slot>newXScale(int)</slot>
+  <slot>newZScale(int)</slot>
  </slots>
 </ui>

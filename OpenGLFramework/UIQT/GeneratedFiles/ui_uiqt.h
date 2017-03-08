@@ -17,10 +17,10 @@
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
-#include <QtWidgets/QListView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QSpinBox>
 #include <QtWidgets/QStackedWidget>
+#include <QtWidgets/QTreeView>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -33,30 +33,35 @@ public:
     QWidget *objetPage;
     QFrame *objet;
     QGridLayout *gridLayout;
-    QSpinBox *positionYSpinBox;
+    QLabel *positionZLabel;
     QSpinBox *positionXSpinBox;
     QSpinBox *couleurGSpinBox;
-    QLabel *couleurRLabel;
     QSpinBox *rotationXSpinBox;
+    QLabel *couleurRLabel;
     QLabel *couleurGLabel;
-    QLabel *positionZLabel;
+    QSpinBox *positionYSpinBox;
     QLabel *couleurBLabel;
+    QLabel *rotationLabel;
     QLabel *positionXLabel;
     QSpinBox *couleurBSpinBox;
-    QLabel *rotationLabel;
+    QLabel *rotationZLabel;
+    QLabel *positionLabel;
     QLabel *couleurLabel;
     QSpinBox *rotationYSpinBox;
-    QLabel *positionLabel;
-    QLabel *scaleLabel;
-    QLabel *rotationZLabel;
-    QSpinBox *scaleSpinBox;
-    QLabel *positionYLabel;
     QSpinBox *couleurRSpinBox;
+    QLabel *positionYLabel;
     QSpinBox *positionZSpinBox;
-    QLabel *rotationXLabel;
     QLabel *rotationYLabel;
     QSpinBox *rotationZSpinBox;
     QLabel *objetLabel;
+    QLabel *rotationXLabel;
+    QLabel *scaleLabel;
+    QSpinBox *scaleXSpinBox;
+    QSpinBox *scaleYSpinBox;
+    QSpinBox *scaleZSpinBox;
+    QLabel *scaleZLabel;
+    QLabel *scaleYLabel;
+    QLabel *scaleXLabel;
     QWidget *cameraPage;
     QFrame *camera;
     QGridLayout *gridLayout_2;
@@ -71,7 +76,7 @@ public:
     QSpinBox *nearSpinBox;
     QLabel *farLabel;
     QSpinBox *farSpinBox;
-    QListView *hierarchyListView;
+    QTreeView *hierarchyTreeView;
 
     void setupUi(QMainWindow *UIQTClass)
     {
@@ -96,13 +101,10 @@ public:
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        positionYSpinBox = new QSpinBox(objet);
-        positionYSpinBox->setObjectName(QStringLiteral("positionYSpinBox"));
-        positionYSpinBox->setAlignment(Qt::AlignCenter);
-        positionYSpinBox->setMinimum(-999999999);
-        positionYSpinBox->setMaximum(999999999);
+        positionZLabel = new QLabel(objet);
+        positionZLabel->setObjectName(QStringLiteral("positionZLabel"));
 
-        gridLayout->addWidget(positionYSpinBox, 2, 3, 1, 1);
+        gridLayout->addWidget(positionZLabel, 2, 4, 1, 1);
 
         positionXSpinBox = new QSpinBox(objet);
         positionXSpinBox->setObjectName(QStringLiteral("positionXSpinBox"));
@@ -119,11 +121,6 @@ public:
 
         gridLayout->addWidget(couleurGSpinBox, 21, 3, 1, 1);
 
-        couleurRLabel = new QLabel(objet);
-        couleurRLabel->setObjectName(QStringLiteral("couleurRLabel"));
-
-        gridLayout->addWidget(couleurRLabel, 21, 0, 1, 1);
-
         rotationXSpinBox = new QSpinBox(objet);
         rotationXSpinBox->setObjectName(QStringLiteral("rotationXSpinBox"));
         rotationXSpinBox->setAlignment(Qt::AlignCenter);
@@ -132,20 +129,35 @@ public:
 
         gridLayout->addWidget(rotationXSpinBox, 8, 1, 1, 1);
 
+        couleurRLabel = new QLabel(objet);
+        couleurRLabel->setObjectName(QStringLiteral("couleurRLabel"));
+
+        gridLayout->addWidget(couleurRLabel, 21, 0, 1, 1);
+
         couleurGLabel = new QLabel(objet);
         couleurGLabel->setObjectName(QStringLiteral("couleurGLabel"));
 
         gridLayout->addWidget(couleurGLabel, 21, 2, 1, 1);
 
-        positionZLabel = new QLabel(objet);
-        positionZLabel->setObjectName(QStringLiteral("positionZLabel"));
+        positionYSpinBox = new QSpinBox(objet);
+        positionYSpinBox->setObjectName(QStringLiteral("positionYSpinBox"));
+        positionYSpinBox->setAlignment(Qt::AlignCenter);
+        positionYSpinBox->setMinimum(-999999999);
+        positionYSpinBox->setMaximum(999999999);
 
-        gridLayout->addWidget(positionZLabel, 2, 4, 1, 1);
+        gridLayout->addWidget(positionYSpinBox, 2, 3, 1, 1);
 
         couleurBLabel = new QLabel(objet);
         couleurBLabel->setObjectName(QStringLiteral("couleurBLabel"));
 
         gridLayout->addWidget(couleurBLabel, 21, 4, 1, 1);
+
+        rotationLabel = new QLabel(objet);
+        rotationLabel->setObjectName(QStringLiteral("rotationLabel"));
+        rotationLabel->setAlignment(Qt::AlignCenter);
+        rotationLabel->setTextInteractionFlags(Qt::NoTextInteraction);
+
+        gridLayout->addWidget(rotationLabel, 7, 1, 1, 5);
 
         positionXLabel = new QLabel(objet);
         positionXLabel->setObjectName(QStringLiteral("positionXLabel"));
@@ -159,12 +171,17 @@ public:
 
         gridLayout->addWidget(couleurBSpinBox, 21, 5, 1, 1);
 
-        rotationLabel = new QLabel(objet);
-        rotationLabel->setObjectName(QStringLiteral("rotationLabel"));
-        rotationLabel->setAlignment(Qt::AlignCenter);
-        rotationLabel->setTextInteractionFlags(Qt::NoTextInteraction);
+        rotationZLabel = new QLabel(objet);
+        rotationZLabel->setObjectName(QStringLiteral("rotationZLabel"));
 
-        gridLayout->addWidget(rotationLabel, 7, 1, 1, 5);
+        gridLayout->addWidget(rotationZLabel, 8, 4, 1, 1);
+
+        positionLabel = new QLabel(objet);
+        positionLabel->setObjectName(QStringLiteral("positionLabel"));
+        positionLabel->setAlignment(Qt::AlignCenter);
+        positionLabel->setTextInteractionFlags(Qt::NoTextInteraction);
+
+        gridLayout->addWidget(positionLabel, 1, 1, 1, 5);
 
         couleurLabel = new QLabel(objet);
         couleurLabel->setObjectName(QStringLiteral("couleurLabel"));
@@ -181,44 +198,17 @@ public:
 
         gridLayout->addWidget(rotationYSpinBox, 8, 3, 1, 1);
 
-        positionLabel = new QLabel(objet);
-        positionLabel->setObjectName(QStringLiteral("positionLabel"));
-        positionLabel->setAlignment(Qt::AlignCenter);
-        positionLabel->setTextInteractionFlags(Qt::NoTextInteraction);
-
-        gridLayout->addWidget(positionLabel, 1, 1, 1, 5);
-
-        scaleLabel = new QLabel(objet);
-        scaleLabel->setObjectName(QStringLiteral("scaleLabel"));
-        scaleLabel->setAlignment(Qt::AlignCenter);
-        scaleLabel->setTextInteractionFlags(Qt::NoTextInteraction);
-
-        gridLayout->addWidget(scaleLabel, 22, 3, 1, 1);
-
-        rotationZLabel = new QLabel(objet);
-        rotationZLabel->setObjectName(QStringLiteral("rotationZLabel"));
-
-        gridLayout->addWidget(rotationZLabel, 8, 4, 1, 1);
-
-        scaleSpinBox = new QSpinBox(objet);
-        scaleSpinBox->setObjectName(QStringLiteral("scaleSpinBox"));
-        scaleSpinBox->setAlignment(Qt::AlignCenter);
-        scaleSpinBox->setMinimum(-999999999);
-        scaleSpinBox->setMaximum(999999999);
-
-        gridLayout->addWidget(scaleSpinBox, 23, 3, 1, 1);
-
-        positionYLabel = new QLabel(objet);
-        positionYLabel->setObjectName(QStringLiteral("positionYLabel"));
-
-        gridLayout->addWidget(positionYLabel, 2, 2, 1, 1);
-
         couleurRSpinBox = new QSpinBox(objet);
         couleurRSpinBox->setObjectName(QStringLiteral("couleurRSpinBox"));
         couleurRSpinBox->setAlignment(Qt::AlignCenter);
         couleurRSpinBox->setMaximum(255);
 
         gridLayout->addWidget(couleurRSpinBox, 21, 1, 1, 1);
+
+        positionYLabel = new QLabel(objet);
+        positionYLabel->setObjectName(QStringLiteral("positionYLabel"));
+
+        gridLayout->addWidget(positionYLabel, 2, 2, 1, 1);
 
         positionZSpinBox = new QSpinBox(objet);
         positionZSpinBox->setObjectName(QStringLiteral("positionZSpinBox"));
@@ -227,11 +217,6 @@ public:
         positionZSpinBox->setMaximum(999999999);
 
         gridLayout->addWidget(positionZSpinBox, 2, 5, 1, 1);
-
-        rotationXLabel = new QLabel(objet);
-        rotationXLabel->setObjectName(QStringLiteral("rotationXLabel"));
-
-        gridLayout->addWidget(rotationXLabel, 8, 0, 1, 1);
 
         rotationYLabel = new QLabel(objet);
         rotationYLabel->setObjectName(QStringLiteral("rotationYLabel"));
@@ -257,6 +242,53 @@ public:
         objetLabel->setTextInteractionFlags(Qt::NoTextInteraction);
 
         gridLayout->addWidget(objetLabel, 0, 1, 1, 5);
+
+        rotationXLabel = new QLabel(objet);
+        rotationXLabel->setObjectName(QStringLiteral("rotationXLabel"));
+
+        gridLayout->addWidget(rotationXLabel, 8, 0, 1, 1);
+
+        scaleLabel = new QLabel(objet);
+        scaleLabel->setObjectName(QStringLiteral("scaleLabel"));
+        scaleLabel->setAlignment(Qt::AlignCenter);
+        scaleLabel->setTextInteractionFlags(Qt::NoTextInteraction);
+
+        gridLayout->addWidget(scaleLabel, 9, 3, 1, 1);
+
+        scaleXSpinBox = new QSpinBox(objet);
+        scaleXSpinBox->setObjectName(QStringLiteral("scaleXSpinBox"));
+        scaleXSpinBox->setAlignment(Qt::AlignCenter);
+
+        gridLayout->addWidget(scaleXSpinBox, 10, 1, 1, 1);
+
+        scaleYSpinBox = new QSpinBox(objet);
+        scaleYSpinBox->setObjectName(QStringLiteral("scaleYSpinBox"));
+        scaleYSpinBox->setAlignment(Qt::AlignCenter);
+        scaleYSpinBox->setMinimum(-999999999);
+        scaleYSpinBox->setMaximum(999999999);
+
+        gridLayout->addWidget(scaleYSpinBox, 10, 3, 1, 1);
+
+        scaleZSpinBox = new QSpinBox(objet);
+        scaleZSpinBox->setObjectName(QStringLiteral("scaleZSpinBox"));
+        scaleZSpinBox->setAlignment(Qt::AlignCenter);
+
+        gridLayout->addWidget(scaleZSpinBox, 10, 5, 1, 1);
+
+        scaleZLabel = new QLabel(objet);
+        scaleZLabel->setObjectName(QStringLiteral("scaleZLabel"));
+
+        gridLayout->addWidget(scaleZLabel, 10, 4, 1, 1);
+
+        scaleYLabel = new QLabel(objet);
+        scaleYLabel->setObjectName(QStringLiteral("scaleYLabel"));
+
+        gridLayout->addWidget(scaleYLabel, 10, 2, 1, 1);
+
+        scaleXLabel = new QLabel(objet);
+        scaleXLabel->setObjectName(QStringLiteral("scaleXLabel"));
+
+        gridLayout->addWidget(scaleXLabel, 10, 0, 1, 1);
 
         stackedWidget->addWidget(objetPage);
         cameraPage = new QWidget();
@@ -358,16 +390,15 @@ public:
         nearSpinBox->raise();
         farSpinBox->raise();
         stackedWidget->addWidget(cameraPage);
-        hierarchyListView = new QListView(centralWidget);
-        hierarchyListView->setObjectName(QStringLiteral("hierarchyListView"));
-        hierarchyListView->setGeometry(QRect(60, 130, 321, 291));
+        hierarchyTreeView = new QTreeView(centralWidget);
+        hierarchyTreeView->setObjectName(QStringLiteral("hierarchyTreeView"));
+        hierarchyTreeView->setGeometry(QRect(60, 70, 311, 391));
         UIQTClass->setCentralWidget(centralWidget);
         QWidget::setTabOrder(positionYSpinBox, couleurGSpinBox);
         QWidget::setTabOrder(couleurGSpinBox, rotationXSpinBox);
         QWidget::setTabOrder(rotationXSpinBox, couleurBSpinBox);
         QWidget::setTabOrder(couleurBSpinBox, rotationYSpinBox);
-        QWidget::setTabOrder(rotationYSpinBox, scaleSpinBox);
-        QWidget::setTabOrder(scaleSpinBox, couleurRSpinBox);
+        QWidget::setTabOrder(rotationYSpinBox, couleurRSpinBox);
         QWidget::setTabOrder(couleurRSpinBox, positionZSpinBox);
         QWidget::setTabOrder(positionZSpinBox, rotationZSpinBox);
         QWidget::setTabOrder(rotationZSpinBox, positionXSpinBox);
@@ -387,7 +418,7 @@ public:
         QObject::connect(couleurRSpinBox, SIGNAL(valueChanged(int)), UIQTClass, SLOT(newRColor(int)));
         QObject::connect(couleurGSpinBox, SIGNAL(valueChanged(int)), UIQTClass, SLOT(newGColor(int)));
         QObject::connect(couleurBSpinBox, SIGNAL(valueChanged(int)), UIQTClass, SLOT(newBColor(int)));
-        QObject::connect(scaleSpinBox, SIGNAL(valueChanged(int)), UIQTClass, SLOT(newScale(int)));
+        QObject::connect(scaleYSpinBox, SIGNAL(valueChanged(int)), UIQTClass, SLOT(newScale(int)));
         QObject::connect(pitchSpinBox, SIGNAL(valueChanged(int)), UIQTClass, SLOT(newPitch(int)));
         QObject::connect(yawSpinBox, SIGNAL(valueChanged(int)), UIQTClass, SLOT(newYaw(int)));
         QObject::connect(zoomSpinBox, SIGNAL(valueChanged(int)), UIQTClass, SLOT(newZoom(int)));
@@ -402,12 +433,16 @@ public:
         QObject::connect(UIQTClass, SIGNAL(currentRColor(int)), couleurRSpinBox, SLOT(setValue(int)));
         QObject::connect(UIQTClass, SIGNAL(currentGColor(int)), couleurGSpinBox, SLOT(setValue(int)));
         QObject::connect(UIQTClass, SIGNAL(currentBColor(int)), couleurBSpinBox, SLOT(setValue(int)));
-        QObject::connect(UIQTClass, SIGNAL(currentScale(int)), scaleSpinBox, SLOT(setValue(int)));
+        QObject::connect(UIQTClass, SIGNAL(currentYScale(int)), scaleYSpinBox, SLOT(setValue(int)));
         QObject::connect(UIQTClass, SIGNAL(currentPitch(int)), pitchSpinBox, SLOT(setValue(int)));
         QObject::connect(UIQTClass, SIGNAL(currentYaw(int)), yawSpinBox, SLOT(setValue(int)));
         QObject::connect(UIQTClass, SIGNAL(currentZoom(int)), zoomSpinBox, SLOT(setValue(int)));
         QObject::connect(UIQTClass, SIGNAL(currentNear(int)), nearSpinBox, SLOT(setValue(int)));
         QObject::connect(UIQTClass, SIGNAL(currentFar(int)), farSpinBox, SLOT(setValue(int)));
+        QObject::connect(scaleXSpinBox, SIGNAL(valueChanged(int)), UIQTClass, SLOT(newXScale(int)));
+        QObject::connect(scaleZSpinBox, SIGNAL(valueChanged(int)), UIQTClass, SLOT(newZScale(int)));
+        QObject::connect(UIQTClass, SIGNAL(currentXScale(int)), scaleXSpinBox, SLOT(setValue(int)));
+        QObject::connect(UIQTClass, SIGNAL(currentZScale(int)), scaleZSpinBox, SLOT(setValue(int)));
 
         stackedWidget->setCurrentIndex(0);
 
@@ -418,20 +453,23 @@ public:
     void retranslateUi(QMainWindow *UIQTClass)
     {
         UIQTClass->setWindowTitle(QApplication::translate("UIQTClass", "UIQT", Q_NULLPTR));
+        positionZLabel->setText(QApplication::translate("UIQTClass", "Z:", Q_NULLPTR));
         couleurRLabel->setText(QApplication::translate("UIQTClass", "R:", Q_NULLPTR));
         couleurGLabel->setText(QApplication::translate("UIQTClass", "G:", Q_NULLPTR));
-        positionZLabel->setText(QApplication::translate("UIQTClass", "Z:", Q_NULLPTR));
         couleurBLabel->setText(QApplication::translate("UIQTClass", "B:", Q_NULLPTR));
-        positionXLabel->setText(QApplication::translate("UIQTClass", "X:", Q_NULLPTR));
         rotationLabel->setText(QApplication::translate("UIQTClass", "Rotation", Q_NULLPTR));
-        couleurLabel->setText(QApplication::translate("UIQTClass", "Couleur", Q_NULLPTR));
-        positionLabel->setText(QApplication::translate("UIQTClass", "Position", Q_NULLPTR));
-        scaleLabel->setText(QApplication::translate("UIQTClass", "Scale", Q_NULLPTR));
+        positionXLabel->setText(QApplication::translate("UIQTClass", "X:", Q_NULLPTR));
         rotationZLabel->setText(QApplication::translate("UIQTClass", "Z:", Q_NULLPTR));
+        positionLabel->setText(QApplication::translate("UIQTClass", "Position", Q_NULLPTR));
+        couleurLabel->setText(QApplication::translate("UIQTClass", "Couleur", Q_NULLPTR));
         positionYLabel->setText(QApplication::translate("UIQTClass", "Y:", Q_NULLPTR));
-        rotationXLabel->setText(QApplication::translate("UIQTClass", "X:", Q_NULLPTR));
         rotationYLabel->setText(QApplication::translate("UIQTClass", "Y:", Q_NULLPTR));
         objetLabel->setText(QApplication::translate("UIQTClass", "Objet", Q_NULLPTR));
+        rotationXLabel->setText(QApplication::translate("UIQTClass", "X:", Q_NULLPTR));
+        scaleLabel->setText(QApplication::translate("UIQTClass", "Scale", Q_NULLPTR));
+        scaleZLabel->setText(QApplication::translate("UIQTClass", "Z:", Q_NULLPTR));
+        scaleYLabel->setText(QApplication::translate("UIQTClass", "Y:", Q_NULLPTR));
+        scaleXLabel->setText(QApplication::translate("UIQTClass", "X:", Q_NULLPTR));
         cameraLabel->setText(QApplication::translate("UIQTClass", "Camera", Q_NULLPTR));
         pitchLabel->setText(QApplication::translate("UIQTClass", "Pitch", Q_NULLPTR));
         yawLabel->setText(QApplication::translate("UIQTClass", "Yaw", Q_NULLPTR));

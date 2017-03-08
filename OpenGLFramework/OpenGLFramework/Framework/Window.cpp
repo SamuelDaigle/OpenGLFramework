@@ -11,7 +11,7 @@ namespace Framework
 
 		
 
-		glutSetCursor(GLUT_CURSOR_FULL_CROSSHAIR);							//Curseur
+		glutSetCursor(GLUT_CURSOR_LEFT_ARROW);							//Curseur
 		m_inputhandler = new Input::InputHandler();
 
 		Math::Vector2 cursorPosition = Math::Vector2(GetWidth() / 2.0f, GetHeight() / 2.0f);
@@ -39,14 +39,28 @@ namespace Framework
 			m_scene->Update();
 			m_scene->Render();
 		}
+		if (m_uiInterface)
+		{
+			m_uiInterface->Draw();
+		}
 		m_openGL->EndScene();
 
-		if (m_inputhandler->HasMovedMouse())
+
+
+		if (m_inputhandler->isMouseDown(1))
 		{
-			glutSetCursor(GLUT_CURSOR_NONE);
 			glutWarpPointer(cursorPosition.x, cursorPosition.y);
 		}
-
+		if (m_inputhandler->isMousePressed(1))
+		{
+			glutSetCursor(GLUT_CURSOR_NONE);
+		}
+		if (m_inputhandler->isMouseReleased(1))
+		{
+			glutSetCursor(GLUT_CURSOR_LEFT_ARROW);
+		}
+		
+		m_inputhandler->LateUpdate(cursorPosition);
 		if (HasExited())
 		{
 			glutLeaveMainLoop();
@@ -69,9 +83,9 @@ namespace Framework
 	}
 
 
-	void Window::OnMouseStateChanged(int button, int state, int x, int y)
+	void Window::OnMouseStateChanged(int _button, int _state, int _x, int _y)
 	{
-		m_inputhandler->OnMouseStateChanged(button, state, x, y);
+		m_inputhandler->OnMouseStateChanged(_button, _state, _x, _y);
 	}
 
 	void Window::InitializeWindow()
@@ -100,6 +114,12 @@ namespace Framework
 	void Window::SetScene(IScene& _scene)
 	{
 		m_scene = &_scene;
+	}
+
+	void Window::SetUIInterface(IUIInterface& _uiInterface)
+	{
+		m_uiInterface = &_uiInterface;
+		//m_uiInterface->ShowPopup(m_scene->getHierarchy());
 	}
 
 	const OpenGL& Window::GetOpenGLWrapper() const

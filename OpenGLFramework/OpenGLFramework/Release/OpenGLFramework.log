@@ -1,3 +1,22 @@
+<<<<<<< HEAD
 ﻿  Camera.cpp
 LINK : warning LNK4068: /MACHINE not specified; defaulting to X86
   OpenGLFramework.vcxproj -> C:\Users\William Valin\Desktop\GLO\Session4\IFT-3100-Infographie\TP2-TP3\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.lib
+=======
+﻿  Window.cpp
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\framework\..\Input\InputHandler.h(12): warning C4005: 'MB_RIGHT': macro redefinition
+  C:\Program Files (x86)\Windows Kits\8.1\Include\um\winuser.h(8663): note: see previous definition of 'MB_RIGHT'
+Framework\Window.cpp(19): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+Framework\Window.cpp(21): error C2259: 'IUIInterface': cannot instantiate abstract class
+  Framework\Window.cpp(21): note: due to following members:
+  Framework\Window.cpp(21): note: 'void IUIInterface::Destroy(void)': is abstract
+  c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\framework\..\Interface\IUIInterface.h(18): note: see declaration of 'IUIInterface::Destroy'
+  Framework\Window.cpp(21): note: 'void IUIInterface::Input(void)': is abstract
+  c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\framework\..\Interface\IUIInterface.h(20): note: see declaration of 'IUIInterface::Input'
+  Framework\Window.cpp(21): note: 'void IUIInterface::Update(void)': is abstract
+  c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\framework\..\Interface\IUIInterface.h(21): note: see declaration of 'IUIInterface::Update'
+  Framework\Window.cpp(21): note: 'void IUIInterface::Render(void) const': is abstract
+  c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\framework\..\Interface\IUIInterface.h(22): note: see declaration of 'IUIInterface::Render'
+Framework\Window.cpp(54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+Framework\Window.cpp(96): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+>>>>>>> master

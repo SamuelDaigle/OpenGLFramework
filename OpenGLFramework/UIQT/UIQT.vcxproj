@@ -163,6 +163,7 @@
     </ClCompile>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="UIInterface.cpp" />
     <ClCompile Include="uiqt.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -209,6 +210,7 @@
     <ClInclude Include="CustomShader.h" />
     <ClInclude Include="GeneratedFiles\ui_uiqt.h" />
     <ClInclude Include="Scene.h" />
+    <ClInclude Include="UIInterface.h" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="uiqt.qrc">
