@@ -28,12 +28,17 @@ void UIQT::addChildStringTo(Text::TextHolder& _hierarchyText, Framework::BaseObj
 
 }
 
+void UIQT::createHierarchyList()
+{
+	
+}
+
 void UIQT::addObjectToListView()
 {
-
+	/*
 	Ui_UIQTClass ui;
 	ui.hierarchyListView->setGeometry(QRect(60, 130, 200, 350));
-
+	*/
 }
 
 
@@ -41,54 +46,64 @@ void UIQT::addObjectToListView()
 
 //   SLOTS (information going out of the interface)
 
-int UIQT::newRColor(int rColor)
+int UIQT::newRColor(int _rColor)
 {
-	return rColor;
+	return _rColor;
 }
 
-int UIQT::newGColor(int gColor)
+int UIQT::newGColor(int _gColor)
 {
-	return gColor;
+	return _gColor;
 }
 
-int UIQT::newBColor(int bColor)
+int UIQT::newBColor(int _bColor)
 {
-	return bColor;
+	return _bColor;
 }
 
-int UIQT::newXPosition(int xPosition)
+int UIQT::newXPosition(int _xPosition)
 {
-	return xPosition;
+	return _xPosition;
 }
 
-int UIQT::newYPosition(int yPosition)
+int UIQT::newYPosition(int _yPosition)
 {
-	return yPosition;
+	return _yPosition;
 }
 
-int UIQT::newZPosition(int zPosition)
+int UIQT::newZPosition(int _zPosition)
 {
-	return zPosition;
+	return _zPosition;
 }
 
-int UIQT::newXRotation(int xRotation)
+int UIQT::newXRotation(int _xRotation)
 {
-	return xRotation;
+	return _xRotation;
 }
 
-int UIQT::newYRotation(int yRotation)
+int UIQT::newYRotation(int _yRotation)
 {
-	return yRotation;
+	return _yRotation;
 }
 
-int UIQT::newZRotation(int zRotation)
+int UIQT::newZRotation(int _zRotation)
 {
-	return zRotation;
+	return _zRotation;
 }
 
-int UIQT::newScale(int _scale)
+int UIQT::newXScale(int _xScale)
 {
-	return _scale;
+	return _xScale;
+}
+
+int UIQT::newYScale(int _yScale)
+{
+	return _yScale;
+}
+
+int UIQT::newZScale(int _zScale)
+{
+	return _zScale;
 }
 
 int UIQT::newPitch(int _pitch)
@@ -119,54 +134,64 @@ int UIQT::newFar(int _far)
 
 //   SIGNALS (information going in the interface)
 
-void UIQT::presentRColor(int rColor)
+void UIQT::presentRColor(int _rColor)
 {
-	emit currentRColor(rColor);
+	emit currentRColor(_rColor);
 }
 
-void UIQT::presentGColor(int gColor)
+void UIQT::presentGColor(int _gColor)
 {
-	emit currentGColor(gColor);
+	emit currentGColor(_gColor);
 }
 
-void UIQT::presentBColor(int bColor)
+void UIQT::presentBColor(int _bColor)
 {
-	emit currentBColor(bColor);
+	emit currentBColor(_bColor);
 }
 
-void UIQT::presentXPosition(int xPosition)
+void UIQT::presentXPosition(int _xPosition)
 {
-	emit currentXPosition(xPosition);
+	emit currentXPosition(_xPosition);
 }
 
-void UIQT::presentYPosition(int yPosition)
+void UIQT::presentYPosition(int _yPosition)
 {
-	emit currentYPosition(yPosition);
+	emit currentYPosition(_yPosition);
 }
 
-void UIQT::presentZPosition(int zPosition)
+void UIQT::presentZPosition(int _zPosition)
 {
-	emit currentZPosition(zPosition);
+	emit currentZPosition(_zPosition);
 }
 
-void UIQT::presentXRotation(int xRotation)
+void UIQT::presentXRotation(int _xRotation)
 {
-	emit currentXRotation(xRotation);
+	emit currentXRotation(_xRotation);
 }
 
-void UIQT::presentYRotation(int yRotation)
+void UIQT::presentYRotation(int _yRotation)
 {
-	emit currentYRotation(yRotation);
+	emit currentYRotation(_yRotation);
 }
 
-void UIQT::presentZRotation(int zRotation)
+void UIQT::presentZRotation(int _zRotation)
 {
-	emit currentZRotation(zRotation);
+	emit currentZRotation(_zRotation);
 }
 
-void UIQT::presentScale(int _scale)
+void UIQT::presentXScale(int _xScale)
 {
-	emit currentScale(_scale);
+	emit currentXScale(_xScale);
+}
+
+void UIQT::presentYScale(int _yScale)
+{
+	emit currentYScale(_yScale);
+}
+
+void UIQT::presentZScale(int _zScale)
+{
+	emit currentZScale(_zScale);
 }
 
 void UIQT::presentPitch(int _pitch)

@@ -37,6 +37,7 @@ int main(int argc, char* argv[])
 	glutKeyboardFunc(OnKeyPress);
 	glutKeyboardUpFunc(OnKeyRelease);
 	glutPassiveMotionFunc(OnMouseMove);
+	glutMouseFunc(OnMouseStateChanged);
 	
 
 
@@ -44,7 +45,7 @@ int main(int argc, char* argv[])
 	UIQT w;
 	w.show();
 
-	
+	w.presentXScale(26);
 	w.presentRColor(255);
 
 	glutMainLoop();

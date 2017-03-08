@@ -31,6 +31,7 @@ namespace Application
 		void Input() override;
 		void Update() override;
 		void Render() const override;
+		
 
 	private:
 		void UpdateHierarchyText();

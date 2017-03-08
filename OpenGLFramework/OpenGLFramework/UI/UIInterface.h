@@ -3,6 +3,7 @@
 #include "CommandStack.h"
 #include "UIBaseObjectPopup.h"
 #include "UIShape.h"
+//#include "..\..\UIQT\uiqt.h"
 
 #include <map>
 #include <vector>

@@ -10,6 +10,7 @@
 #include "..\Interface\IWindow.h"
 #include "..\Utils\Log.h"
 #include "..\stdafx.h"
+#include "..\UI\UIInterface.h"
 
 namespace Framework
 {
@@ -20,11 +21,13 @@ namespace Framework
 		void Initialize();
 		void Destroy();
 
+
+
 		void Frame();
 		void OnKeyPress(unsigned char _key, int _x, int _y);
 		void OnKeyRelease(unsigned char _key, int _x, int _y);
 		void OnMouseMove(int _x, int _y);
-		void OnMouseStateChanged(int button, int state, int x, int y);
+		void OnMouseStateChanged(int _button, int _state, int _x, int _y);
 
 		void SetScene(IScene& _scene);
 
@@ -40,6 +43,7 @@ namespace Framework
 		OpenGL* m_openGL;
 		Input::InputHandler* m_inputhandler;
 		IScene* m_scene;
+		UI::UIInterface* m_uiInterface;
 	};
 
 }

@@ -21,6 +21,10 @@ namespace UI
 	void UIInterface::ShowPopup(Framework::BaseObject& _baseObject)
 	{
 		m_popups.push_back(new UIBaseObjectPopup(_baseObject));
+
+
+
+		//mettre le code du main UIQT (doit heriter de UIpopup (UIQT w;) passer l<objet (le root de la scene)  
 	}
 
 	void UIInterface::AddShape(ShapeNames _name, UIShape& _shape)
