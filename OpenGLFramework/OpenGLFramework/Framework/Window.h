@@ -30,6 +30,7 @@ namespace Framework
 		void OnMouseStateChanged(int _button, int _state, int _x, int _y);
 
 		void SetScene(IScene& _scene);
+		void SetUIInterface(IUIInterface& _uiInterface);
 
 		const OpenGL& GetOpenGLWrapper() const override;
 		const Input::InputHandler& GetInputHandler() const override;

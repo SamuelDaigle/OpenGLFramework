@@ -5,10 +5,10 @@
 #include "ui_uiqt.h"
 #include "Framework\Light.h"
 #include "Text\TextHolder.h"
+#include "UI/UIPopup.h"
 
 
-
-class UIQT : public QMainWindow
+class UIQT : public QMainWindow, public UI::UIPopup
 {
 	Q_OBJECT
 
@@ -33,7 +33,7 @@ public:
 	void presentZoom(int _zoom);
 	void presentNear(int _near);
 	void presentFar(int _far);
-	void addChildStringTo(Text::TextHolder& _hierarchyText, Framework::BaseObject& _parent, int _depth);
+	void updateHierarchy(Framework::BaseObject& _hierarchy);
 	void createHierarchyList();
 	void addObjectToListView();
 	

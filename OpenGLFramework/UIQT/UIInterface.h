@@ -1,7 +1,7 @@
 #pragma once
 
 #include "UI\CommandStack.h"
-#include "UI\UIBaseObjectPopup.h"
+#include "UI\UIPopup.h"
 #include "uiqt.h"
 #include "Interface\IUIInterface.h"
 
@@ -10,32 +10,24 @@
 #include <typeinfo>
 
 
-namespace UI
+namespace Application
 {
 
-	enum ShapeNames
-	{
-		HEALTH_BAR,
-		TEST_CIRCLE,
-		CROSSHAIR_LINE_VERTICAL,
-		CROSSHAIR_LINE_HORIZONTAL
-	};
-
-	class UIInterface
+	class UIInterface : public IUIInterface
 	{
 	public:
 		UIInterface();
 		~UIInterface();
 
-		void ShowPopup(Framework::BaseObject& _baseObject);
-		void AddShape(ShapeNames _name, UIShape& _shape);
+		void ShowPopup(Framework::BaseObject& _baseObject) override;
+		void AddShape(ShapeNames _name, UI::UIShape& _shape) override;
 
-		void Draw() const;
+		void Draw() const override;
 
 	private:
-		CommandStack* m_commandStack;
-		std::vector<UIPopup*> m_popups;
-		std::map<ShapeNames, UIShape*> m_shapes;
+		UI::CommandStack* m_commandStack;
+		std::vector<UI::UIPopup*> m_popups;
+		std::map<ShapeNames, UI::UIShape*> m_shapes;
 	};
 
 }

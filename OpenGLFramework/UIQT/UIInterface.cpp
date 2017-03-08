@@ -20,9 +20,9 @@ namespace Application
 
 	void UIInterface::ShowPopup(Framework::BaseObject& _baseObject)
 	{
-		m_popups.push_back(new UI::UIBaseObjectPopup(_baseObject));
-
-
+		UIQT* popup = new UIQT();
+		popup->updateHierarchy(_baseObject);
+		m_popups.push_back(popup);
 
 		//mettre le code du main UIQT (doit heriter de UIpopup (UIQT w;) passer l<objet (le root de la scene)  
 	}

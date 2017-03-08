@@ -7,6 +7,7 @@
 #include <QtWidgets/QApplication>
 #include "Framework\Window.h"
 #include "Scene.h"
+#include "UIInterface.h"
 
 #include <iostream>
 #include <fstream>
@@ -20,6 +21,7 @@ void OnMouseStateChanged(int button, int state, int x, int y);
 
 Framework::Window* m_window;
 Application::Scene* m_scene;
+Application::UIInterface* m_uiInterface;
 
 int main(int argc, char* argv[])
 {
@@ -32,6 +34,7 @@ int main(int argc, char* argv[])
 
 	m_scene = new Application::Scene(*m_window);
 	m_window->SetScene(*m_scene);
+	m_window->SetUIInterface(*m_uiInterface);
 
 	glutTimerFunc(1, Frame, 1);
 	glutKeyboardFunc(OnKeyPress);

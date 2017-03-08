@@ -10,22 +10,9 @@ UIQT::UIQT(QWidget *parent)
 
 
 
-void UIQT::addChildStringTo(Text::TextHolder& _hierarchyText, Framework::BaseObject& _parent, int _depth)
+void UIQT::updateHierarchy(Framework::BaseObject& _hierarchy)
 {
-
-	std::string childText = " ";
-		for (int j = 0; j < _depth; j++)
-			childText += "-";
-		childText += " ";
-		childText += typeid(_parent).name();
-		_hierarchyText.AddLine(childText);
-		std::vector<Framework::BaseObject*> childObjects = _parent.GetChilds();
-		for (int i = 0; i < childObjects.size(); i++)
-		{
-			addChildStringTo(_hierarchyText, *childObjects[i], _depth + 1);
-		}
-
-
+	// supprimer les éléments du tree et refaire setupTree.
 }
 
 void UIQT::createHierarchyList()
