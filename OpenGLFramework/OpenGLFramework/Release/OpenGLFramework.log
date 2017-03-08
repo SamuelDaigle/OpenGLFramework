@@ -1,8 +1,3 @@
-﻿  Window.cpp
-c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\framework\..\Input\InputHandler.h(12): warning C4005: 'MB_RIGHT': macro redefinition
-  C:\Program Files (x86)\Windows Kits\8.1\Include\um\winuser.h(8663): note: see previous definition of 'MB_RIGHT'
-Framework\Window.cpp(19): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-Framework\Window.cpp(47): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-Framework\Window.cpp(80): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+﻿  Camera.cpp
 LINK : warning LNK4068: /MACHINE not specified; defaulting to X86
-  OpenGLFramework.vcxproj -> C:\Users\Yannick\OneDrive\Hiver2017\Infographie\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.lib
+  OpenGLFramework.vcxproj -> C:\Users\William Valin\Desktop\GLO\Session4\IFT-3100-Infographie\TP2-TP3\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.lib

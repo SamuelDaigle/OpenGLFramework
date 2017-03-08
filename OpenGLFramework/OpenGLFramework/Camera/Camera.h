@@ -17,6 +17,9 @@ namespace Camera
 		void Destroy();
 
 		virtual void Rotate(const float _angle, const Math::Vector3& _axis) override;
+		void Zoom(unsigned int _change);
+		void Ortho();
+		void Perspective();
 
 		void Update();
 		const Math::Vector3& GetPosition() const override;
