@@ -56,6 +56,9 @@
     <ClCompile Include="CustomShader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="UIInterface.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="uiqt.h">
@@ -76,6 +79,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Scene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UIInterface.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

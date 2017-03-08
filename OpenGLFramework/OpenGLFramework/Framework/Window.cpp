@@ -18,7 +18,7 @@ namespace Framework
 		m_inputhandler->Initialize(cursorPosition);
 		glutWarpPointer(cursorPosition.x, cursorPosition.y);
 		
-		m_uiInterface = new UI::UIInterface();
+		m_uiInterface = new IUIInterface();
 		//m_uiInterface->ShowPopup(m_scene->getHierarchy());
 		
 	}

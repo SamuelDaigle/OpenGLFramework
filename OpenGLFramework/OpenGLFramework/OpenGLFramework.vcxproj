@@ -56,7 +56,6 @@
     <ClCompile Include="UI\UIBaseObjectPopup.cpp" />
     <ClCompile Include="UI\UICircle.cpp" />
     <ClCompile Include="UI\UIHierarchyPopup.cpp" />
-    <ClCompile Include="UI\UIInterface.cpp" />
     <ClCompile Include="UI\UILine.cpp" />
     <ClCompile Include="UI\UIPopup.cpp" />
     <ClCompile Include="UI\UIShape.cpp" />
@@ -79,6 +78,7 @@
     <ClInclude Include="Interface\ICommandStack.h" />
     <ClInclude Include="Interface\IShader.h" />
     <ClInclude Include="Interface\IScene.h" />
+    <ClInclude Include="Interface\IUIInterface.h" />
     <ClInclude Include="Interface\IWindow.h" />
     <ClInclude Include="IO\MeshBank.h" />
     <ClInclude Include="IO\MeshLoader.h" />
@@ -109,7 +109,6 @@
     <ClInclude Include="UI\UIBaseObjectPopup.h" />
     <ClInclude Include="UI\UICircle.h" />
     <ClInclude Include="UI\UIHierarchyPopup.h" />
-    <ClInclude Include="UI\UIInterface.h" />
     <ClInclude Include="UI\UILine.h" />
     <ClInclude Include="UI\UIPopup.h" />
     <ClInclude Include="UI\UIShape.h" />

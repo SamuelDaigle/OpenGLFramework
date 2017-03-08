@@ -147,9 +147,6 @@
     <ClCompile Include="UI\UIHierarchyPopup.cpp">
       <Filter>UI</Filter>
     </ClCompile>
-    <ClCompile Include="UI\UIInterface.cpp">
-      <Filter>UI</Filter>
-    </ClCompile>
     <ClCompile Include="UI\UILine.cpp">
       <Filter>UI</Filter>
     </ClCompile>
@@ -312,9 +309,6 @@
     <ClInclude Include="UI\UIHierarchyPopup.h">
       <Filter>UI</Filter>
     </ClInclude>
-    <ClInclude Include="UI\UIInterface.h">
-      <Filter>UI</Filter>
-    </ClInclude>
     <ClInclude Include="UI\UILine.h">
       <Filter>UI</Filter>
     </ClInclude>
@@ -343,6 +337,9 @@
       <Filter>Rendering</Filter>
     </ClInclude>
     <ClInclude Include="resource.h" />
+    <ClInclude Include="Interface\IUIInterface.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Shaders\advanced.frag">

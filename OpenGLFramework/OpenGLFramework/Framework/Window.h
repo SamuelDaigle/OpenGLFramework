@@ -10,7 +10,7 @@
 #include "..\Interface\IWindow.h"
 #include "..\Utils\Log.h"
 #include "..\stdafx.h"
-#include "..\UI\UIInterface.h"
+#include "..\Interface\IUIInterface.h"
 
 namespace Framework
 {
@@ -43,7 +43,7 @@ namespace Framework
 		OpenGL* m_openGL;
 		Input::InputHandler* m_inputhandler;
 		IScene* m_scene;
-		UI::UIInterface* m_uiInterface;
+		IUIInterface* m_uiInterface;
 	};
 
 }
