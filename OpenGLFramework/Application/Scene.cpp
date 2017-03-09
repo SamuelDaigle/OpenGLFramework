@@ -31,7 +31,7 @@ namespace Application
 		m_rootObject->Add(planet);
 		Physics::Rigidbody* planetRigidbody = new Physics::Rigidbody(*planet, *new btSphereShape(1), 1);
 		m_physicsWorld->AddRigidbody(*planetRigidbody);
-		Rendering::Renderer* planetRenderer = new Rendering::Renderer("../Content/planet/planet.obj", *meshLoader, *m_advancedShader);
+		Rendering::Renderer* planetRenderer = new Rendering::Renderer("../Content/planet/planet.obj", *meshLoader, *m_basicShader);
 		planet->AddComponent(*planetRenderer);
 		planet->AddComponent(*planetRigidbody);
 
@@ -107,8 +107,11 @@ namespace Application
 		m_camera->Update();
 
 		// Rotation
-		m_camera->Rotate(m_window->GetInputHandler().GetCursorDelta().x / 5, Math::Vector3(1.0f, 0.0f, 0.0f));
-		m_camera->Rotate(m_window->GetInputHandler().GetCursorDelta().y / 5, Math::Vector3(0.0f, 1.0f, 0.0f));
+		if (m_window->HasCameraControl())
+		{
+			m_camera->Rotate(m_window->GetInputHandler().GetCursorDelta().x / 5, Math::Vector3(1.0f, 0.0f, 0.0f));
+			m_camera->Rotate(m_window->GetInputHandler().GetCursorDelta().y / 5, Math::Vector3(0.0f, 1.0f, 0.0f));
+		}
 
 		// Move with arrow.
 		if (m_window->GetInputHandler().IsKeyDown('a'))

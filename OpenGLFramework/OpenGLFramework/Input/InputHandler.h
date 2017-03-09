@@ -5,22 +5,9 @@
 #pragma once
 
 #include "..\Math\Vector2.h"
-
-
-#define MB_LEFT   0
-#define MB_MIDDLE 1
-#define MB_RIGHT  2
-#define LMB_PRESSED (1<<0)
-#define MMB_PRESSED (1<<1)
-#define RMB_PRESSED (1<<2)
-#define LMB_CLICKED (1<<16)
-#define MMB_CLICKED (1<<17)
-#define RMB_CLICKED (1<<18)
-#define MB_PRESSED(state, button) (1<<(button))
-#define MB_CLICKED(state, button) (1<<((button)+16)))
-#define MB_MASK_PRESSED 0x0000ffffL
-#define MB_MASK_CLICKED 0xffff0000L
-
+#include "..\Utils\Log.h"
+#include <string>
+#include <list>
 
 namespace Input
 {
@@ -34,6 +21,9 @@ namespace Input
 		void LateUpdate(Math::Vector2 _centerScreenPosition);
 
 		const bool IsKeyDown(const unsigned char _key) const;
+		const bool IsKeyUp(const unsigned char _key) const;
+		const bool IsKeyPressed(const unsigned char _key) const;
+		const bool IsKeyReleased(const unsigned char _key) const;
 		const bool isMouseDown(int _button) const;
 		const bool isMouseUp(int _button) const;
 		const bool isMousePressed(int _button) const;
@@ -52,7 +42,7 @@ namespace Input
 
 	private:
 
-		enum MouseState
+		enum InputState
 		{
 			UP,
 			DOWN,
@@ -60,13 +50,15 @@ namespace Input
 			RELEASED
 		};
 
-		bool isMouseInState(int _button, MouseState _state) const;
+		bool isMouseInState(int _button, InputState _state) const;
 
-		bool m_keyStates[256];
+		InputState m_keyStates[256];
+		std::list<unsigned char> m_modifiedKeyStates;
+
 		Math::Vector2 m_cursorPosition;
 		Math::Vector2 m_deltaCursor;
-		MouseState m_leftMouseState;
-		MouseState m_rightMouseState;
+		InputState m_leftMouseState;
+		InputState m_rightMouseState;
 
 	};
 

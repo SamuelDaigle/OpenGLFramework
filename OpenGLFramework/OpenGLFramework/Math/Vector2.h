@@ -12,8 +12,18 @@ namespace Math
 		Vector2(const float _x, const float _y);
 
 		const Vector2 operator-();
+		void operator-=(const glm::vec2& _other);
+		void operator+=(const glm::vec2& _other);
+		void operator*=(const glm::vec2& _other);
+		void operator/=(const glm::vec2& _other);
+		void operator*=(const float _value);
+		void operator/=(const float _value);
 		const Vector2 operator-(const glm::vec2& _other);
+		const Vector2 operator+(const glm::vec2& _other);
 		const Vector2 operator*(const glm::vec2& _other);
+		const Vector2 operator/(const glm::vec2& _other);
+		const Vector2 operator*(const float _value);
+		const Vector2 operator/(const float _value);
 	};
 
 }

@@ -9,16 +9,12 @@ namespace Framework
 
 		m_openGL = new OpenGL();
 
-		
-
 		glutSetCursor(GLUT_CURSOR_LEFT_ARROW);							//Curseur
 		m_inputhandler = new Input::InputHandler();
 
 		Math::Vector2 cursorPosition = Math::Vector2(GetWidth() / 2.0f, GetHeight() / 2.0f);
 		m_inputhandler->Initialize(cursorPosition);
 		glutWarpPointer(cursorPosition.x, cursorPosition.y);
-		
-		
 	}
 
 	void Window::Destroy()
@@ -31,6 +27,8 @@ namespace Framework
 	{
 		Math::Vector2 cursorPosition = Math::Vector2(GetWidth() / 2.0f, GetHeight() / 2.0f);
 		m_inputhandler->Update(cursorPosition);
+		if (m_cameraControl)
+			glutWarpPointer(cursorPosition.x, cursorPosition.y);
 
 		m_openGL->BeginScene();
 		if (m_scene)
@@ -45,19 +43,13 @@ namespace Framework
 		}
 		m_openGL->EndScene();
 
-
-
-		if (m_inputhandler->isMouseDown(1))
+		if (m_inputhandler->isMousePressed(1) || m_inputhandler->isMouseReleased(1))
 		{
-			glutWarpPointer(cursorPosition.x, cursorPosition.y);
-		}
-		if (m_inputhandler->isMousePressed(1))
-		{
-			glutSetCursor(GLUT_CURSOR_NONE);
-		}
-		if (m_inputhandler->isMouseReleased(1))
-		{
-			glutSetCursor(GLUT_CURSOR_LEFT_ARROW);
+			m_cameraControl = !m_cameraControl;
+			if (m_cameraControl)
+				glutSetCursor(GLUT_CURSOR_NONE);
+			else
+				glutSetCursor(GLUT_CURSOR_LEFT_ARROW);
 		}
 		
 		m_inputhandler->LateUpdate(cursorPosition);
@@ -109,7 +101,10 @@ namespace Framework
 		return m_inputhandler->IsKeyDown(VK_ESCAPE);
 	}
 
-	
+	const float Window::HasCameraControl() const
+	{
+		return m_cameraControl;
+	}
 
 	void Window::SetScene(IScene& _scene)
 	{

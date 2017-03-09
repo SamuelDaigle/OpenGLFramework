@@ -11,7 +11,7 @@ namespace Input
 		m_cursorPosition = _centerScreenPosition;
 		for (int i = 0; i < 256; i++)
 		{
-			m_keyStates[i] = false;
+			m_keyStates[i] = InputState::UP;
 		}
 	}
 
@@ -27,48 +27,73 @@ namespace Input
 
 	void InputHandler::LateUpdate(Math::Vector2 _centerScreenPosition)
 	{
-		if (m_rightMouseState == MouseState::PRESSED)
+		if (m_rightMouseState == InputState::PRESSED)
 		{
-			m_rightMouseState = MouseState::DOWN;
+			m_rightMouseState = InputState::DOWN;
 		}
-		else if (m_rightMouseState == MouseState::RELEASED)
+		else if (m_rightMouseState == InputState::RELEASED)
 		{
-			m_rightMouseState = MouseState::UP;
+			m_rightMouseState = InputState::UP;
 		}
 
-		if (m_leftMouseState == MouseState::PRESSED)
+		if (m_leftMouseState == InputState::PRESSED)
 		{
-			m_leftMouseState = MouseState::DOWN;
+			m_leftMouseState = InputState::DOWN;
 		}
-		else if (m_leftMouseState == MouseState::RELEASED)
+		else if (m_leftMouseState == InputState::RELEASED)
 		{
-			m_leftMouseState = MouseState::UP;
+			m_leftMouseState = InputState::UP;
 		}
+
+		for each (const unsigned char key in m_modifiedKeyStates)
+		{
+			InputState state = m_keyStates[key];
+			if (state == InputState::PRESSED)
+				m_keyStates[key] = InputState::DOWN;
+			if (state == InputState::RELEASED)
+				m_keyStates[key] = InputState::UP;
+		}
+		m_modifiedKeyStates.clear();
 	}
 
 	const bool InputHandler::IsKeyDown(const unsigned char _key) const
 	{
-		return m_keyStates[_key];
+		return m_keyStates[_key] == InputState::DOWN || m_keyStates[_key] == InputState::PRESSED;
+	}
+
+	const bool InputHandler::IsKeyUp(const unsigned char _key) const
+	{
+		return m_keyStates[_key] == InputState::UP || m_keyStates[_key] == InputState::RELEASED;
+	}
+
+	const bool InputHandler::IsKeyPressed(const unsigned char _key) const
+	{
+		return m_keyStates[_key] == InputState::PRESSED;
+	}
+
+	const bool InputHandler::IsKeyReleased(const unsigned char _key) const
+	{
+		return m_keyStates[_key] == InputState::RELEASED;
 	}
 
 	const bool InputHandler::isMouseDown(int _button) const
 	{
-		return isMouseInState(_button, MouseState::DOWN);
+		return isMouseInState(_button, InputState::DOWN) || isMouseInState(_button, InputState::PRESSED);
 	}
 
 	const bool InputHandler::isMouseUp(int _button) const
 	{
-		return isMouseInState(_button, MouseState::UP);
+		return isMouseInState(_button, InputState::UP) || isMouseInState(_button, InputState::RELEASED);
 	}
 
 	const bool InputHandler::isMousePressed(int _button) const
 	{
-		return isMouseInState(_button, MouseState::PRESSED);
+		return isMouseInState(_button, InputState::PRESSED);
 	}
 
 	const bool InputHandler::isMouseReleased(int _button) const
 	{
-		return isMouseInState(_button, MouseState::RELEASED);
+		return isMouseInState(_button, InputState::RELEASED);
 	}
 
 	const bool InputHandler::HasMovedMouse() const
@@ -88,23 +113,33 @@ namespace Input
 
 	void InputHandler::OnKeyDown(const unsigned char _key)
 	{
-		m_keyStates[_key] = true;
+		if (m_keyStates[_key] == InputState::UP || m_keyStates[_key] == InputState::RELEASED)
+		{
+			m_modifiedKeyStates.push_back(_key);
+			m_keyStates[_key] = InputState::PRESSED;
+		}
 	}
 
 	void InputHandler::OnKeyUp(const unsigned char _key)
 	{
-		m_keyStates[_key] = false;
+		if (m_keyStates[_key] == InputState::DOWN || m_keyStates[_key] == InputState::PRESSED)
+		{
+			m_modifiedKeyStates.push_back(_key);
+			m_keyStates[_key] = InputState::RELEASED;
+		}
 	}
 
 	void InputHandler::OnMouseDown(int _button, int _x, int _y)
 	{
 		if (_button == GLUT_RIGHT_BUTTON)
 		{
-			m_rightMouseState = MouseState::PRESSED;
+			m_cursorPosition.x = (float)glutGet(GLUT_SCREEN_WIDTH) / 2;
+			m_cursorPosition.y = (float)glutGet(GLUT_SCREEN_HEIGHT) / 2;
+			m_rightMouseState = InputState::PRESSED;
 		}
 		else if (_button == GLUT_LEFT_BUTTON)
 		{
-			m_leftMouseState = MouseState::PRESSED;
+			m_leftMouseState = InputState::PRESSED;
 		}
 	}
 
@@ -112,18 +147,17 @@ namespace Input
 	{
 		if (_button == GLUT_RIGHT_BUTTON)
 		{
-			m_rightMouseState = MouseState::RELEASED;
+			m_rightMouseState = InputState::RELEASED;
 		}
 		else if (_button == GLUT_LEFT_BUTTON)
 		{
-			m_leftMouseState = MouseState::RELEASED;
+			m_leftMouseState = InputState::RELEASED;
 		}
 	}
 
 
 	void InputHandler::OnMouseMove(const int _x, const int _y)
 	{
-		
 		m_cursorPosition = Math::Vector2(_x, _y);
 	}
 
@@ -141,7 +175,7 @@ namespace Input
 		}
 	}
 
-	bool InputHandler::isMouseInState(int _button, MouseState _state) const
+	bool InputHandler::isMouseInState(int _button, InputState _state) const
 	{
 		if (_button == 0)
 		{

@@ -36,11 +36,14 @@ namespace Framework
 		const Input::InputHandler& GetInputHandler() const override;
 		const float GetWidth() const override;
 		const float GetHeight() const override;
+		const float HasCameraControl() const override;
 
 	private:
 		void InitializeWindow();
 		const bool HasExited() const;
 
+
+		bool m_cameraControl = false;
 		OpenGL* m_openGL;
 		Input::InputHandler* m_inputhandler;
 		IScene* m_scene;
