@@ -4,8 +4,8 @@
 
 #pragma once
 
-#include "Rendering\BaseShader.h"
-#include "IO\ShaderLoader.h"
+#include "..\OpenGLFramework\Rendering\BaseShader.h"
+#include "..\OpenGLFramework\IO\ShaderLoader.h"
 
 namespace Application
 {

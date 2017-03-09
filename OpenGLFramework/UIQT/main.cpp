@@ -5,7 +5,7 @@
 
 #include "uiqt.h"
 #include <QtWidgets/QApplication>
-#include "Framework\Window.h"
+#include "..\OpenGLFramework\Framework\Window.h"
 #include "Scene.h"
 #include "UIInterface.h"
 
@@ -25,8 +25,6 @@ Application::UIInterface* m_uiInterface;
 
 int main(int argc, char* argv[])
 {
-	
-
 	glutInit(&argc, argv);
 
 	m_window = new Framework::Window();
@@ -34,34 +32,26 @@ int main(int argc, char* argv[])
 
 	m_scene = new Application::Scene(*m_window);
 	m_window->SetScene(*m_scene);
+	
+	m_uiInterface = new Application::UIInterface();
+	QApplication application(argc, argv);
+	m_uiInterface->SetApplication(application);
 	m_window->SetUIInterface(*m_uiInterface);
-
+	
 	glutTimerFunc(1, Frame, 1);
 	glutKeyboardFunc(OnKeyPress);
 	glutKeyboardUpFunc(OnKeyRelease);
 	glutPassiveMotionFunc(OnMouseMove);
 	glutMouseFunc(OnMouseStateChanged);
 	
-
-
-	QApplication a(argc, argv);
-	UIQT w;
-	w.show();
-
-	w.presentXScale(26);
-	w.presentRColor(255);
-
 	glutMainLoop();
-
 
 	system("PAUSE");
 
 	m_window->Destroy();
 	delete m_window;
 	
-	
-
-	return a.exec();
+	return 0;
 }
 
 

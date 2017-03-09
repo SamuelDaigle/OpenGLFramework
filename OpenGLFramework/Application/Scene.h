@@ -30,6 +30,7 @@ namespace Application
 		void Input() override;
 		void Update() override;
 		void Render() const override;
+		Framework::BaseObject& getHierarchy() override;
 
 	private:
 		void UpdateHierarchyText();

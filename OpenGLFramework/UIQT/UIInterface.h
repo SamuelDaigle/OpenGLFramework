@@ -1,9 +1,9 @@
 #pragma once
 
-#include "UI\CommandStack.h"
-#include "UI\UIPopup.h"
+#include "..\OpenGLFramework\UI\CommandStack.h"
+#include "..\OpenGLFramework\UI\UIPopup.h"
 #include "uiqt.h"
-#include "Interface\IUIInterface.h"
+#include "..\OpenGLFramework\Interface\IUIInterface.h"
 
 #include <map>
 #include <vector>
@@ -21,6 +21,7 @@ namespace Application
 
 		void ShowPopup(Framework::BaseObject& _baseObject) override;
 		void AddShape(ShapeNames _name, UI::UIShape& _shape) override;
+		void SetApplication(const QApplication& _application);
 
 		void Draw() const override;
 
@@ -28,6 +29,7 @@ namespace Application
 		UI::CommandStack* m_commandStack;
 		std::vector<UI::UIPopup*> m_popups;
 		std::map<ShapeNames, UI::UIShape*> m_shapes;
+		const QApplication* m_application;
 	};
 
 }

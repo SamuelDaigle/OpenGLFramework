@@ -17,10 +17,10 @@
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QSpinBox>
 #include <QtWidgets/QStackedWidget>
-#include <QtWidgets/QTreeView>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -76,7 +76,7 @@ public:
     QSpinBox *nearSpinBox;
     QLabel *farLabel;
     QSpinBox *farSpinBox;
-    QTreeView *hierarchyTreeView;
+    QListWidget *listWidget;
 
     void setupUi(QMainWindow *UIQTClass)
     {
@@ -390,9 +390,9 @@ public:
         nearSpinBox->raise();
         farSpinBox->raise();
         stackedWidget->addWidget(cameraPage);
-        hierarchyTreeView = new QTreeView(centralWidget);
-        hierarchyTreeView->setObjectName(QStringLiteral("hierarchyTreeView"));
-        hierarchyTreeView->setGeometry(QRect(60, 70, 311, 391));
+        listWidget = new QListWidget(centralWidget);
+        listWidget->setObjectName(QStringLiteral("listWidget"));
+        listWidget->setGeometry(QRect(70, 70, 331, 371));
         UIQTClass->setCentralWidget(centralWidget);
         QWidget::setTabOrder(positionYSpinBox, couleurGSpinBox);
         QWidget::setTabOrder(couleurGSpinBox, rotationXSpinBox);

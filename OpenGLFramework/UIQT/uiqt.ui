@@ -504,13 +504,13 @@
      </widget>
     </widget>
    </widget>
-   <widget class="QTreeView" name="hierarchyTreeView">
+   <widget class="QListWidget" name="listWidget">
     <property name="geometry">
      <rect>
-      <x>60</x>
+      <x>70</x>
       <y>70</y>
-      <width>311</width>
-      <height>391</height>
+      <width>331</width>
+      <height>371</height>
      </rect>
     </property>
    </widget>
@@ -1101,6 +1101,9 @@
   <signal>setHierarchyText(QString)</signal>
   <signal>currentXScale(int)</signal>
   <signal>currentZScale(int)</signal>
+  <signal>editObject(QModelIndex)</signal>
+  <signal>currentIndex(QModelIndex)</signal>
+  <signal>updateAtIndex(QModelIndex)</signal>
   <slot>newXPosition(int)</slot>
   <slot>newYPosition(int)</slot>
   <slot>newZPosition(int)</slot>
@@ -1118,5 +1121,6 @@
   <slot>newFar(int)</slot>
   <slot>newXScale(int)</slot>
   <slot>newZScale(int)</slot>
+  <slot>selectedObject(QModelIndex)</slot>
  </slots>
 </ui>

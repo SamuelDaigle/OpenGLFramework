@@ -1,37 +1,10 @@
 ﻿  CustomShader.obj : MSIL .netmodule or module compiled with /GL found; restarting link with /LTCG; add /LTCG to the link command line to improve linker performance
-OpenGLFramework.lib(BaseShader.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in CustomShader.obj
-OpenGLFramework.lib(Window.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in CustomShader.obj
-OpenGLFramework.lib(Log.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in CustomShader.obj
-OpenGLFramework.lib(BaseObject.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in CustomShader.obj
-OpenGLFramework.lib(Light.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in CustomShader.obj
-OpenGLFramework.lib(Skybox.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in CustomShader.obj
-OpenGLFramework.lib(Vector3.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in CustomShader.obj
-OpenGLFramework.lib(Matrix4.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in CustomShader.obj
-OpenGLFramework.lib(Vector2.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in CustomShader.obj
-OpenGLFramework.lib(MeshLoader.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in CustomShader.obj
-OpenGLFramework.lib(TextureLoader.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in CustomShader.obj
-OpenGLFramework.lib(Camera.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in CustomShader.obj
-OpenGLFramework.lib(InputHandler.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in CustomShader.obj
-OpenGLFramework.lib(Rigidbody.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in CustomShader.obj
-OpenGLFramework.lib(PhysicsWorld.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in CustomShader.obj
-OpenGLFramework.lib(TextHolder.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in CustomShader.obj
-OpenGLFramework.lib(AdvancedShader.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in CustomShader.obj
-OpenGLFramework.lib(BasicShader.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in CustomShader.obj
-OpenGLFramework.lib(Renderer.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in CustomShader.obj
-OpenGLFramework.lib(ColorShader.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in CustomShader.obj
-OpenGLFramework.lib(Component.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in CustomShader.obj
-OpenGLFramework.lib(SkyboxShader.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in CustomShader.obj
-OpenGLFramework.lib(MeshBank.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in CustomShader.obj
-OpenGLFramework.lib(Mesh.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in CustomShader.obj
-OpenGLFramework.lib(TextureBank.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in CustomShader.obj
-OpenGLFramework.lib(Text.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in CustomShader.obj
-OpenGLFramework.lib(ShaderLoader.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in CustomShader.obj
-OpenGLFramework.lib(Model.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in CustomShader.obj
-LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
-OpenGLFramework.lib(BaseShader.obj) : error LNK2001: unresolved external symbol __imp___wassert
-OpenGLFramework.lib(ShaderLoader.obj) : error LNK2001: unresolved external symbol __imp__fgetpos
-OpenGLFramework.lib(ShaderLoader.obj) : error LNK2001: unresolved external symbol __imp__setvbuf
-OpenGLFramework.lib(ShaderLoader.obj) : error LNK2001: unresolved external symbol __imp__ungetc
-OpenGLFramework.lib(ShaderLoader.obj) : error LNK2001: unresolved external symbol __imp__fsetpos
-MSVCRT.lib(_chandler4gs_.obj) : error LNK2001: unresolved external symbol __except_handler4_common
-C:\Users\Yannick\OneDrive\Hiver2017\Infographie\OpenGLFramework\OpenGLFramework\Release\Application.exe : fatal error LNK1120: 6 unresolved externals
+  Generating code
+c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\math\vector3.cpp(57): warning C4717: 'Math::Vector3::operator*': recursive on all control paths, function will cause runtime stack overflow
+c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\math\vector3.cpp(52): warning C4717: 'Math::Vector3::operator-': recursive on all control paths, function will cause runtime stack overflow
+c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\framework\baseobject.cpp(136): warning C4172: returning address of local variable or temporary
+c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\framework\baseobject.cpp(151): warning C4172: returning address of local variable or temporary
+c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\framework\baseobject.cpp(131): warning C4172: returning address of local variable or temporary
+  Finished generating code
+  Application.vcxproj -> C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\Release\Application.exe
+  Application.vcxproj -> C:\Users\samue\Documents\workspace\OpenGLFramework\OpenGLFramework\Release\Application.pdb (Full PDB)

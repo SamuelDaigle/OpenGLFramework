@@ -144,6 +144,25 @@ namespace Application
 		{
 			m_rootObject->GetChilds()[1]->GetChilds()[0]->Rotate(1, Math::Vector3(0.0f, 1.0f, 0.0f));
 		}
+		//zoom et fov 
+		if (m_window->GetInputHandler().IsKeyDown('2'))
+		{
+			m_camera->Zoom(1);
+		}
+		if (m_window->GetInputHandler().IsKeyDown('1'))
+		{
+			m_camera->Zoom(-1);
+		}
+		//projection orthogonale
+		if (m_window->GetInputHandler().IsKeyDown('o'))
+		{
+			m_camera->Ortho();
+		}
+		//projection perspective
+		if (m_window->GetInputHandler().IsKeyDown('p'))
+		{
+			m_camera->Perspective();
+		}
 	}
 
 	void Scene::Render() const
@@ -159,6 +178,11 @@ namespace Application
 		m_physicsWorld->Update();
 		m_rootObject->Update();
 		UpdateConsoleText();
+	}
+
+	Framework::BaseObject& Scene::getHierarchy()
+	{
+		return *m_rootObject;
 	}
 
 }

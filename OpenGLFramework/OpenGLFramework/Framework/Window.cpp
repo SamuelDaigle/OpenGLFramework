@@ -9,7 +9,7 @@ namespace Framework
 
 		m_openGL = new OpenGL();
 
-		glutSetCursor(GLUT_CURSOR_LEFT_ARROW);							//Curseur
+		glutSetCursor(GLUT_CURSOR_LEFT_ARROW);
 		m_inputhandler = new Input::InputHandler();
 
 		Math::Vector2 cursorPosition = Math::Vector2(GetWidth() / 2.0f, GetHeight() / 2.0f);
@@ -42,6 +42,8 @@ namespace Framework
 			m_uiInterface->Draw();
 		}
 		m_openGL->EndScene();
+
+
 
 		if (m_inputhandler->isMousePressed(1) || m_inputhandler->isMouseReleased(1))
 		{
@@ -101,10 +103,7 @@ namespace Framework
 		return m_inputhandler->IsKeyDown(VK_ESCAPE);
 	}
 
-	const float Window::HasCameraControl() const
-	{
-		return m_cameraControl;
-	}
+	
 
 	void Window::SetScene(IScene& _scene)
 	{
@@ -114,7 +113,7 @@ namespace Framework
 	void Window::SetUIInterface(IUIInterface& _uiInterface)
 	{
 		m_uiInterface = &_uiInterface;
-		//m_uiInterface->ShowPopup(m_scene->getHierarchy());
+		m_uiInterface->ShowPopup(m_scene->getHierarchy());
 	}
 
 	const OpenGL& Window::GetOpenGLWrapper() const
@@ -135,6 +134,12 @@ namespace Framework
 	const float Window::GetHeight() const
 	{
 		return (float)glutGet(GLUT_SCREEN_HEIGHT);
+	}
+
+
+	const float Window::HasCameraControl() const
+	{
+		return m_cameraControl;
 	}
 
 }
