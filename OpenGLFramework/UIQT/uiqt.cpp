@@ -12,21 +12,33 @@ UIQT::UIQT(QWidget *parent)
 
 void UIQT::updateHierarchy(Framework::BaseObject& _hierarchy)
 {
-	// supprimer les éléments du tree et refaire setupTree.
-}
 
-void UIQT::createHierarchyList()
-{
+	m_hierarchyText.clear();
+	m_hierarchyObjects.clear();
+
+	createHierarchyList(m_hierarchyText, _hierarchy, 0);
+	ui.listWidget->addItems(m_hierarchyText);
+
 	
 }
 
-void UIQT::addObjectToListView()
+void UIQT::createHierarchyList(QStringList _hierarchyText, Framework::BaseObject& _parent, unsigned int _depth)
 {
-	/*
-	Ui_UIQTClass ui;
-	ui.hierarchyListView->setGeometry(QRect(60, 130, 200, 350));
-	*/
+	std::string childText = " ";
+	for (int j = 0; j < _depth; j++)
+		childText += "-";
+	childText += " ";
+	childText += typeid(_parent).name();
+	m_hierarchyObjects.push_back(&_parent);
+	_hierarchyText.append(childText.c_str());                                            //rajouter un qitem ou string
+	std::vector<Framework::BaseObject*> childObjects = _parent.GetChilds();
+	for (int i = 0; i < childObjects.size(); i++)
+	{
+		createHierarchyList(_hierarchyText, *childObjects[i], _depth + 1);
+	}
 }
+
+
 
 
 
@@ -116,6 +128,11 @@ int UIQT::newNear(int _near)
 int UIQT::newFar(int _far)
 {
 	return _far;
+}
+
+QModelIndex UIQT::selectedObject(QModelIndex _index)
+{
+	return _index;
 }
 
 

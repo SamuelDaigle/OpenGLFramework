@@ -3,9 +3,11 @@
 
 #include <QtWidgets/QMainWindow>
 #include "ui_uiqt.h"
-#include "Framework\Light.h"
-#include "Text\TextHolder.h"
-#include "UI/UIPopup.h"
+#include "..\OpenGLFramework\Framework\Light.h"
+#include "..\OpenGLFramework\Text\TextHolder.h"
+#include "..\OpenGLFramework\UI/UIPopup.h"
+#include <QtQuick/qquickitem.h>
+#include <QtQuick/qquickview.h>
 
 
 class UIQT : public QMainWindow, public UI::UIPopup
@@ -34,8 +36,7 @@ public:
 	void presentNear(int _near);
 	void presentFar(int _far);
 	void updateHierarchy(Framework::BaseObject& _hierarchy);
-	void createHierarchyList();
-	void addObjectToListView();
+	void createHierarchyList(QStringList _hierarchyText, Framework::BaseObject& _hierarchy, unsigned int _depth);
 	
 	~UIQT();
 
@@ -59,8 +60,8 @@ int newYaw(int _yaw);
 int newZoom(int _zoom);
 int newNear(int _near);
 int newFar(int _far);
-
-
+QModelIndex selectedObject(QModelIndex _index);
+//pour nouveau nom objet
 
 signals :
 
@@ -82,10 +83,16 @@ void currentYaw(int _yaw);
 void currentZoom(int _zoom);
 void currentNear(int _near);
 void currentFar(int _far);
+void editObject(QModelIndex _index);
+void currentIndex(QModelIndex _index);
+void updateAtIndex(QModelIndex _index);
 //void setHierarchyText(QString);
 
 private:
 	Ui::UIQTClass ui;
+	QStringList m_hierarchyText;
+	std::list<Framework::BaseObject*> m_hierarchyObjects;
+	
 };
 
 #endif // UIQT_H

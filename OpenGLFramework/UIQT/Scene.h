@@ -4,20 +4,21 @@
 
 #pragma once
 
-#include "stdafx.h"
-#include "Framework\Skybox.h"
-#include "Rendering\BasicShader.h"
-#include "Rendering\AdvancedShader.h"
-#include "Rendering\ColorShader.h"
+
 #include "CustomShader.h"
-#include "Input\InputHandler.h"
-#include "Framework\Light.h"
-#include "Text\TextHolder.h"
-#include "Interface\IScene.h"
-#include "Camera\Camera.h"
-#include "Interface\IWindow.h"
+#include "..\OpenGLFramework\stdafx.h"
+#include "..\OpenGLFramework\Framework\Skybox.h"
+#include "..\OpenGLFramework\Rendering\BasicShader.h"
+#include "..\OpenGLFramework\Rendering\AdvancedShader.h"
+#include "..\OpenGLFramework\Rendering\ColorShader.h"
+#include "..\OpenGLFramework\Input\InputHandler.h"
+#include "..\OpenGLFramework\Framework\Light.h"
+#include "..\OpenGLFramework\Text\TextHolder.h"
+#include "..\OpenGLFramework\Interface\IScene.h"
+#include "..\OpenGLFramework\Camera\Camera.h"
+#include "..\OpenGLFramework\Interface\IWindow.h"
 //#include "Physics\PhysicsWorld.h"
-#include "Rendering\Renderer.h"
+#include "..\OpenGLFramework\Rendering\Renderer.h"
 
 namespace Application
 {
@@ -31,12 +32,13 @@ namespace Application
 		void Input() override;
 		void Update() override;
 		void Render() const override;
-		
+		Framework::BaseObject& getHierarchy() override;
 
 	private:
 		void UpdateHierarchyText();
 		void UpdateConsoleText();
 		void AddChildStringTo(Text::TextHolder& _hierarchyText, Framework::BaseObject& _parent, int _depth);
+		
 
 		IWindow* m_window;
 		Framework::BaseObject* m_rootObject;

@@ -152,6 +152,11 @@ namespace Application
 		m_rootObject->Render(*m_camera, Math::Matrix4());
 	}
 
+	Framework::BaseObject & Scene::getHierarchy()
+	{
+		return *m_rootObject;
+	}
+
 	void Scene::Update()
 	{
 		//m_physicsWorld->Update();
