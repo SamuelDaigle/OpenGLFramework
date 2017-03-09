@@ -1,55 +1,56 @@
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\openglframework.pdb
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\vector3.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\vector2.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\quaternion.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\matrix4.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\matrix3.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\textureloader.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\texturebank.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\shaderloader.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\meshloader.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\meshbank.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\inputhandler.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\window.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\triangle.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\square.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\skybox.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\opengl.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\light.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\component.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\baseobject.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\camera.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\release\openglframework.lib
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\openglframework.res
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\advancedshader.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\baseshader.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\basicshader.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\colorshader.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\command.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\commandstack.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\log.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\mesh.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\model.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\physicsworld.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\renderer.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\rigidbody.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\skyboxshader.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\text.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\textholder.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\uibaseobjectpopup.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\uicircle.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\uihierarchypopup.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\uiline.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\uipopup.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\uishape.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\uisquare.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\vertex.obj
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\openglframework.tlog\cl.command.1.tlog
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\openglframework.tlog\cl.read.1.tlog
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\openglframework.tlog\cl.write.1.tlog
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\openglframework.tlog\lib-link-cvtres.read.1.tlog
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\openglframework.tlog\lib-link-cvtres.write.1.tlog
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\openglframework.tlog\lib.command.1.tlog
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\openglframework.tlog\rc.command.1.tlog
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\openglframework.tlog\rc.read.1.tlog
-c:\users\samue\documents\workspace\openglframework\openglframework\openglframework\release\openglframework.tlog\rc.write.1.tlog
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\openglframework.pdb
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\vector3.obj
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\vector2.obj
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\quaternion.obj
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\matrix4.obj
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\matrix3.obj
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\textureloader.obj
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\texturebank.obj
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\shaderloader.obj
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\meshloader.obj
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\meshbank.obj
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\inputhandler.obj
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\window.obj
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\triangle.obj
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\square.obj
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\skybox.obj
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\opengl.obj
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\light.obj
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\component.obj
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\baseobject.obj
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\camera.obj
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\uishape.obj
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\uipopup.obj
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\uiline.obj
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\uihierarchypopup.obj
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\uicircle.obj
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\uibaseobjectpopup.obj
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\commandstack.obj
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\command.obj
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\textholder.obj
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\text.obj
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\skyboxshader.obj
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\renderer.obj
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\model.obj
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\mesh.obj
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\colorshader.obj
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\basicshader.obj
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\baseshader.obj
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\advancedshader.obj
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\rigidbody.obj
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\physicsworld.obj
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\vertex.obj
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\log.obj
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\uisquare.obj
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\screencapture.obj
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\release\openglframework.lib
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\openglframework.res
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\openglframework.tlog\cl.command.1.tlog
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\openglframework.tlog\cl.read.1.tlog
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\openglframework.tlog\cl.write.1.tlog
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\openglframework.tlog\lib-link-cvtres.read.1.tlog
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\openglframework.tlog\lib-link-cvtres.write.1.tlog
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\openglframework.tlog\lib.command.1.tlog
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\openglframework.tlog\rc.command.1.tlog
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\openglframework.tlog\rc.read.1.tlog
+c:\users\utilisateur\onedrive\génie logiciel\session4\ift-3100-infographie\tp2-tp3\openglframework\openglframework\openglframework\release\openglframework.tlog\rc.write.1.tlog

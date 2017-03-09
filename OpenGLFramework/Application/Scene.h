@@ -17,6 +17,7 @@
 #include "Interface\IWindow.h"
 #include "Physics\PhysicsWorld.h"
 #include "Rendering\Renderer.h"
+#include "IO\ScreenCapture.h"
 
 namespace Application
 {
