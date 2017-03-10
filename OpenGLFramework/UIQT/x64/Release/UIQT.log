@@ -1,1 +1,14 @@
-﻿
+﻿  Moc'ing uiqt.h...
+  Uic'ing uiqt.ui...
+  Rcc'ing uiqt.qrc...
+RCC : warning : No resources in 'C:\Users\Yannick\OneDrive\Hiver2017\Infographie\OpenGLFramework\OpenGLFramework\UIQT\uiqt.qrc'.
+  
+  CustomShader.cpp
+  moc_uiqt.cpp
+  main.cpp
+  Scene.cpp
+  UIInterface.cpp
+  uiqt.cpp
+  Generating Code...
+  qrc_uiqt.cpp
+LINK : fatal error LNK1181: cannot open input file 'OpenGLFramework.lib'

@@ -82,7 +82,7 @@ public:
     {
         if (UIQTClass->objectName().isEmpty())
             UIQTClass->setObjectName(QStringLiteral("UIQTClass"));
-        UIQTClass->resize(900, 598);
+        UIQTClass->resize(903, 598);
         UIQTClass->setWindowOpacity(0.5);
         centralWidget = new QWidget(UIQTClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
@@ -393,6 +393,7 @@ public:
         listWidget = new QListWidget(centralWidget);
         listWidget->setObjectName(QStringLiteral("listWidget"));
         listWidget->setGeometry(QRect(70, 70, 331, 371));
+        listWidget->viewport()->setProperty("cursor", QVariant(QCursor(Qt::PointingHandCursor)));
         UIQTClass->setCentralWidget(centralWidget);
         QWidget::setTabOrder(positionYSpinBox, couleurGSpinBox);
         QWidget::setTabOrder(couleurGSpinBox, rotationXSpinBox);
@@ -443,6 +444,9 @@ public:
         QObject::connect(scaleZSpinBox, SIGNAL(valueChanged(int)), UIQTClass, SLOT(newZScale(int)));
         QObject::connect(UIQTClass, SIGNAL(currentXScale(int)), scaleXSpinBox, SLOT(setValue(int)));
         QObject::connect(UIQTClass, SIGNAL(currentZScale(int)), scaleZSpinBox, SLOT(setValue(int)));
+        QObject::connect(UIQTClass, SIGNAL(currentObjectName(QString)), objetLabel, SLOT(setText(QString)));
+        QObject::connect(UIQTClass, SIGNAL(changeStackedWidgetIndex(int)), stackedWidget, SLOT(setCurrentIndex(int)));
+        QObject::connect(listWidget, SIGNAL(clicked(QModelIndex)), UIQTClass, SLOT(selectedObject(QModelIndex)));
 
         stackedWidget->setCurrentIndex(0);
 

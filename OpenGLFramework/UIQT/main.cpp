@@ -43,7 +43,6 @@ int main(int argc, char* argv[])
 	glutKeyboardUpFunc(OnKeyRelease);
 	glutPassiveMotionFunc(OnMouseMove);
 	glutMouseFunc(OnMouseStateChanged);
-	
 	glutMainLoop();
 
 	system("PAUSE");
