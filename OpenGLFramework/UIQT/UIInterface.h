@@ -4,6 +4,11 @@
 #include "..\OpenGLFramework\UI\UIPopup.h"
 #include "uiqt.h"
 #include "..\OpenGLFramework\Interface\IUIInterface.h"
+#include "..\OpenGLFramework\UI\UILine.h"
+#include "..\OpenGLFramework\UI\UISquare.h"
+#include "..\OpenGLFramework\UI\UICircle.h"
+#include "..\OpenGLFramework\UI\UIComposite.h"
+#include "..\OpenGLFramework\UI\UIProcedural.h"
 #include "..\OpenGLFramework\Camera\Camera.h"
 
 #include <map>

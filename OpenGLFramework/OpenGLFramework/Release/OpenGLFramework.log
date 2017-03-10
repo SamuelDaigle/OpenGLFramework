@@ -1,5 +1,2 @@
-﻿  CommandStack.cpp
-  UIBaseObjectPopup.cpp
-  UIPopup.cpp
-  Generating Code...
-  OpenGLFramework.vcxproj -> C:\Users\Yannick\OneDrive\Hiver2017\Infographie\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.lib
+﻿  UIComposite.cpp
+  OpenGLFramework.vcxproj -> C:\Users\sebro\Desktop\Université\Session Hiver 2017\IFT-3100 - Infographie\TP2_GIT\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.lib

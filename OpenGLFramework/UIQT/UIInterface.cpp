@@ -1,11 +1,25 @@
 #include "UIInterface.h"
 
+
 namespace Application
 {
 
 	UIInterface::UIInterface()
 	{
 		m_commandStack = new UI::CommandStack();
+
+		UI::UIComposite * compo = new UI::UIComposite();
+
+		UI::UILine * line = new UI::UILine(0, 0, 100, 100);
+		UI::UICircle * circle = new UI::UICircle(0,0,10,100);
+		UI::UISquare * sq = new UI::UISquare(10,10,20,20);
+
+		compo->Add(line);
+		compo->Add(circle);
+		compo->Add(sq);
+
+		AddShape(IUIInterface::ShapeNames::CROSSHAIR_LINE_HORIZONTAL, *compo);
+
 	}
 
 
