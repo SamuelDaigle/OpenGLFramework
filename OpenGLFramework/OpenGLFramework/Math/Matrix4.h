@@ -15,6 +15,7 @@ namespace Math
 	public:
 		static const Matrix4 QuaternionToRotationMatrix(const Quaternion& _rotationQuaternion);
 		static const Matrix4 VectorToRotationMatrix(const glm::vec3& _rotationVector);
+		static const Vector3 Matrix4::MatrixToEulerAngles(const glm::mat4& _rotationMatrix);
 		static const Matrix4 VectorToScaleMatrix(const glm::vec3& _scaleVector);
 		static const Matrix4 VectorToTranslationMatrix(const glm::vec3& _translationVector);
 		static const Matrix4 LookAt(const glm::vec3& _position, const glm::vec3& _direction);
