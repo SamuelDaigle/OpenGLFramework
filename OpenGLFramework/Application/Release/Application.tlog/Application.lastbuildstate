@@ -1,6 +1,0 @@
-#TargetFrameworkVersion=v4.0:PlatformToolSet=v140:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit:WindowsTargetPlatformVersion=8.1
-<<<<<<< Updated upstream
-Release|Win32|C:\Users\Utilisateur\OneDrive\Génie logiciel\Session4\IFT-3100-Infographie\TP2-TP3\OpenGLFramework\OpenGLFramework\|
-=======
-Release|Win32|C:\Users\Yannick\OneDrive\Hiver2017\Infographie\OpenGLFramework\OpenGLFramework\|
->>>>>>> Stashed changes
