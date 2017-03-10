@@ -62,6 +62,7 @@ public:
     QLabel *scaleZLabel;
     QLabel *scaleYLabel;
     QLabel *scaleXLabel;
+    QListWidget *listWidget;
     QWidget *cameraPage;
     QFrame *camera;
     QGridLayout *gridLayout_2;
@@ -76,25 +77,27 @@ public:
     QSpinBox *nearSpinBox;
     QLabel *farLabel;
     QSpinBox *farSpinBox;
-    QListWidget *listWidget;
+    QListWidget *CameraListWidget;
+    QSpinBox *spinBox;
+    QLabel *pageLabel;
 
     void setupUi(QMainWindow *UIQTClass)
     {
         if (UIQTClass->objectName().isEmpty())
             UIQTClass->setObjectName(QStringLiteral("UIQTClass"));
         UIQTClass->resize(903, 598);
-        UIQTClass->setWindowOpacity(0.5);
+        UIQTClass->setWindowOpacity(1);
         centralWidget = new QWidget(UIQTClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         stackedWidget = new QStackedWidget(centralWidget);
         stackedWidget->setObjectName(QStringLiteral("stackedWidget"));
-        stackedWidget->setGeometry(QRect(450, 80, 371, 361));
+        stackedWidget->setGeometry(QRect(30, 80, 801, 371));
         stackedWidget->setFrameShadow(QFrame::Plain);
         objetPage = new QWidget();
         objetPage->setObjectName(QStringLiteral("objetPage"));
         objet = new QFrame(objetPage);
         objet->setObjectName(QStringLiteral("objet"));
-        objet->setGeometry(QRect(20, 50, 333, 226));
+        objet->setGeometry(QRect(430, 50, 333, 226));
         objet->setFrameShape(QFrame::Box);
         objet->setFrameShadow(QFrame::Raised);
         gridLayout = new QGridLayout(objet);
@@ -290,12 +293,16 @@ public:
 
         gridLayout->addWidget(scaleXLabel, 10, 0, 1, 1);
 
+        listWidget = new QListWidget(objetPage);
+        listWidget->setObjectName(QStringLiteral("listWidget"));
+        listWidget->setGeometry(QRect(60, 30, 321, 321));
+        listWidget->viewport()->setProperty("cursor", QVariant(QCursor(Qt::PointingHandCursor)));
         stackedWidget->addWidget(objetPage);
         cameraPage = new QWidget();
         cameraPage->setObjectName(QStringLiteral("cameraPage"));
         camera = new QFrame(cameraPage);
         camera->setObjectName(QStringLiteral("camera"));
-        camera->setGeometry(QRect(120, 40, 121, 271));
+        camera->setGeometry(QRect(550, 30, 131, 271));
         camera->setFrameShape(QFrame::Box);
         camera->setFrameShadow(QFrame::Raised);
         gridLayout_2 = new QGridLayout(camera);
@@ -389,11 +396,17 @@ public:
         zoomSpinBox->raise();
         nearSpinBox->raise();
         farSpinBox->raise();
+        CameraListWidget = new QListWidget(cameraPage);
+        CameraListWidget->setObjectName(QStringLiteral("CameraListWidget"));
+        CameraListWidget->setGeometry(QRect(60, 30, 321, 321));
         stackedWidget->addWidget(cameraPage);
-        listWidget = new QListWidget(centralWidget);
-        listWidget->setObjectName(QStringLiteral("listWidget"));
-        listWidget->setGeometry(QRect(70, 70, 331, 371));
-        listWidget->viewport()->setProperty("cursor", QVariant(QCursor(Qt::PointingHandCursor)));
+        spinBox = new QSpinBox(centralWidget);
+        spinBox->setObjectName(QStringLiteral("spinBox"));
+        spinBox->setGeometry(QRect(730, 490, 42, 22));
+        spinBox->setMaximum(1);
+        pageLabel = new QLabel(centralWidget);
+        pageLabel->setObjectName(QStringLiteral("pageLabel"));
+        pageLabel->setGeometry(QRect(680, 490, 31, 21));
         UIQTClass->setCentralWidget(centralWidget);
         QWidget::setTabOrder(positionYSpinBox, couleurGSpinBox);
         QWidget::setTabOrder(couleurGSpinBox, rotationXSpinBox);
@@ -447,6 +460,7 @@ public:
         QObject::connect(UIQTClass, SIGNAL(currentObjectName(QString)), objetLabel, SLOT(setText(QString)));
         QObject::connect(UIQTClass, SIGNAL(changeStackedWidgetIndex(int)), stackedWidget, SLOT(setCurrentIndex(int)));
         QObject::connect(listWidget, SIGNAL(clicked(QModelIndex)), UIQTClass, SLOT(selectedObject(QModelIndex)));
+        QObject::connect(spinBox, SIGNAL(valueChanged(int)), stackedWidget, SLOT(setCurrentIndex(int)));
 
         stackedWidget->setCurrentIndex(0);
 
@@ -480,6 +494,7 @@ public:
         zoomLabel->setText(QApplication::translate("UIQTClass", "Zoom", Q_NULLPTR));
         nearLabel->setText(QApplication::translate("UIQTClass", "Near", Q_NULLPTR));
         farLabel->setText(QApplication::translate("UIQTClass", "Far", Q_NULLPTR));
+        pageLabel->setText(QApplication::translate("UIQTClass", "Page", Q_NULLPTR));
     } // retranslateUi
 
 };

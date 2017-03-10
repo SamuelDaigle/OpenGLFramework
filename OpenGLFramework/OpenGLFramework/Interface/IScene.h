@@ -10,4 +10,5 @@ public:
 	virtual void Update() = 0;
 	virtual void Render() const = 0;
 	virtual Framework::BaseObject& getHierarchy() = 0;
+	virtual ICamera& getCamera() =0;
 };

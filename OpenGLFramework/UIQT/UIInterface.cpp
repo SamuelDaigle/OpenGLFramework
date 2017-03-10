@@ -18,11 +18,13 @@ namespace Application
 		}
 	}
 
-	void UIInterface::ShowPopup(Framework::BaseObject& _baseObject)
+	void UIInterface::ShowPopup(Framework::BaseObject& _baseObject, ICamera& _camera)
 	{
 		
 		UIQT* popup = new UIQT();
-		popup->updateHierarchy(_baseObject);
+		popup->updateHierarchy(_baseObject, _camera);
+		
+
 		m_popups.push_back(popup);
 		popup->show();
 		

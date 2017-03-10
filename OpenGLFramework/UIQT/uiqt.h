@@ -9,6 +9,7 @@
 #include "qmatrix4x4.h"
 #include <QtQuick/qquickitem.h>
 #include <QtQuick/qquickview.h>
+#include "..\OpenGLFramework\Camera\Camera.h"
 
 
 class UIQT : public QMainWindow, public UI::UIPopup
@@ -36,7 +37,7 @@ void presentYaw();
 void presentZoom();
 void presentNear();
 void presentFar();
-void updateHierarchy(Framework::BaseObject& _hierarchy);
+void updateHierarchy(Framework::BaseObject& _hierarchy,ICamera& _camera);
 void createHierarchyList(QStringList _hierarchyText, Framework::BaseObject& _hierarchy, int _depth);
 void setCurrentObjectName(QString _objectName);
 void setCurrentStackedIndex(int _index);
@@ -97,6 +98,7 @@ private:
 	QStringList m_hierarchyText;
 	std::vector<Framework::BaseObject*> m_hierarchyObjects;
 	QModelIndex m_selectedObject;
+	Camera::Camera* m_camera;
 	
 };
 

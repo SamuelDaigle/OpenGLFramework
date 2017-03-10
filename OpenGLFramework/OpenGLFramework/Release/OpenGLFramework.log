@@ -1,5 +1,4 @@
 ﻿  Camera.cpp
-<<<<<<< HEAD
   BaseObject.cpp
 Framework\BaseObject.cpp(23): warning C4018: '<': signed/unsigned mismatch
 Framework\BaseObject.cpp(37): warning C4018: '<': signed/unsigned mismatch
@@ -17,7 +16,7 @@ Framework\Skybox.cpp(14): warning C4101: 'image': unreferenced local variable
   Window.cpp
 Framework\Window.cpp(17): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 Framework\Window.cpp(31): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-Framework\Window.cpp(88): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+Framework\Window.cpp(93): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   InputHandler.cpp
 Input\InputHandler.cpp(161): warning C4244: 'argument': conversion from 'const int' to 'const float', possible loss of data
   MeshBank.cpp
@@ -37,8 +36,8 @@ Math\Quaternion.cpp(32): warning C4244: 'argument': conversion from 'const int' 
   Generating Code...
 c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\math\matrix3.cpp(19): warning C4717: 'Math::Matrix3::operator*': recursive on all control paths, function will cause runtime stack overflow
 c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\framework\baseobject.cpp(131): warning C4172: returning address of local variable or temporary
-c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\framework\baseobject.cpp(151): warning C4172: returning address of local variable or temporary
 c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\framework\baseobject.cpp(136): warning C4172: returning address of local variable or temporary
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\framework\baseobject.cpp(151): warning C4172: returning address of local variable or temporary
   Compiling...
   Vector3.cpp
   PhysicsWorld.cpp
@@ -78,6 +77,3 @@ c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\
   Vertex.cpp
   Generating Code...
   OpenGLFramework.vcxproj -> C:\Users\Yannick\OneDrive\Hiver2017\Infographie\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.lib
-=======
-  OpenGLFramework.vcxproj -> C:\Users\Utilisateur\OneDrive\Génie logiciel\Session4\IFT-3100-Infographie\TP2-TP3\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.lib
->>>>>>> master

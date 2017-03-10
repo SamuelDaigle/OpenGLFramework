@@ -157,6 +157,11 @@ namespace Application
 		return *m_rootObject;
 	}
 
+	ICamera& Scene::getCamera()
+	{
+		return *m_camera;
+	}
+
 	void Scene::Update()
 	{
 		//m_physicsWorld->Update();

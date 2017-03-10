@@ -10,16 +10,23 @@ UIQT::UIQT(QWidget *parent)
 
 
 
-void UIQT::updateHierarchy(Framework::BaseObject& _hierarchy)
+void UIQT::updateHierarchy(Framework::BaseObject& _hierarchy,ICamera& _camera)
 {
 	m_hierarchyText.clear();
 	m_hierarchyObjects.clear();
 
 	createHierarchyList(m_hierarchyText, _hierarchy, 0);
+
+	m_camera = (Camera::Camera*)&_camera;
+
+	QListWidgetItem* newItem = new QListWidgetItem;
+	newItem->setText("Camera");
+	ui.CameraListWidget->insertItem(0, newItem);
 }
 
 void UIQT::createHierarchyList(QStringList _hierarchyText, Framework::BaseObject& _parent,  int _depth)
 {
+
 	std::string childText = " ";
 	for (int j = 0; j < _depth; j++)
 		childText += "-";
@@ -32,6 +39,7 @@ void UIQT::createHierarchyList(QStringList _hierarchyText, Framework::BaseObject
 	newItem->setText(_hierarchyText[_depth]);
 	ui.listWidget->insertItem(_depth, newItem);
 	//ui.listWidget-
+	
 
 	std::vector<Framework::BaseObject*> childObjects = _parent.GetChilds();
 	for (int i = 0; i < childObjects.size(); i++)
@@ -114,13 +122,14 @@ void UIQT::presentZScale()
 	emit currentZScale(_zScale);
 }
 
-void UIQT::presentPitch()
+void UIQT::presentPitch() //pitch = tilt   
 {
+	
 	int _pitch;
 	emit currentPitch(_pitch);
 }
 
-void UIQT::presentYaw()
+void UIQT::presentYaw() //yaw = bearing
 {
 	int _yaw;
 	emit currentYaw(_yaw);

@@ -1,6 +1,7 @@
 #pragma once
 #include "..\Framework\BaseObject.h"
 #include "..\UI\UIShape.h"
+#include "ICamera.h"
 
 
 class IUIInterface
@@ -15,7 +16,7 @@ public:
 		CROSSHAIR_LINE_HORIZONTAL
 	};
 
-	virtual void ShowPopup(Framework::BaseObject& _baseObject) = 0;
+	virtual void ShowPopup(Framework::BaseObject& _baseObject, ICamera& _camera) = 0;
 	virtual void AddShape(ShapeNames _name, UI::UIShape& _shape) = 0;
 
 	virtual void Draw() const = 0;

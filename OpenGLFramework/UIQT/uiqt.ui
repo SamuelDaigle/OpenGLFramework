@@ -14,16 +14,16 @@
    <string>UIQT</string>
   </property>
   <property name="windowOpacity">
-   <double>0.500000000000000</double>
+   <double>1.000000000000000</double>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
-      <x>450</x>
+      <x>30</x>
       <y>80</y>
-      <width>371</width>
-      <height>361</height>
+      <width>801</width>
+      <height>371</height>
      </rect>
     </property>
     <property name="frameShadow">
@@ -36,7 +36,7 @@
      <widget class="QFrame" name="objet">
       <property name="geometry">
        <rect>
-        <x>20</x>
+        <x>430</x>
         <y>50</y>
         <width>333</width>
         <height>226</height>
@@ -342,14 +342,27 @@
        </item>
       </layout>
      </widget>
+     <widget class="QListWidget" name="listWidget">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>30</y>
+        <width>321</width>
+        <height>321</height>
+       </rect>
+      </property>
+      <property name="cursor" stdset="0">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="cameraPage">
      <widget class="QFrame" name="camera">
       <property name="geometry">
        <rect>
-        <x>120</x>
-        <y>40</y>
-        <width>121</width>
+        <x>550</x>
+        <y>30</y>
+        <width>131</width>
         <height>271</height>
        </rect>
       </property>
@@ -502,19 +515,42 @@
       <zorder>nearSpinBox</zorder>
       <zorder>farSpinBox</zorder>
      </widget>
+     <widget class="QListWidget" name="CameraListWidget">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>30</y>
+        <width>321</width>
+        <height>321</height>
+       </rect>
+      </property>
+     </widget>
     </widget>
    </widget>
-   <widget class="QListWidget" name="listWidget">
+   <widget class="QSpinBox" name="spinBox">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>70</y>
-      <width>331</width>
-      <height>371</height>
+      <x>730</x>
+      <y>490</y>
+      <width>42</width>
+      <height>22</height>
      </rect>
     </property>
-    <property name="cursor" stdset="0">
-     <cursorShape>PointingHandCursor</cursorShape>
+    <property name="maximum">
+     <number>1</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="pageLabel">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>490</y>
+      <width>31</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Page</string>
     </property>
    </widget>
   </widget>
@@ -579,7 +615,7 @@
    <slot>newZPosition(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>791</x>
+     <x>781</x>
      <y>209</y>
     </hint>
     <hint type="destinationlabel">
@@ -627,7 +663,7 @@
    <slot>newZRotation(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>791</x>
+     <x>781</x>
      <y>254</y>
     </hint>
     <hint type="destinationlabel">
@@ -675,7 +711,7 @@
    <slot>newBColor(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>791</x>
+     <x>781</x>
      <y>344</y>
     </hint>
     <hint type="destinationlabel">
@@ -707,8 +743,8 @@
    <slot>newPitch(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>581</x>
-     <y>199</y>
+     <x>602</x>
+     <y>189</y>
     </hint>
     <hint type="destinationlabel">
      <x>35</x>
@@ -723,8 +759,8 @@
    <slot>newYaw(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>581</x>
-     <y>244</y>
+     <x>602</x>
+     <y>234</y>
     </hint>
     <hint type="destinationlabel">
      <x>30</x>
@@ -739,8 +775,8 @@
    <slot>newZoom(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>581</x>
-     <y>289</y>
+     <x>602</x>
+     <y>279</y>
     </hint>
     <hint type="destinationlabel">
      <x>32</x>
@@ -755,8 +791,8 @@
    <slot>newNear(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>581</x>
-     <y>334</y>
+     <x>602</x>
+     <y>324</y>
     </hint>
     <hint type="destinationlabel">
      <x>30</x>
@@ -771,8 +807,8 @@
    <slot>newFar(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>581</x>
-     <y>379</y>
+     <x>602</x>
+     <y>369</y>
     </hint>
     <hint type="destinationlabel">
      <x>51</x>
@@ -823,7 +859,7 @@
      <y>40</y>
     </hint>
     <hint type="destinationlabel">
-     <x>791</x>
+     <x>781</x>
      <y>209</y>
     </hint>
    </hints>
@@ -871,7 +907,7 @@
      <y>207</y>
     </hint>
     <hint type="destinationlabel">
-     <x>791</x>
+     <x>781</x>
      <y>254</y>
     </hint>
    </hints>
@@ -919,7 +955,7 @@
      <y>244</y>
     </hint>
     <hint type="destinationlabel">
-     <x>791</x>
+     <x>781</x>
      <y>344</y>
     </hint>
    </hints>
@@ -951,8 +987,8 @@
      <y>191</y>
     </hint>
     <hint type="destinationlabel">
-     <x>581</x>
-     <y>199</y>
+     <x>602</x>
+     <y>189</y>
     </hint>
    </hints>
   </connection>
@@ -967,8 +1003,8 @@
      <y>247</y>
     </hint>
     <hint type="destinationlabel">
-     <x>581</x>
-     <y>244</y>
+     <x>602</x>
+     <y>234</y>
     </hint>
    </hints>
   </connection>
@@ -983,8 +1019,8 @@
      <y>268</y>
     </hint>
     <hint type="destinationlabel">
-     <x>581</x>
-     <y>289</y>
+     <x>602</x>
+     <y>279</y>
     </hint>
    </hints>
   </connection>
@@ -999,8 +1035,8 @@
      <y>333</y>
     </hint>
     <hint type="destinationlabel">
-     <x>581</x>
-     <y>334</y>
+     <x>602</x>
+     <y>324</y>
     </hint>
    </hints>
   </connection>
@@ -1015,8 +1051,8 @@
      <y>379</y>
     </hint>
     <hint type="destinationlabel">
-     <x>581</x>
-     <y>379</y>
+     <x>602</x>
+     <y>369</y>
     </hint>
    </hints>
   </connection>
@@ -1129,6 +1165,22 @@
     <hint type="destinationlabel">
      <x>214</x>
      <y>475</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>stackedWidget</receiver>
+   <slot>setCurrentIndex(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>745</x>
+     <y>497</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>715</x>
+     <y>442</y>
     </hint>
    </hints>
   </connection>

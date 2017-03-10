@@ -4,6 +4,7 @@
 #include "..\OpenGLFramework\UI\UIPopup.h"
 #include "uiqt.h"
 #include "..\OpenGLFramework\Interface\IUIInterface.h"
+#include "..\OpenGLFramework\Camera\Camera.h"
 
 #include <map>
 #include <vector>
@@ -19,7 +20,7 @@ namespace Application
 		UIInterface();
 		~UIInterface();
 
-		void ShowPopup(Framework::BaseObject& _baseObject) override;
+		void ShowPopup(Framework::BaseObject& _baseObject, ICamera& _camera) override;
 		void AddShape(ShapeNames _name, UI::UIShape& _shape) override;
 		void SetApplication(const QApplication& _application);
 

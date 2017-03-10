@@ -118,7 +118,7 @@ namespace Framework
 	void Window::SetUIInterface(IUIInterface& _uiInterface)
 	{
 		m_uiInterface = &_uiInterface;
-		m_uiInterface->ShowPopup(m_scene->getHierarchy());
+		m_uiInterface->ShowPopup(m_scene->getHierarchy(), m_scene->getCamera());
 	}
 
 	const Framework::OpenGL& Window::GetOpenGLWrapper() const
