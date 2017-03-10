@@ -1,4 +1,2 @@
-﻿  ScreenCapture.cpp
-IO\ScreenCapture.cpp(7): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-IO\ScreenCapture.cpp(8): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+﻿  Camera.cpp
   OpenGLFramework.vcxproj -> C:\Users\Utilisateur\OneDrive\Génie logiciel\Session4\IFT-3100-Infographie\TP2-TP3\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.lib

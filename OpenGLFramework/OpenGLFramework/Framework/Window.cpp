@@ -42,7 +42,12 @@ namespace Framework
 			m_uiInterface->Draw();
 		}
 		m_openGL->EndScene();
-
+		if (m_inputhandler->IsKeyDown('c')) 
+		{
+			IO::ScreenCapture* image = new IO::ScreenCapture();
+			image->Capture();
+			delete image;
+		}
 
 
 		if (m_inputhandler->isMousePressed(1) || m_inputhandler->isMouseReleased(1))
