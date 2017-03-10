@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>900</width>
+    <width>903</width>
     <height>598</height>
    </rect>
   </property>
@@ -512,6 +512,9 @@
       <width>331</width>
       <height>371</height>
      </rect>
+    </property>
+    <property name="cursor" stdset="0">
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
    </widget>
   </widget>
@@ -1081,6 +1084,54 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>UIQTClass</sender>
+   <signal>currentObjectName(QString)</signal>
+   <receiver>objetLabel</receiver>
+   <slot>setText(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>659</x>
+     <y>43</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>649</x>
+     <y>153</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UIQTClass</sender>
+   <signal>changeStackedWidgetIndex(int)</signal>
+   <receiver>stackedWidget</receiver>
+   <slot>setCurrentIndex(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>865</x>
+     <y>42</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>792</x>
+     <y>88</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>listWidget</sender>
+   <signal>clicked(QModelIndex)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>selectedObject(QModelIndex)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>218</x>
+     <y>402</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>214</x>
+     <y>475</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <signal>currentRColor(int)</signal>
@@ -1104,6 +1155,8 @@
   <signal>editObject(QModelIndex)</signal>
   <signal>currentIndex(QModelIndex)</signal>
   <signal>updateAtIndex(QModelIndex)</signal>
+  <signal>currentObjectName(QString)</signal>
+  <signal>changeStackedWidgetIndex(int)</signal>
   <slot>newXPosition(int)</slot>
   <slot>newYPosition(int)</slot>
   <slot>newZPosition(int)</slot>

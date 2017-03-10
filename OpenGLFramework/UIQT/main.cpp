@@ -44,7 +44,6 @@ int main(int argc, char* argv[])
 	glutPassiveMotionFunc(OnMouseMove);
 	glutMotionFunc(OnMouseMove);
 	glutMouseFunc(OnMouseStateChanged);
-	
 	glutMainLoop();
 
 	system("PAUSE");
