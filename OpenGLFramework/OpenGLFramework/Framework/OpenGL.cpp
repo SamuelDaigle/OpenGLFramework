@@ -5,6 +5,7 @@ namespace Framework
 
 	OpenGL::OpenGL()
 	{
+		test = true;
 		glEnable(GL_DEPTH_TEST);
 		glDepthMask(GL_ALWAYS);
 		glDepthFunc(GL_LESS);

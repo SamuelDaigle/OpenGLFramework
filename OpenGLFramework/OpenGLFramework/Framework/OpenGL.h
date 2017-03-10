@@ -18,6 +18,9 @@ namespace Framework
 
 		void BeginScene() const;
 		void EndScene() const;
+
+	private:
+		bool test = true;
 	};
 
 }

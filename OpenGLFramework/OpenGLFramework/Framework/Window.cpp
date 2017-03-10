@@ -7,7 +7,7 @@ namespace Framework
 	{
 		InitializeWindow();
 
-		m_openGL = new OpenGL();
+		m_openGL = new Framework::OpenGL();
 
 		glutSetCursor(GLUT_CURSOR_LEFT_ARROW);
 		m_inputhandler = new Input::InputHandler();
@@ -116,7 +116,7 @@ namespace Framework
 		m_uiInterface->ShowPopup(m_scene->getHierarchy());
 	}
 
-	const OpenGL& Window::GetOpenGLWrapper() const
+	const Framework::OpenGL& Window::GetOpenGLWrapper() const
 	{
 		return *m_openGL;
 	}

@@ -32,7 +32,7 @@ namespace Application
 		m_rootObject->Add(planet);
 		//Physics::Rigidbody* planetRigidbody = new Physics::Rigidbody(*planet, *new btSphereShape(1), 1);
 		//m_physicsWorld->AddRigidbody(*planetRigidbody);
-		Rendering::Renderer* planetRenderer = new Rendering::Renderer("../Content/planet/planet.obj", *meshLoader, *m_advancedShader);
+		Rendering::Renderer* planetRenderer = new Rendering::Renderer("../Content/planet/planet.obj", *meshLoader, *m_basicShader);
 		planet->AddComponent(*planetRenderer);
 		//planet->AddComponent(*planetRigidbody);
 
@@ -72,7 +72,7 @@ namespace Application
 		m_consoleText->AddLine(std::string("                      Console"));
 		m_consoleText->AddLine(std::string("========================="));
 
-		std::vector<std::string> output = Utils::Log::GetLastOutput(10);
+		std::vector<std::string> output = Utils::Log::GetLastOutput(20);
 		for (int i = 0; i < output.size(); i++)
 			m_consoleText->AddLine(output[i]);
 

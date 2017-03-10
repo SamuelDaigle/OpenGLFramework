@@ -32,7 +32,7 @@ namespace Framework
 		void SetScene(IScene& _scene);
 		void SetUIInterface(IUIInterface& _uiInterface);
 
-		const OpenGL& GetOpenGLWrapper() const override;
+		const Framework::OpenGL& GetOpenGLWrapper() const override;
 		const Input::InputHandler& GetInputHandler() const override;
 		const float GetWidth() const override;
 		const float GetHeight() const override;
@@ -44,7 +44,7 @@ namespace Framework
 
 
 		bool m_cameraControl = false;
-		OpenGL* m_openGL;
+		Framework::OpenGL* m_openGL;
 		Input::InputHandler* m_inputhandler;
 		IScene* m_scene;
 		IUIInterface* m_uiInterface;

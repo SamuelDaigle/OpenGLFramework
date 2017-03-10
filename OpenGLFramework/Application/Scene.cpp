@@ -29,16 +29,16 @@ namespace Application
 
 		Framework::BaseObject* planet = new Framework::BaseObject();
 		m_rootObject->Add(planet);
-		Physics::Rigidbody* planetRigidbody = new Physics::Rigidbody(*planet, *new btSphereShape(1), 1);
-		m_physicsWorld->AddRigidbody(*planetRigidbody);
+		//Physics::Rigidbody* planetRigidbody = new Physics::Rigidbody(*planet, *new btSphereShape(1), 1);
+		//m_physicsWorld->AddRigidbody(*planetRigidbody);
 		Rendering::Renderer* planetRenderer = new Rendering::Renderer("../Content/planet/planet.obj", *meshLoader, *m_basicShader);
 		planet->AddComponent(*planetRenderer);
-		planet->AddComponent(*planetRigidbody);
+		//planet->AddComponent(*planetRigidbody);
 
 		Framework::BaseObject* terrain = new Framework::BaseObject();
 		terrain->Translate(0, -15, 0);
-		Physics::Rigidbody* m_rigidbody = new Physics::Rigidbody(*terrain, *new btStaticPlaneShape(btVector3(0, 1, 0), 10), 0);
-		m_physicsWorld->AddRigidbody(*m_rigidbody);
+		//Physics::Rigidbody* m_rigidbody = new Physics::Rigidbody(*terrain, *new btStaticPlaneShape(btVector3(0, 1, 0), 10), 0);
+		//m_physicsWorld->AddRigidbody(*m_rigidbody);
 		m_rootObject->Add(terrain);
 
 		m_skybox = new Framework::Skybox();
@@ -175,7 +175,7 @@ namespace Application
 
 	void Scene::Update()
 	{
-		m_physicsWorld->Update();
+		//m_physicsWorld->Update();
 		m_rootObject->Update();
 		UpdateConsoleText();
 	}

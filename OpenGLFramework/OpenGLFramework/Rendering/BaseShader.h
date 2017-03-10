@@ -6,8 +6,6 @@
 
 #include "..\Interface\IShader.h"
 
-using namespace glm;
-
 namespace Rendering
 {
 
