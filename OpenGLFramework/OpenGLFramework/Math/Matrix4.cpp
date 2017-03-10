@@ -23,6 +23,31 @@ namespace Math
 		return glm::orientate4(_rotationVector);
 	}
 
+	const Vector3 Matrix4::MatrixToEulerAngles(const glm::mat4& _rotationMatrix)
+	{
+		float pitch, roll, yaw;
+		if (_rotationMatrix[0][0] == 1.0f)
+		{
+			yaw = atan2f(_rotationMatrix[0][2], _rotationMatrix[2][3]);
+			pitch = 0;
+			roll = 0;
+		}
+		else if (_rotationMatrix[0][0] == -1.0f)
+		{
+			yaw = atan2f(_rotationMatrix[0][2], _rotationMatrix[2][3]);
+			pitch = 0;
+			roll = 0;
+		}
+		else
+		{
+			yaw = atan2(-_rotationMatrix[2][0], _rotationMatrix[0][0]);
+			pitch = asin(_rotationMatrix[1][0]);
+			roll = atan2(-_rotationMatrix[1][2], _rotationMatrix[1][1]);
+		}
+
+		return Vector3(pitch, roll, yaw);
+	}
+
 	const Matrix4 Matrix4::VectorToScaleMatrix(const glm::vec3& _scaleVector)
 	{
 		return glm::scale(_scaleVector);

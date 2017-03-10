@@ -8,7 +8,7 @@ namespace Camera
 	Camera::Camera() :
 		BaseObject::BaseObject()
 	{
-		m_projectionMatrix = glm::perspective<float>(glm::radians(_fov), (float)glutGet(GLUT_SCREEN_WIDTH) / (float)glutGet(GLUT_SCREEN_HEIGHT), 0.1f, 1000.0f);
+		m_projectionMatrix = glm::perspective<float>(glm::radians(_fov), (float)glutGet(GLUT_SCREEN_WIDTH) / (float)glutGet(GLUT_SCREEN_HEIGHT), 0.1f, 10000.0f);
 	}
 
 	void Camera::Destroy()
@@ -49,7 +49,7 @@ namespace Camera
 
 	void Camera::Ortho()
 	{
-		m_projectionMatrix = glm::ortho<float>(0.0f, (float)glutGet(GLUT_SCREEN_WIDTH), (float)glutGet(GLUT_SCREEN_HEIGHT),0.0f,0.1f,1000.0f);
+		m_projectionMatrix = glm::ortho<float>(0.0f, 1.0f, 1.0,0.0f,0.1f,1000.0f);
 	}
 
 	void Camera::Perspective()

@@ -163,12 +163,7 @@ namespace Application
 		{
 			m_camera->Perspective();
 		}
-		if (m_window->GetInputHandler().IsKeyDown('c'))
-		{
-			IO::ScreenCapture* image = new IO::ScreenCapture();
-			image->Capture();
-			delete image; 
-		}
+		
 	}
 
 	void Scene::Render() const

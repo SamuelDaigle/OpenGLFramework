@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿  uiqt.cpp
 c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\uiqt\uiqt.cpp(48): warning C4700: uninitialized local variable '_rColor' used
 c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\uiqt\uiqt.cpp(54): warning C4700: uninitialized local variable '_gColor' used
@@ -20,3 +21,6 @@ SOIL.lib(stb_image_aug.obj) : warning LNK4099: PDB 'SOIL.pdb' was not found with
 SOIL.lib(image_DXT.obj) : warning LNK4099: PDB 'SOIL.pdb' was not found with 'SOIL.lib(image_DXT.obj)' or at 'C:\Users\Yannick\OneDrive\Hiver2017\Infographie\OpenGLFramework\OpenGLFramework\Release\SOIL.pdb'; linking object as if no debug info
   UIQT.vcxproj -> C:\Users\Yannick\OneDrive\Hiver2017\Infographie\OpenGLFramework\OpenGLFramework\Release\UIQT.exe
   UIQT.vcxproj -> C:\Users\Yannick\OneDrive\Hiver2017\Infographie\OpenGLFramework\OpenGLFramework\Release\UIQT.pdb (Full PDB)
+=======
+﻿
+>>>>>>> master

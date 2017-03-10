@@ -11,6 +11,7 @@
 #include "..\Utils\Log.h"
 #include "..\stdafx.h"
 #include "..\Interface\IUIInterface.h"
+#include "..\IO\ScreenCapture.h"
 
 namespace Framework
 {

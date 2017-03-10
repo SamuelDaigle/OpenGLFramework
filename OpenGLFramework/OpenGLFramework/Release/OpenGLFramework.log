@@ -1,4 +1,5 @@
 ﻿  Camera.cpp
+<<<<<<< HEAD
   BaseObject.cpp
 Framework\BaseObject.cpp(23): warning C4018: '<': signed/unsigned mismatch
 Framework\BaseObject.cpp(37): warning C4018: '<': signed/unsigned mismatch
@@ -77,3 +78,6 @@ c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\
   Vertex.cpp
   Generating Code...
   OpenGLFramework.vcxproj -> C:\Users\Yannick\OneDrive\Hiver2017\Infographie\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.lib
+=======
+  OpenGLFramework.vcxproj -> C:\Users\Utilisateur\OneDrive\Génie logiciel\Session4\IFT-3100-Infographie\TP2-TP3\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.lib
+>>>>>>> master
