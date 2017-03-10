@@ -108,11 +108,8 @@ namespace Application
 		m_camera->Update();
 
 		// Rotation
-		if (m_window->HasCameraControl())
-		{
-			m_camera->Rotate(m_window->GetInputHandler().GetCursorDelta().x / 5, Math::Vector3(1.0f, 0.0f, 0.0f));
-			m_camera->Rotate(m_window->GetInputHandler().GetCursorDelta().y / 5, Math::Vector3(0.0f, 1.0f, 0.0f));
-		}
+		m_camera->Rotate(m_window->GetInputHandler().GetCursorDelta().x / 5, Math::Vector3(1.0f, 0.0f, 0.0f));
+		m_camera->Rotate(m_window->GetInputHandler().GetCursorDelta().y / 5, Math::Vector3(0.0f, 1.0f, 0.0f));
 
 		// Move with arrow.
 		if (m_window->GetInputHandler().IsKeyDown('a'))
