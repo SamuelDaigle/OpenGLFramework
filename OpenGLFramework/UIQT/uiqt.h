@@ -10,6 +10,8 @@
 #include <QtQuick/qquickitem.h>
 #include <QtQuick/qquickview.h>
 #include "..\OpenGLFramework\Camera\Camera.h"
+#include "..\OpenGLFramework\UI\Command.h"
+#include "..\OpenGLFramework\UI\CommandStack.h"
 
 
 class UIQT : public QMainWindow, public UI::UIPopup
@@ -19,7 +21,7 @@ class UIQT : public QMainWindow, public UI::UIPopup
 public:
 
 
-UIQT(QWidget *parent = 0);
+UIQT(UI::CommandStack* _commandStack, QWidget *parent = 0);
 void presentRColor();
 void presentGColor();
 void presentBColor();
@@ -65,6 +67,8 @@ void newZoom(int _zoom);
 void newNear(int _near);
 void newFar(int _far);
 void selectedObject(QModelIndex _index);
+void undo();
+void redo();
 
 signals :
 
@@ -99,7 +103,7 @@ private:
 	std::vector<Framework::BaseObject*> m_hierarchyObjects;
 	QModelIndex m_selectedObject;
 	Camera::Camera* m_camera;
-	
+	UI::CommandStack* _commandStack;
 };
 
 #endif // UIQT_H

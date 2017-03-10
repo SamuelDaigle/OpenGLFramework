@@ -57,6 +57,26 @@ namespace Camera
 		m_projectionMatrix = glm::perspective<float>(glm::radians(_fov), (float)glutGet(GLUT_SCREEN_WIDTH) / (float)glutGet(GLUT_SCREEN_HEIGHT), 0.1f, 1000.0f);
 	}
 
+	float Camera::getPitch()
+	{
+		return m_tilt;
+	}
+
+	void Camera::setPitch(float _newPitch)
+	{
+		m_tilt = _newPitch;
+	}
+
+	float Camera::getYaw()
+	{
+		return m_bearing;
+	}
+
+	void Camera::setYaw(float _newYaw)
+	{
+		m_bearing = _newYaw;
+	}
+
 	const Math::Vector3& Camera::GetPosition() const
 	{
 		return m_position;

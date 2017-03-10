@@ -21,7 +21,7 @@ namespace Camera
 		void Ortho();						//ajouter un bouton qui toggle entre les deux
 		void Perspective();
 		float getPitch();
-		void setPitch(float _newTilt);
+		void setPitch(float _newPitch);
 		float getYaw();
 		void setYaw(float _newYaw);
 
@@ -32,7 +32,7 @@ namespace Camera
 		const Math::Matrix4& GetRotation() const override;
 
 	private:
-		Math::Matrix4 m_projectionMatrix;		//pitch = tilt  yaw = bearing 
+		Math::Matrix4 m_projectionMatrix;
 		float m_bearing;						
 		float m_tilt;
 	};

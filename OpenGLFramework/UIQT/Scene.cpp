@@ -142,6 +142,14 @@ namespace Application
 		{
 			m_rootObject->GetChilds()[1]->GetChilds()[0]->Rotate(1, Math::Vector3(0.0f, 1.0f, 0.0f));
 		}
+		if (m_window->GetInputHandler().IsKeyDown('o'))
+		{
+			m_camera->Ortho();
+		}
+		if (m_window->GetInputHandler().IsKeyDown('p'))
+		{
+			m_camera->Perspective();
+		}
 	}
 
 	void Scene::Render() const

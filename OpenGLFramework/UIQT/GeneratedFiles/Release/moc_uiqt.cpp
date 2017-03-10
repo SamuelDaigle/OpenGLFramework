@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_UIQT_t {
-    QByteArrayData data[62];
-    char stringdata0[693];
+    QByteArrayData data[64];
+    char stringdata0[703];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -92,7 +92,9 @@ QT_MOC_LITERAL(57, 648, 6), // "newYaw"
 QT_MOC_LITERAL(58, 655, 7), // "newZoom"
 QT_MOC_LITERAL(59, 663, 7), // "newNear"
 QT_MOC_LITERAL(60, 671, 6), // "newFar"
-QT_MOC_LITERAL(61, 678, 14) // "selectedObject"
+QT_MOC_LITERAL(61, 678, 14), // "selectedObject"
+QT_MOC_LITERAL(62, 693, 4), // "undo"
+QT_MOC_LITERAL(63, 698, 4) // "redo"
 
     },
     "UIQT\0currentRColor\0\0_rColor\0currentGColor\0"
@@ -115,7 +117,7 @@ QT_MOC_LITERAL(61, 678, 14) // "selectedObject"
     "newXRotation\0newYRotation\0newZRotation\0"
     "newXScale\0_scale\0newYScale\0newZScale\0"
     "newPitch\0newYaw\0newZoom\0newNear\0newFar\0"
-    "selectedObject"
+    "selectedObject\0undo\0redo"
 };
 #undef QT_MOC_LITERAL
 
@@ -125,7 +127,7 @@ static const uint qt_meta_data_UIQT[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      40,   14, // methods
+      42,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -133,48 +135,50 @@ static const uint qt_meta_data_UIQT[] = {
       22,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,  214,    2, 0x06 /* Public */,
-       4,    1,  217,    2, 0x06 /* Public */,
-       6,    1,  220,    2, 0x06 /* Public */,
-       8,    1,  223,    2, 0x06 /* Public */,
-      10,    1,  226,    2, 0x06 /* Public */,
-      12,    1,  229,    2, 0x06 /* Public */,
-      14,    1,  232,    2, 0x06 /* Public */,
-      16,    1,  235,    2, 0x06 /* Public */,
-      18,    1,  238,    2, 0x06 /* Public */,
-      20,    1,  241,    2, 0x06 /* Public */,
-      22,    1,  244,    2, 0x06 /* Public */,
-      24,    1,  247,    2, 0x06 /* Public */,
-      26,    1,  250,    2, 0x06 /* Public */,
-      28,    1,  253,    2, 0x06 /* Public */,
-      30,    1,  256,    2, 0x06 /* Public */,
-      32,    1,  259,    2, 0x06 /* Public */,
-      34,    1,  262,    2, 0x06 /* Public */,
-      36,    1,  265,    2, 0x06 /* Public */,
-      38,    1,  268,    2, 0x06 /* Public */,
-      39,    1,  271,    2, 0x06 /* Public */,
-      40,    1,  274,    2, 0x06 /* Public */,
-      42,    1,  277,    2, 0x06 /* Public */,
+       1,    1,  224,    2, 0x06 /* Public */,
+       4,    1,  227,    2, 0x06 /* Public */,
+       6,    1,  230,    2, 0x06 /* Public */,
+       8,    1,  233,    2, 0x06 /* Public */,
+      10,    1,  236,    2, 0x06 /* Public */,
+      12,    1,  239,    2, 0x06 /* Public */,
+      14,    1,  242,    2, 0x06 /* Public */,
+      16,    1,  245,    2, 0x06 /* Public */,
+      18,    1,  248,    2, 0x06 /* Public */,
+      20,    1,  251,    2, 0x06 /* Public */,
+      22,    1,  254,    2, 0x06 /* Public */,
+      24,    1,  257,    2, 0x06 /* Public */,
+      26,    1,  260,    2, 0x06 /* Public */,
+      28,    1,  263,    2, 0x06 /* Public */,
+      30,    1,  266,    2, 0x06 /* Public */,
+      32,    1,  269,    2, 0x06 /* Public */,
+      34,    1,  272,    2, 0x06 /* Public */,
+      36,    1,  275,    2, 0x06 /* Public */,
+      38,    1,  278,    2, 0x06 /* Public */,
+      39,    1,  281,    2, 0x06 /* Public */,
+      40,    1,  284,    2, 0x06 /* Public */,
+      42,    1,  287,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      43,    1,  280,    2, 0x08 /* Private */,
-      44,    1,  283,    2, 0x08 /* Private */,
-      45,    1,  286,    2, 0x08 /* Private */,
-      46,    1,  289,    2, 0x08 /* Private */,
-      47,    1,  292,    2, 0x08 /* Private */,
-      48,    1,  295,    2, 0x08 /* Private */,
-      49,    1,  298,    2, 0x08 /* Private */,
-      50,    1,  301,    2, 0x08 /* Private */,
-      51,    1,  304,    2, 0x08 /* Private */,
-      52,    1,  307,    2, 0x08 /* Private */,
-      54,    1,  310,    2, 0x08 /* Private */,
-      55,    1,  313,    2, 0x08 /* Private */,
-      56,    1,  316,    2, 0x08 /* Private */,
-      57,    1,  319,    2, 0x08 /* Private */,
-      58,    1,  322,    2, 0x08 /* Private */,
-      59,    1,  325,    2, 0x08 /* Private */,
-      60,    1,  328,    2, 0x08 /* Private */,
-      61,    1,  331,    2, 0x08 /* Private */,
+      43,    1,  290,    2, 0x08 /* Private */,
+      44,    1,  293,    2, 0x08 /* Private */,
+      45,    1,  296,    2, 0x08 /* Private */,
+      46,    1,  299,    2, 0x08 /* Private */,
+      47,    1,  302,    2, 0x08 /* Private */,
+      48,    1,  305,    2, 0x08 /* Private */,
+      49,    1,  308,    2, 0x08 /* Private */,
+      50,    1,  311,    2, 0x08 /* Private */,
+      51,    1,  314,    2, 0x08 /* Private */,
+      52,    1,  317,    2, 0x08 /* Private */,
+      54,    1,  320,    2, 0x08 /* Private */,
+      55,    1,  323,    2, 0x08 /* Private */,
+      56,    1,  326,    2, 0x08 /* Private */,
+      57,    1,  329,    2, 0x08 /* Private */,
+      58,    1,  332,    2, 0x08 /* Private */,
+      59,    1,  335,    2, 0x08 /* Private */,
+      60,    1,  338,    2, 0x08 /* Private */,
+      61,    1,  341,    2, 0x08 /* Private */,
+      62,    0,  344,    2, 0x08 /* Private */,
+      63,    0,  345,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Int,    3,
@@ -219,6 +223,8 @@ static const uint qt_meta_data_UIQT[] = {
     QMetaType::Void, QMetaType::Int,   33,
     QMetaType::Void, QMetaType::Int,   35,
     QMetaType::Void, QMetaType::QModelIndex,   37,
+    QMetaType::Void,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -269,6 +275,8 @@ void UIQT::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void *
         case 37: _t->newNear((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 38: _t->newFar((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 39: _t->selectedObject((*reinterpret_cast< QModelIndex(*)>(_a[1]))); break;
+        case 40: _t->undo(); break;
+        case 41: _t->redo(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -458,13 +466,13 @@ int UIQT::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 40)
+        if (_id < 42)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 40;
+        _id -= 42;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 40)
+        if (_id < 42)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 40;
+        _id -= 42;
     }
     return _id;
 }

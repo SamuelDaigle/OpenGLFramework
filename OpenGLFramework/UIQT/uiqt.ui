@@ -553,6 +553,32 @@
      <string>Page</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="undoPushButton">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>510</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Undo</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="redoPushButton">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>510</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Redo</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
@@ -1184,6 +1210,38 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>undoPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>undo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>60</x>
+     <y>521</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>75</x>
+     <y>564</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>redoPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>redo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>169</x>
+     <y>526</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>169</x>
+     <y>558</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <signal>currentRColor(int)</signal>
@@ -1227,5 +1285,7 @@
   <slot>newXScale(int)</slot>
   <slot>newZScale(int)</slot>
   <slot>selectedObject(QModelIndex)</slot>
+  <slot>undo()</slot>
+  <slot>redo()</slot>
  </slots>
 </ui>

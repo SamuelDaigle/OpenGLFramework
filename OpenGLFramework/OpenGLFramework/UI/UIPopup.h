@@ -1,6 +1,7 @@
 #pragma once
 
 #include "..\Interface\ICommandStack.h"
+#include "CommandStack.h"
 
 namespace UI
 {

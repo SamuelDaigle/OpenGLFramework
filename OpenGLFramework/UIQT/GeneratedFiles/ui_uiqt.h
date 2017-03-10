@@ -19,6 +19,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpinBox>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QWidget>
@@ -80,6 +81,8 @@ public:
     QListWidget *CameraListWidget;
     QSpinBox *spinBox;
     QLabel *pageLabel;
+    QPushButton *undoPushButton;
+    QPushButton *redoPushButton;
 
     void setupUi(QMainWindow *UIQTClass)
     {
@@ -407,6 +410,12 @@ public:
         pageLabel = new QLabel(centralWidget);
         pageLabel->setObjectName(QStringLiteral("pageLabel"));
         pageLabel->setGeometry(QRect(680, 490, 31, 21));
+        undoPushButton = new QPushButton(centralWidget);
+        undoPushButton->setObjectName(QStringLiteral("undoPushButton"));
+        undoPushButton->setGeometry(QRect(50, 510, 75, 23));
+        redoPushButton = new QPushButton(centralWidget);
+        redoPushButton->setObjectName(QStringLiteral("redoPushButton"));
+        redoPushButton->setGeometry(QRect(140, 510, 75, 23));
         UIQTClass->setCentralWidget(centralWidget);
         QWidget::setTabOrder(positionYSpinBox, couleurGSpinBox);
         QWidget::setTabOrder(couleurGSpinBox, rotationXSpinBox);
@@ -461,6 +470,8 @@ public:
         QObject::connect(UIQTClass, SIGNAL(changeStackedWidgetIndex(int)), stackedWidget, SLOT(setCurrentIndex(int)));
         QObject::connect(listWidget, SIGNAL(clicked(QModelIndex)), UIQTClass, SLOT(selectedObject(QModelIndex)));
         QObject::connect(spinBox, SIGNAL(valueChanged(int)), stackedWidget, SLOT(setCurrentIndex(int)));
+        QObject::connect(undoPushButton, SIGNAL(clicked()), UIQTClass, SLOT(undo()));
+        QObject::connect(redoPushButton, SIGNAL(clicked()), UIQTClass, SLOT(redo()));
 
         stackedWidget->setCurrentIndex(0);
 
@@ -495,6 +506,8 @@ public:
         nearLabel->setText(QApplication::translate("UIQTClass", "Near", Q_NULLPTR));
         farLabel->setText(QApplication::translate("UIQTClass", "Far", Q_NULLPTR));
         pageLabel->setText(QApplication::translate("UIQTClass", "Page", Q_NULLPTR));
+        undoPushButton->setText(QApplication::translate("UIQTClass", "Undo", Q_NULLPTR));
+        redoPushButton->setText(QApplication::translate("UIQTClass", "Redo", Q_NULLPTR));
     } // retranslateUi
 
 };

@@ -5,7 +5,7 @@ namespace UI
 
 	UIPopup::UIPopup()
 	{
-
+		
 	}
 
 	UIPopup::~UIPopup()
