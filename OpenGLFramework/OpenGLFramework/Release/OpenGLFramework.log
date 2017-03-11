@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿  Camera.cpp
   BaseObject.cpp
 Framework\BaseObject.cpp(23): warning C4018: '<': signed/unsigned mismatch
@@ -52,3 +53,7 @@ c:\users\william valin\desktop\glo\session4\ift-3100-infographie\tp2-tp3\openglf
   Vertex.cpp
   Generating Code...
   OpenGLFramework.vcxproj -> C:\Users\William Valin\Desktop\GLO\Session4\IFT-3100-Infographie\TP2-TP3\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.lib
+=======
+﻿  UIComposite.cpp
+  OpenGLFramework.vcxproj -> C:\Users\sebro\Desktop\Université\Session Hiver 2017\IFT-3100 - Infographie\TP2_GIT\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.lib
+>>>>>>> master

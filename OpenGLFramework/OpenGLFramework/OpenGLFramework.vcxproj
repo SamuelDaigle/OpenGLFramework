@@ -56,9 +56,11 @@
     <ClCompile Include="UI\CommandStack.cpp" />
     <ClCompile Include="UI\UIBaseObjectPopup.cpp" />
     <ClCompile Include="UI\UICircle.cpp" />
+    <ClCompile Include="UI\UIComposite.cpp" />
     <ClCompile Include="UI\UIHierarchyPopup.cpp" />
     <ClCompile Include="UI\UILine.cpp" />
     <ClCompile Include="UI\UIPopup.cpp" />
+    <ClCompile Include="UI\UIProcedural.cpp" />
     <ClCompile Include="UI\UIShape.cpp" />
     <ClCompile Include="UI\UISquare.cpp" />
     <ClCompile Include="Utils\Log.cpp" />
@@ -110,9 +112,11 @@
     <ClInclude Include="UI\CommandStack.h" />
     <ClInclude Include="UI\UIBaseObjectPopup.h" />
     <ClInclude Include="UI\UICircle.h" />
+    <ClInclude Include="UI\UIComposite.h" />
     <ClInclude Include="UI\UIHierarchyPopup.h" />
     <ClInclude Include="UI\UILine.h" />
     <ClInclude Include="UI\UIPopup.h" />
+    <ClInclude Include="UI\UIProcedural.h" />
     <ClInclude Include="UI\UIShape.h" />
     <ClInclude Include="UI\UISquare.h" />
     <ClInclude Include="Utils\Color.h" />
