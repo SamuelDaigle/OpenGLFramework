@@ -20,8 +20,8 @@ namespace UI
 	void UILine::Draw() const
 	{
 		glBegin(GL_LINES);
-		glVertex3f(x, y, 0);
-		glVertex3f(x2, y2, 0);
+		glVertex2f(x, y);
+		glVertex2f(x2, y2);
 		glEnd();
 	}
 }

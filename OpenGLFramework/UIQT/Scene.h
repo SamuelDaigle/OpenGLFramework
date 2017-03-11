@@ -13,6 +13,9 @@
 #include "..\OpenGLFramework\Rendering\ColorShader.h"
 #include "..\OpenGLFramework\Input\InputHandler.h"
 #include "..\OpenGLFramework\Framework\Light.h"
+#include "..\OpenGLFramework\Framework\Pyramid.h"
+#include "..\OpenGLFramework\Framework\Square.h"
+#include "..\OpenGLFramework\Framework\Triangle.h"
 #include "..\OpenGLFramework\Text\TextHolder.h"
 #include "..\OpenGLFramework\Interface\IScene.h"
 #include "..\OpenGLFramework\Camera\Camera.h"
@@ -39,7 +42,7 @@ namespace Application
 		void UpdateHierarchyText();
 		void UpdateConsoleText();
 		void AddChildStringTo(Text::TextHolder& _hierarchyText, Framework::BaseObject& _parent, int _depth);
-		
+
 
 		IWindow* m_window;
 		Framework::BaseObject* m_rootObject;
