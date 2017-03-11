@@ -32,6 +32,7 @@ namespace Application
 		void Update() override;
 		void Render() const override;
 		Framework::BaseObject& getHierarchy() override;
+		ICamera& getCamera() override;
 
 	private:
 		void UpdateHierarchyText();

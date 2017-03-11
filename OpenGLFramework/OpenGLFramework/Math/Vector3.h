@@ -20,6 +20,7 @@ namespace Math
 		Vector3(const float _x, const float _y, const float _z);
 
 		const Vector3 operator-();
+		const Vector3 operator+(const Vector3& _other);
 		const Vector3 operator-(const Vector3& _other);
 		const Vector3 operator*(const Vector3& _other);
 	};
