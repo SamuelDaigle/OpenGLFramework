@@ -41,27 +41,23 @@ void UIQT::createHierarchyList(QStringList _hierarchyText, Framework::BaseObject
 	{
 		m_shapeObjects.push_back(&_parent);
 		QListWidgetItem* newItem = new QListWidgetItem;
-		newItem->setText(_hierarchyText[_depth]);
+		newItem->setText(childText.c_str());
 		ui.listWidget->insertItem(_depth, newItem);
 	}
 	else if (hasRendererComponent(_parent))		// couleur en plus  page 2
 	{
 		m_modelObjects.push_back(&_parent);
 		QListWidgetItem* newItem = new QListWidgetItem;
-		newItem->setText(_hierarchyText[_depth]);
+		newItem->setText(childText.c_str());
 		ui.modelObjectListWidget->insertItem(_depth, newItem);
 	}
 	else//Standard (pas couleur)   page 1
 	{
 		m_emptyObjects.push_back(&_parent);
 		QListWidgetItem* newItem = new QListWidgetItem;
-		newItem->setText(_hierarchyText[_depth]);
+		newItem->setText(childText.c_str());
 		ui.emptyObjectListWidget->insertItem(_depth, newItem);
 	}
-	_hierarchyText.append(childText.c_str());
-
-	
-	//ui.listWidget-
 
 
 	std::vector<Framework::BaseObject*> childObjects = _parent.GetChilds();

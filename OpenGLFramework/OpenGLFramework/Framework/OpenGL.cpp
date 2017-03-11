@@ -5,12 +5,11 @@ namespace Framework
 
 	OpenGL::OpenGL()
 	{
-		test = true;
 		glEnable(GL_DEPTH_TEST);
 		glDepthMask(GL_ALWAYS);
 		glDepthFunc(GL_LESS);
 		glEnable(GL_STENCIL_TEST);
-		glDisable(GL_CULL_FACE); // Render both sides?, to remove later..
+		glDisable(GL_CULL_FACE);
 	}
 
 	void OpenGL::Destroy()
@@ -19,13 +18,15 @@ namespace Framework
 
 	void OpenGL::BeginScene() const
 	{
-		glClearColor(0, 0, 0, 1.0f);
+		glClearColor(0.1f, 0.3f, 0.6f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		assert(glGetError() == GL_NO_ERROR);
 	}
 
 	void OpenGL::EndScene() const
 	{
 		glutSwapBuffers();
+		assert(glGetError() == GL_NO_ERROR);
 	}
 
 }

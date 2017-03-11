@@ -26,7 +26,7 @@ namespace Application
 		light->Translate(2.5f, 0, 0);
 		Framework::Light* lightComponent = new Framework::Light(*light, *m_advancedShader);
 		light->AddComponent(*lightComponent);
-		m_rootObject->Add(light);
+		//m_rootObject->Add(light);
 
 		Framework::BaseShape * sphere = new Framework::Pyramid(*m_colorShader);
 		sphere->SetColor(0.0f, 0.75f, 0.75f, 1.0f);

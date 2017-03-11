@@ -60,6 +60,7 @@ namespace Application
 		for (std::map<ShapeNames, UI::UIShape*>::const_iterator it = m_shapes.begin(); it != m_shapes.end(); it++)
 		{
 			it->second->Draw();
+			assert(glGetError() == GL_NO_ERROR);
 		}
 	}
 

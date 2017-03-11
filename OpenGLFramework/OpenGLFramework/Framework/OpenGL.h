@@ -6,6 +6,7 @@
 
 #include "..\Dependencies\glew\glew.h"
 #include "..\Dependencies\freeglut\freeglut.h"
+#include <assert.h>
 
 namespace Framework
 {
@@ -18,9 +19,6 @@ namespace Framework
 
 		void BeginScene() const;
 		void EndScene() const;
-
-	private:
-		bool test = true;
 	};
 
 }

@@ -102,7 +102,7 @@ namespace IO
 			}
 			else
 			{
-				Utils::Log::DebugLog("Could not load vertex normal.");
+				//Utils::Log::DebugLog("Could not load vertex normal.");
 			}
 			vertex.Normal = vertexPlaceholderData;
 
