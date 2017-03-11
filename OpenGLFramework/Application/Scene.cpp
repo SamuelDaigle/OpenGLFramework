@@ -154,16 +154,27 @@ namespace Application
 			m_camera->Zoom(-1);
 		}
 		//projection orthogonale
-		if (m_window->GetInputHandler().IsKeyDown('o'))
+		if (m_window->GetInputHandler().IsKeyPressed('o'))
 		{
 			m_camera->Ortho();
 		}
 		//projection perspective
-		if (m_window->GetInputHandler().IsKeyDown('p'))
+		if (m_window->GetInputHandler().IsKeyPressed('p'))
 		{
 			m_camera->Perspective();
 		}
-		
+		//importation d'image pour le skybox 
+		if (m_window->GetInputHandler().IsKeyPressed('r'))
+		{
+			IO::TextureLoader textureLoader;
+			textureLoader.Initialize();
+			m_skybox->Initialize("../Content/skybox/rick.bmp", &textureLoader);
+		}
+		//lookat a un objet 
+		if (m_window->GetInputHandler().IsKeyDown('c')) 
+		{
+			m_camera->m_rotation = Math::Matrix4::LookAt(m_camera->m_position, Math::Vector3());
+		}
 	}
 
 	void Scene::Render() const
@@ -186,4 +197,8 @@ namespace Application
 		return *m_rootObject;
 	}
 
+	ICamera& Scene::getCamera()
+	{
+		return *m_camera;
+	}
 }

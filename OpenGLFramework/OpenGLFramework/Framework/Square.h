@@ -4,16 +4,16 @@
 
 #pragma once
 
-#include "BaseObject.h"
+#include "BaseShape.h"
 #include "..\Utils\VertexType.h"
 
 namespace Framework
 {
 
-	class Square : public BaseObject
+	class Square : public BaseShape
 	{
 	public:
-		Square();
+		Square(IShader &_shader);
 		~Square();
 
 		void Destroy() override;
@@ -23,7 +23,6 @@ namespace Framework
 	private:
 		void InitializeBuffers();
 		void ShutdownBuffers();
-
 
 		int m_vertexCount, m_indexCount;
 		unsigned int m_vertexArrayId, m_vertexBufferId, m_indexBufferId;

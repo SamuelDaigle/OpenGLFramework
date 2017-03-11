@@ -3,7 +3,8 @@
 namespace Framework
 {
 
-	Triangle::Triangle()
+	Triangle::Triangle(IShader &_shader) :
+		BaseShape(_shader)
 	{
 		InitializeBuffers();
 	}
@@ -15,10 +16,10 @@ namespace Framework
 
 	void Triangle::Render(const ICamera& _camera, const Math::Matrix4& _parentWorldMatrix) const
 	{
+		BaseShape::Render(_camera, _parentWorldMatrix);
 		glBindVertexArray(m_vertexArrayId);
 		glDrawElements(GL_TRIANGLES, m_indexCount, GL_UNSIGNED_INT, 0);
 	}
-
 
 	void Triangle::InitializeBuffers()
 	{
@@ -32,8 +33,8 @@ namespace Framework
 		indices = new unsigned int[m_indexCount];
 
 		// Bottom left.
-		vertices[0].x = -0.75f;  // Position.
-		vertices[0].y = -0.75f;
+		vertices[0].x = -10.0f;  // Position.
+		vertices[0].y = -10.0f;
 		vertices[0].z = -0.0f;
 
 		vertices[0].r = 0.0f;  // Color.
@@ -42,7 +43,7 @@ namespace Framework
 
 		// Top middle.
 		vertices[1].x = 0.0f;  // Position.
-		vertices[1].y = 0.75f;
+		vertices[1].y = 10.0f;
 		vertices[1].z = 0.0f;
 
 		vertices[1].r = 0.0f;  // Color.
@@ -50,8 +51,8 @@ namespace Framework
 		vertices[1].b = 0.0f;
 
 		// Bottom right.
-		vertices[2].x = 0.75f;  // Position.
-		vertices[2].y = -0.75f;
+		vertices[2].x = 10.0f;  // Position.
+		vertices[2].y = -10.0f;
 		vertices[2].z = 0.0f;
 
 		vertices[2].r = 0.0f;  // Color.
@@ -81,13 +82,11 @@ namespace Framework
 		// vertex color.
 		glBindBuffer(GL_ARRAY_BUFFER, m_vertexBufferId);
 		glVertexAttribPointer(1, 3, GL_FLOAT, false, sizeof(Utils::VertexType), (unsigned char*)NULL + (3 * sizeof(float)));
-
 		glGenBuffers(1, &m_indexBufferId);
 
 		// Bind the index buffer and load the index data into it.
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_indexBufferId);
 		glBufferData(GL_ELEMENT_ARRAY_BUFFER, m_indexCount * sizeof(unsigned int), indices, GL_STATIC_DRAW);
-
 
 		// delete vertices as they are stored in OpenGL's buffers.
 		delete[] vertices;

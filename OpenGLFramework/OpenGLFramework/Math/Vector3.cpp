@@ -46,9 +46,14 @@ namespace Math
 		return Vector3(-x, -y, -z);
 	}
 
+	const Vector3 Vector3::operator+(const Vector3& _other)
+	{
+		return Vector3(x + _other.x, y + _other.y, z + _other.z);
+	}
+
 	const Vector3 Vector3::operator-(const Vector3& _other)
 	{
-		return (*this) - _other;
+		return Vector3(x - _other.x, y - _other.y, z - _other.z);
 	}
 
 	const Vector3 Vector3::operator*(const Vector3& _other)

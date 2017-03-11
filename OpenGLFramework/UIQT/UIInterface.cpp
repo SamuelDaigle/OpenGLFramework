@@ -13,10 +13,12 @@ namespace Application
 		UI::UILine * line = new UI::UILine(0, 0, 100, 100);
 		UI::UICircle * circle = new UI::UICircle(0,0,10,100);
 		UI::UISquare * sq = new UI::UISquare(10,10,20,20);
+		UI::UIProcedural * proc = new UI::UIProcedural(-10,10,1,5);
 
 		compo->Add(line);
 		compo->Add(circle);
 		compo->Add(sq);
+		compo->Add(proc);
 
 		AddShape(IUIInterface::ShapeNames::CROSSHAIR_LINE_HORIZONTAL, *compo);
 

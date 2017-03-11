@@ -180,6 +180,12 @@
     <ClCompile Include="UI\UIProcedural.cpp">
       <Filter>UI</Filter>
     </ClCompile>
+    <ClCompile Include="Framework\Pyramid.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\BaseShape.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Framework\OpenGL.h">
@@ -357,6 +363,12 @@
     </ClInclude>
     <ClInclude Include="UI\UIProcedural.h">
       <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Pyramid.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\BaseShape.h">
+      <Filter>Framework</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

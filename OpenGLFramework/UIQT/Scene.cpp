@@ -28,6 +28,13 @@ namespace Application
 		light->AddComponent(*lightComponent);
 		m_rootObject->Add(light);
 
+		Framework::BaseShape * sphere = new Framework::Pyramid(*m_colorShader);
+		sphere->SetColor(0.0f, 0.75f, 0.75f, 1.0f);
+		m_rootObject->Add(sphere);
+
+		//Framework::Square * sphere2 = new Framework::Square();
+		//m_rootObject->Add(sphere2);
+
 		Framework::BaseObject* planet = new Framework::BaseObject();
 		m_rootObject->Add(planet);
 		//Physics::Rigidbody* planetRigidbody = new Physics::Rigidbody(*planet, *new btSphereShape(1), 1);

@@ -19,7 +19,6 @@ namespace Text
 
 	void TextHolder::DrawTexts() const
 	{
-		glDepthFunc(GL_FALSE);
 		glDisable(GL_TEXTURE_2D);
 		glDisable(GL_LIGHTING);
 		glBindTexture(GL_TEXTURE_2D, 0);
@@ -29,7 +28,6 @@ namespace Text
 		}
 		glEnable(GL_LIGHTING);
 		glEnable(GL_TEXTURE_2D);
-		glDepthFunc(GL_TRUE);
 	}
 
 	void TextHolder::AddLine(const std::string& _value)
