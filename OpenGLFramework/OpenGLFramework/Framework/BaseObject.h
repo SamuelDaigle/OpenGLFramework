@@ -32,6 +32,8 @@ namespace Framework
 		virtual void Scale(const float _scaleX, const float _scaleY, const float _scaleZ);
 
 		virtual std::vector<BaseObject*> GetChilds();
+		virtual std::vector<Component*> GetComponents();
+		
 
 		virtual void AddComponent(Component& _component);
 

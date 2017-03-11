@@ -1,2 +1,8 @@
-﻿  UIComposite.cpp
-  OpenGLFramework.vcxproj -> C:\Users\sebro\Desktop\Université\Session Hiver 2017\IFT-3100 - Infographie\TP2_GIT\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.lib
+﻿  Window.cpp
+Framework\Window.cpp(17): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+Framework\Window.cpp(31): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+Framework\Window.cpp(93): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  InputHandler.cpp
+Input\InputHandler.cpp(161): warning C4244: 'argument': conversion from 'const int' to 'const float', possible loss of data
+  Generating Code...
+  OpenGLFramework.vcxproj -> C:\Users\Yannick\OneDrive\Hiver2017\Infographie\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.lib

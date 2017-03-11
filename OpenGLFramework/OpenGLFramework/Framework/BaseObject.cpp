@@ -90,6 +90,11 @@ std::vector<BaseObject*> BaseObject::GetChilds()
 	return m_childObjects;
 }
 
+std::vector<Component*> BaseObject::GetComponents()
+{
+	return m_components;
+}
+
 void BaseObject::AddComponent(Component& _component)
 {
 	m_components.push_back(&_component);
