@@ -28,7 +28,7 @@ namespace Application
 		lightRenderer->SetColor(1.0, 1.0, 1.0);
 		light->AddComponent(*lightRenderer);
 		light->Translate(5, 0, 0);
-		light->Scale(0.1f, 0.1f, 0.1f);
+		light->SetScale(0.1f, 0.1f, 0.1f);
 
 		Framework::BaseShape * pyramid = new Framework::Pyramid(*m_colorShader, Math::Vector3(0, 4, 0));
 		pyramid->SetColor(0.0f, 0.75f, 0.75f, 0.5f);
@@ -46,7 +46,7 @@ namespace Application
 		planetRenderer->SetColor(1, 1, 1);
 		planet->AddComponent(*planetRenderer);
 		planet->Translate(0, 0, 6);
-		planet->Scale(0.75f, 0.75f, 0.75f);
+		planet->SetScale(0.75f, 0.75f, 0.75f);
 
 		Framework::BaseObject* moon = new Framework::BaseObject();
 		planet->Add(moon);
@@ -54,7 +54,7 @@ namespace Application
 		moonRenderer->SetColor(0.0f, 0.0f, 1.0f);
 		moon->AddComponent(*moonRenderer);
 		moon->Translate(0, 0, 10);
-		moon->Scale(0.25f, 0.25f, 0.25f);
+		moon->SetScale(0.25f, 0.25f, 0.25f);
 
 		SpawnAsteroid(*meshLoader);
 
@@ -119,7 +119,7 @@ namespace Application
 			rockRenderer->SetColor(0.7f, 0.7f, 0.7f);
 			rock->AddComponent(*rockRenderer);
 			rock->Translate(std::cos(angle) * distance, 0, std::sin(angle) * distance);
-			rock->Scale(0.1f * std::rand() / RAND_MAX + 0.1f, 0.1f * std::rand() / RAND_MAX + 0.1f, 0.1f * std::rand() / RAND_MAX + 0.1f);
+			rock->SetScale(0.1f * std::rand() / RAND_MAX + 0.1f, 0.1f * std::rand() / RAND_MAX + 0.1f, 0.1f * std::rand() / RAND_MAX + 0.1f);
 			rock->Rotate(((float)rand()) / (float)RAND_MAX * 360, ((float)rand()) / (float)RAND_MAX * 360, ((float)rand()) / (float)RAND_MAX * 360);
 
 			angle += 12.5f;

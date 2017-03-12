@@ -15,7 +15,7 @@ namespace UI
 			// Add all changes here, do not stock the current rotation value 
 			// but stock the delta between the new and the previous rotation.
 			Math::Vector3 rotationChange;
-			Math::Vector3 scalingChange;
+			Math::Vector3 scalingChange; 
 			Math::Vector3 translationChange;
 		};
 

@@ -31,6 +31,8 @@ public:
 
 	void ScaleChilds(const float _scaleX, const float _scaleY, const float _scaleZ);
 
+	void SetScaleChilds(const float _scaleX, const float _scaleY, const float _scaleZ);
+
 	void Add(T* _object);
 
 protected:

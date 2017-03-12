@@ -28,6 +28,8 @@ namespace Framework
 		virtual void Rotate(const Math::Vector3& _eulerAngles);
 		virtual void Rotate(const float _angle, const Math::Vector3& _axis);
 		virtual void Rotate(const float _eulerAnglesX, const float _eulerAnglesY, const float _eulerAngleZ);
+		virtual void SetScale(const Math::Vector3& _scale);
+		virtual void SetScale(const float _scaleX, const float _scaleY, const float _scaleZ);
 		virtual void Scale(const Math::Vector3& _scale);
 		virtual void Scale(const float _scaleX, const float _scaleY, const float _scaleZ);
 

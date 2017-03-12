@@ -21,7 +21,6 @@ namespace Application
 		compo->Add(proc);
 
 		AddShape(IUIInterface::ShapeNames::CROSSHAIR_LINE_HORIZONTAL, *compo);
-
 	}
 
 
@@ -36,13 +35,11 @@ namespace Application
 
 	void UIInterface::ShowPopup(Framework::BaseObject& _baseObject, ICamera& _camera)
 	{
-		
 		UIQT* popup = new UIQT(m_commandStack);
 		popup->updateHierarchy(_baseObject, _camera);
 		m_popups.push_back(popup);
+		popup->move(0, 0);
 		popup->show();
-		
-
 	}
 
 	void UIInterface::AddShape(ShapeNames _name, UI::UIShape& _shape)

@@ -37,7 +37,7 @@ void UIQT::createHierarchyList(QStringList _hierarchyText, Framework::BaseObject
 	childText += " ";
 	childText += typeid(_parent).name();
 
-	if (typeid(_parent) == typeid(Camera::Camera))		//remplacer par baseshape  couleur en plus  page 3  enum(0,1,2,3)   enum::page ->ca sort le numero de la page
+	if (dynamic_cast<Framework::BaseShape*>(&_parent) != nullptr)		//remplacer par baseshape  couleur en plus  page 3  enum(0,1,2,3)   enum::page ->ca sort le numero de la page
 	{
 		m_shapeObjects.push_back(&_parent);
 		QListWidgetItem* newItem = new QListWidgetItem;
@@ -71,7 +71,6 @@ void UIQT::createHierarchyList(QStringList _hierarchyText, Framework::BaseObject
 
 void UIQT::presentRColor()
 {
-
 	int rColor;
 	emit currentRColor(rColor);
 }
@@ -92,17 +91,17 @@ void UIQT::presentXPosition()
 {
 	if (ui.stackedWidget->currentIndex() == page::Empty)
 	{
-		int xPosition = m_emptyObjects[m_selectedObject.row()]->m_position[0];
+		int xPosition = m_emptyObjects[m_selectedObject.row()]->m_position.x;
 		emit currentEmptyXPosition(xPosition);
 	}
 	else if (ui.stackedWidget->currentIndex() == page::Model)
 	{
-		int xPosition = m_modelObjects[m_selectedObject.row()]->m_position[0];
+		int xPosition = m_modelObjects[m_selectedObject.row()]->m_position.x;
 		emit currentModelXPosition(xPosition);
 	}
 	else if (ui.stackedWidget->currentIndex() == page::Shape)
 	{
-		int xPosition = m_shapeObjects[m_selectedObject.row()]->m_position[0];
+		int xPosition = m_shapeObjects[m_selectedObject.row()]->m_position.x;
 		emit currentXPosition(xPosition);
 	}
 }
@@ -111,17 +110,17 @@ void UIQT::presentYPosition()
 {
 	if (ui.stackedWidget->currentIndex() == page::Empty)
 	{
-		int yPosition = m_emptyObjects[m_selectedObject.row()]->m_position[1];
+		int yPosition = m_emptyObjects[m_selectedObject.row()]->m_position.y;
 		emit currentEmptyYPosition(yPosition);
 	}
 	else if (ui.stackedWidget->currentIndex() == page::Model)
 	{
-		int yPosition = m_modelObjects[m_selectedObject.row()]->m_position[1];
+		int yPosition = m_modelObjects[m_selectedObject.row()]->m_position.y;
 		emit currentModelYPosition(yPosition);
 	}
 	else if (ui.stackedWidget->currentIndex() == page::Shape)
 	{
-		int yPosition = m_shapeObjects[m_selectedObject.row()]->m_position[1];
+		int yPosition = m_shapeObjects[m_selectedObject.row()]->m_position.y;
 		emit currentYPosition(yPosition);
 	}
 }
@@ -130,24 +129,24 @@ void UIQT::presentZPosition()
 {
 	if (ui.stackedWidget->currentIndex() == page::Empty)
 	{
-		int zPosition = m_emptyObjects[m_selectedObject.row()]->m_position[2];
+		int zPosition = m_emptyObjects[m_selectedObject.row()]->m_position.z;
 		emit currentEmptyZPosition(zPosition);
 	}
 	else if (ui.stackedWidget->currentIndex() == page::Model)
 	{
-		int zPosition = m_modelObjects[m_selectedObject.row()]->m_position[2];
+		int zPosition = m_modelObjects[m_selectedObject.row()]->m_position.z;
 		emit currentModelZPosition(zPosition);
 	}
 	else if (ui.stackedWidget->currentIndex() == page::Shape)
 	{
-		int zPosition = m_shapeObjects[m_selectedObject.row()]->m_position[2];
+		int zPosition = m_shapeObjects[m_selectedObject.row()]->m_position.z;
 		emit currentZPosition(zPosition);
 	}
 }
 
 void UIQT::presentXRotation()
 {
-	int xRotation /*= Math::Matrix4::MatrixToEulerAngles(m_hierarchyObjects[m_selectedObject.row()]->m_rotation[0]))*/;
+	int xRotation = Math::Matrix4::MatrixToEulerAngles(m_emptyObjects[m_selectedObject.row()]->m_rotation).x;
 	emit currentXRotation(xRotation);
 }
 
@@ -167,17 +166,17 @@ void UIQT::presentXScale()
 {
 	if (ui.stackedWidget->currentIndex() == page::Empty)
 	{
-		double xScale = m_emptyObjects[m_selectedObject.row()]->m_scale[0];
+		double xScale = m_emptyObjects[m_selectedObject.row()]->m_scale.x;
 		emit currentEmptyXScale(xScale);
 	}
 	else if (ui.stackedWidget->currentIndex() == page::Model)
 	{
-		double xScale = m_modelObjects[m_selectedObject.row()]->m_scale[0];
+		double xScale = m_modelObjects[m_selectedObject.row()]->m_scale.x;
 		emit currentModelXScale(xScale);
 	}
 	else if (ui.stackedWidget->currentIndex() == page::Shape)
 	{
-		double xScale = m_shapeObjects[m_selectedObject.row()]->m_scale[0];
+		double xScale = m_shapeObjects[m_selectedObject.row()]->m_scale.x;
 		emit currentXScale(xScale);
 	}
 	
@@ -187,17 +186,17 @@ void UIQT::presentYScale()
 {
 	if (ui.stackedWidget->currentIndex() == page::Empty)
 	{
-		double yScale = m_emptyObjects[m_selectedObject.row()]->m_scale[0];
+		double yScale = m_emptyObjects[m_selectedObject.row()]->m_scale.y;
 		emit currentEmptyYScale(yScale);
 	}
 	else if (ui.stackedWidget->currentIndex() == page::Model)
 	{
-		double yScale = m_modelObjects[m_selectedObject.row()]->m_scale[0];
+		double yScale = m_modelObjects[m_selectedObject.row()]->m_scale.y;
 		emit currentModelYScale(yScale);
 	}
 	else if (ui.stackedWidget->currentIndex() == page::Shape)
 	{
-		double yScale = m_shapeObjects[m_selectedObject.row()]->m_scale[0];
+		double yScale = m_shapeObjects[m_selectedObject.row()]->m_scale.y;
 		emit currentYScale(yScale);
 	}
 }
@@ -206,17 +205,17 @@ void UIQT::presentZScale()
 {
 	if (ui.stackedWidget->currentIndex() == page::Empty)
 	{
-		double zScale = m_emptyObjects[m_selectedObject.row()]->m_scale[0];
+		double zScale = m_emptyObjects[m_selectedObject.row()]->m_scale.z;
 		emit currentEmptyZScale(zScale);
 	}
 	else if (ui.stackedWidget->currentIndex() == page::Model)
 	{
-		double zScale = m_modelObjects[m_selectedObject.row()]->m_scale[0];
+		double zScale = m_modelObjects[m_selectedObject.row()]->m_scale.z;
 		emit currentModelZScale(zScale);
 	}
 	else if (ui.stackedWidget->currentIndex() == page::Shape)
 	{
-		double zScale = m_shapeObjects[m_selectedObject.row()]->m_scale[0];
+		double zScale = m_shapeObjects[m_selectedObject.row()]->m_scale.z;
 		emit currentZScale(zScale);
 	}
 }
@@ -267,7 +266,7 @@ bool UIQT::hasRendererComponent(Framework::BaseObject & _object)
 {
 	for each(Framework::Component* component in _object.GetComponents())
 	{
-		if (typeid(_object) == typeid(Rendering::Renderer))
+		if (dynamic_cast<Rendering::Renderer*>(component) != nullptr)
 			return true;
 	}
 	return false;
@@ -317,13 +316,13 @@ void UIQT::newXPosition(int _xPosition)
 	{
 		if (m_selectedObject.isValid())
 		{
-			int _currentXPosition = _currentXPosition = m_emptyObjects[m_selectedObject.row()]->m_position[0];
+			int _currentXPosition = _currentXPosition = m_emptyObjects[m_selectedObject.row()]->m_position.x;
 			int xTranslate = _xPosition - _currentXPosition;
 
 			UI::Command::CommandData data;
-			data.translationChange.x = xTranslate;
-			UI::Command command(*m_emptyObjects[m_selectedObject.row()], data);
-			m_commandStack->AddCommandAndExecute(command);
+			data.translationChange.x = xTranslate;		
+			UI::Command* command = new UI::Command(*m_emptyObjects[m_selectedObject.row()], data);
+			m_commandStack->AddCommandAndExecute(*command);
 
 			//m_hierarchyObjects[m_selectedObject.row()]->Translate(xTranslate, 0, 0);
 		}
@@ -332,7 +331,7 @@ void UIQT::newXPosition(int _xPosition)
 	{
 		if (m_selectedObject.isValid())
 		{
-			int _currentXPosition = _currentXPosition = m_modelObjects[m_selectedObject.row()]->m_position[0];
+			int _currentXPosition = _currentXPosition = m_modelObjects[m_selectedObject.row()]->m_position.x;
 			int xTranslate = _xPosition - _currentXPosition;
 
 			UI::Command::CommandData data;
@@ -347,7 +346,7 @@ void UIQT::newXPosition(int _xPosition)
 	{
 		if (m_selectedObject.isValid())
 		{
-			int _currentXPosition = _currentXPosition = m_shapeObjects[m_selectedObject.row()]->m_position[0];
+			int _currentXPosition = _currentXPosition = m_shapeObjects[m_selectedObject.row()]->m_position.x;
 			int xTranslate = _xPosition - _currentXPosition;
 
 			UI::Command::CommandData data;
@@ -367,7 +366,7 @@ void UIQT::newYPosition(int _yPosition)
 	{
 		if (m_selectedObject.isValid())
 		{
-			int _currentXPosition = _currentXPosition = m_emptyObjects[m_selectedObject.row()]->m_position[0];
+			int _currentXPosition = _currentXPosition = m_emptyObjects[m_selectedObject.row()]->m_position.y;
 			int yTranslate = _yPosition - _currentXPosition;
 
 			UI::Command::CommandData data;
@@ -382,7 +381,7 @@ void UIQT::newYPosition(int _yPosition)
 	{
 		if (m_selectedObject.isValid())
 		{
-			int _currentXPosition = _currentXPosition = m_modelObjects[m_selectedObject.row()]->m_position[0];
+			int _currentXPosition = _currentXPosition = m_modelObjects[m_selectedObject.row()]->m_position.y;
 			int yTranslate = _yPosition - _currentXPosition;
 
 			UI::Command::CommandData data;
@@ -397,7 +396,7 @@ void UIQT::newYPosition(int _yPosition)
 	{
 		if (m_selectedObject.isValid())
 		{
-			int _currentXPosition = _currentXPosition = m_shapeObjects[m_selectedObject.row()]->m_position[0];
+			int _currentXPosition = _currentXPosition = m_shapeObjects[m_selectedObject.row()]->m_position.y;
 			int yTranslate = _yPosition - _currentXPosition;
 
 			UI::Command::CommandData data;
@@ -413,50 +412,37 @@ void UIQT::newYPosition(int _yPosition)
 
 void UIQT::newZPosition(int _zPosition)
 {
-	if (ui.stackedWidget->currentIndex() == page::Empty)
+	if (!m_selectedObject.isValid())
+		return;
+
+	switch (ui.stackedWidget->currentIndex())
 	{
-		if (m_selectedObject.isValid())
-		{
-			int _currentXPosition = _currentXPosition = m_emptyObjects[m_selectedObject.row()]->m_position[0];
-			int zTranslate = _zPosition - _currentXPosition;
-
-			UI::Command::CommandData data;
-			data.translationChange.z = zTranslate;
-			UI::Command command(*m_emptyObjects[m_selectedObject.row()], data);
-			m_commandStack->AddCommandAndExecute(command);
-
-			//m_hierarchyObjects[m_selectedObject.row()]->Translate(xTranslate, 0, 0);
-		}
-	}
-	else if (ui.stackedWidget->currentIndex() == page::Model)
-	{
-		if (m_selectedObject.isValid())
-		{
-			int _currentXPosition = _currentXPosition = m_modelObjects[m_selectedObject.row()]->m_position[0];
-			int zTranslate = _zPosition - _currentXPosition;
-
-			UI::Command::CommandData data;
-			data.translationChange.z = zTranslate;
-			UI::Command command(*m_modelObjects[m_selectedObject.row()], data);
-			m_commandStack->AddCommandAndExecute(command);
-
-			//m_hierarchyObjects[m_selectedObject.row()]->Translate(xTranslate, 0, 0);
-		}
-	}
-	else if (ui.stackedWidget->currentIndex() == page::Shape)
-	{
-		if (m_selectedObject.isValid())
-		{
-			int _currentXPosition = _currentXPosition = m_shapeObjects[m_selectedObject.row()]->m_position[0];
-			int zTranslate = _zPosition - _currentXPosition;
-
-			UI::Command::CommandData data;
-			data.translationChange.z = zTranslate;
-			UI::Command command(*m_shapeObjects[m_selectedObject.row()], data);
-			m_commandStack->AddCommandAndExecute(command);
-
-			//m_hierarchyObjects[m_selectedObject.row()]->Translate(xTranslate, 0, 0);
-		}
+	case page::Empty:
+		int _currentXPosition = _currentXPosition = m_emptyObjects[m_selectedObject.row()]->m_position.z;
+		int zTranslate = _zPosition - _currentXPosition;
+		UI::Command::CommandData data;
+		data.translationChange.z = zTranslate;
+		UI::Command command(*m_emptyObjects[m_selectedObject.row()], data);
+		m_commandStack->AddCommandAndExecute(command);
+		break;
+	case page::Model:
+		int _currentXPosition = _currentXPosition = m_modelObjects[m_selectedObject.row()]->m_position.z;
+		int zTranslate = _zPosition - _currentXPosition;
+		UI::Command::CommandData data;
+		data.translationChange.z = zTranslate;
+		UI::Command command(*m_modelObjects[m_selectedObject.row()], data);
+		m_commandStack->AddCommandAndExecute(command);
+		break;
+	case page::Shape:
+		int _currentXPosition = _currentXPosition = m_shapeObjects[m_selectedObject.row()]->m_position.z;
+		int zTranslate = _zPosition - _currentXPosition;
+		UI::Command::CommandData data;
+		data.translationChange.z = zTranslate;
+		UI::Command command(*m_shapeObjects[m_selectedObject.row()], data);
+		m_commandStack->AddCommandAndExecute(command);
+		break;
+	default:
+		break;
 	}
 }
 
@@ -464,6 +450,13 @@ void UIQT::newXRotation(int _xRotation)
 {
 	if (m_selectedObject.isValid())
 	{
+		int currentXRotation = Math::Matrix4::MatrixToEulerAngles(m_emptyObjects[m_selectedObject.row()]->m_rotation).x;
+		double xRotation = _xRotation - currentXRotation;
+
+		UI::Command::CommandData* data = new UI::Command::CommandData();
+		data->rotationChange.x = xRotation;
+		UI::Command* command = new UI::Command(*m_emptyObjects[m_selectedObject.row()], *data);
+		m_commandStack->AddCommandAndExecute(*command);
 	}
 }
 
@@ -483,15 +476,20 @@ void UIQT::newZRotation(int _zRotation)
 
 void UIQT::newXScale(double _xScale)
 {
+	if (initializing)
+		return;
+
 	if (ui.stackedWidget->currentIndex() == page::Empty)
 	{
 		if (m_selectedObject.isValid())
 		{
-			double xScaling = _xScale;
-			UI::Command::CommandData data;
-			data.scalingChange.x = xScaling;
-			UI::Command command(*m_emptyObjects[m_selectedObject.row()], data);
-			m_commandStack->AddCommandAndExecute(command);
+			int currentXScale = m_emptyObjects[m_selectedObject.row()]->m_scale.x;
+			double xScaling = _xScale - currentXScale;
+
+			UI::Command::CommandData* data = new UI::Command::CommandData();
+			data->scalingChange.x = xScaling;
+			UI::Command* command = new UI::Command(*m_emptyObjects[m_selectedObject.row()], *data);
+			m_commandStack->AddCommandAndExecute(*command);
 		}
 	}
 	else if (ui.stackedWidget->currentIndex() == page::Model)
@@ -522,6 +520,9 @@ void UIQT::newXScale(double _xScale)
 
 void UIQT::newYScale(double _yScale)
 {
+	if (initializing)
+		return;
+
 	if (ui.stackedWidget->currentIndex() == page::Empty)
 	{
 		if (m_selectedObject.isValid())
@@ -559,6 +560,9 @@ void UIQT::newYScale(double _yScale)
 
 void UIQT::newZScale(double _zScale)
 {
+	if (initializing)
+		return;
+
 	if (ui.stackedWidget->currentIndex() == page::Empty)
 	{
 		if (m_selectedObject.isValid())
@@ -631,6 +635,7 @@ void UIQT::newFar(int _far)
 
 void UIQT::selectedObject(QModelIndex _index)
 {
+	initializing = true;
 	m_selectedObject = _index;
 
 	presentXPosition();
@@ -652,16 +657,19 @@ void UIQT::selectedObject(QModelIndex _index)
 	presentZoom();
 	presentNear();
 	presentFar();
+	initializing = false;
 }
 
 void UIQT::undo()
 {
 	m_commandStack->Undo();
+	selectedObject(m_selectedObject);
 }
 
 void UIQT::redo()
 {
 	m_commandStack->Redo();
+	selectedObject(m_selectedObject);
 }
 
 void UIQT::newDessinX(double _dessinX)

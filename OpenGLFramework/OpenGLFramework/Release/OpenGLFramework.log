@@ -1,1 +1,31 @@
-﻿  OpenGLFramework.vcxproj -> C:\Users\Utilisateur\OneDrive\Génie logiciel\Session4\IFT-3100-Infographie\TP2-TP3\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.lib
+﻿  Camera.cpp
+  BaseObject.cpp
+Framework\BaseObject.cpp(22): warning C4018: '<': signed/unsigned mismatch
+Framework\BaseObject.cpp(39): warning C4018: '<': signed/unsigned mismatch
+  BaseShape.cpp
+  Light.cpp
+  Pyramid.cpp
+  Square.cpp
+  Triangle.cpp
+  Window.cpp
+Framework\Window.cpp(17): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+Framework\Window.cpp(31): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+Framework\Window.cpp(93): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  PhysicsWorld.cpp
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\dependencies\bullet\src\LinearMath/btIDebugDraw.h(169): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\dependencies\bullet\src\LinearMath/btIDebugDraw.h(170): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\dependencies\bullet\src\LinearMath/btIDebugDraw.h(171): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+  Rigidbody.cpp
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\dependencies\bullet\src\LinearMath/btIDebugDraw.h(169): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\dependencies\bullet\src\LinearMath/btIDebugDraw.h(170): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\dependencies\bullet\src\LinearMath/btIDebugDraw.h(171): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+  Command.cpp
+  CommandStack.cpp
+  UIBaseObjectPopup.cpp
+  UIHierarchyPopup.cpp
+  UIPopup.cpp
+  Generating Code...
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\framework\baseobject.cpp(163): warning C4172: returning address of local variable or temporary
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\framework\baseobject.cpp(178): warning C4172: returning address of local variable or temporary
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\openglframework\framework\baseobject.cpp(158): warning C4172: returning address of local variable or temporary
+  OpenGLFramework.vcxproj -> C:\Users\Yannick\OneDrive\Hiver2017\Infographie\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.lib

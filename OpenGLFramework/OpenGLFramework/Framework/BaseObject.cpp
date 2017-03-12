@@ -72,6 +72,21 @@ void BaseObject::Rotate(const float _eulerAnglesX, const float _eulerAnglesY, co
 	m_rotation = Math::Matrix4::Rotate(m_rotation, _eulerAnglesX, Math::Vector3(0, 0, 1));
 }
 
+void BaseObject::SetScale(const Math::Vector3& _scale)
+{
+	SetScale(_scale.x, _scale.y, _scale.z);
+}
+
+void BaseObject::SetScale(const float _scaleX, const float _scaleY, const float _scaleZ)
+{
+	if (m_scale.x == 0.0f || m_scale.y == 0.0f || m_scale.z == 0.0f)
+		Utils::Log::DebugLog("WARNING -- Setting an object with a scale of 0.");
+	Utils::Composite<BaseObject>::SetScaleChilds(_scaleX, _scaleY, _scaleZ);
+	m_scale.x = _scaleX;
+	m_scale.y = _scaleY;
+	m_scale.z = _scaleZ;
+}
+
 void BaseObject::Scale(const Math::Vector3& _scale)
 {
 	Scale(_scale.x, _scale.y, _scale.z);
@@ -82,9 +97,9 @@ void BaseObject::Scale(const float _scaleX, const float _scaleY, const float _sc
 	if (m_scale.x == 0.0f || m_scale.y == 0.0f || m_scale.z == 0.0f)
 		Utils::Log::DebugLog("WARNING -- Setting an object with a scale of 0.");
 	Utils::Composite<BaseObject>::ScaleChilds(_scaleX, _scaleY, _scaleZ);
-	m_scale.x = _scaleX;
-	m_scale.y = _scaleY;
-	m_scale.z = _scaleZ;
+	m_scale.x += _scaleX;
+	m_scale.y += _scaleY;
+	m_scale.z += _scaleZ;
 }
 
 std::vector<BaseObject*> BaseObject::GetChilds()

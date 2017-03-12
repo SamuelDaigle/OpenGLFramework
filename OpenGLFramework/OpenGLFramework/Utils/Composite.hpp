@@ -74,6 +74,15 @@ namespace Utils
 	}
 
 	template <class T>
+	void Composite<T>::SetScaleChilds(const float _scaleX, const float _scaleY, const float _scaleZ)
+	{
+		for each (T* childObject in m_childObjects)
+		{
+			childObject->SetScale(_scaleX, _scaleY, _scaleZ);
+		}
+	}
+
+	template <class T>
 	void Composite<T>::Add(T* _object)
 	{
 		m_childObjects.push_back(_object);

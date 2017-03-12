@@ -13,6 +13,7 @@
 #include "..\OpenGLFramework\UI\Command.h"
 #include "..\OpenGLFramework\UI\CommandStack.h"
 #include "..\OpenGLFramework\Rendering\Renderer.h"
+#include "..\OpenGLFramework\Framework\BaseShape.h"
 
 
 class UIQT : public QMainWindow, public UI::UIPopup
@@ -172,6 +173,7 @@ private:
 	QModelIndex m_selectedObject;
 	Camera::Camera* m_camera;
 	UI::CommandStack* _commandStack;
+	bool initializing;
 
 };
 

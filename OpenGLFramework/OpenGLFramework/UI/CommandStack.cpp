@@ -15,6 +15,7 @@ namespace UI
 			return;
 
 		const Command* command = m_undoStack.top();
+		m_undoStack.pop();
 		command->ReverseExecute();
 		m_redoStack.push(command);
 	}
@@ -25,6 +26,7 @@ namespace UI
 			return;
 
 		const Command* command = m_redoStack.top();
+		m_redoStack.pop();
 		command->Execute();
 		m_undoStack.push(command);
 	}

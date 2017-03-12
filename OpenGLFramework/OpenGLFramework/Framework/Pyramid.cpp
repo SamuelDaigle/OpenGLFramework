@@ -8,7 +8,7 @@ namespace Framework
 	{
 		m_position = _position;
 		InitializeBuffers();
-		BaseObject::Scale(1, 1, 1);
+		BaseObject::SetScale(1, 1, 1);
 	}
 
 

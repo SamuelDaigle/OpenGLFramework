@@ -1,11 +1,24 @@
-﻿  Scene.cpp
+﻿  Uic'ing uiqt.ui...
+  moc_uiqt.cpp
+  UIInterface.cpp
+  main.cpp
+  uiqt.cpp
+  Generating Code...
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\uiqt\uiqt.cpp(75): warning C4700: uninitialized local variable 'rColor' used
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\uiqt\uiqt.cpp(81): warning C4700: uninitialized local variable 'gColor' used
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\uiqt\uiqt.cpp(87): warning C4700: uninitialized local variable 'bColor' used
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\uiqt\uiqt.cpp(156): warning C4700: uninitialized local variable 'yRotation' used
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\uiqt\uiqt.cpp(162): warning C4700: uninitialized local variable 'zRotation' used
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\uiqt\uiqt.cpp(238): warning C4700: uninitialized local variable 'zoom' used
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\uiqt\uiqt.cpp(244): warning C4700: uninitialized local variable 'near_' used
+c:\users\yannick\onedrive\hiver2017\infographie\openglframework\openglframework\uiqt\uiqt.cpp(250): warning C4700: uninitialized local variable 'far_' used
   SOIL.lib(SOIL.obj) : MSIL .netmodule or module compiled with /GL found; restarting link with /LTCG; add /LTCG to the link command line to improve linker performance
 LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Generating code
   Finished generating code
-SOIL.lib(SOIL.obj) : warning LNK4099: PDB 'SOIL.pdb' was not found with 'SOIL.lib(SOIL.obj)' or at 'C:\Users\Utilisateur\OneDrive\GÚnie logiciel\Session4\IFT-3100-Infographie\TP2-TP3\OpenGLFramework\OpenGLFramework\Release\SOIL.pdb'; linking object as if no debug info
-SOIL.lib(image_helper.obj) : warning LNK4099: PDB 'SOIL.pdb' was not found with 'SOIL.lib(image_helper.obj)' or at 'C:\Users\Utilisateur\OneDrive\GÚnie logiciel\Session4\IFT-3100-Infographie\TP2-TP3\OpenGLFramework\OpenGLFramework\Release\SOIL.pdb'; linking object as if no debug info
-SOIL.lib(stb_image_aug.obj) : warning LNK4099: PDB 'SOIL.pdb' was not found with 'SOIL.lib(stb_image_aug.obj)' or at 'C:\Users\Utilisateur\OneDrive\GÚnie logiciel\Session4\IFT-3100-Infographie\TP2-TP3\OpenGLFramework\OpenGLFramework\Release\SOIL.pdb'; linking object as if no debug info
-SOIL.lib(image_DXT.obj) : warning LNK4099: PDB 'SOIL.pdb' was not found with 'SOIL.lib(image_DXT.obj)' or at 'C:\Users\Utilisateur\OneDrive\GÚnie logiciel\Session4\IFT-3100-Infographie\TP2-TP3\OpenGLFramework\OpenGLFramework\Release\SOIL.pdb'; linking object as if no debug info
-  UIQT.vcxproj -> C:\Users\Utilisateur\OneDrive\Génie logiciel\Session4\IFT-3100-Infographie\TP2-TP3\OpenGLFramework\OpenGLFramework\Release\UIQT.exe
-  UIQT.vcxproj -> C:\Users\Utilisateur\OneDrive\Génie logiciel\Session4\IFT-3100-Infographie\TP2-TP3\OpenGLFramework\OpenGLFramework\Release\UIQT.pdb (Full PDB)
+SOIL.lib(SOIL.obj) : warning LNK4099: PDB 'SOIL.pdb' was not found with 'SOIL.lib(SOIL.obj)' or at 'C:\Users\Yannick\OneDrive\Hiver2017\Infographie\OpenGLFramework\OpenGLFramework\Release\SOIL.pdb'; linking object as if no debug info
+SOIL.lib(image_helper.obj) : warning LNK4099: PDB 'SOIL.pdb' was not found with 'SOIL.lib(image_helper.obj)' or at 'C:\Users\Yannick\OneDrive\Hiver2017\Infographie\OpenGLFramework\OpenGLFramework\Release\SOIL.pdb'; linking object as if no debug info
+SOIL.lib(stb_image_aug.obj) : warning LNK4099: PDB 'SOIL.pdb' was not found with 'SOIL.lib(stb_image_aug.obj)' or at 'C:\Users\Yannick\OneDrive\Hiver2017\Infographie\OpenGLFramework\OpenGLFramework\Release\SOIL.pdb'; linking object as if no debug info
+SOIL.lib(image_DXT.obj) : warning LNK4099: PDB 'SOIL.pdb' was not found with 'SOIL.lib(image_DXT.obj)' or at 'C:\Users\Yannick\OneDrive\Hiver2017\Infographie\OpenGLFramework\OpenGLFramework\Release\SOIL.pdb'; linking object as if no debug info
+  UIQT.vcxproj -> C:\Users\Yannick\OneDrive\Hiver2017\Infographie\OpenGLFramework\OpenGLFramework\Release\UIQT.exe
+  UIQT.vcxproj -> C:\Users\Yannick\OneDrive\Hiver2017\Infographie\OpenGLFramework\OpenGLFramework\Release\UIQT.pdb (Full PDB)

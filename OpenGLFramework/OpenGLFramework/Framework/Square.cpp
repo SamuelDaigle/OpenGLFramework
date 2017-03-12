@@ -7,7 +7,7 @@ namespace Framework
 		BaseShape(_shader)
 	{
 		InitializeBuffers();
-		BaseObject::Scale(1, 1, 1);
+		BaseObject::SetScale(1, 1, 1);
 	}
 
 
