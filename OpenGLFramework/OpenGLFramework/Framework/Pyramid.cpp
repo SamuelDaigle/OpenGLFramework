@@ -211,9 +211,9 @@ namespace Framework
 		vertices[17].b = 1.0f;
 
 		// Load the index array with data.
-		indices[0] = 0; 
+		indices[0] = 2; 
 		indices[1] = 1; 
-		indices[2] = 2;  
+		indices[2] = 0;  
 
 		indices[3] = 1;  
 		indices[4] = 2;  
