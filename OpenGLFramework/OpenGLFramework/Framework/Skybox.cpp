@@ -64,9 +64,9 @@ namespace Framework
 		// Prepare shader.
 		glDepthMask(GL_FALSE);
 		m_shader->Use();
-		Math::Matrix4 proj = glm::perspective<float>(90.0f, (float)glutGet(GLUT_SCREEN_WIDTH) / (float)glutGet(GLUT_SCREEN_HEIGHT), 0.1f, 100000.0f);
+		Math::Matrix4 proj = glm::perspective<float>(glm::radians(45.0f), (float)glutGet(GLUT_SCREEN_WIDTH) / (float)glutGet(GLUT_SCREEN_HEIGHT), 0.1f, 100000.0f);
 		m_shader->SetProjectionMatrix(proj);
-		m_shader->SetViewMatrix(Math::Matrix4::Inverse(_camera.GetRotation()));
+		m_shader->SetViewMatrix(_camera.GetRotation());
 
 		// Draw.
 		glBindVertexArray(m_skyboxVAO);
