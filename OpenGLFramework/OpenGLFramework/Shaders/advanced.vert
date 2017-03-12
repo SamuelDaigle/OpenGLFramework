@@ -23,7 +23,7 @@ void main(void)
 {
 	gl_Position = vec4(Position, 1.0) * worldMatrix * viewMatrix * projectionMatrix;
 
-	ex_FragPos = vec3(vec4(Position, 1.0f) * worldMatrix);
+	ex_FragPos = vec3(vec4(Position, 1.0f) * transpose(worldMatrix));
 	ex_Normal = mat3(transpose(inverse(worldMatrix))) * Normal;
 	ex_TexCoord = TexCoords;
 	ex_Color = Color;

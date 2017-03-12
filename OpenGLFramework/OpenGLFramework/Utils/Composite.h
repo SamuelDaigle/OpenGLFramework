@@ -21,7 +21,7 @@ public:
 
 	void UpdateChilds(const Math::Matrix4& _parentWorldMatrix);
 
-	void RenderChilds(const ICamera& _camera, const Math::Matrix4& _parentWorldMatrix) const;
+	void RenderChilds(const ICamera& _camera) const;
 
 	void SetChildsPosition(const float _x, const float _y, const float _z);
 

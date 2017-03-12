@@ -24,14 +24,14 @@ namespace Framework
 
 	}
 
-	void BaseShape::Render(const ICamera& _camera, const Math::Matrix4& _parentWorldMatrix) const
+	void BaseShape::Render(const ICamera& _camera) const
 	{
 		if (m_ColorShader)
 		{
 			m_ColorShader->Use();
 			m_ColorShader->SetViewMatrix(_camera.GetViewMatrix());
 			m_ColorShader->SetProjectionMatrix(_camera.GetProjectionMatrix());
-			m_ColorShader->SetWorldMatrix(_parentWorldMatrix);
+			m_ColorShader->SetWorldMatrix(m_worldMatrix);
 		}
 		glUniform4f(glGetUniformLocation(m_ColorShader->GetGlProgram(), "Color"), m_color.r, m_color.g, m_color.b, m_alpha);
 	}

@@ -18,7 +18,7 @@ namespace Framework
 
 		void Destroy() override;
 
-		void Render(const ICamera& _camera, const Math::Matrix4& _parentWorldMatrix) const override;
+		void Render(const ICamera& _camera) const override;
 
 	private:
 		void InitializeBuffers();

@@ -19,9 +19,6 @@ namespace Application
 		m_colorShader = new Rendering::ColorShader();
 
 		m_rootObject = new Framework::BaseObject();
-		Rendering::Renderer* rootRenderer = new Rendering::Renderer("../Content/planet/planet.obj", *meshLoader, *m_advancedShader);
-		rootRenderer->SetColor(1.0, 1.0, 0.0);
-		m_rootObject->AddComponent(*rootRenderer);
 
 		Framework::BaseObject* light = new Framework::BaseObject();
 		m_rootObject->Add(light);
@@ -30,7 +27,7 @@ namespace Application
 		Rendering::Renderer* lightRenderer = new Rendering::Renderer("../Content/planet/planet.obj", *meshLoader, *m_advancedShader);
 		lightRenderer->SetColor(1.0, 1.0, 1.0);
 		light->AddComponent(*lightRenderer);
-		light->Translate(50, 0, 0);
+		light->Translate(5, 0, 0);
 		light->Scale(0.1f, 0.1f, 0.1f);
 
 		Framework::BaseShape * pyramid = new Framework::Pyramid(*m_colorShader, Math::Vector3(0, 4, 0));
@@ -42,14 +39,13 @@ namespace Application
 		Rendering::Renderer* sunRenderer = new Rendering::Renderer("../Content/planet/planet.obj", *meshLoader, *m_basicShader);
 		sunRenderer->SetColor(1.0, 1.0, 0.0);
 		sun->AddComponent(*sunRenderer);
-		sun->Translate(0, 5, 0);
 
 		Framework::BaseObject* planet = new Framework::BaseObject();
 		sun->Add(planet);
 		Rendering::Renderer* planetRenderer = new Rendering::Renderer("../Content/planet/planet.obj", *meshLoader, *m_advancedShader);
 		planetRenderer->SetColor(1, 1, 1);
 		planet->AddComponent(*planetRenderer);
-		planet->Translate(0, 0, 10);
+		planet->Translate(0, 0, 6);
 		planet->Scale(0.75f, 0.75f, 0.75f);
 
 		Framework::BaseObject* moon = new Framework::BaseObject();
@@ -190,7 +186,13 @@ namespace Application
 		m_skybox->Render(*m_camera);
 		m_hierarchyText->DrawTexts();
 		m_consoleText->DrawTexts();
-		m_rootObject->Render(*m_camera, Math::Matrix4());
+		m_rootObject->Render(*m_camera);
+
+
+		m_basicShader->Use();
+		m_basicShader->SetProjectionMatrix(glm::ortho(0.0f, 16.0f, 9.0f, 0.0f, 0.1f, 1000.0f));
+		m_basicShader->SetViewMatrix(Math::Matrix4() * Math::Matrix4::VectorToTranslationMatrix(Math::Vector3(0, 0, -10)));
+		m_basicShader->SetWorldMatrix(Math::Matrix4());
 	}
 
 	Framework::BaseObject & Scene::getHierarchy()

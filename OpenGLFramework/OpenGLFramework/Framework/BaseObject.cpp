@@ -15,27 +15,26 @@ void BaseObject::Destroy()
 	Utils::Composite<BaseObject>::DestroyChilds();
 }
 
-void BaseObject::Render(const ICamera& _camera, const Math::Matrix4& _parentWorldMatrix) const
+void BaseObject::Render(const ICamera& _camera) const
 {
-	Math::Matrix4 world = _parentWorldMatrix * GetWorldMatrix();
-	Utils::Composite<BaseObject>::RenderChilds(_camera, world);
+	Utils::Composite<BaseObject>::RenderChilds(_camera);
 
 	for (int i = 0; i < m_components.size(); i++)
 	{
-		m_components[i]->Render(_camera, world);
+		m_components[i]->Render(_camera, m_worldMatrix);
 	}
 }
 
 void BaseObject::Update(const Math::Matrix4& _parentWorldMatrix)
 {
-	Math::Matrix4 world = _parentWorldMatrix * GetWorldMatrix();
-	Utils::Composite<BaseObject>::UpdateChilds(world);
+	m_worldMatrix = _parentWorldMatrix * GetLocalWorldMatrix();
+	Utils::Composite<BaseObject>::UpdateChilds(m_worldMatrix);
 
 	m_rightVector	  = -Math::Vector3(m_rotation[0][0], m_rotation[1][0], m_rotation[2][0]);
 	m_upVector	  = -Math::Vector3(m_rotation[0][1], m_rotation[1][1], m_rotation[2][1]);
 	m_forwardVector = -Math::Vector3(m_rotation[0][2], m_rotation[1][2], m_rotation[2][2]);
 
-	m_worldPosition = Math::Vector3(world[0][3], world[1][3], world[2][3]);
+	m_worldPosition = Math::Vector3(m_worldMatrix[3][0], m_worldMatrix[3][1], m_worldMatrix[3][2]);
 
 	for (int i = 0; i < m_components.size(); i++)
 	{
@@ -103,13 +102,18 @@ void BaseObject::AddComponent(Component& _component)
 	m_components.push_back(&_component);
 }
 
-const Math::Matrix4 BaseObject::GetWorldMatrix() const
+const Math::Matrix4 BaseObject::GetLocalWorldMatrix() const
 {
 	Math::Matrix4 rotationMatrix = GetRotationMatrix();
 	Math::Matrix4 scalingMatrix = GetScalingMatrix();
 	Math::Matrix4 translateMatrix = GetTranslationMatrix();
 
-	return scalingMatrix * translateMatrix * rotationMatrix;
+	return translateMatrix * scalingMatrix * rotationMatrix;
+}
+
+const Math::Matrix4 BaseObject::GetWorldMatrix() const
+{
+	return m_worldMatrix;
 }
 
 const Math::Matrix4& BaseObject::GetRotationMatrix() const
