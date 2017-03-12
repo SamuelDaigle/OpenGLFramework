@@ -13,7 +13,7 @@ namespace Framework
 	class Pyramid : public BaseShape
 	{
 	public:
-		Pyramid(IShader &_shader);
+		Pyramid(IShader &_shader, Math::Vector3 _position);
 		~Pyramid();
 
 		void Destroy() override;

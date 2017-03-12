@@ -18,35 +18,50 @@ namespace Application
 		m_customShader = new Application::CustomShader();
 		m_colorShader = new Rendering::ColorShader();
 
-		//m_physicsWorld = new Physics::PhysicsWorld();
-
 		m_rootObject = new Framework::BaseObject();
+		Rendering::Renderer* rootRenderer = new Rendering::Renderer("../Content/planet/planet.obj", *meshLoader, *m_advancedShader);
+		rootRenderer->SetColor(1.0, 1.0, 0.0);
+		m_rootObject->AddComponent(*rootRenderer);
 
 		Framework::BaseObject* light = new Framework::BaseObject();
-		light->Translate(2.5f, 0, 0);
+		m_rootObject->Add(light);
 		Framework::Light* lightComponent = new Framework::Light(*light, *m_advancedShader);
 		light->AddComponent(*lightComponent);
-		//m_rootObject->Add(light);
+		Rendering::Renderer* lightRenderer = new Rendering::Renderer("../Content/planet/planet.obj", *meshLoader, *m_advancedShader);
+		lightRenderer->SetColor(1.0, 1.0, 1.0);
+		light->AddComponent(*lightRenderer);
+		light->Translate(50, 0, 0);
+		light->Scale(0.1f, 0.1f, 0.1f);
 
-		Framework::BaseShape * sphere = new Framework::Pyramid(*m_colorShader);
-		sphere->SetColor(0.0f, 0.75f, 0.75f, 1.0f);
-		m_rootObject->Add(sphere);
+		Framework::BaseShape * pyramid = new Framework::Pyramid(*m_colorShader, Math::Vector3(0, 4, 0));
+		pyramid->SetColor(0.0f, 0.75f, 0.75f, 0.5f);
+		m_rootObject->Add(pyramid);
 
-		//Framework::Square * sphere2 = new Framework::Square();
-		//m_rootObject->Add(sphere2);
+		Framework::BaseObject* sun = new Framework::BaseObject();
+		m_rootObject->Add(sun);
+		Rendering::Renderer* sunRenderer = new Rendering::Renderer("../Content/planet/planet.obj", *meshLoader, *m_basicShader);
+		sunRenderer->SetColor(1.0, 1.0, 0.0);
+		sun->AddComponent(*sunRenderer);
+		sun->Translate(0, 5, 0);
 
 		Framework::BaseObject* planet = new Framework::BaseObject();
-		m_rootObject->Add(planet);
-		//Physics::Rigidbody* planetRigidbody = new Physics::Rigidbody(*planet, *new btSphereShape(1), 1);
-		//m_physicsWorld->AddRigidbody(*planetRigidbody);
-		Rendering::Renderer* planetRenderer = new Rendering::Renderer("../Content/planet/planet.obj", *meshLoader, *m_basicShader);
+		sun->Add(planet);
+		Rendering::Renderer* planetRenderer = new Rendering::Renderer("../Content/planet/planet.obj", *meshLoader, *m_advancedShader);
+		planetRenderer->SetColor(1, 1, 1);
 		planet->AddComponent(*planetRenderer);
-		//planet->AddComponent(*planetRigidbody);
+		planet->Translate(0, 0, 10);
+		planet->Scale(0.75f, 0.75f, 0.75f);
+
+		Framework::BaseObject* moon = new Framework::BaseObject();
+		planet->Add(moon);
+		Rendering::Renderer* moonRenderer = new Rendering::Renderer("../Content/planet/planet.obj", *meshLoader, *m_basicShader);
+		moonRenderer->SetColor(0.0f, 0.0f, 1.0f);
+		moon->AddComponent(*moonRenderer);
+		moon->Translate(0, 0, 10);
+		moon->Scale(0.25f, 0.25f, 0.25f);
 
 		Framework::BaseObject* terrain = new Framework::BaseObject();
 		terrain->Translate(0, -15, 0);
-		//Physics::Rigidbody* m_rigidbody = new Physics::Rigidbody(*terrain, *new btStaticPlaneShape(btVector3(0, 1, 0), 10), 0);
-		//m_physicsWorld->AddRigidbody(*m_rigidbody);
 		m_rootObject->Add(terrain);
 
 		m_skybox = new Framework::Skybox();
@@ -145,12 +160,12 @@ namespace Application
 
 		if (m_window->GetInputHandler().IsKeyDown('k'))
 		{
-			m_rootObject->GetChilds()[1]->Rotate(-3, Math::Vector3(0.0f, 1.0f, 0.0f));
+			m_rootObject->GetChilds()[2]->Rotate(-2, Math::Vector3(0.0f, 1.0f, 0.0f));
 		}
 
 		if (m_window->GetInputHandler().IsKeyDown('j'))
 		{
-			m_rootObject->GetChilds()[1]->GetChilds()[0]->Rotate(1, Math::Vector3(0.0f, 1.0f, 0.0f));
+			m_rootObject->GetChilds()[2]->GetChilds()[0]->Rotate(1, Math::Vector3(0.0f, 1.0f, 0.0f));
 		}
 		if (m_window->GetInputHandler().IsKeyDown('o'))
 		{
@@ -160,10 +175,18 @@ namespace Application
 		{
 			m_camera->Perspective();
 		}
+
+		if (m_window->GetInputHandler().IsKeyPressed('r'))
+		{
+			IO::TextureLoader textureLoader;
+			textureLoader.Initialize();
+			m_skybox->Initialize("../Content/skybox/rick.bmp", &textureLoader);
+		}
 	}
 
 	void Scene::Render() const
 	{
+		m_basicShader->Use();
 		m_skybox->Render(*m_camera);
 		m_hierarchyText->DrawTexts();
 		m_consoleText->DrawTexts();
@@ -182,8 +205,7 @@ namespace Application
 
 	void Scene::Update()
 	{
-		//m_physicsWorld->Update();
-		m_rootObject->Update();
+		m_rootObject->Update(Math::Matrix4());
 		UpdateConsoleText();
 	}
 

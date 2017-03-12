@@ -24,7 +24,7 @@ namespace Camera
 		m_rotation = Math::Matrix4::Rotate(m_rotation, m_tilt, pitchVector); //pencher la barre 
 		m_rotation = Math::Matrix4::Inverse(m_rotation); //on inverse la matrice pour la remettre normale
 
-		BaseObject::Update();
+		BaseObject::Update(Math::Matrix4());
 	}
 
 	void Camera::Rotate(const float _angle, const Math::Vector3& _axis)

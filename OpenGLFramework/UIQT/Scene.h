@@ -20,7 +20,6 @@
 #include "..\OpenGLFramework\Interface\IScene.h"
 #include "..\OpenGLFramework\Camera\Camera.h"
 #include "..\OpenGLFramework\Interface\IWindow.h"
-//#include "Physics\PhysicsWorld.h"
 #include "..\OpenGLFramework\Rendering\Renderer.h"
 
 namespace Application
@@ -54,7 +53,6 @@ namespace Application
 		Camera::Camera* m_camera;
 		Text::TextHolder* m_hierarchyText;
 		Text::TextHolder* m_consoleText;
-		//Physics::PhysicsWorld* m_physicsWorld;
 	};
 
 }

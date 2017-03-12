@@ -2,7 +2,7 @@
 /* Author: Samuel Daigle                                                */
 /************************************************************************/
 
-#version 330 core
+#version 400 core
 
 struct PointLight {
 	vec3 position;
@@ -15,6 +15,7 @@ in vec3 ex_Normal;
 in vec3 ex_FragPos;
 in vec2 ex_TexCoord;
 in vec4 ex_Color;
+in mat4 ex_worldMatrix;
 
 out vec4 color;
 
@@ -31,7 +32,8 @@ void main()
   	
     // Diffuse 
     vec3 norm = normalize(ex_Normal);
-    vec3 lightDir = normalize(pointLight.position - ex_FragPos);
+	vec3 lightPos = vec3(vec4(pointLight.position, 1.0f));
+    vec3 lightDir = normalize(lightPos - ex_FragPos);
     float diff = max(0.0, dot(norm, lightDir));
     vec3 diffuse = diff * pointLight.diffuse * texture;
     
@@ -42,7 +44,7 @@ void main()
     vec3 specular = pointLight.specular * spec * texture;
 
 	// Combine results
-	vec3 result = ambient + diffuse;  // + specular;
+	vec3 result = ambient + diffuse; // + specular;
 
     color = vec4(result, 1.0f) * ex_Color;
 }

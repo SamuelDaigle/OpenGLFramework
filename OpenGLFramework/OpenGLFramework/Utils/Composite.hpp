@@ -20,11 +20,11 @@ namespace Utils
 	}
 
 	template <class T>
-	void Composite<T>::UpdateChilds()
+	void Composite<T>::UpdateChilds(const Math::Matrix4& _parentWorldMatrix)
 	{
 		for each (T* childObject in m_childObjects)
 		{
-			childObject->Update();
+			childObject->Update(_parentWorldMatrix);
 		}
 	}
 

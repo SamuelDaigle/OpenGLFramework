@@ -9,7 +9,7 @@ namespace Framework
 		glDepthMask(GL_ALWAYS);
 		glDepthFunc(GL_LESS);
 		glEnable(GL_STENCIL_TEST);
-		glDisable(GL_CULL_FACE);
+		glEnable(GL_CULL_FACE);
 	}
 
 	void OpenGL::Destroy()

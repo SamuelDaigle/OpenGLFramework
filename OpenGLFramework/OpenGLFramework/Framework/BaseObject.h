@@ -21,7 +21,7 @@ namespace Framework
 		BaseObject();
 		virtual void Destroy();
 		virtual void Render(const ICamera& _camera, const Math::Matrix4& _parentWorldMatrix) const;
-		virtual void Update();
+		virtual void Update(const Math::Matrix4& _parentWorldMatrix);
 
 		virtual void Translate(const Math::Vector3& _translationVector);
 		virtual void Translate(const float _x, const float _y, const float _z);
@@ -46,6 +46,8 @@ namespace Framework
 		virtual const Math::Vector3& Up() const;
 		virtual const Math::Vector3& Down() const;
 
+		virtual const Math::Vector3& GetWorldPosition() const;
+
 		// Public to allow all modification from external class.
 		Math::Vector3 m_position;
 		Math::Vector3 m_scale;
@@ -60,6 +62,8 @@ namespace Framework
 		Math::Vector3 m_forwardVector;
 		Math::Vector3 m_upVector;
 		Math::Vector3 m_rightVector;
+
+		Math::Vector3 m_worldPosition;
 
 		std::vector<Component*> m_components;
 	};

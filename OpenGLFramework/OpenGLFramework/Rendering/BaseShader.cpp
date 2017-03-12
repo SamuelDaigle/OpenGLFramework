@@ -18,6 +18,11 @@ namespace Rendering
 		glUseProgram(m_glProgram);
 	}
 
+	void BaseShader::StopUsing() const
+	{
+		glUseProgram(0);
+	}
+
 	const unsigned int BaseShader::GetGlProgram() const
 	{
 		return m_glProgram;

@@ -26,13 +26,16 @@ void BaseObject::Render(const ICamera& _camera, const Math::Matrix4& _parentWorl
 	}
 }
 
-void BaseObject::Update()
+void BaseObject::Update(const Math::Matrix4& _parentWorldMatrix)
 {
-	Utils::Composite<BaseObject>::UpdateChilds();
+	Math::Matrix4 world = _parentWorldMatrix * GetWorldMatrix();
+	Utils::Composite<BaseObject>::UpdateChilds(world);
 
 	m_rightVector	  = -Math::Vector3(m_rotation[0][0], m_rotation[1][0], m_rotation[2][0]);
 	m_upVector	  = -Math::Vector3(m_rotation[0][1], m_rotation[1][1], m_rotation[2][1]);
 	m_forwardVector = -Math::Vector3(m_rotation[0][2], m_rotation[1][2], m_rotation[2][2]);
+
+	m_worldPosition = Math::Vector3(world[0][3], world[1][3], world[2][3]);
 
 	for (int i = 0; i < m_components.size(); i++)
 	{
@@ -154,6 +157,12 @@ const Math::Vector3& BaseObject::Up() const
 const Math::Vector3& BaseObject::Down() const
 {
 	return -m_upVector;
+}
+
+
+const Math::Vector3& BaseObject::GetWorldPosition() const
+{
+	return m_worldPosition;
 }
 
 }

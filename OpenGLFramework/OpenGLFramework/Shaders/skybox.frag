@@ -2,7 +2,7 @@
 /* Author: Samuel Daigle et Sébastien Rousseau                          */
 /************************************************************************/
 
-#version 330 core
+#version 400 core
 
 in vec3 TexCoords;
 

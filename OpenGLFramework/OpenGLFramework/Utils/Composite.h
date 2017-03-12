@@ -19,7 +19,7 @@ public:
 
 	void DestroyChilds();
 
-	void UpdateChilds();
+	void UpdateChilds(const Math::Matrix4& _parentWorldMatrix);
 
 	void RenderChilds(const ICamera& _camera, const Math::Matrix4& _parentWorldMatrix) const;
 
