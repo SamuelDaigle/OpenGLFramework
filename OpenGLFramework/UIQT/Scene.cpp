@@ -169,20 +169,36 @@ namespace Application
 		{
 			m_rootObject->GetChilds()[2]->GetChilds()[0]->Rotate(1, Math::Vector3(0.0f, 1.0f, 0.0f));
 		}
+		//zoom et modification du champ de vision 
+		if (m_window->GetInputHandler().IsKeyDown('2'))
+		{
+			m_camera->Zoom(1);
+		}
+		if (m_window->GetInputHandler().IsKeyDown('1'))
+		{
+			m_camera->Zoom(-1);
+		}
+		//projection orthogonale
 		if (m_window->GetInputHandler().IsKeyDown('o'))
 		{
 			m_camera->Ortho();
 		}
+		//projection perspective
 		if (m_window->GetInputHandler().IsKeyDown('p'))
 		{
 			m_camera->Perspective();
 		}
-
+		//importation d'image pour le skybox 
 		if (m_window->GetInputHandler().IsKeyPressed('r'))
 		{
 			IO::TextureLoader textureLoader;
 			textureLoader.Initialize();
 			m_skybox->Initialize("../Content/skybox/rick.bmp", &textureLoader);
+		}
+		//lookat a un objet 
+		if (m_window->GetInputHandler().IsKeyDown('c'))
+		{
+			m_camera->m_rotation = Math::Matrix4::LookAt(m_camera->m_position, Math::Vector3());
 		}
 	}
 
