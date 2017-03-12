@@ -9,6 +9,12 @@ namespace UI
 
 	UISquare::UISquare(float _x1, float _y1, float _x2, float _y2)
 	{
+		if (_y2 < _y1)
+		{
+			float temp = _y2;
+			_y2 = _y1;
+			_y1 = temp;
+		}
 		x = _x1;
 		y = _y1;
 		x2 = _x2;
@@ -24,4 +30,5 @@ namespace UI
 		glVertex3f(x2, y, 0.0);
 		glEnd();
 	}
+}
 }

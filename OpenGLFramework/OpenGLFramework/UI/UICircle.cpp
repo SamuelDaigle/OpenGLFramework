@@ -24,7 +24,7 @@ namespace UI
 		for (int a = 0; a < 360; a += 360 / sides)
 		{
 			double heading = a * 3.1415926535897932384626433832795 / 180;
-			glVertex2d(cos(heading) * radius, sin(heading) * radius);
+			glVertex2d(cos(heading) * radius + x, sin(heading) * radius + y);
 		}
 		glEnd();
 	}
