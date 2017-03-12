@@ -35,6 +35,14 @@ namespace Rendering
 		glUniformMatrix4fv(shaderVariableLocation, 1, false, MatrixToFloatArray(_worldMatrix));
 	}
 
+
+	void BaseShader::SetLocalWorldMatrix(const Math::Matrix4& _localWorldMatrix) const
+	{
+		unsigned int shaderVariableLocation;
+		shaderVariableLocation = glGetUniformLocation(m_glProgram, "localWorldMatrix");
+		glUniformMatrix4fv(shaderVariableLocation, 1, false, MatrixToFloatArray(_localWorldMatrix));
+	}
+
 	void BaseShader::SetViewMatrix(const Math::Matrix4& _viewMatrix) const
 	{
 		unsigned int shaderVariableLocation;

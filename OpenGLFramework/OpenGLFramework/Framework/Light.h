@@ -17,7 +17,7 @@ namespace Framework
 		~Light();
 
 		void Update() override;
-		void Render(const ICamera& _camera, const Math::Matrix4& _world) const override;
+		void Render(const ICamera& _camera, const Math::Matrix4& _world, const Math::Matrix4& _localWorldMatrix) const override;
 
 	private:
 		BaseObject* m_baseObject;

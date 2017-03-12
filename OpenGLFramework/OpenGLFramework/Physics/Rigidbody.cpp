@@ -28,7 +28,7 @@ namespace Physics
 		m_baseObject->m_position.z = transform.getOrigin().getZ();
 	}
 
-	void Rigidbody::Render(const ICamera& _camera, const Math::Matrix4& _worldMatrix) const
+	void Rigidbody::Render(const ICamera& _camera, const Math::Matrix4& _worldMatrix, const Math::Matrix4& _localWorldMatrix) const
 	{
 
 	}

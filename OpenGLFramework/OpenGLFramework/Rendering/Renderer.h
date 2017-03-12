@@ -17,7 +17,7 @@ namespace Rendering
 		void SetColor(float _r, float _g, float _b);
 
 		void Update() override;
-		void Render(const ICamera& _camera, const Math::Matrix4& _worldMatrix) const override;
+		void Render(const ICamera& _camera, const Math::Matrix4& _worldMatrix, const Math::Matrix4& _localWorldMatrix) const override;
 
 	private:
 		Model* m_model;

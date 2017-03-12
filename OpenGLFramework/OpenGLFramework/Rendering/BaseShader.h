@@ -18,6 +18,7 @@ namespace Rendering
 		virtual void SetViewMatrix(const Math::Matrix4& _viewMatrix) const override;
 		virtual void SetProjectionMatrix(const Math::Matrix4& _projMatrix) const override;
 		virtual void SetWorldMatrix(const Math::Matrix4& _worldMatrix) const override;
+		virtual void SetLocalWorldMatrix(const Math::Matrix4& _localWorldMatrix) const override;
 		virtual void Use() const override;
 		virtual void StopUsing() const override;
 		virtual const unsigned int GetGlProgram() const override;

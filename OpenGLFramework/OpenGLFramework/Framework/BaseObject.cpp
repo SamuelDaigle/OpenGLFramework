@@ -21,7 +21,7 @@ void BaseObject::Render(const ICamera& _camera) const
 
 	for (int i = 0; i < m_components.size(); i++)
 	{
-		m_components[i]->Render(_camera, m_worldMatrix);
+		m_components[i]->Render(_camera, m_worldMatrix, GetRotationMatrix());
 	}
 }
 

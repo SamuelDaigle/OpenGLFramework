@@ -15,6 +15,7 @@ out vec2 ex_TexCoord;
 out mat4 ex_worldMatrix;
 
 uniform vec4 Color;
+uniform mat4 localWorldMatrix;
 uniform mat4 worldMatrix;
 uniform mat4 viewMatrix;
 uniform mat4 projectionMatrix;
@@ -23,7 +24,7 @@ void main(void)
 {
 	gl_Position = vec4(Position, 1.0) * worldMatrix * viewMatrix * projectionMatrix;
 
-	ex_FragPos = vec3(vec4(Position, 1.0f) * transpose(worldMatrix));
+	ex_FragPos = vec3(worldMatrix * vec4(Position, 1.0f));
 	ex_Normal = mat3(transpose(inverse(worldMatrix))) * Normal;
 	ex_TexCoord = TexCoords;
 	ex_Color = Color;

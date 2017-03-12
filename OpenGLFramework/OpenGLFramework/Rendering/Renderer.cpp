@@ -31,7 +31,7 @@ namespace Rendering
 
 	}
 
-	void Renderer::Render(const ICamera& _camera, const Math::Matrix4& _worldMatrix) const
+	void Renderer::Render(const ICamera& _camera, const Math::Matrix4& _worldMatrix, const Math::Matrix4& _localWorldMatrix) const
 	{
 		if (m_shader)
 		{
@@ -39,6 +39,7 @@ namespace Rendering
 			m_shader->SetViewMatrix(_camera.GetViewMatrix());
 			m_shader->SetProjectionMatrix(_camera.GetProjectionMatrix());
 			m_shader->SetWorldMatrix(_worldMatrix);
+			m_shader->SetLocalWorldMatrix(_localWorldMatrix);
 		}
 
 		glUniform4f(glGetUniformLocation(m_shader->GetGlProgram(), "Color"), m_color.r, m_color.g, m_color.b, 1.0f);

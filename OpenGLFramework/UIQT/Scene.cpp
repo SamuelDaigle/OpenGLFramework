@@ -36,13 +36,13 @@ namespace Application
 
 		Framework::BaseObject* sun = new Framework::BaseObject();
 		m_rootObject->Add(sun);
-		Rendering::Renderer* sunRenderer = new Rendering::Renderer("../Content/planet/planet.obj", *meshLoader, *m_basicShader);
+		Rendering::Renderer* sunRenderer = new Rendering::Renderer("../Content/planet/planet.obj", *meshLoader, *m_advancedShader);
 		sunRenderer->SetColor(1.0, 1.0, 0.0);
 		sun->AddComponent(*sunRenderer);
 
 		Framework::BaseObject* planet = new Framework::BaseObject();
 		sun->Add(planet);
-		Rendering::Renderer* planetRenderer = new Rendering::Renderer("../Content/planet/planet.obj", *meshLoader, *m_advancedShader);
+		Rendering::Renderer* planetRenderer = new Rendering::Renderer("../Content/planet/planet.obj", *meshLoader, *m_basicShader);
 		planetRenderer->SetColor(1, 1, 1);
 		planet->AddComponent(*planetRenderer);
 		planet->Translate(0, 0, 6);
@@ -149,14 +149,20 @@ namespace Application
 		{
 			m_camera->m_position += m_camera->Forward() * Math::Vector3(CAMERA_SPEED, CAMERA_SPEED, CAMERA_SPEED);
 		}
-		if (m_window->GetInputHandler().IsKeyDown('l'))
+
+		if (m_window->GetInputHandler().IsKeyDown('g'))
 		{
-			m_rootObject->Rotate(1, Math::Vector3(0.0f, 1.0f, 0.0f));
+			m_rootObject->GetChilds()[0]->Translate(0, 0, 1);
+		}
+
+		if (m_window->GetInputHandler().IsKeyDown('h'))
+		{
+			m_rootObject->GetChilds()[0]->Translate(0, 0, -1);
 		}
 
 		if (m_window->GetInputHandler().IsKeyDown('k'))
 		{
-			m_rootObject->GetChilds()[2]->Rotate(-2, Math::Vector3(0.0f, 1.0f, 0.0f));
+			m_rootObject->Rotate(1, Math::Vector3(0.0f, 1.0f, 0.0f));
 		}
 
 		if (m_window->GetInputHandler().IsKeyDown('j'))
