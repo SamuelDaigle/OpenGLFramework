@@ -3,8 +3,8 @@
 namespace Rendering
 {
 
-	Renderer::Renderer(const char* _modelPath, IO::MeshLoader& _meshLoader, const IShader& _shader) :
-		m_model(new Model(_modelPath, &_meshLoader)), m_shader(&_shader)
+	Renderer::Renderer(const char* _modelPath, const char* _textureName, IO::MeshLoader& _meshLoader, const IShader& _shader) :
+		m_model(new Model(_modelPath, _textureName, &_meshLoader)), m_shader(&_shader)
 	{
 	}
 

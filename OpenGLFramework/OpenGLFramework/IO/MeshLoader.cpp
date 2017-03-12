@@ -26,7 +26,7 @@ namespace IO
 		}
 	}
 
-	const std::vector<Rendering::Mesh*> MeshLoader::LoadMeshes(const char* _filepath)
+	const std::vector<Rendering::Mesh*> MeshLoader::LoadMeshes(const char* _filepath, const char* _texturePath)
 	{
 		Importer importer;
 
@@ -53,29 +53,29 @@ namespace IO
 		m_directory = path.substr(0, path.find_last_of('/'));
 
 		// Process ASSIMP's root node recursively
-		processNode(scene->mRootNode, scene);
+		processNode(scene->mRootNode, scene, _texturePath);
 
 		m_meshBank->AddMesh(_filepath, m_meshesToProcess);
 
 		return m_meshesToProcess;
 	}
 
-	void MeshLoader::processNode(aiNode* _node, const aiScene* _scene)
+	void MeshLoader::processNode(aiNode* _node, const aiScene* _scene, const char* _texturePath)
 	{
 		for (GLuint i = 0; i < _node->mNumMeshes; i++)
 		{
 			aiMesh* mesh = _scene->mMeshes[_node->mMeshes[i]];
-			m_meshesToProcess.push_back(processMesh(mesh, _scene));
+			m_meshesToProcess.push_back(processMesh(mesh, _scene, _texturePath));
 		}
 
 		for (GLuint i = 0; i < _node->mNumChildren; i++)
 		{
-			processNode(_node->mChildren[i], _scene);
+			processNode(_node->mChildren[i], _scene, _texturePath);
 		}
 	}
 
 
-	Rendering::Mesh* MeshLoader::processMesh(aiMesh* _mesh, const aiScene* _scene)
+	Rendering::Mesh* MeshLoader::processMesh(aiMesh* _mesh, const aiScene* _scene, const char* _texturePath)
 	{
 		std::vector<Rendering::Vertex> vertices;
 		std::vector<GLuint> indices;
@@ -131,19 +131,20 @@ namespace IO
 			aiMaterial* material = _scene->mMaterials[_mesh->mMaterialIndex];
 
 			// 1. Diffuse maps
-			texture = loadMaterialTextures(material);
+			texture = loadMaterialTextures(material, _texturePath);
 		}
 
 		return new Rendering::Mesh(vertices, indices, texture);
 	}
 
-	GLuint MeshLoader::loadMaterialTextures(aiMaterial* _material)
+	GLuint MeshLoader::loadMaterialTextures(aiMaterial* _material, const char* _texturePath)
 	{
 		aiString str;
 		_material->GetTexture(aiTextureType_DIFFUSE, 0, &str);
 
 		aiString dirStr(m_directory);
 		dirStr.Append("/");
+		dirStr.Append(_texturePath);
 		dirStr.Append(str.C_Str());
 
 		Utils::Log::DebugLog(2, "Load material: ", dirStr.C_Str());

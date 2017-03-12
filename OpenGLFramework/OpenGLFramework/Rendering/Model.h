@@ -14,7 +14,7 @@ namespace Rendering
 	class Model
 	{
 	public:
-		Model(const char* _path, IO::MeshLoader* _meshLoader);
+		Model(const char* _path, const char* _texturePath, IO::MeshLoader* _meshLoader);
 		void Draw(const IShader& _shader) const;
 
 	private:

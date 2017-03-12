@@ -10,7 +10,7 @@ namespace Rendering
 	class Renderer : public Framework::Component
 	{
 	public:
-		Renderer(const char* _modelPath, IO::MeshLoader& _meshLoader, const IShader& _shader);
+		Renderer(const char* _modelPath, const char* _textureName, IO::MeshLoader& _meshLoader, const IShader& _shader);
 		~Renderer();
 
 		void SetColor(const Utils::Color& _color);

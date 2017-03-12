@@ -21,6 +21,7 @@
 #include "..\OpenGLFramework\Camera\Camera.h"
 #include "..\OpenGLFramework\Interface\IWindow.h"
 #include "..\OpenGLFramework\Rendering\Renderer.h"
+#include <time.h>
 
 namespace Application
 {
@@ -41,6 +42,7 @@ namespace Application
 		void UpdateHierarchyText();
 		void UpdateConsoleText();
 		void AddChildStringTo(Text::TextHolder& _hierarchyText, Framework::BaseObject& _parent, int _depth);
+		void SpawnAsteroid(IO::MeshLoader& _meshLoader);
 
 
 		IWindow* m_window;
