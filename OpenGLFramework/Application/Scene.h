@@ -4,20 +4,24 @@
 
 #pragma once
 
-#include "stdafx.h"
-#include "Framework\Skybox.h"
-#include "Rendering\BasicShader.h"
-#include "Rendering\AdvancedShader.h"
-#include "Rendering\ColorShader.h"
-#include "Input\InputHandler.h"
-#include "Framework\Light.h"
-#include "Text\TextHolder.h"
-#include "Interface\IScene.h"
-#include "Camera\Camera.h"
-#include "Interface\IWindow.h"
-#include "Physics\PhysicsWorld.h"
-#include "Rendering\Renderer.h"
-#include "IO\ScreenCapture.h"
+
+#include "CustomShader.h"
+#include "..\OpenGLFramework\stdafx.h"
+#include "..\OpenGLFramework\Framework\Skybox.h"
+#include "..\OpenGLFramework\Rendering\BasicShader.h"
+#include "..\OpenGLFramework\Rendering\AdvancedShader.h"
+#include "..\OpenGLFramework\Rendering\ColorShader.h"
+#include "..\OpenGLFramework\Input\InputHandler.h"
+#include "..\OpenGLFramework\Framework\Light.h"
+#include "..\OpenGLFramework\Framework\Pyramid.h"
+#include "..\OpenGLFramework\Framework\Square.h"
+#include "..\OpenGLFramework\Framework\Triangle.h"
+#include "..\OpenGLFramework\Text\TextHolder.h"
+#include "..\OpenGLFramework\Interface\IScene.h"
+#include "..\OpenGLFramework\Camera\Camera.h"
+#include "..\OpenGLFramework\Interface\IWindow.h"
+#include "..\OpenGLFramework\Rendering\Renderer.h"
+#include <time.h>
 
 namespace Application
 {
@@ -38,17 +42,19 @@ namespace Application
 		void UpdateHierarchyText();
 		void UpdateConsoleText();
 		void AddChildStringTo(Text::TextHolder& _hierarchyText, Framework::BaseObject& _parent, int _depth);
+		void SpawnAsteroid(IO::MeshLoader& _meshLoader);
+
 
 		IWindow* m_window;
 		Framework::BaseObject* m_rootObject;
 		IShader* m_basicShader;
 		IShader* m_advancedShader;
+		IShader* m_customShader;
 		IShader* m_colorShader;
 		Framework::Skybox* m_skybox;
 		Camera::Camera* m_camera;
 		Text::TextHolder* m_hierarchyText;
 		Text::TextHolder* m_consoleText;
-		Physics::PhysicsWorld* m_physicsWorld;
 	};
 
 }
