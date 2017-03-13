@@ -171,7 +171,7 @@ namespace Application
 		}
 		if (m_window->GetInputHandler().IsKeyDown('d'))
 		{
-			m_camera->m_position += m_camera->Right() * Math::Vector3(CAMERA_SPEED, CAMERA_SPEED, CAMERA_SPEED);
+			m_camera->m_position  += m_camera->Right() * Math::Vector3(CAMERA_SPEED, CAMERA_SPEED, CAMERA_SPEED);
 		}
 		if (m_window->GetInputHandler().IsKeyDown('s'))
 		{
@@ -222,9 +222,13 @@ namespace Application
 			IO::TextureLoader textureLoader;
 			textureLoader.Initialize();
 			m_skybox->Initialize("../Content/skybox/rick.bmp", &textureLoader);
+			Utils::Log::DebugLog("Never gonna give you up, never gonna let you down");
+			Utils::Log::DebugLog("Never gonna run around and desert you");
+			Utils::Log::DebugLog("Never gonna make you cry, never gonna say goodbye");
+			Utils::Log::DebugLog("Never gonna tell a lie and hurt you");
 		}
 		//lookat a un objet 
-		if (m_window->GetInputHandler().IsKeyDown('c'))
+		if (m_window->GetInputHandler().IsKeyDown('l'))
 		{
 			m_camera->m_rotation = Math::Matrix4::LookAt(m_camera->m_position, Math::Vector3());
 		}

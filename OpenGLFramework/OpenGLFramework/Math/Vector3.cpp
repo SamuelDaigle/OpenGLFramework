@@ -61,9 +61,7 @@ namespace Math
 		return (*this) * _other;
 	}
 
-	const Vector3 Vector3::operator+=(const Vector3& _other)
-	{
-		return (*this) + _other;
-	}
+
+
 	
 }

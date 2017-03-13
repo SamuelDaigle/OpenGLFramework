@@ -23,7 +23,7 @@ namespace Math
 		const Vector3 operator+(const Vector3& _other);
 		const Vector3 operator-(const Vector3& _other);
 		const Vector3 operator*(const Vector3& _other);
-		const Vector3 operator+=(const Vector3& _other);
+
 	};
 
 }

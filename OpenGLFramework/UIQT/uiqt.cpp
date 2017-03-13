@@ -316,7 +316,7 @@ void UIQT::newXPosition(int _xPosition)
 	{
 		if (m_selectedObject.isValid())
 		{
-			int _currentXPosition = _currentXPosition = m_emptyObjects[m_selectedObject.row()]->m_position.x;
+			int _currentXPosition = m_emptyObjects[m_selectedObject.row()]->m_position.x;
 			int xTranslate = _xPosition - _currentXPosition;
 
 			UI::Command::CommandData data;
@@ -331,7 +331,7 @@ void UIQT::newXPosition(int _xPosition)
 	{
 		if (m_selectedObject.isValid())
 		{
-			int _currentXPosition = _currentXPosition = m_modelObjects[m_selectedObject.row()]->m_position.x;
+			int _currentXPosition = m_modelObjects[m_selectedObject.row()]->m_position.x;
 			int xTranslate = _xPosition - _currentXPosition;
 
 			UI::Command::CommandData data;
@@ -346,7 +346,7 @@ void UIQT::newXPosition(int _xPosition)
 	{
 		if (m_selectedObject.isValid())
 		{
-			int _currentXPosition = _currentXPosition = m_shapeObjects[m_selectedObject.row()]->m_position.x;
+			int _currentXPosition = m_shapeObjects[m_selectedObject.row()]->m_position.x;
 			int xTranslate = _xPosition - _currentXPosition;
 
 			UI::Command::CommandData data;
@@ -366,7 +366,7 @@ void UIQT::newYPosition(int _yPosition)
 	{
 		if (m_selectedObject.isValid())
 		{
-			int _currentXPosition = _currentXPosition = m_emptyObjects[m_selectedObject.row()]->m_position.y;
+			int _currentXPosition = m_emptyObjects[m_selectedObject.row()]->m_position.y;
 			int yTranslate = _yPosition - _currentXPosition;
 
 			UI::Command::CommandData data;
@@ -381,7 +381,7 @@ void UIQT::newYPosition(int _yPosition)
 	{
 		if (m_selectedObject.isValid())
 		{
-			int _currentXPosition = _currentXPosition = m_modelObjects[m_selectedObject.row()]->m_position.y;
+			int _currentXPosition = m_modelObjects[m_selectedObject.row()]->m_position.y;
 			int yTranslate = _yPosition - _currentXPosition;
 
 			UI::Command::CommandData data;
@@ -396,7 +396,7 @@ void UIQT::newYPosition(int _yPosition)
 	{
 		if (m_selectedObject.isValid())
 		{
-			int _currentXPosition = _currentXPosition = m_shapeObjects[m_selectedObject.row()]->m_position.y;
+			int _currentXPosition = m_shapeObjects[m_selectedObject.row()]->m_position.y;
 			int yTranslate = _yPosition - _currentXPosition;
 
 			UI::Command::CommandData data;
@@ -418,29 +418,35 @@ void UIQT::newZPosition(int _zPosition)
 	switch (ui.stackedWidget->currentIndex())
 	{
 	case page::Empty:
-		int _currentXPosition = _currentXPosition = m_emptyObjects[m_selectedObject.row()]->m_position.z;
+	{
+		int _currentXPosition = m_emptyObjects[m_selectedObject.row()]->m_position.z;
 		int zTranslate = _zPosition - _currentXPosition;
 		UI::Command::CommandData data;
 		data.translationChange.z = zTranslate;
 		UI::Command command(*m_emptyObjects[m_selectedObject.row()], data);
 		m_commandStack->AddCommandAndExecute(command);
 		break;
+	}
 	case page::Model:
-		int _currentXPosition = _currentXPosition = m_modelObjects[m_selectedObject.row()]->m_position.z;
+	{
+		int _currentXPosition = m_modelObjects[m_selectedObject.row()]->m_position.z;
 		int zTranslate = _zPosition - _currentXPosition;
 		UI::Command::CommandData data;
 		data.translationChange.z = zTranslate;
 		UI::Command command(*m_modelObjects[m_selectedObject.row()], data);
 		m_commandStack->AddCommandAndExecute(command);
 		break;
+	}
 	case page::Shape:
-		int _currentXPosition = _currentXPosition = m_shapeObjects[m_selectedObject.row()]->m_position.z;
+	{
+		int _currentXPosition = m_shapeObjects[m_selectedObject.row()]->m_position.z;
 		int zTranslate = _zPosition - _currentXPosition;
 		UI::Command::CommandData data;
 		data.translationChange.z = zTranslate;
 		UI::Command command(*m_shapeObjects[m_selectedObject.row()], data);
 		m_commandStack->AddCommandAndExecute(command);
 		break;
+	}
 	default:
 		break;
 	}

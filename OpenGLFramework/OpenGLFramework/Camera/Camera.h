@@ -35,5 +35,6 @@ namespace Camera
 		Math::Matrix4 m_projectionMatrix;
 		float m_bearing;						
 		float m_tilt;
+		float m_fov = 45.0f;
 	};
 }

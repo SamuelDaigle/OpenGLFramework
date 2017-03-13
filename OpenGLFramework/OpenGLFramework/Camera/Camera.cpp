@@ -1,14 +1,12 @@
 #include "Camera.h"
 
-float _fov = 45.0f;
-
 namespace Camera
 {
 
 	Camera::Camera() :
 		BaseObject::BaseObject()
 	{
-		m_projectionMatrix = glm::perspective<float>(glm::radians(_fov), (float)glutGet(GLUT_SCREEN_WIDTH) / (float)glutGet(GLUT_SCREEN_HEIGHT), 0.1f, 10000.0f);
+		m_projectionMatrix = glm::perspective<float>(glm::radians(m_fov), (float)glutGet(GLUT_SCREEN_WIDTH) / (float)glutGet(GLUT_SCREEN_HEIGHT), 0.1f, 10000.0f);
 	}
 
 	void Camera::Destroy()
@@ -33,17 +31,22 @@ namespace Camera
 			m_bearing -= _angle; //gauche a droite
 		else if (_axis.y == 1.0f)
 			m_tilt -= _angle; // haut en bas
+
+		if (m_tilt < -90)
+			m_tilt = -90;
+		if (m_tilt > 90)
+			m_tilt = 90;
 	}
 
 	void Camera::Zoom(unsigned int _change)
 	{
-		if (_change == -1) {
-			_fov -= 1.0f;
-			m_projectionMatrix = glm::perspective<float>(glm::radians(_fov), (float)glutGet(GLUT_SCREEN_WIDTH) / (float)glutGet(GLUT_SCREEN_HEIGHT), 0.1f, 1000.0f);
+		if (m_fov >= 0 && _change == -1) {
+			m_fov -= 1.0f;
+			m_projectionMatrix = glm::perspective<float>(glm::radians(m_fov), (float)glutGet(GLUT_SCREEN_WIDTH) / (float)glutGet(GLUT_SCREEN_HEIGHT), 0.1f, 1000.0f);
 		}
-		else if (_change == 1) {
-			_fov += 1.0f;
-			m_projectionMatrix = glm::perspective<float>(glm::radians(_fov), (float)glutGet(GLUT_SCREEN_WIDTH) / (float)glutGet(GLUT_SCREEN_HEIGHT), 0.1f, 1000.0f);
+		else if (m_fov <= 140 && _change == 1) {
+			m_fov += 1.0f;
+			m_projectionMatrix = glm::perspective<float>(glm::radians(m_fov), (float)glutGet(GLUT_SCREEN_WIDTH) / (float)glutGet(GLUT_SCREEN_HEIGHT), 0.1f, 1000.0f);
 		}
 	}
 
@@ -54,7 +57,7 @@ namespace Camera
 
 	void Camera::Perspective()
 	{
-		m_projectionMatrix = glm::perspective<float>(glm::radians(_fov), (float)glutGet(GLUT_SCREEN_WIDTH) / (float)glutGet(GLUT_SCREEN_HEIGHT), 0.1f, 1000.0f);
+		m_projectionMatrix = glm::perspective<float>(glm::radians(m_fov), (float)glutGet(GLUT_SCREEN_WIDTH) / (float)glutGet(GLUT_SCREEN_HEIGHT), 0.1f, 1000.0f);
 	}
 
 	float Camera::getPitch()
