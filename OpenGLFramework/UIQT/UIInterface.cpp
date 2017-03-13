@@ -13,7 +13,7 @@ namespace Application
 		UI::UILine * line = new UI::UILine(0.5, 0.5, 4, 0.5);
 		UI::UICircle * circle = new UI::UICircle(15,7.5,0.5,100);
 		UI::UISquare * sq = new UI::UISquare(14.5,0.5,15.5,1.5);
-		UI::UIProcedural * proc = new UI::UIProcedural(-2,8.5,1,5);
+		UI::UIProcedural * proc = new UI::UIProcedural(-2,7.5,1,5);
 
 		compo->Add(line);
 		compo->Add(circle);

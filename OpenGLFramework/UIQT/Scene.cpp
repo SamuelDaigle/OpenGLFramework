@@ -87,8 +87,17 @@ namespace Application
 		m_hierarchyText->Clear();
 		m_hierarchyText->AddLine(std::string("Info"));
 		m_hierarchyText->AddLine(std::string("-------------------------"));
-		m_hierarchyText->AddLine(std::string("Press R: Change skybox"));
-		m_hierarchyText->AddLine(std::string("Press J, K or L: Rotate some objects"));
+		m_hierarchyText->AddLine(std::string("Press R:			Change skybox"));
+		m_hierarchyText->AddLine(std::string("Press J, K:		Rotate some objects"));
+		m_hierarchyText->AddLine(std::string("Press W, A, S, D:	Move"));
+		m_hierarchyText->AddLine(std::string("Right click:		Look around"));
+		m_hierarchyText->AddLine(std::string("Press 1, 2:		Zoom in or out"));
+		m_hierarchyText->AddLine(std::string("Press C:			Screenshot in UIQT folder"));
+		m_hierarchyText->AddLine(std::string("Press O:			Switch to orhogonal projection"));   
+		m_hierarchyText->AddLine(std::string("Press P:			Switch to perspective projection")); 
+		m_hierarchyText->AddLine(std::string("Press G, H:		Translate light"));
+		m_hierarchyText->AddLine(std::string("Press L:			Look at root object"));
+
 	}
 
 

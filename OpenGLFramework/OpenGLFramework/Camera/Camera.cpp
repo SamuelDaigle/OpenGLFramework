@@ -42,7 +42,7 @@ namespace Camera
 			m_tilt = 90;
 	}
 
-	void Camera::Zoom(unsigned int _change)
+	void Camera::Zoom(int _change)
 	{
 		if (m_fov >= 0 && _change < 0) 
 		{

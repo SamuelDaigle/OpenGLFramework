@@ -17,7 +17,7 @@ namespace Camera
 		void Destroy();
 
 		virtual void Rotate(const float _angle, const Math::Vector3& _axis) override;
-		void Zoom(unsigned int _change);
+		void Zoom(int _change);
 		void Ortho();						//ajouter un bouton qui toggle entre les deux
 		void Perspective();
 		float GetPitch();
