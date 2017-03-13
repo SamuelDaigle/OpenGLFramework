@@ -20,10 +20,16 @@ namespace Camera
 		void Zoom(unsigned int _change);
 		void Ortho();						//ajouter un bouton qui toggle entre les deux
 		void Perspective();
-		float getPitch();
-		void setPitch(float _newPitch);
-		float getYaw();
-		void setYaw(float _newYaw);
+		float GetPitch();
+		void SetPitch(float _newPitch);
+		float GetYaw();
+		void SetYaw(float _newYaw);
+		float GetZoom();
+		void SetZoom(float _zoom);
+		float GetNear();
+		void SetNear(float _near);
+		float GetFar();
+		void SetFar(float _far);
 
 		void Update();
 		const Math::Vector3& GetPosition() const override;
@@ -35,6 +41,8 @@ namespace Camera
 		Math::Matrix4 m_projectionMatrix;
 		float m_bearing;						
 		float m_tilt;
-		float m_fov = 45.0f;
+		float m_near;
+		float m_far;
+		float m_fov;
 	};
 }

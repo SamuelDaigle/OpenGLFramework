@@ -4,9 +4,13 @@ namespace Camera
 {
 
 	Camera::Camera() :
-		BaseObject::BaseObject()
+		BaseObject::BaseObject() 
+		
 	{
-		m_projectionMatrix = glm::perspective<float>(glm::radians(m_fov), (float)glutGet(GLUT_SCREEN_WIDTH) / (float)glutGet(GLUT_SCREEN_HEIGHT), 0.1f, 10000.0f);
+		m_near = 0.1; 
+		m_far = 1000;
+		m_fov = 45.0f;
+		m_projectionMatrix = glm::perspective<float>(glm::radians(m_fov), (float)glutGet(GLUT_SCREEN_WIDTH) / (float)glutGet(GLUT_SCREEN_HEIGHT), m_near, m_far);
 	}
 
 	void Camera::Destroy()
@@ -40,44 +44,79 @@ namespace Camera
 
 	void Camera::Zoom(unsigned int _change)
 	{
-		if (m_fov >= 0 && _change == -1) {
+		if (m_fov >= 0 && _change < 0) 
+		{
 			m_fov -= 1.0f;
-			m_projectionMatrix = glm::perspective<float>(glm::radians(m_fov), (float)glutGet(GLUT_SCREEN_WIDTH) / (float)glutGet(GLUT_SCREEN_HEIGHT), 0.1f, 1000.0f);
+			m_projectionMatrix = glm::perspective<float>(glm::radians(m_fov), (float)glutGet(GLUT_SCREEN_WIDTH) / (float)glutGet(GLUT_SCREEN_HEIGHT), m_near, m_far);
 		}
-		else if (m_fov <= 140 && _change == 1) {
+		else if (m_fov <= 140 && _change >= 0) 
+		{
 			m_fov += 1.0f;
-			m_projectionMatrix = glm::perspective<float>(glm::radians(m_fov), (float)glutGet(GLUT_SCREEN_WIDTH) / (float)glutGet(GLUT_SCREEN_HEIGHT), 0.1f, 1000.0f);
+			m_projectionMatrix = glm::perspective<float>(glm::radians(m_fov), (float)glutGet(GLUT_SCREEN_WIDTH) / (float)glutGet(GLUT_SCREEN_HEIGHT), m_near, m_far);
 		}
 	}
 
 	void Camera::Ortho()
 	{
-		m_projectionMatrix = glm::ortho<float>(0.0f, 1.0f, 1.0,0.0f,0.1f,1000.0f);
+		m_projectionMatrix = glm::ortho<float>(0.0f, 1.0f, 1.0,0.0f,m_near,m_far);
 	}
 
 	void Camera::Perspective()
 	{
-		m_projectionMatrix = glm::perspective<float>(glm::radians(m_fov), (float)glutGet(GLUT_SCREEN_WIDTH) / (float)glutGet(GLUT_SCREEN_HEIGHT), 0.1f, 1000.0f);
+		m_projectionMatrix = glm::perspective<float>(glm::radians(m_fov), (float)glutGet(GLUT_SCREEN_WIDTH) / (float)glutGet(GLUT_SCREEN_HEIGHT), m_near, m_far);
 	}
 
-	float Camera::getPitch()
+	float Camera::GetPitch()
 	{
 		return m_tilt;
 	}
 
-	void Camera::setPitch(float _newPitch)
+	void Camera::SetPitch(float _newPitch)
 	{
 		m_tilt = _newPitch;
 	}
 
-	float Camera::getYaw()
+	float Camera::GetYaw()
 	{
 		return m_bearing;
 	}
 
-	void Camera::setYaw(float _newYaw)
+	void Camera::SetYaw(float _newYaw)
 	{
 		m_bearing = _newYaw;
+	}
+
+	float Camera::GetZoom()
+	{
+		return m_fov;
+	}
+
+	void Camera::SetZoom(float _zoom)
+	{
+		m_fov = _zoom;
+		Zoom(0);
+	}
+
+	float Camera::GetNear()
+	{
+		return m_near;
+	}
+
+	void Camera::SetNear(float _near)
+	{
+		m_near = _near;
+		m_projectionMatrix = glm::perspective<float>(glm::radians(m_fov), (float)glutGet(GLUT_SCREEN_WIDTH) / (float)glutGet(GLUT_SCREEN_HEIGHT), m_near, m_far);
+	}
+
+	float Camera::GetFar()
+	{
+		return m_far;
+	}
+
+	void Camera::SetFar(float _far)
+	{
+		m_far = _far;
+		m_projectionMatrix = glm::perspective<float>(glm::radians(m_fov), (float)glutGet(GLUT_SCREEN_WIDTH) / (float)glutGet(GLUT_SCREEN_HEIGHT), m_near, m_far);
 	}
 
 	const Math::Vector3& Camera::GetPosition() const

@@ -1,2 +1,3 @@
 ﻿  Camera.cpp
-  OpenGLFramework.vcxproj -> C:\Users\Utilisateur\OneDrive\Génie logiciel\Session4\IFT-3100-Infographie\TP2-TP3\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.lib
+Camera\Camera.cpp(10): warning C4305: '=': truncation from 'double' to 'float'
+  OpenGLFramework.vcxproj -> C:\Users\Yannick\OneDrive\Hiver2017\Infographie\OpenGLFramework\OpenGLFramework\Release\OpenGLFramework.lib

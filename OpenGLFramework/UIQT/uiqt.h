@@ -79,23 +79,23 @@ public:
 
 	private slots:
 
-	void newRColor(int _rColor);
-	void newGColor(int _gColor);
-	void newBColor(int _bColor);
-	void newXPosition(int _xPosition);
-	void newYPosition(int _yPosition);
-	void newZPosition(int _zPosition);
-	void newXRotation(int _xRotation);
-	void newYRotation(int _yRotation);
-	void newZRotation(int _zRotation);
+	void newRColor(double _rColor);
+	void newGColor(double _gColor);
+	void newBColor(double _bColor);
+	void newXPosition(double _xPosition);
+	void newYPosition(double _yPosition);
+	void newZPosition(double _zPosition);
+	void newXRotation(double _xRotation);
+	void newYRotation(double _yRotation);
+	void newZRotation(double _zRotation);
 	void newXScale(double _scale);
 	void newYScale(double _scale);
 	void newZScale(double _scale);
-	void newPitch(int _pitch);
-	void newYaw(int _yaw);
-	void newZoom(int _zoom);
-	void newNear(int _near);
-	void newFar(int _far);
+	void newPitch(double _pitch);
+	void newYaw(double _yaw);
+	void newZoom(double _zoom);
+	void newNear(double _near);
+	void newFar(double _far);
 	void selectedObject(QModelIndex _index);
 	void undo();
 	void redo(); 
@@ -105,47 +105,47 @@ public:
 signals:
 
 	
-	void currentEmptyXPosition(int _xPosition);
-	void currentEmptyYPosition(int _yPosition);
-	void currentEmptyZPosition(int _zPosition);
-	void currentEmptyXRotation(int _xRotation);
-	void currentEmptyYRotation(int _yRotation);
-	void currentEmptyZRotation(int _zRotation);
+	void currentEmptyXPosition(double _xPosition);
+	void currentEmptyYPosition(double _yPosition);
+	void currentEmptyZPosition(double _zPosition);
+	void currentEmptyXRotation(double _xRotation);
+	void currentEmptyYRotation(double _yRotation);
+	void currentEmptyZRotation(double _zRotation);
 	void currentEmptyXScale(double _xScale);
 	void currentEmptyYScale(double _yScale);
 	void currentEmptyZScale(double _zScale);
 
-	void currentModelRColor(int _rColor);
-	void currentModelGColor(int _gColor);
-	void currentModelBColor(int _bColor);
-	void currentModelXPosition(int _xPosition);
-	void currentModelYPosition(int _yPosition);
-	void currentModelZPosition(int _zPosition);
-	void currentModelXRotation(int _xRotation);
-	void currentModelYRotation(int _yRotation);
-	void currentModelZRotation(int _zRotation);
+	void currentModelRColor(double _rColor);
+	void currentModelGColor(double _gColor);
+	void currentModelBColor(double _bColor);
+	void currentModelXPosition(double _xPosition);
+	void currentModelYPosition(double _yPosition);
+	void currentModelZPosition(double _zPosition);
+	void currentModelXRotation(double _xRotation);
+	void currentModelYRotation(double _yRotation);
+	void currentModelZRotation(double _zRotation);
 	void currentModelXScale(double _xScale);
 	void currentModelYScale(double _yScale);
 	void currentModelZScale(double _zScale);
 
-	void currentRColor(int _rColor);
-	void currentGColor(int _gColor);
-	void currentBColor(int _bColor);
-	void currentXPosition(int _xPosition);
-	void currentYPosition(int _yPosition);
-	void currentZPosition(int _zPosition);
-	void currentXRotation(int _xRotation);
-	void currentYRotation(int _yRotation);
-	void currentZRotation(int _zRotation);
+	void currentRColor(double _rColor);
+	void currentGColor(double _gColor);
+	void currentBColor(double _bColor);
+	void currentXPosition(double _xPosition);
+	void currentYPosition(double _yPosition);
+	void currentZPosition(double _zPosition);
+	void currentXRotation(double _xRotation);
+	void currentYRotation(double _yRotation);
+	void currentZRotation(double _zRotation);
 	void currentXScale(double _xScale);
 	void currentYScale(double _yScale);
 	void currentZScale(double _zScale);
 
-	void currentPitch(int _pitch);
-	void currentYaw(int _yaw);
-	void currentZoom(int _zoom);
-	void currentNear(int _near);
-	void currentFar(int _far);
+	void currentPitch(double _pitch);
+	void currentYaw(double _yaw);
+	void currentZoom(double _zoom);
+	void currentNear(double _near);
+	void currentFar(double _far);
 	void editObject(QModelIndex _index);
 	void currentIndex(QModelIndex _index);
 	void updateAtIndex(QModelIndex _index);

@@ -70,10 +70,10 @@
             <set>Qt::AlignCenter</set>
            </property>
            <property name="readOnly">
-            <bool>true</bool>
+            <bool>false</bool>
            </property>
            <property name="minimum">
-            <double>-999.000000000000000</double>
+            <double>0.000000000000000</double>
            </property>
            <property name="maximum">
             <double>999.000000000000000</double>
@@ -89,10 +89,10 @@
             <set>Qt::AlignCenter</set>
            </property>
            <property name="readOnly">
-            <bool>true</bool>
+            <bool>false</bool>
            </property>
            <property name="minimum">
-            <double>-999.000000000000000</double>
+            <double>0.000000000000000</double>
            </property>
            <property name="maximum">
             <double>999.000000000000000</double>
@@ -123,10 +123,10 @@
             <set>Qt::AlignCenter</set>
            </property>
            <property name="readOnly">
-            <bool>true</bool>
+            <bool>false</bool>
            </property>
            <property name="minimum">
-            <double>-999.000000000000000</double>
+            <double>0.000000000000000</double>
            </property>
            <property name="maximum">
             <double>999.000000000000000</double>
@@ -536,7 +536,7 @@
             <set>Qt::AlignCenter</set>
            </property>
            <property name="minimum">
-            <double>-999.000000000000000</double>
+            <double>0.000000000000000</double>
            </property>
            <property name="maximum">
             <double>999.000000000000000</double>
@@ -549,7 +549,7 @@
             <set>Qt::AlignCenter</set>
            </property>
            <property name="minimum">
-            <double>-999.000000000000000</double>
+            <double>0.000000000000000</double>
            </property>
            <property name="maximum">
             <double>999.000000000000000</double>
@@ -572,7 +572,7 @@
             <set>Qt::AlignCenter</set>
            </property>
            <property name="minimum">
-            <double>-999.000000000000000</double>
+            <double>0.000000000000000</double>
            </property>
            <property name="maximum">
             <double>999.000000000000000</double>
@@ -701,163 +701,70 @@
          <item row="2" column="4">
           <widget class="QLabel" name="positionZLabel">
            <property name="text">
-            <string>Z:</string>
+            <string>z</string>
            </property>
-          </widget>
-         </item>
-         <item row="2" column="1">
-          <widget class="QSpinBox" name="positionXSpinBox">
            <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-           <property name="minimum">
-            <number>-999999999</number>
-           </property>
-           <property name="maximum">
-            <number>999999999</number>
-           </property>
-          </widget>
-         </item>
-         <item row="8" column="1">
-          <widget class="QSpinBox" name="rotationXSpinBox">
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-           <property name="minimum">
-            <number>-360</number>
-           </property>
-           <property name="maximum">
-            <number>360</number>
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
            </property>
           </widget>
          </item>
          <item row="2" column="0">
           <widget class="QLabel" name="positionXLabel">
            <property name="text">
-            <string>X:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="3">
-          <widget class="QSpinBox" name="positionYSpinBox">
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-           <property name="minimum">
-            <number>-999999999</number>
-           </property>
-           <property name="maximum">
-            <number>999999999</number>
-           </property>
-          </widget>
-         </item>
-         <item row="7" column="1" colspan="5">
-          <widget class="QLabel" name="rotationLabel">
-           <property name="font">
-            <font>
-             <pointsize>10</pointsize>
-            </font>
-           </property>
-           <property name="text">
-            <string>Rotation</string>
+            <string>x</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-           <property name="textInteractionFlags">
-            <set>Qt::NoTextInteraction</set>
-           </property>
-          </widget>
-         </item>
-         <item row="8" column="3">
-          <widget class="QSpinBox" name="rotationYSpinBox">
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-           <property name="minimum">
-            <number>-360</number>
-           </property>
-           <property name="maximum">
-            <number>360</number>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="1" colspan="5">
-          <widget class="QLabel" name="positionLabel">
-           <property name="font">
-            <font>
-             <pointsize>10</pointsize>
-            </font>
-           </property>
-           <property name="text">
-            <string>Position</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-           <property name="textInteractionFlags">
-            <set>Qt::NoTextInteraction</set>
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
            </property>
           </widget>
          </item>
          <item row="8" column="4">
           <widget class="QLabel" name="rotationZLabel">
            <property name="text">
-            <string>Z:</string>
+            <string>z</string>
            </property>
-          </widget>
-         </item>
-         <item row="8" column="5">
-          <widget class="QSpinBox" name="rotationZSpinBox">
            <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-           <property name="minimum">
-            <number>-360</number>
-           </property>
-           <property name="maximum">
-            <number>360</number>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="5">
-          <widget class="QSpinBox" name="positionZSpinBox">
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-           <property name="minimum">
-            <number>-999999999</number>
-           </property>
-           <property name="maximum">
-            <number>999999999</number>
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
            </property>
           </widget>
          </item>
          <item row="2" column="2">
           <widget class="QLabel" name="positionYLabel">
            <property name="text">
-            <string>Y:</string>
+            <string>y</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
            </property>
           </widget>
          </item>
          <item row="8" column="2">
           <widget class="QLabel" name="rotationYLabel">
            <property name="text">
-            <string>Y:</string>
+            <string>y</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
            </property>
           </widget>
          </item>
          <item row="10" column="4">
           <widget class="QLabel" name="scaleZLabel">
            <property name="text">
-            <string>Z:</string>
+            <string>z</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
            </property>
           </widget>
          </item>
          <item row="8" column="0">
           <widget class="QLabel" name="rotationXLabel">
            <property name="text">
-            <string>X:</string>
+            <string>x</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
            </property>
           </widget>
          </item>
@@ -881,7 +788,198 @@
            </property>
           </widget>
          </item>
-         <item row="9" column="3">
+         <item row="10" column="0">
+          <widget class="QLabel" name="scaleXLabel">
+           <property name="text">
+            <string>x</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="10" column="1">
+          <widget class="QDoubleSpinBox" name="scaleXSpinBox">
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="decimals">
+            <number>2</number>
+           </property>
+           <property name="minimum">
+            <double>0.000000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>999.000000000000000</double>
+           </property>
+           <property name="value">
+            <double>0.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="10" column="3">
+          <widget class="QDoubleSpinBox" name="scaleYSpinBox">
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="decimals">
+            <number>2</number>
+           </property>
+           <property name="minimum">
+            <double>0.000000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>999.000000000000000</double>
+           </property>
+           <property name="value">
+            <double>0.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="10" column="2">
+          <widget class="QLabel" name="scaleYLabel">
+           <property name="text">
+            <string>y</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="10" column="5">
+          <widget class="QDoubleSpinBox" name="scaleZSpinBox">
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="decimals">
+            <number>2</number>
+           </property>
+           <property name="minimum">
+            <double>0.000000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>999.000000000000000</double>
+           </property>
+           <property name="value">
+            <double>0.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QDoubleSpinBox" name="doubleSpinBox_19">
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="minimum">
+            <double>-999.000000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>999.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="3">
+          <widget class="QDoubleSpinBox" name="doubleSpinBox_20">
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="minimum">
+            <double>-999.000000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>999.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="5">
+          <widget class="QDoubleSpinBox" name="doubleSpinBox_21">
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="minimum">
+            <double>-999.000000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>999.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="1">
+          <widget class="QDoubleSpinBox" name="doubleSpinBox_22">
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="minimum">
+            <double>-999.000000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>999.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="3">
+          <widget class="QDoubleSpinBox" name="doubleSpinBox_23">
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="minimum">
+            <double>-999.000000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>999.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="5">
+          <widget class="QDoubleSpinBox" name="doubleSpinBox_24">
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="minimum">
+            <double>-999.000000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>999.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="0" colspan="6">
+          <widget class="QLabel" name="rotationLabel">
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Rotation</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="textInteractionFlags">
+            <set>Qt::NoTextInteraction</set>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="6">
+          <widget class="QLabel" name="positionLabel">
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Position</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="textInteractionFlags">
+            <set>Qt::NoTextInteraction</set>
+           </property>
+          </widget>
+         </item>
+         <item row="9" column="0" colspan="6">
           <widget class="QLabel" name="scaleLabel">
            <property name="font">
             <font>
@@ -896,68 +994,6 @@
            </property>
            <property name="textInteractionFlags">
             <set>Qt::NoTextInteraction</set>
-           </property>
-          </widget>
-         </item>
-         <item row="10" column="0">
-          <widget class="QLabel" name="scaleXLabel">
-           <property name="text">
-            <string>X:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="10" column="1">
-          <widget class="QDoubleSpinBox" name="scaleXSpinBox">
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-           <property name="decimals">
-            <number>1</number>
-           </property>
-           <property name="minimum">
-            <double>0.100000000000000</double>
-           </property>
-           <property name="value">
-            <double>1.000000000000000</double>
-           </property>
-          </widget>
-         </item>
-         <item row="10" column="3">
-          <widget class="QDoubleSpinBox" name="scaleYSpinBox">
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-           <property name="decimals">
-            <number>1</number>
-           </property>
-           <property name="minimum">
-            <double>0.100000000000000</double>
-           </property>
-           <property name="value">
-            <double>1.000000000000000</double>
-           </property>
-          </widget>
-         </item>
-         <item row="10" column="2">
-          <widget class="QLabel" name="scaleYLabel">
-           <property name="text">
-            <string>Y:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="10" column="5">
-          <widget class="QDoubleSpinBox" name="scaleZSpinBox">
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-           <property name="decimals">
-            <number>1</number>
-           </property>
-           <property name="minimum">
-            <double>0.100000000000000</double>
-           </property>
-           <property name="value">
-            <double>1.000000000000000</double>
            </property>
           </widget>
          </item>
@@ -977,41 +1013,6 @@
          <enum>QFrame::Plain</enum>
         </property>
         <layout class="QGridLayout" name="gridLayout_2">
-         <item row="6" column="1">
-          <widget class="QSpinBox" name="zoomSpinBox">
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item row="8" column="1">
-          <widget class="QSpinBox" name="nearSpinBox">
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item row="10" column="1">
-          <widget class="QSpinBox" name="farSpinBox">
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="1">
-          <widget class="QSpinBox" name="pitchSpinBox">
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="1">
-          <widget class="QSpinBox" name="yawSpinBox">
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
          <item row="4" column="0">
           <widget class="QLabel" name="yawLabel">
            <property name="font">
@@ -1083,7 +1084,7 @@
             </font>
            </property>
            <property name="text">
-            <string>Zoom</string>
+            <string>Field of view</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>
@@ -1128,6 +1129,71 @@
            </property>
            <property name="textInteractionFlags">
             <set>Qt::NoTextInteraction</set>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QDoubleSpinBox" name="doubleSpinBox_25">
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="minimum">
+            <double>-999.000000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>999.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QDoubleSpinBox" name="doubleSpinBox_26">
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="minimum">
+            <double>-999.000000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>999.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="1">
+          <widget class="QDoubleSpinBox" name="doubleSpinBox_27">
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="minimum">
+            <double>-999.000000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>999.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="1">
+          <widget class="QDoubleSpinBox" name="doubleSpinBox_28">
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="minimum">
+            <double>-999.000000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>999.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="10" column="1">
+          <widget class="QDoubleSpinBox" name="doubleSpinBox_29">
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="minimum">
+            <double>-999.000000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>10000.000000000000000</double>
            </property>
           </widget>
          </item>
@@ -1186,375 +1252,10 @@
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <tabstops>
-  <tabstop>positionYSpinBox</tabstop>
-  <tabstop>rotationXSpinBox</tabstop>
-  <tabstop>rotationYSpinBox</tabstop>
-  <tabstop>positionZSpinBox</tabstop>
-  <tabstop>rotationZSpinBox</tabstop>
-  <tabstop>positionXSpinBox</tabstop>
-  <tabstop>pitchSpinBox</tabstop>
-  <tabstop>yawSpinBox</tabstop>
-  <tabstop>zoomSpinBox</tabstop>
-  <tabstop>nearSpinBox</tabstop>
-  <tabstop>farSpinBox</tabstop>
- </tabstops>
  <resources>
   <include location="uiqt.qrc"/>
  </resources>
  <connections>
-  <connection>
-   <sender>positionXSpinBox</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>UIQTClass</receiver>
-   <slot>newXPosition(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>127</x>
-     <y>298</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>159</x>
-     <y>15</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>positionYSpinBox</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>UIQTClass</receiver>
-   <slot>newYPosition(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>232</x>
-     <y>298</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>249</x>
-     <y>18</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>positionZSpinBox</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>UIQTClass</receiver>
-   <slot>newZPosition(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>337</x>
-     <y>298</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>367</x>
-     <y>19</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>rotationXSpinBox</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>UIQTClass</receiver>
-   <slot>newXRotation(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>127</x>
-     <y>346</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>21</x>
-     <y>60</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>rotationYSpinBox</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>UIQTClass</receiver>
-   <slot>newYRotation(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>232</x>
-     <y>346</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>19</x>
-     <y>96</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>rotationZSpinBox</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>UIQTClass</receiver>
-   <slot>newZRotation(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>337</x>
-     <y>346</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>28</x>
-     <y>129</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pitchSpinBox</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>UIQTClass</receiver>
-   <slot>newPitch(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>337</x>
-     <y>290</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>35</x>
-     <y>86</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>yawSpinBox</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>UIQTClass</receiver>
-   <slot>newYaw(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>337</x>
-     <y>316</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>30</x>
-     <y>123</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>zoomSpinBox</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>UIQTClass</receiver>
-   <slot>newZoom(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>337</x>
-     <y>342</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>32</x>
-     <y>159</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>nearSpinBox</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>UIQTClass</receiver>
-   <slot>newNear(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>337</x>
-     <y>368</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>30</x>
-     <y>198</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>farSpinBox</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>UIQTClass</receiver>
-   <slot>newFar(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>337</x>
-     <y>394</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>51</x>
-     <y>254</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>UIQTClass</sender>
-   <signal>currentXPosition(int)</signal>
-   <receiver>positionXSpinBox</receiver>
-   <slot>setValue(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>280</x>
-     <y>50</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>127</x>
-     <y>298</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>UIQTClass</sender>
-   <signal>currentYPosition(int)</signal>
-   <receiver>positionYSpinBox</receiver>
-   <slot>setValue(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>367</x>
-     <y>45</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>232</x>
-     <y>298</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>UIQTClass</sender>
-   <signal>currentZPosition(int)</signal>
-   <receiver>positionZSpinBox</receiver>
-   <slot>setValue(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>367</x>
-     <y>40</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>337</x>
-     <y>298</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>UIQTClass</sender>
-   <signal>currentXRotation(int)</signal>
-   <receiver>rotationXSpinBox</receiver>
-   <slot>setValue(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>299</x>
-     <y>46</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>127</x>
-     <y>346</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>UIQTClass</sender>
-   <signal>currentYRotation(int)</signal>
-   <receiver>rotationYSpinBox</receiver>
-   <slot>setValue(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>367</x>
-     <y>46</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>232</x>
-     <y>346</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>UIQTClass</sender>
-   <signal>currentZRotation(int)</signal>
-   <receiver>rotationZSpinBox</receiver>
-   <slot>setValue(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>367</x>
-     <y>207</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>337</x>
-     <y>346</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>UIQTClass</sender>
-   <signal>currentPitch(int)</signal>
-   <receiver>pitchSpinBox</receiver>
-   <slot>setValue(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>367</x>
-     <y>191</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>337</x>
-     <y>290</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>UIQTClass</sender>
-   <signal>currentYaw(int)</signal>
-   <receiver>yawSpinBox</receiver>
-   <slot>setValue(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>367</x>
-     <y>247</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>337</x>
-     <y>316</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>UIQTClass</sender>
-   <signal>currentZoom(int)</signal>
-   <receiver>zoomSpinBox</receiver>
-   <slot>setValue(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>367</x>
-     <y>268</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>337</x>
-     <y>342</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>UIQTClass</sender>
-   <signal>currentNear(int)</signal>
-   <receiver>nearSpinBox</receiver>
-   <slot>setValue(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>367</x>
-     <y>333</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>337</x>
-     <y>368</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>UIQTClass</sender>
-   <signal>currentFar(int)</signal>
-   <receiver>farSpinBox</receiver>
-   <slot>setValue(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>367</x>
-     <y>379</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>337</x>
-     <y>394</y>
-    </hint>
-   </hints>
-  </connection>
   <connection>
    <sender>UIQTClass</sender>
    <signal>currentObjectName(QString)</signal>
@@ -1748,54 +1449,6 @@
    </hints>
   </connection>
   <connection>
-   <sender>UIQTClass</sender>
-   <signal>currentEmptyXScale(double)</signal>
-   <receiver>doubleSpinBox</receiver>
-   <slot>setValue(double)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>367</x>
-     <y>469</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>127</x>
-     <y>394</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>UIQTClass</sender>
-   <signal>currentEmptyYScale(double)</signal>
-   <receiver>doubleSpinBox_2</receiver>
-   <slot>setValue(double)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>367</x>
-     <y>479</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>232</x>
-     <y>394</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>UIQTClass</sender>
-   <signal>currentEmptyZScale(double)</signal>
-   <receiver>doubleSpinBox_3</receiver>
-   <slot>setValue(double)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>367</x>
-     <y>479</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>337</x>
-     <y>394</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>emptyObjectListWidget</sender>
    <signal>clicked(QModelIndex)</signal>
    <receiver>UIQTClass</receiver>
@@ -1824,54 +1477,6 @@
     <hint type="destinationlabel">
      <x>284</x>
      <y>473</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>doubleSpinBox</sender>
-   <signal>valueChanged(double)</signal>
-   <receiver>UIQTClass</receiver>
-   <slot>newEmptyXScale(double)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>127</x>
-     <y>394</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>367</x>
-     <y>479</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>doubleSpinBox_2</sender>
-   <signal>valueChanged(double)</signal>
-   <receiver>UIQTClass</receiver>
-   <slot>newEmptyYScale(double)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>232</x>
-     <y>394</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>367</x>
-     <y>366</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>doubleSpinBox_3</sender>
-   <signal>valueChanged(double)</signal>
-   <receiver>UIQTClass</receiver>
-   <slot>newEmptyZScale(double)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>337</x>
-     <y>394</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>367</x>
-     <y>405</y>
     </hint>
    </hints>
   </connection>
@@ -1924,50 +1529,242 @@
    </hints>
   </connection>
   <connection>
-   <sender>doubleSpinBox_4</sender>
-   <signal>valueChanged(double)</signal>
-   <receiver>UIQTClass</receiver>
-   <slot>newModelXScale(double)</slot>
+   <sender>UIQTClass</sender>
+   <signal>currentEmptyXPosition(double)</signal>
+   <receiver>doubleSpinBox_10</receiver>
+   <slot>setValue(double)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>127</x>
-     <y>394</y>
+     <x>4</x>
+     <y>271</y>
     </hint>
     <hint type="destinationlabel">
-     <x>367</x>
-     <y>451</y>
+     <x>84</x>
+     <y>292</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>doubleSpinBox_5</sender>
-   <signal>valueChanged(double)</signal>
-   <receiver>UIQTClass</receiver>
-   <slot>newModelYScale(double)</slot>
+   <sender>UIQTClass</sender>
+   <signal>currentEmptyYPosition(double)</signal>
+   <receiver>doubleSpinBox_11</receiver>
+   <slot>setValue(double)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>232</x>
-     <y>394</y>
+     <x>5</x>
+     <y>245</y>
     </hint>
     <hint type="destinationlabel">
-     <x>367</x>
-     <y>305</y>
+     <x>182</x>
+     <y>285</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>doubleSpinBox_6</sender>
-   <signal>valueChanged(double)</signal>
-   <receiver>UIQTClass</receiver>
-   <slot>newModelZScale(double)</slot>
+   <sender>UIQTClass</sender>
+   <signal>currentEmptyZPosition(double)</signal>
+   <receiver>doubleSpinBox_12</receiver>
+   <slot>setValue(double)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>337</x>
-     <y>394</y>
+     <x>244</x>
+     <y>5</y>
     </hint>
     <hint type="destinationlabel">
-     <x>367</x>
-     <y>347</y>
+     <x>302</x>
+     <y>288</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UIQTClass</sender>
+   <signal>currentEmptyXRotation(double)</signal>
+   <receiver>doubleSpinBox_7</receiver>
+   <slot>setValue(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>4</x>
+     <y>307</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>81</x>
+     <y>338</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UIQTClass</sender>
+   <signal>currentEmptyYRotation(double)</signal>
+   <receiver>doubleSpinBox_8</receiver>
+   <slot>setValue(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>2</x>
+     <y>270</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>186</x>
+     <y>338</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UIQTClass</sender>
+   <signal>currentEmptyZRotation(double)</signal>
+   <receiver>doubleSpinBox_9</receiver>
+   <slot>setValue(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>359</x>
+     <y>275</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>313</x>
+     <y>332</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UIQTClass</sender>
+   <signal>currentEmptyXScale(double)</signal>
+   <receiver>doubleSpinBox</receiver>
+   <slot>setValue(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>0</x>
+     <y>236</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>77</x>
+     <y>380</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UIQTClass</sender>
+   <signal>currentEmptyYScale(double)</signal>
+   <receiver>doubleSpinBox_2</receiver>
+   <slot>setValue(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>201</x>
+     <y>3</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>191</x>
+     <y>384</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UIQTClass</sender>
+   <signal>currentEmptyZScale(double)</signal>
+   <receiver>doubleSpinBox_3</receiver>
+   <slot>setValue(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>274</x>
+     <y>1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>313</x>
+     <y>377</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_10</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>newXPosition(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>98</x>
+     <y>282</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>5</x>
+     <y>180</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_11</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>newYPosition(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>192</x>
+     <y>288</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>3</x>
+     <y>215</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_12</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>newZPosition(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>296</x>
+     <y>287</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>363</x>
+     <y>208</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_7</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>newXRotation(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>92</x>
+     <y>336</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>4</x>
+     <y>241</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_8</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>newYRotation(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>207</x>
+     <y>334</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>4</x>
+     <y>275</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_9</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>newZRotation(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>309</x>
+     <y>331</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>360</x>
+     <y>276</y>
     </hint>
    </hints>
   </connection>
@@ -1978,32 +1775,688 @@
    <slot>newXScale(double)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>112</x>
-     <y>394</y>
+     <x>91</x>
+     <y>379</y>
     </hint>
     <hint type="destinationlabel">
-     <x>9</x>
-     <y>406</y>
+     <x>0</x>
+     <y>301</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_2</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>newYScale(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>214</x>
+     <y>381</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>367</x>
+     <y>308</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_3</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>newZScale(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>315</x>
+     <y>382</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>353</x>
+     <y>456</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UIQTClass</sender>
+   <signal>currentModelXPosition(double)</signal>
+   <receiver>doubleSpinBox_16</receiver>
+   <slot>setValue(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>71</x>
+     <y>4</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>92</x>
+     <y>286</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UIQTClass</sender>
+   <signal>currentModelYPosition(double)</signal>
+   <receiver>doubleSpinBox_17</receiver>
+   <slot>setValue(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>161</x>
+     <y>3</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>178</x>
+     <y>285</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UIQTClass</sender>
+   <signal>currentModelZPosition(double)</signal>
+   <receiver>doubleSpinBox_18</receiver>
+   <slot>setValue(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>18</x>
+     <y>459</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>305</x>
+     <y>288</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UIQTClass</sender>
+   <signal>currentModelXRotation(double)</signal>
+   <receiver>doubleSpinBox_13</receiver>
+   <slot>setValue(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>24</x>
+     <y>464</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>73</x>
+     <y>328</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UIQTClass</sender>
+   <signal>currentModelYRotation(double)</signal>
+   <receiver>doubleSpinBox_14</receiver>
+   <slot>setValue(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>48</x>
+     <y>457</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>201</x>
+     <y>333</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UIQTClass</sender>
+   <signal>currentModelZRotation(double)</signal>
+   <receiver>doubleSpinBox_15</receiver>
+   <slot>setValue(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>23</x>
+     <y>460</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>316</x>
+     <y>332</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_16</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>newXPosition(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>99</x>
+     <y>284</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>0</x>
+     <y>151</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_17</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>newYPosition(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>203</x>
+     <y>283</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>367</x>
+     <y>103</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_18</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>newZPosition(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>286</x>
+     <y>288</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>366</x>
+     <y>177</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_13</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>newXRotation(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>95</x>
+     <y>335</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>138</x>
+     <y>1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_14</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>newYRotation(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>209</x>
+     <y>329</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>265</x>
+     <y>5</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_15</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>newZRotation(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>309</x>
+     <y>330</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>364</x>
+     <y>257</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_4</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>newXScale(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>91</x>
+     <y>381</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>13</x>
+     <y>459</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_5</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>newYScale(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>188</x>
+     <y>385</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>105</x>
+     <y>456</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_6</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>newZScale(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>296</x>
+     <y>383</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>301</x>
+     <y>466</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_19</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>newXPosition(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>95</x>
+     <y>285</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>28</x>
+     <y>468</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_20</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>newYPosition(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>204</x>
+     <y>288</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>365</x>
+     <y>247</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_21</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>newZPosition(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>301</x>
+     <y>285</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>280</x>
+     <y>452</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_22</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>newXRotation(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>93</x>
+     <y>331</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>8</x>
+     <y>155</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_23</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>newYRotation(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>206</x>
+     <y>332</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>5</x>
+     <y>209</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_24</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>newZRotation(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>306</x>
+     <y>335</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>0</x>
+     <y>259</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UIQTClass</sender>
+   <signal>currentXPosition(double)</signal>
+   <receiver>doubleSpinBox_19</receiver>
+   <slot>setValue(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>367</x>
+     <y>314</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>103</x>
+     <y>291</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UIQTClass</sender>
+   <signal>currentYPosition(double)</signal>
+   <receiver>doubleSpinBox_20</receiver>
+   <slot>setValue(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>367</x>
+     <y>227</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>207</x>
+     <y>285</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UIQTClass</sender>
+   <signal>currentZPosition(double)</signal>
+   <receiver>doubleSpinBox_21</receiver>
+   <slot>setValue(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>367</x>
+     <y>240</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>312</x>
+     <y>285</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UIQTClass</sender>
+   <signal>currentXRotation(double)</signal>
+   <receiver>doubleSpinBox_22</receiver>
+   <slot>setValue(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>367</x>
+     <y>301</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>70</x>
+     <y>336</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UIQTClass</sender>
+   <signal>currentYRotation(double)</signal>
+   <receiver>doubleSpinBox_23</receiver>
+   <slot>setValue(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>367</x>
+     <y>245</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>218</x>
+     <y>332</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UIQTClass</sender>
+   <signal>currentZRotation(double)</signal>
+   <receiver>doubleSpinBox_24</receiver>
+   <slot>setValue(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>367</x>
+     <y>208</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>315</x>
+     <y>328</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_25</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>newPitch(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>250</x>
+     <y>287</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>367</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_26</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>newYaw(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>296</x>
+     <y>307</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>367</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_27</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>newZoom(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>255</x>
+     <y>329</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>367</x>
+     <y>335</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_28</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>newNear(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>257</x>
+     <y>353</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>367</x>
+     <y>363</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_29</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>newFar(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>284</x>
+     <y>384</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>367</x>
+     <y>396</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UIQTClass</sender>
+   <signal>currentPitch(double)</signal>
+   <receiver>doubleSpinBox_25</receiver>
+   <slot>setValue(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>367</x>
+     <y>222</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>263</x>
+     <y>273</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UIQTClass</sender>
+   <signal>currentYaw(double)</signal>
+   <receiver>doubleSpinBox_26</receiver>
+   <slot>setValue(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>367</x>
+     <y>177</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>258</x>
+     <y>303</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UIQTClass</sender>
+   <signal>currentZoom(double)</signal>
+   <receiver>doubleSpinBox_27</receiver>
+   <slot>setValue(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>367</x>
+     <y>211</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>251</x>
+     <y>334</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UIQTClass</sender>
+   <signal>currentNear(double)</signal>
+   <receiver>doubleSpinBox_28</receiver>
+   <slot>setValue(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>367</x>
+     <y>191</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>279</x>
+     <y>356</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UIQTClass</sender>
+   <signal>currentFar(double)</signal>
+   <receiver>doubleSpinBox_29</receiver>
+   <slot>setValue(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>367</x>
+     <y>338</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>290</x>
+     <y>392</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CameraListWidget</sender>
+   <signal>clicked(QModelIndex)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>selectedObject(QModelIndex)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>228</x>
+     <y>145</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>369</x>
+     <y>165</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>modelObjectListWidget</sender>
+   <signal>clicked(QModelIndex)</signal>
+   <receiver>UIQTClass</receiver>
+   <slot>selectedObject(QModelIndex)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>284</x>
+     <y>114</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>409</x>
+     <y>133</y>
     </hint>
    </hints>
   </connection>
  </connections>
  <slots>
-  <signal>currentRColor(int)</signal>
-  <signal>currentGColor(int)</signal>
-  <signal>currentBColor(int)</signal>
-  <signal>currentXPosition(int)</signal>
-  <signal>currentYPosition(int)</signal>
-  <signal>currentZPosition(int)</signal>
-  <signal>currentXRotation(int)</signal>
-  <signal>currentYRotation(int)</signal>
-  <signal>currentZRotation(int)</signal>
+  <signal>currentRColor(double)</signal>
+  <signal>currentGColor(double)</signal>
+  <signal>currentBColor(double)</signal>
+  <signal>currentXPosition(double)</signal>
+  <signal>currentYPosition(double)</signal>
+  <signal>currentZPosition(double)</signal>
+  <signal>currentXRotation(double)</signal>
+  <signal>currentYRotation(double)</signal>
+  <signal>currentZRotation(double)</signal>
   <signal>currentYScale(double)</signal>
-  <signal>currentPitch(int)</signal>
-  <signal>currentYaw(int)</signal>
-  <signal>currentZoom(int)</signal>
-  <signal>currentNear(int)</signal>
-  <signal>currentFar(int)</signal>
+  <signal>currentPitch(double)</signal>
+  <signal>currentYaw(double)</signal>
+  <signal>currentZoom(double)</signal>
+  <signal>currentNear(double)</signal>
+  <signal>currentFar(double)</signal>
   <signal>setHierarchyText(QString)</signal>
   <signal>currentXScale(double)</signal>
   <signal>currentZScale(double)</signal>
@@ -2012,70 +2465,49 @@
   <signal>updateAtIndex(QModelIndex)</signal>
   <signal>currentObjectName(QString)</signal>
   <signal>changeStackedWidgetIndex(int)</signal>
-  <signal>currentEmptyXPosition(int)</signal>
-  <signal>currentEmptyYPosition(int)</signal>
-  <signal>currentEmptyZPosition(int)</signal>
-  <signal>currentEmptyXRotation(int)</signal>
-  <signal>currentEmptyYRotation(int)</signal>
-  <signal>currentEmptyZRotation(int)</signal>
+  <signal>currentEmptyXPosition(double)</signal>
+  <signal>currentEmptyYPosition(double)</signal>
+  <signal>currentEmptyZPosition(double)</signal>
+  <signal>currentEmptyXRotation(double)</signal>
+  <signal>currentEmptyYRotation(double)</signal>
+  <signal>currentEmptyZRotation(double)</signal>
   <signal>currentEmptyXScale(double)</signal>
   <signal>currentEmptyYScale(double)</signal>
   <signal>currentEmptyZScale(double)</signal>
-  <signal>currentModelXPosition(int)</signal>
-  <signal>currentModelYPosition(int)</signal>
-  <signal>currentModelZPosition(int)</signal>
-  <signal>currentModelXRotation(int)</signal>
-  <signal>currentModelYRotation(int)</signal>
-  <signal>currentModelZRotation(int)</signal>
+  <signal>currentModelXPosition(double)</signal>
+  <signal>currentModelYPosition(double)</signal>
+  <signal>currentModelZPosition(double)</signal>
+  <signal>currentModelXRotation(double)</signal>
+  <signal>currentModelYRotation(double)</signal>
+  <signal>currentModelZRotation(double)</signal>
   <signal>currentModelXScale(double)</signal>
   <signal>currentModelYScale(double)</signal>
   <signal>currentModelZScale(double)</signal>
-  <signal>currentModelRColor(int)</signal>
-  <signal>currentModelGColor(int)</signal>
-  <signal>currentModelBColor(int)</signal>
+  <signal>currentModelRColor(double)</signal>
+  <signal>currentModelGColor(double)</signal>
+  <signal>currentModelBColor(double)</signal>
   <signal>currentDessinX(double)</signal>
   <signal>currentDessinY(double)</signal>
-  <slot>newXPosition(int)</slot>
-  <slot>newYPosition(int)</slot>
-  <slot>newZPosition(int)</slot>
-  <slot>newXRotation(int)</slot>
-  <slot>newYRotation(int)</slot>
-  <slot>newZRotation(int)</slot>
-  <slot>newRColor(int)</slot>
-  <slot>newGColor(int)</slot>
-  <slot>newBColor(int)</slot>
+  <slot>newXPosition(double)</slot>
+  <slot>newYPosition(double)</slot>
+  <slot>newZPosition(double)</slot>
+  <slot>newXRotation(double)</slot>
+  <slot>newYRotation(double)</slot>
+  <slot>newZRotation(double)</slot>
+  <slot>newRColor(double)</slot>
+  <slot>newGColor(double)</slot>
+  <slot>newBColor(double)</slot>
   <slot>newYScale(double)</slot>
-  <slot>newPitch(int)</slot>
-  <slot>newYaw(int)</slot>
-  <slot>newZoom(int)</slot>
-  <slot>newNear(int)</slot>
-  <slot>newFar(int)</slot>
+  <slot>newPitch(double)</slot>
+  <slot>newYaw(double)</slot>
+  <slot>newZoom(double)</slot>
+  <slot>newNear(double)</slot>
+  <slot>newFar(double)</slot>
   <slot>newXScale(double)</slot>
   <slot>newZScale(double)</slot>
   <slot>selectedObject(QModelIndex)</slot>
   <slot>undo()</slot>
   <slot>redo()</slot>
-  <slot>newEmptyXPosition(int)</slot>
-  <slot>newEmptyYPosition(int)</slot>
-  <slot>newEmptyZPosition(int)</slot>
-  <slot>newEmptyXRotation(int)</slot>
-  <slot>newEmptyYRotation(int)</slot>
-  <slot>newEmptyZRotation(int)</slot>
-  <slot>newEmptyXScale(double)</slot>
-  <slot>newEmptyYScale(double)</slot>
-  <slot>newEmptyZScale(double)</slot>
-  <slot>newModelXPosition(int)</slot>
-  <slot>newModelYPosition(int)</slot>
-  <slot>newModelZPosition(int)</slot>
-  <slot>newModelXRotation(int)</slot>
-  <slot>newModelYRotation(int)</slot>
-  <slot>newModelZRotation(int)</slot>
-  <slot>newModelXScale(double)</slot>
-  <slot>newModelYScale(double)</slot>
-  <slot>newModelZScale(double)</slot>
-  <slot>newModelRColor(int)</slot>
-  <slot>newModelGColor(int)</slot>
-  <slot>newModelBColor(int)</slot>
   <slot>selectedEmptyObject(QModelIndex)</slot>
   <slot>selectedModelObject(QModelIndex)</slot>
   <slot>newDessinX(double)</slot>
