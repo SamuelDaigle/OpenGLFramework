@@ -7,7 +7,6 @@ namespace Framework
 		BaseShape(_shader)
 	{
 		m_position = _position;
-		InitializeBuffers();
 		BaseObject::SetScale(1, 1, 1);
 	}
 
@@ -33,8 +32,8 @@ namespace Framework
 		Utils::VertexType* vertices;
 		unsigned int* indices;
 
-		m_vertexCount = 18;
-		m_indexCount = 18;
+		int m_vertexCount = 18;
+		int m_indexCount = 18;
 
 		vertices = new Utils::VertexType[m_vertexCount];
 		indices = new unsigned int[m_indexCount];

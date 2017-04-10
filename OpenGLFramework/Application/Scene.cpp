@@ -30,6 +30,23 @@ namespace Application
 		light->Translate(5, 0, 0);
 		light->SetScale(0.1f, 0.1f, 0.1f);
 
+		Framework::SurfaceParam * surf = new Framework::SurfaceParam(*m_colorShader);
+		m_rootObject->Add(surf);
+
+		Framework::BezierLine * bezier = new Framework::BezierLine(*m_colorShader);
+		bezier->SetupCtrlPoints(100, Math::Vector3(0, 0, 0),
+			Math::Vector3(1, 1, 1), Math::Vector3(2, 1, -1), Math::Vector3(1, 0, 0));
+		//m_rootObject->Add(bezier);
+
+		Framework::CatmullRom * catmull = new Framework::CatmullRom(*m_colorShader);
+		std::vector<Math::Vector3> *vec = new std::vector<Math::Vector3>();
+		vec->push_back(Math::Vector3(0, 0, 0));
+		vec->push_back(Math::Vector3(1, 1, 0));
+		vec->push_back(Math::Vector3(2, 4, 0));
+		vec->push_back(Math::Vector3(0, 5, 0));
+		catmull->SetupCtrlPoints(100, *vec);
+		//m_rootObject->Add(catmull);
+
 		Framework::BaseShape * pyramid = new Framework::Pyramid(*m_colorShader, Math::Vector3(0, 4, 0));
 		pyramid->SetColor(0.0f, 0.75f, 0.75f, 0.5f);
 		m_rootObject->Add(pyramid);
