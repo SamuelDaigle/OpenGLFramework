@@ -64,6 +64,7 @@ namespace Application
 		planet->AddComponent(*planetRenderer);
 		planet->Translate(0, 0, 6);
 		planet->SetScale(0.75f, 0.75f, 0.75f);
+		planet->SetRenderOrder(2);
 
 		Framework::BaseObject* moon = new Framework::BaseObject();
 		planet->Add(moon);
@@ -147,6 +148,7 @@ namespace Application
 			rock->Translate(std::cos(angle) * distance, 0, std::sin(angle) * distance);
 			rock->SetScale(0.1f * std::rand() / RAND_MAX + 0.1f, 0.1f * std::rand() / RAND_MAX + 0.1f, 0.1f * std::rand() / RAND_MAX + 0.1f);
 			rock->Rotate(((float)rand()) / (float)RAND_MAX * 360, ((float)rand()) / (float)RAND_MAX * 360, ((float)rand()) / (float)RAND_MAX * 360);
+			rock->SetRenderOrder(0);
 
 			angle += 12.5f;
 		}
@@ -266,7 +268,9 @@ namespace Application
 		m_skybox->Render(*m_camera);
 		m_hierarchyText->DrawTexts();
 		m_consoleText->DrawTexts();
-		m_rootObject->Render(*m_camera);
+
+		for (unsigned int renderOrder = 0; renderOrder <= Framework::BaseObject::MAX_RENDER_ORDER; renderOrder++)
+			m_rootObject->Render(*m_camera, renderOrder);
 
 
 		// Reset shader for UI drawing.

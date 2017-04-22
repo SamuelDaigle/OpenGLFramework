@@ -17,7 +17,7 @@ namespace Framework
 		void Destroy() override;
 		void SetColor(Math::Vector3 _newColor, float _alpha);
 		void SetColor(float _r, float _g, float _b, float _alpha);
-		void Render(const ICamera& _camera) const override;
+		void Render(const ICamera& _camera, const int _currentRenderOrder) const override;
 	private:
 		IShader * m_ColorShader;
 		Math::Vector3 m_color;

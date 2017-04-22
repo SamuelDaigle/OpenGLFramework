@@ -1,12 +1,14 @@
 #include "BaseObject.h"
 #include "Component.h"
 
+
+
 namespace Framework
 {
 
 BaseObject::BaseObject() :
-	Utils::Composite<BaseObject>(),
-	m_scale(1, 1, 1), m_position(0, 0, 0), m_upVector(0, 1, 0)
+		Utils::Composite<BaseObject>(),
+		m_scale(1, 1, 1), m_position(0, 0, 0), m_upVector(0, 1, 0), m_renderOrder(1)
 {
 }
 
@@ -15,13 +17,16 @@ void BaseObject::Destroy()
 	Utils::Composite<BaseObject>::DestroyChilds();
 }
 
-void BaseObject::Render(const ICamera& _camera) const
+void BaseObject::Render(const ICamera& _camera, const int _currentRenderOrder) const
 {
-	Utils::Composite<BaseObject>::RenderChilds(_camera);
+	Utils::Composite<BaseObject>::RenderChilds(_camera, _currentRenderOrder);
 
-	for (int i = 0; i < m_components.size(); i++)
+	if (_currentRenderOrder == m_renderOrder)
 	{
-		m_components[i]->Render(_camera, m_worldMatrix, GetRotationMatrix());
+		for (int i = 0; i < m_components.size(); i++)
+		{
+			m_components[i]->Render(_camera, m_worldMatrix, GetRotationMatrix());
+		}
 	}
 }
 
@@ -40,6 +45,14 @@ void BaseObject::Update(const Math::Matrix4& _parentWorldMatrix)
 	{
 		m_components[i]->Update();
 	}
+}
+
+void BaseObject::SetRenderOrder(const unsigned int _renderOrder)
+{
+	if (_renderOrder > MAX_RENDER_ORDER)
+		m_renderOrder = MAX_RENDER_ORDER;
+	else
+		m_renderOrder = _renderOrder;
 }
 
 void BaseObject::Translate(const Math::Vector3& _translationVector)

@@ -14,7 +14,7 @@ namespace Framework
 		~CatmullRom();
 
 		void SetupCtrlPoints(int lineResolution, std::vector<Math::Vector3> & newControlPoints);
-		void Render(const ICamera& _camera) const override;
+		void Render(const ICamera& _camera, const int _currentRenderOrder) const override;
 
 	private:
 		unsigned int lineResolution;

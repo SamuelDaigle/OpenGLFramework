@@ -243,17 +243,17 @@ namespace Framework
 		glDeleteVertexArrays(1, &m_vertexArrayId);
 	}
 
-	void SurfaceParam::Render(const ICamera& _camera) const
+	void SurfaceParam::Render(const ICamera& _camera, const int _currentRenderOrder) const
 	{
-		BaseShape::Render(_camera);
+		BaseShape::Render(_camera, _currentRenderOrder);
 		glBindVertexArray(m_vertexArrayId);
 		glDrawElements(GL_TRIANGLES, m_indexCount, GL_UNSIGNED_INT, 0);
 
-		BaseShape::Render(_camera);
-		c1->Render(_camera);
-		c2->Render(_camera);
-		c3->Render(_camera);
-		c4->Render(_camera);	
+		BaseShape::Render(_camera, _currentRenderOrder);
+		c1->Render(_camera, _currentRenderOrder);
+		c2->Render(_camera, _currentRenderOrder);
+		c3->Render(_camera, _currentRenderOrder);
+		c4->Render(_camera, _currentRenderOrder);
 	}
 
 }

@@ -24,7 +24,7 @@ namespace Framework
 
 	}
 
-	void BaseShape::Render(const ICamera& _camera) const
+	void BaseShape::Render(const ICamera& _camera, const int _currentRenderOrder) const
 	{
 		if (m_ColorShader)
 		{

@@ -18,9 +18,11 @@ namespace Framework
 	class BaseObject : public Utils::Composite<BaseObject>
 	{
 	public:
+		static const unsigned int MAX_RENDER_ORDER = 3;
+
 		BaseObject();
 		virtual void Destroy();
-		virtual void Render(const ICamera& _camera) const;
+		virtual void Render(const ICamera& _camera, const int _currentRenderOrder) const;
 		virtual void Update(const Math::Matrix4& _parentWorldMatrix);
 
 		virtual void Translate(const Math::Vector3& _translationVector);
@@ -36,7 +38,7 @@ namespace Framework
 		virtual std::vector<BaseObject*> GetChilds();
 		virtual std::vector<Component*> GetComponents();
 		
-
+		virtual void SetRenderOrder(const unsigned int _renderOrder);
 		virtual void AddComponent(Component& _component);
 
 		virtual const Math::Matrix4 GetLocalWorldMatrix() const;
@@ -64,6 +66,7 @@ namespace Framework
 		Math::Matrix4 m_worldMatrix;
 
 	private:
+		unsigned int m_renderOrder;
 		Math::Vector3 m_forwardVector;
 		Math::Vector3 m_upVector;
 		Math::Vector3 m_rightVector;

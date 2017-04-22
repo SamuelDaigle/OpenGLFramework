@@ -60,9 +60,9 @@ namespace Framework
 		}
 	}
 
-	void B_Spline::Render(const ICamera& _camera) const
+	void B_Spline::Render(const ICamera& _camera, const int _currentRenderOrder) const
 	{
-		BaseShape::Render(_camera);
+		BaseShape::Render(_camera, _currentRenderOrder);
 		for (int i = 1; i < points->size(); i++)
 		{
 			float oldX = points->at(i - 1).x;

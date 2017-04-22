@@ -13,7 +13,7 @@ namespace Framework
 		SurfaceParam(IShader &_shader);
 		~SurfaceParam();
 
-		void Render(const ICamera& _camera) const override;
+		void Render(const ICamera& _camera, const int _currentRenderOrder) const override;
 
 	private:
 		unsigned int lineResolution;

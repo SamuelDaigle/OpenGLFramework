@@ -16,7 +16,7 @@ namespace Framework
 		Triangle(IShader &_shader);
 		void Destroy() override;
 
-		void Render(const ICamera& _camera) const override;
+		void Render(const ICamera& _camera, const int _currentRenderOrder) const override;
 	private:
 		void InitializeBuffers();
 		void ShutdownBuffers();

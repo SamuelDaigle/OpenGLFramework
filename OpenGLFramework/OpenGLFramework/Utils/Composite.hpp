@@ -29,11 +29,11 @@ namespace Utils
 	}
 
 	template <class T>
-	void Composite<T>::RenderChilds(const ICamera& _camera) const
+	void Composite<T>::RenderChilds(const ICamera& _camera, const int _currentRenderOrder) const
 	{
 		for each (T* childObject in m_childObjects)
 		{
-			childObject->Render(_camera);
+			childObject->Render(_camera, _currentRenderOrder);
 		}
 	}
 

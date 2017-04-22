@@ -5,9 +5,10 @@ namespace Framework
 
 	OpenGL::OpenGL()
 	{
-		glEnable(GL_DEPTH_TEST);
+		glDepthFunc(GL_NEVER);
+		//glEnable(GL_DEPTH_TEST);
 		glDepthMask(GL_ALWAYS);
-		glDepthFunc(GL_LESS);
+		//glDepthFunc(GL_LESS);
 		glEnable(GL_STENCIL_TEST);
 		glEnable(GL_CULL_FACE);
 	}

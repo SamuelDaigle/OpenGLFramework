@@ -23,7 +23,7 @@ namespace Framework
 		Math::Vector3 GetCtrlPoint3();
 		Math::Vector3 GetCtrlPoint2();
 
-		void Render(const ICamera& _camera) const override;
+		void Render(const ICamera& _camera, const int _currentRenderOrder) const override;
 
 	private:
 		unsigned int lineResolution;

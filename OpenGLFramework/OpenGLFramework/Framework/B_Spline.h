@@ -13,7 +13,7 @@ namespace Framework
 		~B_Spline();
 
 		void SetupCtrlPointsAndKnots(int lineResolution, std::vector<Math::Vector3> & newControlPoints, std::vector<Math::Vector3> & newKnots);
-		void Render(const ICamera& _camera) const override;
+		void Render(const ICamera& _camera, const int _currentRenderOrder) const override;
 
 	private:
 		void CaculateIndexPosition();
