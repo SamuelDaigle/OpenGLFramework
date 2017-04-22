@@ -198,6 +198,9 @@
     <ClCompile Include="Framework\SurfaceParam.cpp">
       <Filter>Framework</Filter>
     </ClCompile>
+    <ClCompile Include="Rendering\BlinnPhongShader.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Framework\OpenGL.h">
@@ -394,6 +397,9 @@
     <ClInclude Include="Framework\SurfaceParam.h">
       <Filter>Framework</Filter>
     </ClInclude>
+    <ClInclude Include="Rendering\BlinnPhongShader.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Shaders\advanced.frag">
@@ -421,6 +427,12 @@
       <Filter>Shaders</Filter>
     </None>
     <None Include="Shaders\basic.geo">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\blinnphong.frag">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\blinnphong.vert">
       <Filter>Shaders</Filter>
     </None>
   </ItemGroup>
