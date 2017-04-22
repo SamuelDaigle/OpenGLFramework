@@ -26,6 +26,9 @@ namespace Framework
 		Math::Vector3 m_ambiant;
 		Math::Vector3 m_diffuse;
 		Math::Vector3 m_specular;
+
+		int m_lightID;
+		static int lightCount;
 	};
 
 }
