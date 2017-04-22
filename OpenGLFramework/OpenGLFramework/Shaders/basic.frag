@@ -4,7 +4,7 @@
 
 #version 400 core
 
-in vec2 ex_TexCoord;
+in vec2 vert_TexCoord;
 
 out vec4 color;
 
@@ -13,5 +13,5 @@ uniform vec4 Color;
 
 void main()
 {    
-	color = texture(textureSample, ex_TexCoord) * Color;
+	color = texture(textureSample, vert_TexCoord) * Color;
 }

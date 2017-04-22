@@ -144,6 +144,7 @@
     <None Include="Shaders\advanced.frag" />
     <None Include="Shaders\advanced.vert" />
     <None Include="Shaders\basic.frag" />
+    <None Include="Shaders\basic.geo" />
     <None Include="Shaders\basic.vert" />
     <None Include="Shaders\color.frag" />
     <None Include="Shaders\color.vert" />

@@ -26,6 +26,10 @@ namespace IO
 		{
 			shader = glCreateShader(GL_FRAGMENT_SHADER);
 		}
+		else if (_shaderType == ShaderType::GEOMETRY)
+		{
+			shader = glCreateShader(GL_GEOMETRY_SHADER);
+		}
 
 		// load shaders & get length of each
 		GLint shaderLength;

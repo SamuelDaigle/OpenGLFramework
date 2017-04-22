@@ -31,7 +31,7 @@ namespace Application
 		light->SetScale(0.1f, 0.1f, 0.1f);
 
 		Framework::SurfaceParam * surf = new Framework::SurfaceParam(*m_colorShader);
-		m_rootObject->Add(surf);
+		//m_rootObject->Add(surf);
 
 		Framework::BezierLine * bezier = new Framework::BezierLine(*m_colorShader);
 		bezier->SetupCtrlPoints(100, Math::Vector3(0, 0, 0),

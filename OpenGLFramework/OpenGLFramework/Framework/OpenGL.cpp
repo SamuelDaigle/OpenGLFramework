@@ -27,7 +27,8 @@ namespace Framework
 	void OpenGL::EndScene() const
 	{
 		glutSwapBuffers();
+		//GLenum glError = glGetError();
+		//const GLubyte * errorByte = gluErrorString(glError);
 		assert(glGetError() == GL_NO_ERROR);
 	}
-
 }

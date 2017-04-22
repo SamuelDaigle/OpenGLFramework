@@ -420,6 +420,9 @@
     <None Include="Shaders\color.vert">
       <Filter>Shaders</Filter>
     </None>
+    <None Include="Shaders\basic.geo">
+      <Filter>Shaders</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="OpenGLFramework.rc" />

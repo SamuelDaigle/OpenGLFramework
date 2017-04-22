@@ -19,7 +19,8 @@ namespace IO
 		enum ShaderType
 		{
 			VERTEX,
-			FRAGMENTATION
+			FRAGMENTATION,
+			GEOMETRY
 		};
 
 		ShaderLoader();

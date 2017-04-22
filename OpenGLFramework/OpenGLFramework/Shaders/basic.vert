@@ -8,7 +8,10 @@ in vec3 Position;
 in vec3 Normal;
 in vec2 TexCoords;
 
-out vec2 ex_TexCoord;
+out vec2 vert_TexCoord;
+out VS_OUT {
+    vec3 normal;
+} vs_out;
 
 uniform mat4 worldMatrix;
 uniform mat4 viewMatrix;
@@ -20,5 +23,8 @@ void main(void)
 	gl_Position = gl_Position * viewMatrix;
 	gl_Position = gl_Position * projectionMatrix;
 
-	ex_TexCoord = TexCoords;
+	vert_TexCoord = TexCoords;
+
+    mat3 normalMatrix = mat3(transpose(inverse(viewMatrix * worldMatrix)));
+    vs_out.normal = normalize(vec3(projectionMatrix * vec4(normalMatrix * Normal, 1.0)));
 }
