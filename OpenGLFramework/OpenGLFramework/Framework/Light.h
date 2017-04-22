@@ -30,5 +30,4 @@ namespace Framework
 		int m_lightID;
 		static int lightCount;
 	};
-
 }

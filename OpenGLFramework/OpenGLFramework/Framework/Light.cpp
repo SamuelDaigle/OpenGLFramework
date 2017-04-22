@@ -3,16 +3,18 @@
 namespace Framework
 {
 
+	int Light::lightCount = 0;
+
 	Light::Light(BaseObject& _baseObject, const IShader& _shader) :
 		m_baseObject(&_baseObject), m_shader(&_shader), m_ambiant(Math::Vector3(0.15f, 0.15f, 0.15f)), m_diffuse(Math::Vector3(1.0f, 1.0f, 1.0f)), m_specular(Math::Vector3(1.0f, 1.0f, 1.0f))
 	{
-		m_lightID = lightCount;
-		lightCount++;
+		m_lightID = Light::lightCount;
+		Light::lightCount++;
 	}
 
 	Light::~Light()
 	{
-		lightCount--;
+		Light::lightCount--;
 	}
 
 	void Light::Update()
