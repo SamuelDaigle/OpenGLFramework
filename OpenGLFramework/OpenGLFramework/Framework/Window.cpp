@@ -89,7 +89,8 @@ namespace Framework
 
 	void Window::InitializeWindow()
 	{
-		glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA);
+		glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH | GLUT_MULTISAMPLE);
+		glEnable(GL_MULTISAMPLE);
 		glutInitWindowSize(GetWidth(), GetHeight());
 		glutCreateWindow("OpenGL research");
 		GLenum err = glewInit();

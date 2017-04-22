@@ -17,6 +17,7 @@ namespace Application
 		m_advancedShader = new Rendering::AdvancedShader();
 		m_customShader = new Application::CustomShader();
 		m_colorShader = new Rendering::ColorShader();
+		m_blackAndWhite = new Rendering::BlackAndWhite();
 
 		m_rootObject = new Framework::BaseObject();
 
@@ -68,7 +69,7 @@ namespace Application
 
 		Framework::BaseObject* moon = new Framework::BaseObject();
 		planet->Add(moon);
-		Rendering::Renderer* moonRenderer = new Rendering::Renderer("../Content/planet/planet.obj", "", *meshLoader, *m_basicShader);
+		Rendering::Renderer* moonRenderer = new Rendering::Renderer("../Content/planet/planet.obj", "", *meshLoader, *m_blackAndWhite);
 		moonRenderer->SetColor(0.0f, 0.0f, 1.0f);
 		moon->AddComponent(*moonRenderer);
 		moon->Translate(0, 0, 10);

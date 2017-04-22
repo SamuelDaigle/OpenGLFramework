@@ -17,6 +17,13 @@ namespace Rendering
 
 		glBindAttribLocation(GetGlProgram(), 0, "position");
 
+		/* Transform Feedback
+		const GLchar* feedbackVaryings[] = { "outValue" };
+		glTransformFeedbackVaryings(GetGlProgram(), 1, feedbackVaryings, GL_INTERLEAVED_ATTRIBS);
+		glLinkProgram(GetGlProgram());
+		glUseProgram(GetGlProgram());
+		Skybox.cpp */
+
 		glAttachShader(GetGlProgram(), vertShaderID);
 		glAttachShader(GetGlProgram(), fragShaderID);
 
