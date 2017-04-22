@@ -1,2 +1,12 @@
-﻿  Application.vcxproj -> C:\Users\Utilisateur\OneDrive\Génie logiciel\Session4\IFT-3100-Infographie\TP2-TP3\OpenGLFramework\OpenGLFramework\Release\Application.exe
-  Application.vcxproj -> C:\Users\Utilisateur\OneDrive\Génie logiciel\Session4\IFT-3100-Infographie\TP2-TP3\OpenGLFramework\OpenGLFramework\Release\Application.pdb (Full PDB)
+﻿  Scene.cpp
+Scene.cpp(130): warning C4018: '<': signed/unsigned mismatch
+Scene.cpp(166): warning C4018: '<': signed/unsigned mismatch
+  CustomShader.obj : MSIL .netmodule or module compiled with /GL found; restarting link with /LTCG; add /LTCG to the link command line to improve linker performance
+  Generating code
+  Finished generating code
+SOIL.lib(SOIL.obj) : warning LNK4099: PDB 'SOIL.pdb' was not found with 'SOIL.lib(SOIL.obj)' or at 'C:\Users\sebro\Desktop\UniversitÚ\Session Hiver 2017\IFT-3100 - Infographie\TP2_GIT\OpenGLFramework\OpenGLFramework\Release\SOIL.pdb'; linking object as if no debug info
+SOIL.lib(image_helper.obj) : warning LNK4099: PDB 'SOIL.pdb' was not found with 'SOIL.lib(image_helper.obj)' or at 'C:\Users\sebro\Desktop\UniversitÚ\Session Hiver 2017\IFT-3100 - Infographie\TP2_GIT\OpenGLFramework\OpenGLFramework\Release\SOIL.pdb'; linking object as if no debug info
+SOIL.lib(stb_image_aug.obj) : warning LNK4099: PDB 'SOIL.pdb' was not found with 'SOIL.lib(stb_image_aug.obj)' or at 'C:\Users\sebro\Desktop\UniversitÚ\Session Hiver 2017\IFT-3100 - Infographie\TP2_GIT\OpenGLFramework\OpenGLFramework\Release\SOIL.pdb'; linking object as if no debug info
+SOIL.lib(image_DXT.obj) : warning LNK4099: PDB 'SOIL.pdb' was not found with 'SOIL.lib(image_DXT.obj)' or at 'C:\Users\sebro\Desktop\UniversitÚ\Session Hiver 2017\IFT-3100 - Infographie\TP2_GIT\OpenGLFramework\OpenGLFramework\Release\SOIL.pdb'; linking object as if no debug info
+  Application.vcxproj -> C:\Users\sebro\Desktop\Université\Session Hiver 2017\IFT-3100 - Infographie\TP2_GIT\OpenGLFramework\OpenGLFramework\Release\Application.exe
+  Application.vcxproj -> C:\Users\sebro\Desktop\Université\Session Hiver 2017\IFT-3100 - Infographie\TP2_GIT\OpenGLFramework\OpenGLFramework\Release\Application.pdb (Full PDB)
