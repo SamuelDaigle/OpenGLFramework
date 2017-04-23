@@ -11,6 +11,7 @@
 #include "..\OpenGLFramework\Rendering\BasicShader.h"
 #include "..\OpenGLFramework\Rendering\AdvancedShader.h"
 #include "..\OpenGLFramework\Rendering\BlackAndWhite.h"
+#include "..\OpenGLFramework\Rendering\BlinnPhongShader.h"
 #include "..\OpenGLFramework\Rendering\ColorShader.h"
 #include "..\OpenGLFramework\Input\InputHandler.h"
 #include "..\OpenGLFramework\Framework\Light.h"
@@ -55,7 +56,9 @@ namespace Application
 		IShader* m_advancedShader;
 		IShader* m_customShader;
 		IShader* m_colorShader;
-		IShader* m_blackAndWhite;
+		IShader* m_blackAndWhiteShader;
+		IShader* m_blinnPhongShader;
+
 		Framework::Skybox* m_skybox;
 		Camera::Camera* m_camera;
 		Text::TextHolder* m_hierarchyText;
