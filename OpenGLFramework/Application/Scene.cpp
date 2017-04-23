@@ -21,15 +21,16 @@ namespace Application
 
 		m_rootObject = new Framework::BaseObject();
 
-		Framework::BaseObject* light = new Framework::BaseObject();
-		m_rootObject->Add(light);
-		Framework::Light* lightComponent = new Framework::Light(*light, *m_advancedShader);
-		light->AddComponent(*lightComponent);
-		Rendering::Renderer* lightRenderer = new Rendering::Renderer("../Content/planet/planet.obj", "", *meshLoader, *m_advancedShader);
-		lightRenderer->SetColor(1.0, 1.0, 1.0);
-		light->AddComponent(*lightRenderer);
-		light->Translate(5, 0, 0);
-		light->SetScale(0.1f, 0.1f, 0.1f);
+		Framework::BaseObject* light1 = SpawnLight(*meshLoader);
+		light1->Translate(5, 0, 0);
+		Framework::BaseObject* light2 = SpawnLight(*meshLoader);
+		light2->Translate(10, -5, 0);
+		Framework::BaseObject* light3 = SpawnLight(*meshLoader);
+		light3->Translate(0, 0, -10);
+		Framework::BaseObject* light4 = SpawnLight(*meshLoader);
+		light4->Translate(-25, -25, -10);
+		Framework::BaseObject* light5 = SpawnLight(*meshLoader);
+		light5->Translate(-5, 0, 5);
 
 		Framework::SurfaceParam * surf = new Framework::SurfaceParam(*m_colorShader);
 		//m_rootObject->Add(surf);
@@ -155,6 +156,18 @@ namespace Application
 		}
 	}
 
+	Framework::BaseObject* Scene::SpawnLight(IO::MeshLoader& _meshLoader)
+	{
+		Framework::BaseObject* light = new Framework::BaseObject();
+		m_rootObject->Add(light);
+		Framework::Light* lightComponent = new Framework::Light(*light, *m_advancedShader);
+		light->AddComponent(*lightComponent);
+		Rendering::Renderer* lightRenderer = new Rendering::Renderer("../Content/planet/planet.obj", "", _meshLoader, *m_advancedShader);
+		lightRenderer->SetColor(1.0, 1.0, 1.0);
+		light->AddComponent(*lightRenderer);
+		light->SetScale(0.1f, 0.1f, 0.1f);
+		return light;
+	}
 	void Scene::AddChildStringTo(Text::TextHolder& _hierarchyText, Framework::BaseObject& _parent, int _depth)
 	{
 		std::string childText = " ";

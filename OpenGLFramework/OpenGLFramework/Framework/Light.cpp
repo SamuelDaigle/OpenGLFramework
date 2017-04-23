@@ -25,12 +25,18 @@ namespace Framework
 	void Light::Render(const ICamera& _camera, const Math::Matrix4& _world, const Math::Matrix4& _localWorldMatrix) const
 	{
 		m_shader->Use();
+		std::string s_pointLight = "pointLights[";
+		std::string ID = std::to_string(m_lightID);
+		std::string position = "].position";
+		std::string ambiant = "].ambiant";
+		std::string diffuse = "].diffuse";
+		std::string specular = "].specular";
 
 		glUniform3f(glGetUniformLocation(m_shader->GetGlProgram(), "viewPos"), _camera.GetPosition().x, _camera.GetPosition().y, _camera.GetPosition().z);
-		glUniform3f(glGetUniformLocation(m_shader->GetGlProgram(), "pointLight.position"), m_baseObject->GetWorldPosition().x, m_baseObject->GetWorldPosition().y, -m_baseObject->GetWorldPosition().z);
-		glUniform3f(glGetUniformLocation(m_shader->GetGlProgram(), "pointLight.ambient"), m_ambiant.x, m_ambiant.y, m_ambiant.z);
-		glUniform3f(glGetUniformLocation(m_shader->GetGlProgram(), "pointLight.diffuse"), m_diffuse.x, m_diffuse.y, m_diffuse.z);
-		glUniform3f(glGetUniformLocation(m_shader->GetGlProgram(), "pointLight.specular"), m_specular.x, m_specular.y, m_specular.z);
+		glUniform3f(glGetUniformLocation(m_shader->GetGlProgram(), (s_pointLight + ID + position).c_str()), m_baseObject->GetWorldPosition().x, m_baseObject->GetWorldPosition().y, -m_baseObject->GetWorldPosition().z);
+		glUniform3f(glGetUniformLocation(m_shader->GetGlProgram(), (s_pointLight + ID + ambiant).c_str()), m_ambiant.x, m_ambiant.y, m_ambiant.z);
+		glUniform3f(glGetUniformLocation(m_shader->GetGlProgram(), (s_pointLight + ID + diffuse).c_str()), m_diffuse.x, m_diffuse.y, m_diffuse.z);
+		glUniform3f(glGetUniformLocation(m_shader->GetGlProgram(), (s_pointLight + ID + specular).c_str()), m_specular.x, m_specular.y, m_specular.z);
 	}
 
 }

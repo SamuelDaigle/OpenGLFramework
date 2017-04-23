@@ -47,7 +47,7 @@ namespace Application
 		void UpdateConsoleText();
 		void AddChildStringTo(Text::TextHolder& _hierarchyText, Framework::BaseObject& _parent, int _depth);
 		void SpawnAsteroid(IO::MeshLoader& _meshLoader);
-
+		Framework::BaseObject* SpawnLight(IO::MeshLoader& _meshLoader);
 
 		IWindow* m_window;
 		Framework::BaseObject* m_rootObject;
