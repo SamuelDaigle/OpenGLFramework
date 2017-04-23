@@ -52,6 +52,7 @@
     <ClCompile Include="Rendering\BaseShader.cpp" />
     <ClCompile Include="Rendering\BasicShader.cpp" />
     <ClCompile Include="Rendering\BlackAndWhite.cpp" />
+    <ClCompile Include="Rendering\BlinnPhongShader.cpp" />
     <ClCompile Include="Rendering\ColorShader.cpp" />
     <ClCompile Include="Rendering\Mesh.cpp" />
     <ClCompile Include="Rendering\Model.cpp" />
@@ -113,6 +114,7 @@
     <ClInclude Include="Rendering\BaseShader.h" />
     <ClInclude Include="Rendering\BasicShader.h" />
     <ClInclude Include="Rendering\BlackAndWhite.h" />
+    <ClInclude Include="Rendering\BlinnPhongShader.h" />
     <ClInclude Include="Rendering\ColorShader.h" />
     <ClInclude Include="Rendering\Mesh.h" />
     <ClInclude Include="Rendering\Model.h" />
@@ -150,6 +152,8 @@
     <None Include="Shaders\basic.vert" />
     <None Include="Shaders\blackAndWhite.frag" />
     <None Include="Shaders\blackAndWhite.vert" />
+    <None Include="Shaders\blinnphong.frag" />
+    <None Include="Shaders\blinnphong.vert" />
     <None Include="Shaders\color.frag" />
     <None Include="Shaders\color.vert" />
     <None Include="Shaders\skybox.frag" />
